@@ -1,0 +1,74 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+var del_url = '';
+
+function del(url) {
+    del_url = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:CONFIRMATION>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = del_url;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+//-->
+</script>
+
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|title_applications></h2>
+                        </div>
+                        <ul class="userlist cardlist">
+                            <TPL_SUB:DATA>
+                            <li>
+                                <div class="img">
+                                    <a href="<TPL:URL_DETAIL>"><TPL:IMAGE></a>
+                                </div>
+                                <div class="control">
+                                    <TPL_SUB:MOD><a href="<TPL:URL>" title="Edit" class="ico iedit">Edit</a></TPL_SUB:MOD>
+                                    <TPL_SUB:DEL><a href="<TPL:URL>" title="Delete" class="ico idel">Delete</a></TPL_SUB:DEL>
+                                </div>
+                                <div class="lead">
+                                    <h4><TPL:PERSON_NAME_FIRST> <TPL:PERSON_NAME_LAST></h4>
+                                    <small><TPL:CARD_TYPE_NAME></small>
+                                    <p><TPL:TXT_module_isic_card_status|status>: <b class="ok"><TPL:STATE_NAME></b></p>
+                                </div>
+                            </li>
+                            </TPL_SUB:DATA>
+                        </ul>
+
+                        <!--bpanel-->
+                        <div class="bpanel">
+
+                            <div class="bpinner">
+                                <div class="bpleft">
+                                    <a href="<TPL:URL_ALL>" class="icow inext"><TPL:TXT_module_isic_card|all_applications></a>
+                                </div>
+                                <div class="bpright">
+                                    <a href="<TPL:URL_ADD>" class="icow iadd"><TPL:TXT_module_isic_card|add_new_application></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/bpanel-->
+
+                    </div>
+                </div>
+                <!--/box-->

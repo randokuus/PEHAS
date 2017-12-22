@@ -1,0 +1,86 @@
+<TPL_INCLUDE:tmpl/header_report_print.html>
+        <!--filterSettings-->
+        <div class="filterSettings">
+            <table>
+                <tr>
+                    <td>
+                        <table>
+	                        <tr>
+	                            <th><TPL:TXT_module_isic_report|start_date>:</th>
+	                            <td><TPL:FIELD_filter_start_date></td>
+	                        </tr>
+	                        <tr>
+	                            <th><TPL:TXT_module_isic_report|end_date>:</th>
+	                            <td><TPL:FIELD_filter_end_date></td>
+	                        </tr>
+	                    </table>
+	                </td>
+	                <td>
+                        <table>
+	                        <tr>
+	                            <th><TPL:TXT_module_isic_card|person_name_first>:</th>
+	                            <td><TPL:FIELD_filter_person_name_first></td>
+	                        </tr>
+	                        <tr>
+	                            <th><TPL:TXT_module_isic_card|person_name_last>:</th>
+	                            <td><TPL:FIELD_filter_person_name_last></td>
+	                        </tr>
+                        </table>
+	                </td>
+	                <td>
+                        <table>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_id>:</th>
+                                <td><TPL:FIELD_filter_person_number></td>
+                            </tr>
+	                        <tr>
+	                            <th><TPL:TXT_module_isic_report|isic_number>:</th>
+	                            <td><TPL:FIELD_filter_isic_number></td>
+	                        </tr>
+                        </table>
+	                </td>
+                </tr>
+            </table>
+        </div>
+        <!--filterSettings-->
+
+        <!--block-->
+        <div class="block">
+            <div class="heading">
+                <h2><TPL:TITLE></h2>
+            </div>
+            <TPL_SUB:CARD_RETURNED>
+            <!--tableWrap-->
+            <div class="tableWrap">
+                <table class="tList tCard">
+                    <tr class="tHeader3">
+                        <th><TPL:TXT_module_isic_report|returned_date></th>
+                        <th><TPL:TXT_module_isic_report|school_name></th>
+                        <th><TPL:TXT_module_isic_report|type_name></th>
+                        <th><TPL:TXT_module_isic_report|person_name_first></th>
+                        <th><TPL:TXT_module_isic_report|person_name_last></th>
+                        <th><TPL:TXT_module_isic_report|isic_number></th>
+                        <th><TPL:TXT_module_isic_report|bank_account></th>
+                        <th><TPL:TXT_module_isic_report|collateral_returned></th>
+                    </tr>
+                    <TPL_SUB:DATA>
+                    <tr class="<TPL:STYLE>">
+                        <td><TPL:RETURNED_DATE></td>
+                        <td><TPL:SCHOOL_NAME></td>
+                        <td><TPL:TYPE_NAME></td>
+                        <td><TPL:PERSON_NAME_FIRST></td>
+                        <td><TPL:PERSON_NAME_LAST></td>
+                        <td><TPL:ISIC_NUMBER></td>
+                        <td><TPL:PERSON_BANK_ACCOUNT></td>
+                        <td><TPL:COLLATERAL_RETURNED></td>
+                    </tr>
+                    </TPL_SUB:DATA> 
+                </table>
+            </div>
+            <!--/tableWrap-->
+            </TPL_SUB:CARD_RETURNED>
+        </div>
+        <!--/block-->
+
+
+<TPL_INCLUDE:tmpl/footer_report_print.html>

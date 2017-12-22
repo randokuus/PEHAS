@@ -1,0 +1,135 @@
+/*
+ * Customized tree styles
+ */
+
+/*
+ * Tree control box (moveup, movedown buttons)
+ */
+.x-tree-control-box {
+    border: 1px solid #e2e2e2;
+    text-align: right;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.x-tree-control-box-text {
+    float: left;
+    padding: 2px 0 0 3px;
+}
+
+.x-tree-control-box-btn {
+    width: 22px;
+    height: 22px;
+}
+
+.x-tree-control-box-btn.moveup {
+    background: #ccc url(../images/cm_moveup.gif) center center no-repeat;
+}
+
+.x-tree-control-box-btn.movedown {
+    background: #ccc url(../images/cm_movedn.gif) center center no-repeat;
+}
+
+.x-tree-control-box-btn.remove {
+    background: #ccc url(../images/cm_remove.gif) center center no-repeat;
+}
+
+/*
+ * Message box (loading..., saving...)
+ */
+#msg-box {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #ccc;
+    font-size: 12px;
+}
+
+#msg-box a {
+    color: #000;
+}
+
+#msg-status {
+    position: absolute;
+    z-index: 1;
+}
+
+div.msg-status {
+    font: Arial 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 1px;
+    padding: 0;
+}
+
+.msg-status span {
+    background-color: #ff0000;
+    white-space: nowrap;
+}
+
+/*
+ * Tree modifications
+ */
+
+#tree-div {
+    overflow: auto;
+}
+
+.x-tree-node-el .x-tree-node-icon {
+    background-repeat: no-repeat;
+}
+
+.new-page .x-tree-node-icon,
+.new-template .x-tree-node-icon,
+.empty-trash .x-tree-node-icon {
+    background-image: none;
+    width: 0;
+    height: 0;
+    font-style: italic;
+}
+
+.new-page a span, .new-template a span {
+    color: #999;
+}
+
+.empty-trash a span {
+    color: #ff0000;
+}
+
+.content-node .x-tree-node-icon,
+.trash-node .x-tree-node-icon,
+.template-node .x-tree-node-icon {
+    background-image: url('../images/leaf_page.gif');
+}
+
+.content-node.active-node .x-tree-node-icon,
+.trash-node.active-node .x-tree-node-icon,
+.template-node.active-node .x-tree-node-icon {
+    background-image: url('../images/leaf_page_opened.gif');
+}
+
+.x-tree-node-expanded-content-hdr .x-tree-node-icon {
+    background-image: url('../images/structure_opened.gif');
+}
+
+.x-tree-node-collapsed-content-hdr .x-tree-node-icon {
+    background-image: url('../images/structure_closed.gif');
+}
+
+.x-tree-node-expanded-templates-hdr .x-tree-node-icon {
+    background-image: url('../images/templates_opened.gif');
+}
+
+.x-tree-node-collapsed-templates-hdr .x-tree-node-icon {
+    background-image: url('../images/templates_closed.gif');
+}
+
+.x-tree-node-expanded-trash-hdr .x-tree-node-icon {
+    background-image: url('../images/trash_opened.gif');
+}
+
+.x-tree-node-collapsed-trash-hdr .x-tree-node-icon {
+    background-image: url('../images/trash_closed.gif');
+}

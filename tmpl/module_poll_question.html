@@ -1,0 +1,26 @@
+<TPL_SUB:FORM>
+<div class="block">
+  <div class="blockHeaderSimple">
+    <h2><TPL:TXT_module_poll|module_title>: <TPL:QUESTION></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBodyText">
+    <table class="form">
+    <form action="<TPL:SELF>" method="POST">
+    <input type=hidden name="poll" value="<TPL:POLL>">
+    <TPL_SUB:OPTION>
+    <tr>
+      <td class="label"><TPL:OPTION></td>
+      <td class="input"><input type="radio" name="vote" id="vote" value="<TPL:VOTE>" /></td>
+    </tr>
+    </TPL_SUB:OPTION>
+    </table>
+  </div>
+  <p class="actions">
+    <input type="submit" value="<TPL:BUTTON>" class="submit" />
+    <input type="button" onClick="document.location='<TPL:URL_RESULTS>'" class="submit" value="<TPL:TXT_module_poll|results>">
+  </p>
+  </form>
+  <div class="clearer"></div>
+</div>
+</TPL_SUB:FORM>

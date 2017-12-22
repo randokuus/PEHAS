@@ -1,0 +1,55 @@
+<form method="post" action="<TPL:SELF>" name="report_filter">
+<input type="hidden" name="filter" value="1">
+<div class="blockBodyText">
+    <table class="form">
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_report|start_date>:</td>
+        <td class="input"><TPL:FIELD_filter_beg_month> <TPL:FIELD_filter_beg_year></td>
+        <td class="label"><TPL:TXT_module_isic_report|end_date>:</td>
+        <td class="input"><TPL:FIELD_filter_end_month> <TPL:FIELD_filter_end_year></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_report|card_type>:</td>
+        <td class="input"><TPL:FIELD_filter_type_id></td>
+        <td class="label"><TPL:TXT_module_isic_card|school>:</td>
+        <td class="input"><TPL:FIELD_filter_school_id></td>
+      </tr>
+    </table>
+</div>
+<p class="actions">
+  <input type="submit" class="submit" value="<TPL:TXT_module_isic_report|query>">
+  <input type="submit" class="submit" name="print" value="<TPL:TXT_module_isic_report|print>">
+</p>
+  <TPL:HIDDEN>
+</form>
+
+<TPL_SUB:MESSAGE>
+<div class="blockBodyText">
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</div>
+</TPL_SUB:MESSAGE>
+
+<TPL_SUB:PERIOD>
+<div class="blockHeaderSimple">
+  <h2><TPL:NAME></h2>
+  <div class="clearer"></div>
+</div>
+<table class="data" width="100%">
+    <tr>
+        <th width="25%"><TPL:TXT_module_isic_report|school></th>
+        <th width="25%"><TPL:TXT_module_isic_report|card_type></th>
+        <th width="25%"><TPL:TXT_module_isic_report|cards></th>
+        <th width="25%"><TPL:TXT_module_isic_report|sum></th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr class="<TPL:STYLE>">
+        <td><TPL:SCHOOL></td>
+        <td><TPL:TYPE></td>
+        <td><TPL:CARDS></td>
+        <td><TPL:SUM></td>
+    </tr>   
+    </TPL_SUB:DATA> 
+</table>
+</TPL_SUB:PERIOD>

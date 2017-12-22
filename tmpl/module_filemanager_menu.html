@@ -1,0 +1,43 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+    // shorthand
+    var Tree = Ext.tree;
+
+    var tree = new Tree.TreePanel('tree', {
+        animate:true,
+        enableDD:false,
+        loader: new Tree.TreeLoader(), // Note: no dataurl, register a TreeLoader to make use of createNode()
+        lines: true,
+        selModel: new Ext.tree.MultiSelectionModel(),
+        containerScroll: false
+    });
+
+    // set the root node
+    var root = new Tree.TreeNode({
+        text: '<TPL:TXT_module_filemanager|folder_tree>',
+        draggable:false,
+        id:'source'
+    });
+
+    tree.setRootNode(root);
+    // json data describing the tree
+    var json = [<TPL:FOLDERS_TREE>];
+
+    for(var i = 0, len = json.length; i < len; i++) {
+        root.appendChild(tree.getLoader().createNode(json[i]));
+    }
+    tree.render();
+    root.expand();
+});
+</script>
+
+<div class="block">
+  <div class="blockHeaderSimple">
+    <h2><TPL:TXT_module_filemanager|folder></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBodyText">
+    <div id="tree"></div>
+    <div class="clearer"></div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="block">
+  <div class="blockHeader">
+    <h2><TPL:TXT_module_iforum|latest_topics_in_forum></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBody">
+    <table class="style1" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <th style="width:37%;"><TPL:TXT_module_iforum|subject></th>
+      <th class="even" style="width:8%; text-align:center;"><TPL:TXT_module_iforum|views></th>
+      <th style="width:8%; text-align:center;"><TPL:TXT_module_iforum|replies></th>
+      <th class="even" style="width:17%; text-align:center;"><TPL:TXT_module_iforum|author></th>
+      <th style="width:30%; text-align:center;"><TPL:TXT_module_iforum|last_post></th>
+    </tr>
+    <TPL_SUB:THREAD>
+    <tr>
+      <td><img src="img/iforum/icon_folder_<TPL:ICON>.gif" class="icon" alt="" /> <a href="<TPL:URL>"><TPL:NAME></a>
+    <TPL_SUB:PAGINATOR>
+      <br /><span class="pagination"><TPL:TXT_module_iforum|page>: 
+      <TPL_SUB:PAGE>
+        <a href="<TPL:URL>"><TPL:NAME></a>
+      </TPL_SUB:PAGE>
+        </span>
+    </TPL_SUB:PAGINATOR>
+    </td>
+      <td class="even" align="center"><TPL:VIEWS></td>
+      <td align="center"><TPL:REPLIES></td>
+      <td class="even" align="center"><TPL:AUTHOR_NAME></td>
+      <td align="center"><span class="date"><TPL:LAST_POST_TIME></span><br /><span class="author"><TPL:LAST_POST_AUTHOR_NAME></span></td>
+    </tr>
+    </TPL_SUB:THREAD>
+    </table>
+    <div class="clearer"></div>
+  </div>
+</div>

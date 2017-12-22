@@ -1,0 +1,50 @@
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function del(url) {
+        conf = window.confirm('<TPL:TXT_module_mautomation|delete_client_confirmation>');
+        if (conf) document.location = url;
+    }
+    //-->
+</script>
+<h2><TPL:TXT_module_mautomation|blacklist></h2>
+<form method="post" action="<TPL:SELF>">
+<input type="hidden" name="action" value="Filter">
+<table class="filter">
+    <TPL_SUB:FILTER>
+    <tr>
+        <td class="label" width="220px"><TPL:PAGES></td>
+        <td class="label"><TPL:TXT_module_mautomation|rows_per_page>:</td>
+        <td class="input">
+            <select name="filter[cpp]" onchange="this.form.submit()">
+                <TPL_SUB:CPP>
+                <option<TPL:SELECTED>><TPL:VALUE></option>
+                </TPL_SUB:CPP>
+            </select>
+            <button onclick="this.form.submit()" class="submit"><TPL:TXT_module_mautomation|apply></button>
+        </td>
+    </tr>
+    </TPL_SUB:FILTER>
+</table>
+</form>
+<table class="data">
+    <tr valign="top">
+        <th><a href="<TPL:SELF>&action=Sort&field=id"><TPL:TXT_module_mautomation|id></a><TPL:SI_id></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=name"><TPL:TXT_module_mautomation|name></a><TPL:SI_name></th>
+        <th><TPL:TXT_module_mautomation|groups><TPL:SI_groups></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=is_active"><TPL:TXT_module_mautomation|status></a><TPL:SI_is_active></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=in_blacklist">BL</a><TPL:SI_in_blacklist></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td><TPL:ID></td>
+        <td><TPL:NAME></td>
+        <td><TPL:GROUPS></td>
+        <td><TPL:STATUS></td>
+        <td><TPL:LINK_BLACKLIST></td>
+        <td><a href="<TPL:URL_MODIFY>"><img src="img/ico/edit.gif" alt="" border="0"></a></td>
+        <td><a href="javascript:del('<TPL:URL_DELETE>');"><img src="img/ico/delete.gif" alt="" border="0"></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

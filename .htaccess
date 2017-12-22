@@ -1,0 +1,42 @@
+#AuthUserFile /home/minukool/htaccess/.minukool
+#AuthType Basic
+#AuthName "Täna 08.00-10.00 toimiuvad MinuKool-i keskkonnas arendustööd ja keskkonda sisenemine pole võimalik."
+#Require valid-user
+
+#
+# PHP configuration
+#
+
+php_flag display_errors On
+#php_flag magic_quotes_gpc Off
+#php_flag magic_quotes_runtime Off
+#php_flag magic_quotes_sybase Off
+php_value post_max_size 20M
+php_value upload_max_filesize 20M
+php_value memory_limit 228M
+php_value max_execution_time 600
+
+#
+# Custom error pages
+#
+
+ErrorDocument 404 /error.php?error=404
+ErrorDocument 403 /error.php?error=403
+ErrorDocument 401 /error.php?error=401
+
+#
+# mod_rewrite rules for handling nice urls
+#
+
+RewriteEngine On
+RewriteBase /
+
+# rewrite relative requests to /img/, /upload/
+RewriteRule ^.+(/upload/.+)$            $1       [L]
+
+RewriteCond %{REQUEST_URI}              !^.*/admin/img/.*$
+RewriteRule ^.+(/img/.+)$               $1       [L]
+
+# check if requested url is alias
+#RewriteCond ${your_map_name:%{REQUEST_URI}}       (.+)
+#RewriteRule .+              index.php%1     [L]

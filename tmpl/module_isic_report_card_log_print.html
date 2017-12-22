@@ -1,0 +1,108 @@
+<TPL_INCLUDE:tmpl/header_report_print.html>
+        <!--filterSettings-->
+        <div class="filterSettings">
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+						        <th><TPL:TXT_module_isic_card|isic_number>:</th>
+						        <td><TPL:FIELD_filter_isic_number></td>
+						    </tr>
+						</table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_id>:</th>
+                                <td><TPL:FIELD_filter_person_number></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_name_first>:</th>
+                                <td><TPL:FIELD_filter_person_name_first></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_name_last>:</th>
+                                <td><TPL:FIELD_filter_person_name_last></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--/filterSettings-->
+
+        <!--block-->
+        <div class="block">
+            <div class="heading">
+                <h2><TPL:TITLE></h2>
+            </div>
+            <TPL_SUB:CARD_LIST>
+            <div class="tableWrap">
+                <table class="tList tCard">
+                    <tr class="tHeader3">
+                        <th><TPL:TXT_module_isic_card|person_name_first></th>
+                        <th><TPL:TXT_module_isic_card|person_name_last></th>
+                        <th><TPL:TXT_module_isic_card|person_id></th>
+                        <th><TPL:TXT_module_isic_card|expiration_date></th>
+                        <th><TPL:TXT_module_isic_card|isic_number></th>
+                        <th><TPL:TXT_module_isic_card|type></th>
+                        <th><TPL:TXT_module_isic_card|active></th>
+                    </tr>
+                    <TPL_SUB:DATA>
+                    <tr class="<TPL:STYLE>">
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:PERSON_NAME_FIRST></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:PERSON_NAME_LAST></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:PERSON_NUMBER></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:EXPIRATION_DATE></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:ISIC_NUMBER></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:CARD_TYPE_NAME></a></td>
+                        <td><a href="<TPL:URL_DETAIL>"><TPL:ACTIVE></a></td>
+                    </tr>
+                    </TPL_SUB:DATA> 
+                </table>
+            </div>
+            <!--/tableWrap-->
+            </TPL_SUB:CARD_LIST>
+
+            <TPL_SUB:CARD_LOG>
+            <div class="tableWrap">
+                <table class="tList tCard">
+                    <tr class="tHeader2">
+                        <th rowspan="2"><TPL:TXT_module_isic_report|log_date></th>
+                        <th rowspan="2"><TPL:TXT_module_isic_report|log_type></th>
+                        <th rowspan="2"><TPL:TXT_module_isic_report|log_user></th>
+                        <th colspan="3"><TPL:TXT_module_isic_report|log_body></th>
+                    </tr>
+                    <tr class="tHeader3">
+                        <th><TPL:TXT_module_isic_report|log_field></th>
+                        <th><TPL:TXT_module_isic_report|log_old></th>
+                        <th><TPL:TXT_module_isic_report|log_new></th>
+                    </tr>
+                    <TPL_SUB:DATA>
+                    <tr class="<TPL:STYLE>">
+                        <td><TPL:DATE></td>
+                        <td><TPL:TYPE></td>
+                        <td><TPL:USER></td>
+                        <td><TPL:BODY_NAME></td>
+                        <td><TPL:BODY_OLD></td>
+                        <td><TPL:BODY_NEW></td>
+                        <TPL:DUMMY>
+                    </tr>
+                    </TPL_SUB:DATA> 
+                </table>
+            </div>
+            <!--/tableWrap-->
+            </TPL_SUB:CARD_LOG>
+        </div>
+        <!--/block-->
+
+<TPL_INCLUDE:tmpl/footer_report_print.html>

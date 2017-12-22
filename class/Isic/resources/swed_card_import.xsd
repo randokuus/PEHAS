@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+
+    <!--  Common types -->
+
+    <xs:simpleType name="cardStatusType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="O|A|C|B|H"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ISICSerialType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="S.{12,16}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="cardType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ISIC Student 1"/>
+            <xs:enumeration value="ISIC Student 2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="phoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- New cards file -->
+
+    <xs:element name="NewCards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Card" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Card -->
+                            <xs:element type="ISICSerialType" name="ISICSserial"/>
+                            <xs:element type="cardType" name="Type"/>
+                            <xs:element type="xs:date" name="OpenDate"/>
+                            <xs:element type="cardStatusType" name="Status"/>
+                            <xs:element type="xs:date" name="ExpiryDate"/>
+                            <xs:element name="Description">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="new|replacement|renewal"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Cardholder -->
+                            <xs:element type="xs:string" name="IdCode"/>
+                            <xs:element type="nameType" name="FirstName" minOccurs="0"/>
+                            <xs:element type="nameType" name="LastName"/>
+                            <xs:element type="xs:date" name="BirthDate"/>
+                            <xs:element type="xs:string" name="Email" minOccurs="0"/>
+                            <xs:element type="phoneType" name="Phone" minOccurs="0"/>
+                            <xs:element type="xs:string" name="Photo"/>
+                            <!-- School -->
+                            <xs:element type="xs:string" name="SchoolName"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:date" name="FileDate"/>
+            <xs:attribute type="xs:time" name="FileTime"/>
+            <xs:attribute type="xs:positiveInteger" name="FileId"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Card status changes file -->
+
+    <xs:element name="StatusChanges">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Card" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Card -->
+                            <xs:element type="ISICSerialType" name="ISICSserial"/>
+                            <xs:element type="cardType" name="Type"/>
+                            <xs:element type="xs:date" name="OpenDate"/>
+                            <xs:element type="cardStatusType" name="Status"/>
+                            <!-- Cardholder -->
+                            <xs:element type="xs:string" name="Email" minOccurs="0"/>
+                            <xs:element type="phoneType" name="Phone" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+
+            <xs:attribute type="xs:date" name="FileDate"/>
+
+            <xs:attribute type="xs:time" name="FileTime"/>
+
+            <xs:attribute type="xs:positiveInteger" name="FileId"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+

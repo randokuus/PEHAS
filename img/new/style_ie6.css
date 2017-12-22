@@ -1,0 +1,458 @@
+/*
+	Fix for ie6
+	Version:  31.12.10
+*/
+
+.clear,
+.header,
+.menuWrap,
+.wrapper,
+.boxcontent,
+.footer,
+.filterTable,
+.filterTable .tLine,
+.pagin,
+.formTable .fLine,
+.wButtons,
+.ui-helper-clearfix,
+.mainSearch,
+.contactWrap,
+.contactForm .cSubmit,
+.wCheck {
+	display: block;
+	zoom: 1;
+}
+
+.icow,
+.selectw,
+.box,
+.box .heading,
+ul.newslist,
+.bpanel,
+.bpinner,
+.userpanel,
+.menu ul,
+.menu1 ul,
+.menu2 ul,
+.menu3,
+.path a,
+ul.newslist li div,
+ul.userlist li,
+.filter,
+.tList th span,
+.jNiceWrapperSelect,
+.jNiceSelectWrapper ul li span,
+.controlTable,
+.formTable,
+.postReadInner,
+.postRead,
+.jNiceTextAreaWrapper,
+.tHeading,
+.ui-datepicker td span,
+.ui-datepicker td a,
+.listCount,
+.termsText,
+.formTable .fCell .jNiceFileWrapper,
+.loginBox .formTable .fSubmit {
+	zoom: 1;
+}
+
+
+
+/*---------- position problems ----------*/
+.pagin div,
+.tList th,
+.formTable .fLine,
+.schoolTable .wButtons .jNiceButton,
+.formTable .fCell .jNiceInputWrapper,
+.formTable .fCell .jNiceWrapperSelect,
+.formTable .fCell .jNiceFileWrapper,
+.filterTable .tLineButtons .jNiceButton,
+.controlTable .wButtons,
+.controlTable .fSubmit .jNiceButton,
+.controlTable .wButtons .jNiceButton,
+.termsWrap .wButtons .jNiceButton {
+	position: relative;
+}
+
+.studentPhoto {
+	text-align: center;
+}
+.studentPhotoInner p {
+	text-align: left;
+}
+
+.jNiceWrapperSelect { z-index: 999999; }
+.jNiceSelectWrapper {
+	padding-right: 0;
+}
+.jNiceSelectWrapper .jNiceSelectCurrent {
+	margin-right: 19px;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 1px;
+}
+
+.mainSearch .jNiceWrapperSelect {
+	margin-right: 0;
+}
+.mainSearch .jNiceButton {
+	margin-left: 0;
+}
+
+.ownerBirsday {
+	position: static;
+}
+
+.ui-widget-overlay { 
+	position: absolute; 
+	width: 100% !important;
+}
+.userpanel {
+	position: relative;
+	z-index: 3;
+}
+/*---------- /position problems ----------*/
+
+
+/*---------- double indents ----------*/
+.jNiceButton {
+	margin-right: -2px;
+}
+.wButtons .jNiceButton div button,
+.wButtons .jNiceButton div input {
+	padding: 0 15px;
+}
+.contactForm .cSubmit .jNiceButton div button,
+.contactForm .cSubmit .jNiceButton div input {
+	padding: 0 40px;
+}
+.search .wbutt div button {
+	padding: 0 7px;
+}
+.controlTable .fHint {
+	margin-left: 15%;
+}
+.termsTextInner {
+	margin-top: 8px;
+}
+.contactForm .cSubmit .jNiceButton {
+	margin-left: -3px;
+}
+.loginBox .formTable .fSubmit {
+	margin-left: 35%;
+}
+.loginBox .formTable .fSubmit .jNiceButton div button,
+.loginBox .formTable .fSubmit .jNiceButton div input {
+	width: auto;
+	padding: 0 15px;
+}
+.formTable .fHint .jNiceButton div button,
+.formTable .fHint .jNiceButton div input {
+	display: inline;
+	overflow: visible;
+}
+.formTable .fHint .jNiceButton div {
+	margin-left: 0;
+}
+/*---------- /double indents ----------*/
+
+
+/*---------- correct sizes ----------*/
+.mainWrap {
+	width: expression(parentNode.clientWidth < 980 ? "980px" : "auto");
+}
+
+.selectopt {
+	width: expression(this.parentNode.clientWidth + 13);
+}
+.jNiceSelectWrapper ul {
+	height: expression(parentNode.clientHeight > 224 ? "224px" : "auto");
+}
+.selectopt ul {
+	height: expression(parentNode.clientHeight > 470 ? "470px" : "auto");
+}
+
+.box .tt,
+.box .bb,
+.selectopt .tl,
+.selectopt .bl,
+.jNiceTextAreaWrapper .atl,
+.jNiceTextAreaWrapper .abl,
+.jNiceMultiSelectWrapper .stl,
+.jNiceMultiSelectWrapper .sbl,
+.termsText .ttl,
+.termsText .tbl {
+	width: expression(this.parentNode.clientWidth);
+}
+.box .ll,
+.box .rr,
+.selectopt .tl,
+.selectopt .tr,
+.ui-dialog i.ll,
+.ui-dialog i.rr,
+.ui-dialog i.ll i,
+.ui-dialog i.rr i {
+	height: expression(this.parentNode.clientHeight);
+}
+
+.userpanel {
+	height: 2.8em;
+}
+
+.search .wtext div {
+	height: 23px;
+	overflow: hidden;
+}
+
+.jNiceInputInner {
+	height: 23px;
+}
+
+/*.twoCols .tCol {
+	width: 49.9%;
+}
+.threeCols .first-child {
+	width: 33.9%;
+}
+.fourCols .tCol {
+	width: 24.9%;
+}
+.fourCols .tLineButtons {
+	padding-right: 2.2%;
+}*/
+
+.formTable .fHint .jNiceButton div button,
+.formTable .fHint .jNiceButton div input {
+	width: auto;
+	padding: 0;
+}
+.formTable .fHint .jNiceButton div {
+	width: auto;
+}
+.wButtons .jNiceButton div button,
+.wButtons .jNiceButton div input {
+	width: auto;
+}
+
+.jNiceSelectWrapper .jNiceSelectCurrent {
+	height: 23px;
+}
+
+.ui-datepicker {
+	width: 17.4em;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	width: 2em;
+	height: 2em;
+}
+
+.contactForm .cSubmit .jNiceButton div button,
+.contactForm .cSubmit .jNiceButton div input {
+	width: auto;
+}
+
+.tList {
+	position: relative;
+	margin-right: -100%;
+}
+
+.mainSearch .jNiceSelectWrapper .jNiceSelectCurrent .jNiceSelectText {
+	height: 16px;
+}
+
+.jNiceMultiSelectInner {
+	position: relative;
+	z-index: 2;
+	height: 12.8em;
+	overflow: hidden;
+}
+.jNiceMultiSelect {
+	position: absolute;
+	width: expression(this.parentNode.clientWidth + 6);
+	margin: -3px;
+}
+
+.jNiceFileWrapper .jNiceFile input {
+	font-size: 10em;
+}
+
+.wideCol {
+	margin: 0 -8px;
+}
+
+.formTable .fHint p {
+	height: 2.82em;
+}
+.shortTable {
+	width: 700px;
+}
+.shortTable .fSubmit .jNiceButton div {
+	float: left;
+}
+.shortTable .fSubmit .jNiceButton div button,
+.shortTable .fSubmit .jNiceButton div input,
+.shortTable .fSubmit .jNiceButtonInput {
+	width: auto;
+	padding: 0 15px;
+}
+/*---------- /correct sizes ----------*/
+
+
+/*---------- switch images ----------*/
+.selectopt .tl,
+.selectopt .tr,
+.selectopt .bl,
+.selectopt .br {
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/shadow.png', sizingMethod='crop');
+}
+.ui-dialog i.ll i,
+.ui-dialog i.rr i,
+.ui-dialog i.tt i,
+.ui-dialog i.bb i,
+.ui-dialog i.tl,
+.ui-dialog i.tr,
+.ui-dialog i.bl,
+.ui-dialog i.br {
+	background: none;
+}
+.ui-dialog i.ll i {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_ll.png', sizingMethod='scale');
+}
+.ui-dialog i.rr i {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_rr.png', sizingMethod='scale');
+}
+.ui-dialog i.tt i {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_tt.png', sizingMethod='scale');
+}
+.ui-dialog i.bb i {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_bb.png', sizingMethod='scale');
+}
+.ui-dialog i.tl {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_tl.png', sizingMethod='crop');
+}
+.ui-dialog i.tr {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_tr.png', sizingMethod='crop');
+}
+.ui-dialog i.bl {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_bl.png', sizingMethod='crop');
+}
+.ui-dialog i.br {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/ie6/corner_br.png', sizingMethod='crop');
+}
+/*---------- /switch images ----------*/
+
+
+/*---------- display problems ----------*/
+.selectw a {
+	display: inline;
+}
+.selectopt li {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* inline-block fix */
+.msg,
+.menu4 li,
+.studentPhotoInner,
+.studentPhotoInner .wButtons,
+.wButtonsCenter .jNiceButton,
+.shortTable .fSubmit .jNiceButton {
+	zoom: 1;
+	display: inline;
+}
+.studentPhoto {
+	width: 100%;
+}
+
+
+/* IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+	display: none; /*sorry for IE5*/
+	display: block; /*sorry for IE5*/
+	position: absolute;
+	z-index: -1;
+	filter: mask();
+	top: -4px;
+	left: -4px;
+	width: 200px;
+	height: 200px;
+}
+/*---------- /display problems ---------*/
+
+
+
+.box {
+	float: none;
+}
+.box .tt,
+.box .bb {
+	padding: 0 6px;
+}
+.selectopt .tl,
+.selectopt .bl {
+	padding: 0 8px;
+}
+
+.ico {
+	text-indent: 0;
+	color: #fff;
+}
+.ico:hover {
+	text-decoration: none;
+	color: #fff;
+}
+.even .ico, .even .ico:hover {
+	color: #ececec;
+}
+
+.menu3 li li {
+	padding-left: 3em;
+	padding-bottom: 0.4em;
+	list-style: inside decimal;
+}
+.menu3 li li.hover, .menu3 li li.active {
+	background-color: #f5f5f5;
+	color: #266db6;
+}
+.menu3 li li a, .menu3 li li span {
+	height: 1%;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+
+
+.pagin div, .filterTable .tCol, .tList th, .tList td, .menu3 li {
+	z-index: expression( runtimeStyle.zIndex = 1, this == parentNode.firstChild ? (className += " first-child") : 0);
+}
+
+/* add numbering */
+.menu4 li a span, .menu4 li span span {
+	zoom: expression(
+		(typeof step == "undefined" ? step = 1 : step++),
+		(typeof this.processed == "undefined" ? insertAdjacentHTML('afterBegin', step + '. ') : ""),
+		this.processed = true,
+		this.runtimeStyle.zoom = "1"
+	);
+}
+
+/* hover fix */
+.jNiceButton {
+	scrollbar-face-color: expression(runtimeStyle.scrollbarFaceColor = '#fff', onmouseover = function() {this.className += ' jNiceButtonHover'}, onmouseout = function() {this.className = this.className.replace(/ jNiceButtonHover/g, '')} );
+}
+.grayButton {
+	scrollbar-face-color: expression(runtimeStyle.scrollbarFaceColor = '#fff', onmouseover = function() {this.className += ' grayButtonHover'}, onmouseout = function() {this.className = this.className.replace(/ grayButtonHover/g, '')} );
+}
+.tList th span.sort, .menu3 li li, .jNiceSelectWrapper ul li span {
+	scrollbar-face-color: expression(runtimeStyle.scrollbarFaceColor = '#fff', onmouseover = function() {this.className += ' hover'}, onmouseout = function() {this.className = this.className.replace(/ hover/g, '')} );
+}

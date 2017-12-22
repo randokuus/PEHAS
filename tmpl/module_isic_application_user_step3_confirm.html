@@ -1,0 +1,68 @@
+<script type="text/javascript" charset="utf-8">
+function assignConfirmYes() {
+    document.vorm.confirm_yes.value = '1';
+    document.vorm.submit();
+}
+
+function assignConfirmNo() {
+    document.vorm.confirm_no.value = '1';
+    document.vorm.submit();
+}
+
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+        
+        <TPL_SUB:IMESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgOk">
+                <span><TPL:IMESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:IMESSAGE>
+
+        
+
+        <TPL:STEPS>
+
+        <!--singleCol-->
+        <div class="singleCol">
+
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|step3_confirm_title></h2>
+                        </div>
+
+                        <!--formTable-->
+                        <div class="formTable">
+                            <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+								<input type="hidden" name="write" value="1" id="write">
+								<input type="hidden" name="confirm_yes" value="0" id="confirm_yes">
+								<input type="hidden" name="confirm_no" value="0" id="confirm_no">
+								<TPL:HIDDEN>
+                            <!--wButtons-->
+                            <div class="wButtons">
+								<input type="button" id="button_yes" value="<TPL:TXT_module_isic_card|confirm_yes>" onclick="javascript:assignConfirmYes();" />
+								<input type="button" id="button_no" value="<TPL:TXT_module_isic_card|confirm_no>" onclick="javascript:assignConfirmNo();" />
+                            </div>
+                            <!--/wButtons-->
+                        </form>
+                    </div>
+                    <!--/formTable-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

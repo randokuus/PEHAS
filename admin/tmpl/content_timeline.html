@@ -1,0 +1,90 @@
+<script type="text/javascript">
+var id1, id2;
+var id1s, id2s;
+/**
+ * On button click, check, if all parameters are selected.
+ */
+isValid4ChangesView = function() {
+    getSelectedVersionsIds();
+    if (id1s == 'undefined' || id1s == null) return false;
+    if (id2s == 'undefined' || id2s == null) return false;
+    if (id1s == id2s) return false;
+    return true;
+}
+/**
+ * Store checked radio buttons values in predefined variables.
+ */
+getSelectedVersionsIds = function(){
+    id1 = document.forms.vorm.id1;
+    id2 = document.forms.vorm.id2;
+    for (var i=0; i < id1.length; i++) {
+    	if (id1[i].checked) id1s = id1[i].value;
+    }
+    for (var i=0; i < id2.length; i++) {
+    	if (id2[i].checked) id2s = id2[i].value;
+    }
+}
+/**
+ * Disable or enable 'View changes' button depending on radio buttons selection.
+ */
+viewBtnStatus = function() {
+    var btn = document.forms.vorm.btn_view_changes;
+    getSelectedVersionsIds();
+    btn.disabled = !(id1s != id2s && id1s && id2s);
+}
+
+restoreContent = function(changeset){
+    if (changeset) {
+        document.location ='content_admin.php?do=restore&changeset=' + changeset;
+    }
+}
+</script>
+<style type="text/css">
+    .datatable td a { color: #0000ff; }
+</style>
+<form method="get" action="<TPL:PHP_SELF>" <TPL:ENCTYPE> class="formpanel" name="vorm">
+<fieldset id="fieldset<TPL:ID>" title="<TPL:TITLE>" <TPL:STYLE> >
+<legend><TPL:TITLE></legend>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+	   <col width="10" />
+	   <col width="10" />
+	   <col width="10" />
+	   <col width="130" />
+	   <tr>
+	       <TPL_SUB:HEADER_COLUMNS>
+	       <th><TPL:TEXT></th>
+	       </TPL_SUB:HEADER_COLUMNS>
+	   </tr>
+	<TPL_SUB:VERSIONS>
+	<tr>
+	   <td align="right"><TPL:TD_COL1></td>
+	   <td align="center"><TPL:TD_COL2></td>
+	   <td align="center"><TPL:TD_COL3></td>
+	   <td><TPL:TD_COL4></td>
+	   <td nowrap="nowrap"><TPL:TD_COL5></td>
+	   <td align="left"><TPL:TD_COL6></td>
+	   <td><TPL:TD_COL7></td>
+	   <td><TPL:TD_COL8></td>
+	</tr>
+	</TPL_SUB:VERSIONS>
+	</table>
+</fieldset>
+
+		<TPL_SUB:NOTHING>
+		<table class="inputfield" width="100%">
+		<tr>
+			<td align="left" colspan="3"><TPL:FIELD></td>
+		</tr>
+		</table>
+		</TPL_SUB:NOTHING>
+
+<TPL_SUB:HIDDEN>
+	<input type="hidden" name="<TPL:NAME>" value="<TPL:VALUE>">
+</TPL_SUB:HIDDEN>
+
+<p></p>
+<div class="buttonbar">
+	<button type="submit" onclick="if (isValid4ChangesView()) {this.form.submit();} return false;" name="btn_view_changes"><TPL:BUTTON_DIFFER></button>
+</div>
+</form>
+<script type="text/javascript">viewBtnStatus();</script>

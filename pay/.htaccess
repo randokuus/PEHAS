@@ -1,0 +1,6 @@
+AddDefaultCharset Off
+RewriteEngine On
+RewriteBase /khs/pay/
+
+# Realestate url redirection
+RewriteRule ^([0-9]+)          /khs/pay/?id=$1 [QSA]

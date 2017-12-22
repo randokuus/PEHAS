@@ -1,0 +1,347 @@
+<div class="blockHeader">
+  <h2><TPL:POST_WHAT></h2>
+  <div class="clearer"></div>
+</div>
+<TPL_SUB:ERROR>
+<div class="blockBodyText">
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</div>
+</TPL_SUB:ERROR>
+<form method="post" action="<TPL:TARGET>" name="post" onsubmit="return checkForm(this)">
+    <input type="hidden" name="lamer_sensor" value="<TPL:LAMER_SENSOR>" />
+    <input type="hidden" name="quote" value="<TPL:HIDDENQUOTE>" />
+    <input type="hidden" name="reply" value="<TPL:HIDDENREPLY>" />
+
+<TPL_SUB:SHOW_ORIGINAL>
+<table class="style1" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+    <th class="th1" colspan="3"><TPL:TXT_module_iforum|original_post></th>
+</tr>
+<tr>
+    <td rowspan="2" valign="top" width="22%">
+    <span class="name"><strong><TPL:USER_NAME></strong></span><br /><br class="separator" />
+    <span class="date"><TPL:POST_TIME></span><br />
+    </td>
+    <td height="1" style="vertical-align:middle;"><span class="subject"><strong><TPL:NAME></strong></span></td>
+    <td align="right">&nbsp;</td>
+</tr>
+<tr>
+    <td height="75" colspan="2" valign="top" width="78%">
+    <span class="postbody"><TPL:CONTENT></span>
+    <br /><br />
+    </td>
+</tr>
+</table>
+</TPL_SUB:SHOW_ORIGINAL>
+
+<TPL_SUB:SHOW_PREVIEW>
+<table class="style1" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+    <th class="th1" colspan="3"><TPL:TXT_module_iforum|preview></th>
+</tr>
+<tr>
+    <td rowspan="2" valign="top" width="22%">
+    <span class="name"><strong><TPL:USER_NAME></strong></span><br /><br class="separator" />
+    <span class="date"><TPL:POST_TIME></span><br />
+    </td>
+    <td height="1" style="vertical-align:middle;"><span class="subject"><strong><TPL:NAME></strong></span></td>
+  <td align="right">
+    <div class="topicActions buttons">
+      <ul>
+        <li><input type="submit" class="submit" name="post" value="<TPL:TXT_module_iforum|post>" /></li>
+      </ul>
+      <div class="clearer"></div>
+    </div>
+  </td>
+</tr>
+<tr>
+    <td height="75" colspan="2" valign="top" width="78%">
+    <span class="postbody"><TPL:CONTENT></span>
+    <br /><br />
+    </td>
+</tr>
+</table>
+</TPL_SUB:SHOW_PREVIEW>
+
+<div class="blockBody">
+<div>
+<table class="form" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+    <td class="label" width="22%"><label for="fPostingName"><strong><TPL:TXT_module_iforum|posting_name></strong></label></td>
+    <td class="input" width="78%"><TPL:USER_NAME></td>
+</tr>
+<tr>
+  <td colspan="2" class="empty">&nbsp;</td>
+</tr>
+<tr>
+    <td class="label" width="22%"><label for="fSubject" class="required"><strong><TPL:TXT_module_iforum|subject></strong></label></td>
+    <td class="input" width="78%"><input type="text" class="i300" name="fsubject" id="fsubject" tabindex="2" value="<TPL:FSUBJECT>" /></td>
+</tr>
+<tr>
+  <td colspan="2" class="empty">&nbsp;</td>
+</tr>
+<tr>
+    <td class="label" width="22%" valign="top"><label for="fMessage" class="required"><strong><TPL:TXT_module_iforum|message></strong></label>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Startup variables
+var imageTag = false;
+var theSelection = false;
+
+// Check for Browser & Platform for PC & IE specific bits
+// More details from: http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html
+var clientPC = navigator.userAgent.toLowerCase(); // Get client info
+var clientVer = parseInt(navigator.appVersion); // Get browser version
+
+var is_ie = ((clientPC.indexOf("msie") != -1) && (clientPC.indexOf("opera") == -1));
+var is_nav = ((clientPC.indexOf('mozilla')!=-1) && (clientPC.indexOf('spoofer')==-1)
+                && (clientPC.indexOf('compatible') == -1) && (clientPC.indexOf('opera')==-1)
+                && (clientPC.indexOf('webtv')==-1) && (clientPC.indexOf('hotjava')==-1));
+var is_moz = 0;
+
+var is_win = ((clientPC.indexOf("win")!=-1) || (clientPC.indexOf("16bit") != -1));
+var is_mac = (clientPC.indexOf("mac")!=-1);
+
+
+
+// Define the bbCode tags
+bbcode = new Array();
+bbtags = new Array('[b]','[/b]','[i]','[/i]','[u]','[/u]','[quote]','[/quote]','[code]','[/code]','[img]','[/img]','[url]','[/url]');
+imageTag = false;
+
+
+
+// Replacement for arrayname.length property
+function getarraysize(thearray) {
+    for (i = 0; i < thearray.length; i++) {
+        if ((thearray[i] == "undefined") || (thearray[i] == "") || (thearray[i] == null))
+            return i;
+        }
+    return thearray.length;
+}
+
+// Replacement for arrayname.push(value) not implemented in IE until version 5.5
+// Appends element to the array
+function arraypush(thearray,value) {
+    thearray[ getarraysize(thearray) ] = value;
+}
+
+// Replacement for arrayname.pop() not implemented in IE until version 5.5
+// Removes and returns the last element of an array
+function arraypop(thearray) {
+    thearraysize = getarraysize(thearray);
+    retval = thearray[thearraysize - 1];
+    delete thearray[thearraysize - 1];
+    return retval;
+}
+
+
+function checkForm() {
+        bbstyle(-1);
+        return true;
+}
+
+function emoticon(text) {
+    var txtarea = document.post.fcontent;
+    text = ' ' + text + ' ';
+    if (txtarea.createTextRange && txtarea.caretPos) {
+        var caretPos = txtarea.caretPos;
+        caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? caretPos.text + text + ' ' : caretPos.text + text;
+        txtarea.focus();
+    } else {
+        txtarea.value  += text;
+        txtarea.focus();
+    }
+}
+
+function bbfontstyle(bbopen, bbclose) {
+    var txtarea = document.post.fcontent;
+
+    if ((clientVer >= 4) && is_ie && is_win) {
+        theSelection = document.selection.createRange().text;
+        if (!theSelection) {
+            txtarea.value += bbopen + bbclose;
+            txtarea.focus();
+            return;
+        }
+        document.selection.createRange().text = bbopen + theSelection + bbclose;
+        txtarea.focus();
+        return;
+    }
+    else if (txtarea.selectionEnd && (txtarea.selectionEnd - txtarea.selectionStart > 0))
+    {
+        mozWrap(txtarea, bbopen, bbclose);
+        return;
+    }
+    else
+    {
+        txtarea.value += bbopen + bbclose;
+        txtarea.focus();
+    }
+    storeCaret(txtarea);
+}
+
+
+function bbstyle(bbnumber) {
+    var txtarea = document.post.fcontent;
+
+    txtarea.focus();
+    donotinsert = false;
+    theSelection = false;
+    bblast = 0;
+
+    if (bbnumber == -1) { // Close all open tags & default button names
+        while (bbcode[0]) {
+            butnumber = arraypop(bbcode) - 1;
+            txtarea.value += bbtags[butnumber + 1];
+            buttext = eval('document.post.addbbcode' + butnumber + '.value');
+            eval('document.post.addbbcode' + butnumber + '.value ="' + buttext.substr(0,(buttext.length - 1)) + '"');
+        }
+        imageTag = false; // All tags are closed including image tags :D
+        txtarea.focus();
+        return;
+    }
+
+    if ((clientVer >= 4) && is_ie && is_win)
+    {
+        theSelection = document.selection.createRange().text; // Get text selection
+        if (theSelection) {
+            // Add tags around selection
+            document.selection.createRange().text = bbtags[bbnumber] + theSelection + bbtags[bbnumber+1];
+            txtarea.focus();
+            theSelection = '';
+            return;
+        }
+    }
+    else if (txtarea.selectionEnd && (txtarea.selectionEnd - txtarea.selectionStart > 0))
+    {
+        mozWrap(txtarea, bbtags[bbnumber], bbtags[bbnumber+1]);
+        return;
+    }
+
+    // Find last occurance of an open tag the same as the one just clicked
+    for (i = 0; i < bbcode.length; i++) {
+        if (bbcode[i] == bbnumber+1) {
+            bblast = i;
+            donotinsert = true;
+        }
+    }
+
+    if (donotinsert) {      // Close all open tags up to the one just clicked & default button names
+        while (bbcode[bblast]) {
+                butnumber = arraypop(bbcode) - 1;
+                txtarea.value += bbtags[butnumber + 1];
+                buttext = eval('document.post.addbbcode' + butnumber + '.value');
+                eval('document.post.addbbcode' + butnumber + '.value ="' + buttext.substr(0,(buttext.length - 1)) + '"');
+                imageTag = false;
+            }
+            txtarea.focus();
+            return;
+    } else { // Open tags
+
+        if (imageTag && (bbnumber != 14)) {     // Close image tag before adding another
+            txtarea.value += bbtags[15];
+            lastValue = arraypop(bbcode) - 1;   // Remove the close image tag from the list
+            document.post.addbbcode14.value = "Img";    // Return button back to normal state
+            imageTag = false;
+        }
+
+        // Open tag
+        txtarea.value += bbtags[bbnumber];
+        if ((bbnumber == 14) && (imageTag == false)) imageTag = 1; // Check to stop additional tags after an unclosed image tag
+        arraypush(bbcode,bbnumber+1);
+        eval('document.post.addbbcode'+bbnumber+'.value += "*"');
+        txtarea.focus();
+        return;
+    }
+    storeCaret(txtarea);
+}
+
+// From http://www.massless.org/mozedit/
+function mozWrap(txtarea, open, close)
+{
+    var selLength = txtarea.textLength;
+    var selStart = txtarea.selectionStart;
+    var selEnd = txtarea.selectionEnd;
+    if (selEnd == 1 || selEnd == 2)
+        selEnd = selLength;
+
+    var s1 = (txtarea.value).substring(0,selStart);
+    var s2 = (txtarea.value).substring(selStart, selEnd)
+    var s3 = (txtarea.value).substring(selEnd, selLength);
+    txtarea.value = s1 + open + s2 + close + s3;
+    return;
+}
+
+// Insert at Claret position. Code from
+// http://www.faqts.com/knowledge_base/view.phtml/aid/1052/fid/130
+function storeCaret(textEl) {
+    if (textEl.createTextRange) textEl.caretPos = document.selection.createRange().duplicate();
+}
+
+//-->
+</script>
+
+    <div class="clearer"></div>
+    <div class="smiles" style="padding-top:25px; text-align:center;">
+    <TPL_SUB:SMILIES>
+    <a href="javascript:emoticon('<TPL:DESC>')"><img src="img/iforum/smilies/<TPL:URL>" alt="<TPL:DESC>" title="<TPL:DESC>" /></a>
+    </TPL_SUB:SMILIES>
+    </div>
+  </td>
+    <td class="input" width="78%" valign="top">
+    <div class="bbTags" style="padding-bottom:10px;">
+      <input type="button" class="button" accesskey="b" name="addbbcode0" value=" B " style="font-weight:bold; width:30px" onclick="bbstyle(0);" />
+      <input type="button" class="button" accesskey="i" name="addbbcode2" value=" i " style="font-style:italic; width:30px" onclick="bbstyle(2);" />
+      <input type="button" class="button" accesskey="u" name="addbbcode4" value=" u " style="text-decoration: underline; width:30px" onclick="bbstyle(4);" />
+      <input type="button" class="button" accesskey="q" name="addbbcode6" value="<TPL:TXT_module_iforum|quote>" style="width:50px"  onclick="bbstyle(6);" />
+      <input type="button" class="button" accesskey="c" name="addbbcode8" value="<TPL:TXT_module_iforum|code>" style="width:40px"  onclick="bbstyle(8);" />
+      <input type="button" class="button" accesskey="p" name="addbbcode14" value="<TPL:TXT_module_iforum|img>" style="width:40px"  onclick="bbstyle(10);" />
+      <input type="button" class="button" accesskey="w" name="addbbcode16" value="<TPL:TXT_module_iforum|url>" style="text-decoration:underline; width:40px"  onclick="bbstyle(12);" />
+      <div class="clearer"></div>
+    </div>
+    <div class="clearer"></div>
+    <div class="fontStyles" style="float:left; width:75%;">
+      <label for="fColor"><TPL:TXT_module_iforum|font_color>:</label>
+      <select name="fColor" id="fColor" onchange="bbfontstyle('[color='+this.options[this.selectedIndex].value+']', '[/color]');this.selectedIndex=0;" />
+      <option style="color:black;" value="#"><TPL:TXT_module_iforum|default></option>
+      <option style="color:darkred;" value="darkred"><TPL:TXT_module_iforum|darkred></option>
+      <option style="color:red;" value="red"><TPL:TXT_module_iforum|red></option>
+      <option style="color:orange;" value="orange"><TPL:TXT_module_iforum|orange></option>
+      <option style="color:brown;" value="brown"><TPL:TXT_module_iforum|brown></option>
+      <option style="color:yellow;" value="yellow"><TPL:TXT_module_iforum|yellow></option>
+      <option style="color:green;" value="green"><TPL:TXT_module_iforum|green></option>
+      <option style="color:olive;" value="olive"><TPL:TXT_module_iforum|olive></option>
+      <option style="color:cyan;" value="cyan"><TPL:TXT_module_iforum|cyan></option>
+      <option style="color:blue;" value="blue"><TPL:TXT_module_iforum|blue></option>
+      <option style="color:darkblue;" value="darkblue"><TPL:TXT_module_iforum|darkblue></option>
+      <option style="color:indigo;" value="indigo"><TPL:TXT_module_iforum|indigo></option>
+      <option style="color:violet;" value="violet"><TPL:TXT_module_iforum|violet></option>
+      <option style="color:white;" value="white"><TPL:TXT_module_iforum|white></option>
+      <option style="color:black;" value="black"><TPL:TXT_module_iforum|black></option>
+      </select>
+      <div class="clearer"></div>
+      </div>
+    <!--
+    <div class="closeTags" style="float:right; width:25%; text-align:right;">
+      <a href="#">Close Tags</a>
+    </div>
+    -->
+    <div class="clearer"></div>
+    <div class="message" style="padding-top:20px;">
+      <textarea name="fcontent" id="fcontent" tabindex="3" rows="15" cols="100"  style="width:98%;" wrap="virtual" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);"><TPL:FCONTENT></textarea>
+    </div>
+    </td>
+</tr>
+<tr>
+  <td class="submit" colspan="2">
+    <input type="submit" class="submit" name="preview" tabindex="5" value="<TPL:TXT_module_iforum|preview>" />
+    <input type="submit" class="submit" name="post" tabindex="6" accesskey="s" value="<TPL:TXT_module_iforum|post>" />
+  </td>
+</tr>
+</table>
+</form>
+</div>

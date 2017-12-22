@@ -1,0 +1,30 @@
+<TPL_INCLUDE:tmpl/header.html>
+
+        <!--singleCol-->
+        <div class="singleCol">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TITLE></h2>
+                        </div>
+                        <!--contactWrap-->
+                        <div class="contactWrap">
+                            <!--cLead-->
+                            <div class="contactLead">
+                                <div class="contactLeadInner">
+                                    <p><TPL:TEXT></p>
+                                </div>
+                            </div>
+                            <!--/cLead-->
+                            <TPL_OBJECT:form2>
+                              <TPL_OBJECT_OUTPUT:show()>
+                            </TPL_OBJECT:form2>
+                        </div>
+                        <!--/contactWrap-->
+                    </div>
+                </div>
+                <!--/box-->
+        </div>
+        <!--/singleCol-->
+<TPL_INCLUDE:tmpl/footer.html>

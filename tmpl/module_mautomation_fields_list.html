@@ -1,0 +1,35 @@
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function del(url) {
+        conf = window.confirm('<TPL:TXT_module_mautomation|confirm_delete_empty_field>');
+        if (conf) document.location = url;
+    }
+    //-->
+</script>
+<h2><TPL:TXT_module_mautomation|clients_fields_subtitle></h2>
+<!-- Start tabs -->
+<div class="tabs">
+    <div><a href="<TPL:SELF>&action=AddField"><TPL:TXT_module_mautomation|clients_add_field_subtitle></a></div>
+    <div class="active"><a href="<TPL:SELF>&action=ShowFields"><TPL:TXT_module_mautomation|clients_fields_subtitle></a></div>
+    <div><a href="<TPL:SELF>&action=AddClient"><TPL:TXT_module_mautomation|clients_add_subtitle></a></div>
+    <div><a href="<TPL:SELF>&action=ShowClients"><TPL:TXT_module_mautomation|clients_list_subtitle></a></div>
+</div>
+<!-- End tabs -->
+<table class="data">
+    <tr valign="top">
+        <th><TPL:TXT_module_mautomation|field_id></th>
+        <th><TPL:TXT_module_mautomation|field_label></th>
+        <th><TPL:TXT_module_mautomation|field_type></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td class="nowrap"><TPL:ID></td>
+        <td class="nowrap"><TPL:LABEL></td>
+        <td class="nowrap"><TPL:TYPE></td>
+        <td><a href="<TPL:URL_MODIFY>"><img src="img/ico/edit.gif" alt="" border="0"></a></td>
+        <td><a href="javascript:del('<TPL:URL_DELETE>');"><img src="img/ico/delete.gif" alt="" border="0"></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

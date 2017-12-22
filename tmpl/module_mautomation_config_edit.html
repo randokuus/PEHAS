@@ -1,0 +1,73 @@
+<script language="javascript">
+    function getParamForm(f_name, msg){
+        alert("hhh");
+        $value = prompt(msg); 
+        if ($value != "" && $value != null ){
+            $f_name.field_name.value = $value;
+            return false;
+        }
+        return false;
+    }
+    
+    function verificDate(){
+        if( document.getElementById('next_change_date').value.search(/^\d{4}\-\d{2}\-\d{2} \d{2}:\d{2}:\d{2}$/) != -1){
+            document.getElementById('headFormSaveSMTP_CURRENT_SERVER').submit();
+        }else{
+            alert("<TPL:TXT_module_mautomation|error_date_format>");
+            document.getElementById('next_change_date').focus();
+        }
+    }
+    
+    function deleteField(action, param_name, msg){
+        if (confirm(msg)){
+            f_name = document.getElementById('editGateForm');
+            f_name.action.value = action;
+            f_name.pamam_name.value = param_name;
+            f_name.submit();
+        }
+    }
+    
+    function addGateField(action, param_name, msg){
+        val = prompt(msg);
+        if (val != "" && val != null ){
+            f_name = document.getElementById('editGateForm');
+            f_name.action.value = action;
+            f_name.pamam_name.value = param_name;
+            f_name.field_name.value = val;
+            f_name.submit();
+        }
+    }
+</script>
+<div class="container">
+<div class="content">   
+        <form id="editGateForm" name="editGateForm" methos="post" action="">
+            <input type="hidden" name="action" value="">
+            <input type="hidden" name="pamam_name" value="">
+            <input type="hidden" name="field_name" value="">
+        </form>     
+<TPL_SUB:SETTINGS>
+    <font color="red"><TPL:ERROR_MSG></font>
+    <h2><TPL:NAME></h2>         
+        <form id="headForm<TPL:ID>" name="headForm<TPL:ID>" method="post" action="" >
+        <input  type="hidden" name="action" value="<TPL:ID>">
+        
+        <table class="form" align = "center">
+            <col width="120px">
+            <TPL_SUB:DEVISION>
+                <TPL:NAME>
+            <TPL_SUB:PARAMETER>
+            <tr>
+                <td class="label"><TPL:NAME></td>
+                <td class="input"><TPL:VALUE></td>
+            </tr>
+            </TPL_SUB:PARAMETER>
+            <tr>
+                <td colspan="2" align="right"><TPL:BUTTONS></td>
+            </tr>
+            </TPL_SUB:DEVISION>
+            <TPL:BUTTON>
+        </table>
+        </form>
+</TPL_SUB:SETTINGS>
+</div>
+</div>

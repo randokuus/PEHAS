@@ -1,0 +1,97 @@
+<TPL_SUB:MESSAGE>
+<p><font color="red"><TPL:MESSAGE></font></p>
+</TPL_SUB:MESSAGE>
+
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+<TPL:HIDDEN>
+<table class="form">
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|type></td>
+<td class="input"><TPL:FIELD_type_id></td>
+</tr>
+<tr valign="top">
+<td class="label"><b><TPL:TXT_module_filemanager|info></b></td>
+<td class="input"><TPL:FIELD_info></td>
+</tr>
+<tr valign="top">
+<td class="label"><b><TPL:TXT_module_filemanager|file></b></td>
+<td class="input"><TPL:FIELD_file></td>
+</tr>
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|keywords></td>
+<td class="input"><TPL:FIELD_keywords></td>
+</tr>
+<tr valign="top" id="details_row">
+<td class="label"><TPL:TXT_module_filemanager|project></td>
+<td class="input"><TPL:FIELD_project></td>
+</tr>
+<tr valign="top" id="details_row">
+<td class="label"><TPL:TXT_module_filemanager|task></td>
+<td class="input"><TPL:FIELD_task></td>
+</tr>
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|folder></td>
+<td class="input"><TPL:FIELD_folder></td>
+</tr>
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|picture_size></td>
+<td class="input"><TPL:FIELD_picture_size></td>
+</tr>
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|date></td>
+<td class="input"><TPL:LASTMOD></td>
+</tr>
+
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|categories></td>
+<td class="input">
+<TPL_SUB:CATEGORIES>
+<table class="data">
+<tr valign="top">
+<th colspan="2"><TPL:TITLE></th>
+</tr>
+<TPL_SUB:CAT>
+<tr valign="top" class="<TPL:STYLE>">
+<td><b><TPL:NAME></b></td>
+<td class="nowrap"><INPUT TYPE="checkbox" NAME="category[<TPL:ID>]" <TPL:CHECKED>></td>
+</tr>
+</TPL_SUB:CAT>
+</table>
+</TPL_SUB:CATEGORIES>
+</td>
+</tr>
+<TPL_SUB:PERM>
+<tr valign="top">
+<td class="label"><TPL:TXT_module_filemanager|permissions></td>
+<td class="input">
+<table class="data">
+<tr valign="top">
+<th><TPL:TXT_module_filemanager|group></th>
+<th><TPL:TXT_module_filemanager|read></th>
+<th><TPL:TXT_module_filemanager|write></th>
+<th><TPL:TXT_module_filemanager|delete></th>
+</tr>
+
+<TPL_SUB:PERM>
+<tr valign="top" class="<TPL:STYLE>">
+<td><b><TPL:NAME></b></td>
+<td class="nowrap"><INPUT TYPE="checkbox" NAME="group_read[<TPL:ID>]" <TPL:READ_CHECKED>></td>
+<td class="nowrap"><INPUT TYPE="checkbox" NAME="group_write[<TPL:ID>]" <TPL:WRITE_CHECKED>></td>
+<td class="nowrap"><INPUT TYPE="checkbox" NAME="group_delete[<TPL:ID>]" <TPL:DELETE_CHECKED>></td>
+</tr>
+</TPL_SUB:PERM>
+</table>
+</td>
+</tr>
+</TPL_SUB:PERM>
+<TPL_SUB:PERM_HIDDEN>
+<INPUT TYPE="hidden" NAME="group_read[<TPL:ID>]" value="<TPL:READ_CHECKED>">
+<INPUT TYPE="hidden" NAME="group_write[<TPL:ID>]" value="<TPL:WRITE_CHECKED>">
+<INPUT TYPE="hidden" NAME="group_delete[<TPL:ID>]" value="<TPL:DELETE_CHECKED>">
+</TPL_SUB:PERM_HIDDEN>
+<tr valign="top">
+<td class="input">&nbsp;</td>
+<td class="input"><input type="submit" value="<TPL:BUTTON>" class="submit" /></td>
+</tr>
+</table>
+</form>

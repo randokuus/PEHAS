@@ -1,0 +1,570 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+var distributeUrl = '';
+var activateUrl = '';
+var prolongUrl = '';
+var returnUrl = '';
+
+function doDistribute(url) {
+    distibuteUrl = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_distribute>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = distibuteUrl;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function doActivate(url) {
+    activateUrl = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_activate>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = activateUrl;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function doActivateCB(btn, txt) {
+    if (btn == 'yes') {
+        document.location = activateUrl;
+    }
+}
+
+function doProlong(url) {
+    prolongUrl = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_prolong>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = prolongUrl;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function doReturn(url) {
+    returnUrl = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_return>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = returnUrl;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+//-->
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        <TPL_SUB:IMESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgOk">
+                <span><TPL:IMESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:IMESSAGE>
+
+        
+
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:DATA_person_name_first> <TPL:DATA_person_name_last></h2>
+                        </div>
+
+                        <!--formTable-->
+                        <div class="formTable">
+                            <form action="" method="" name="" class="jNice">
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|state>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_state_name>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|kind>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_kind_name>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|bank>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_bank_name>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|type>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_type_name>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <TPL_SUB:SCHOOL>
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|school>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_school_name>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                </TPL_SUB:SCHOOL>
+                            </div>
+                            <!--/fRow-->
+                            
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_name_first>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_name_first>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_name_last>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_name_last>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_id>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_number>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_birthday>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_birthday>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                            </div>
+                            <!--/fRow-->
+
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|delivery_addr1>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_delivery_addr1>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|delivery_addr2>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_delivery_addr2>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|delivery_addr3>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_delivery_addr3>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|delivery_addr4>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_delivery_addr4>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                            </div>
+                            <!--/fRow-->
+
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_email>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_email>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|person_phone>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_person_phone>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                            </div>
+                            <!--/fRow-->
+
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|activation_date>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_activation_date>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|expiration_date>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_expiration_date>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|isic_number>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_isic_number>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|card_number>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_card_number>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/fRow-->
+                                
+                            <TPL_SUB:DEACTIVATION>
+                            <!--fRow-->
+                            <div class="fRow">
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|deactivation_reason>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_reason>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|deactivation_user>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_user>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|deactivation_date>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:DATA_date>
+                                    </div>
+                                    <div class="fHint">
+                                        
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                            </div>
+                            <!--/fRow-->
+                            </TPL_SUB:DEACTIVATION>
+                            <!--wButtons-->
+                            <div class="wButtons">
+                                <TPL_SUB:BACK><input type="button" class="grayButton" onClick="document.location='<TPL:URL_BACK>'" value="<TPL:BACK>" /></TPL_SUB:BACK>
+                                <TPL_SUB:MODIFY><input type="button" onClick="document.location='<TPL:URL>'" value="<TPL:TITLE>" /></TPL_SUB:MODIFY>
+                                <TPL_SUB:DISTRIBUTE><input type="button" onClick="javascript:doDistribute('<TPL:URL>');" value="<TPL:TITLE>" /></TPL_SUB:DISTRIBUTE>
+                                <TPL_SUB:ACTIVATE><input type="button" onClick="javascript:doActivate('<TPL:URL>');" value="<TPL:TITLE>" /></TPL_SUB:ACTIVATE>
+                                <TPL_SUB:DEACTIVATE><input type="button" onClick="document.location='<TPL:URL>'" value="<TPL:TITLE>" /></TPL_SUB:DEACTIVATE>
+                                <TPL_SUB:RETURN><input type="button" onClick="javascript:doReturn('<TPL:URL>');" value="<TPL:TITLE>" /></TPL_SUB:RETURN>
+                                <TPL_SUB:REPLACE><input type="button" onClick="document.location='<TPL:URL>'" value="<TPL:TITLE>" /></TPL_SUB:REPLACE>
+                                <TPL_SUB:PROLONG><input type="button" onClick="javascript:doProlong('<TPL:URL>');" value="<TPL:TITLE>" /></TPL_SUB:PROLONG>
+                            </div>
+                            <!--/wButtons-->
+                        </form>
+                        </div>
+                        <!--/formTable-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->
+
+        <!--col2-->
+        <div class="col2">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2>&nbsp;</h2>
+                        </div>
+                        <!--studentPhoto-->
+                        <div class="studentPhoto">
+                            <div class="studentPhotoInner">
+                                <img src="<TPL:DATA_pic>" alt="" border="0" />
+                            </div>
+                        </div>
+                        <!--/studentPhoto-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col2-->
+        
+        <div class="wideCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                        </div>
+                        <h2><TPL:TXT_module_isic_user|card_validities></h2>
+                    </div>
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList">
+                            <tr>
+                                <th>
+                                    <span class=""><TPL:TXT_module_user_status|school></span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_user_status|structure_unit></span>
+                                </th>
+                                <!--<th>-->
+                                    <!--<span class=""><TPL:TXT_module_user_status|class></span>-->
+                                <!--</th>-->
+                                <th>
+                                    <span class=""><TPL:TXT_module_user_status|course></span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_user_status|position></span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_isic_card_validities|active></span>
+                                </th>
+                            </tr>
+                            
+                            <TPL_SUB:VALIDITY>
+                            <tr>
+                                <td><TPL:SCHOOL></td>
+                                <td><TPL:STRUCTURE_UNIT></td>
+                                <!--<td><TPL:CLASS></td>-->
+                                <td><TPL:COURSE></td>
+                                <td><TPL:POSITION></td>
+                                <td><TPL:ACTIVE></td>
+                            </tr>
+                            </TPL_SUB:VALIDITY>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                </div>
+            </div>
+            <!--/box-->                
+        </div>

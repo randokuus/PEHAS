@@ -1,0 +1,52 @@
+              <div class="blockHeaderSimple">
+                <h2><TPL:TXT_module_filemanager|folder></h2>
+                <div class="clearer"></div>
+              </div>
+                            <div class="blockBodyText">
+              <TPL_SUB:MESSAGE>
+              <div class="error">
+                            <p><TPL:MESSAGE></p>
+              </div>
+                            </TPL_SUB:MESSAGE>
+                            <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+                            <TPL:HIDDEN>
+                                <table class="form">
+                                <tr>
+                                    <td class="label"><b><TPL:TXT_module_filemanager|folder_name></b></td>
+                                    <td class="input"><TPL:FIELD_folder_name></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><TPL:TXT_module_filemanager|folder></td>
+                                    <td class="input"><TPL:FIELD_folder></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><TPL:TXT_module_filemanager|date></td>
+                                    <td class="input"><TPL:LASTMOD></td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><TPL:TXT_module_filemanager|permissions></td>
+                                    <td class="input">
+                    <table class="data">
+                    <tr>
+                      <th><TPL:TXT_module_filemanager|group></th>
+                      <th><TPL:TXT_module_filemanager|read></th>
+                      <th><TPL:TXT_module_filemanager|write></th>
+                      <th><TPL:TXT_module_filemanager|delete></th>
+                    </tr>
+                    <TPL_SUB:PERM>
+                    <tr class="<TPL:STYLE>">
+                                    <td><b><TPL:NAME></b></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_read[<TPL:ID>]" <TPL:READ_CHECKED>></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_write[<TPL:ID>]" <TPL:WRITE_CHECKED>></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_delete[<TPL:ID>]" <TPL:DELETE_CHECKED>></td>
+                    </tr>
+                    </TPL_SUB:PERM>
+                    </table>
+                  </td>
+                                </tr>
+                            </table>
+            </div>
+                        <p class="actions">
+              <input type="submit" value="<TPL:BUTTON>" class="submit" />
+            </p>
+            </form>

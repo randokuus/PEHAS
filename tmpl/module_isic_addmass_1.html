@@ -1,0 +1,21 @@
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+<TPL:HIDDEN>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+  <table class="form">
+  <TPL_SUB:FIELDS>
+  <tr>
+    <td class="label"><TPL:TITLE></td>
+    <td class="input"><TPL:DATA></td>
+  </tr>
+  </TPL_SUB:FIELDS>
+  </table>
+</div>
+<p class="actions">
+  <input type="submit" value="<TPL:BUTTON>" class="submit" />
+</p>
+</form>

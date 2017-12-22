@@ -1,0 +1,73 @@
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2>Filter</h2>
+                        </div>
+                        <!--boxcontent-->
+                        <div class="boxcontent">
+
+                            <!--filterTable-->
+                            <div class="filterTable twoCols">
+                                <form action="<TPL:SELF>" method="post" name="" class="jNice">
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_news|category>:</label>
+                                        <TPL:FIELD_filter_category>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_news|year>:</label>
+                                        <TPL:FIELD_filter_year>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" value="<TPL:TXT_module_news|search>" onClick="this.form.submit()" />
+                                </div>
+                                <TPL:HIDDEN>
+                                </form>
+                            </div>
+                            <!--/filterTable-->
+                        </div>
+                        <!--/boxcontent-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->
+
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_news|news_archive></h2>
+                        </div>
+                        
+                        <ul class="newslist">
+                        <TPL_SUB:ARTICLE>
+                            <li>
+                                <div>
+                                    <h4><a href="<TPL:URL>"><TPL:TITLE></a></h4>
+                                    <small><TPL:DATE></small>
+                                </div>
+                            </li>
+                        </TPL_SUB:ARTICLE>
+                        </ul>
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->

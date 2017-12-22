@@ -1,0 +1,50 @@
+<div class="block">
+  <div class="blockHeader">
+    <h2><TPL:TXT_module_user|change_profile></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBodyText">
+  <TPL_SUB:MESSAGE>
+    <div class="error">
+      <p><TPL:MESSAGE></p>
+    </div>
+  </TPL_SUB:MESSAGE>
+
+  <form method="post" action="<TPL:SELF>">
+    <TPL:HIDDEN>
+    <div>
+      <table class="form" width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="50%" class="label"><label for="fField1" class="required"><TPL:TXT_module_user|old_password></label></td>
+        <td width="50%" class="input"><TPL:FIELD_password_old></td>
+      </tr>
+      <tr>
+        <td width="50%" class="label"><label for="fField1" class="required"><TPL:TXT_module_user|new_password1></label></td>
+        <td width="50%" class="input"><TPL:FIELD_password_new1></td>
+      </tr>
+      <tr>
+        <td width="50%" class="label"><label for="fField1" class="required"><TPL:TXT_module_user|new_password2></label></td>
+        <td width="50%" class="input"><TPL:FIELD_password_new2></td>
+      </tr>
+      <tr>
+        <td width="50%" class="label"><label for="fField1"><TPL:TXT_module_user|skin></label></td>
+        <td width="50%" class="input"><TPL:FIELD_skin></td>
+      </tr>
+      <tr>
+        <td width="50%" class="label"><label for="fField1"><TPL:TXT_module_user|right_column_hidden></label></td>
+        <td width="50%" class="input"><TPL:FIELD_right_column_hidden></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="empty">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="submit">
+          <input type="submit" class="submit" value="<TPL:BUTTON>" />
+        </td>
+      </tr>
+      </table>
+    </div>
+    </form>
+    <div class="clearer"></div>
+  </div>
+</div>

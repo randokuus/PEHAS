@@ -1,0 +1,245 @@
+              <TPL_SUB:MESSAGE>
+              <p><font color="red"><TPL:MESSAGE></font></p>
+              </TPL_SUB:MESSAGE>
+
+              <script type="text/javascript" src="js/file_uploader2.js"></script>
+              <form id="vorm" name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+              <input type="hidden" name="add_multi" value="1">
+              <TPL:HIDDEN>
+              <table class="form" id="file_table">
+                <tr valign="top">
+                    <td align="left" colspan="2">
+                        <input id="btBrowse" type="button" value="<TPL:TXT_module_filemanager|browse>" onclick="fileUploader.browse(document.forms['vorm'].elements['max_size'].value)">
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="label"><TPL:TXT_module_filemanager|file></td>
+                    <td class="label"><TPL:TXT_module_filemanager|info></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                    <td class="label"><TPL:TXT_module_filemanager|keywords></td>
+                    <td class="input"><TPL:FIELD_keywords></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                  <td class="label"><TPL:TXT_module_filemanager|project></td>
+                  <td class="input"><TPL:FIELD_project></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                  <td class="label"><TPL:TXT_module_filemanager|task></td>
+                  <td class="input"><TPL:FIELD_task></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                  <td class="label"><TPL:TXT_module_filemanager|folder></td>
+                  <td class="input"><TPL:FIELD_folder></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                  <td class="label"><TPL:TXT_module_filemanager|picture_size></td>
+                  <td class="input"><TPL:FIELD_picture_size></td>
+                </tr>
+                <tr valign="top" id="details_row">
+                  <td class="label"><TPL:TXT_module_filemanager|date></td>
+                  <td class="input"><TPL:LASTMOD></td>
+                </tr>
+                <TPL_SUB:PERM>
+                <tr valign="top" id="details_row">
+                    <td class="label"><TPL:TXT_module_filemanager|permissions></td>
+                    <td class="input">
+                    <table class="data">
+                    <tr valign="top">
+                      <th><TPL:TXT_module_filemanager|group></th>
+                      <th><TPL:TXT_module_filemanager|read></th>
+                      <th><TPL:TXT_module_filemanager|write></th>
+                      <th><TPL:TXT_module_filemanager|delete></th>
+                    </tr>
+
+                    <TPL_SUB:PERM>
+                    <tr valign="top" class="<TPL:STYLE>">
+                                    <td><b><TPL:NAME></b></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_read[<TPL:ID>]" <TPL:READ_CHECKED>></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_write[<TPL:ID>]" <TPL:WRITE_CHECKED>></td>
+                      <td class="nowrap"><INPUT TYPE="checkbox" NAME="group_delete[<TPL:ID>]" <TPL:DELETE_CHECKED>></td>
+                    </tr>
+                    </TPL_SUB:PERM>
+                    </table>
+                  </td>
+                </tr>
+                </TPL_SUB:PERM>
+                <TPL_SUB:PERM_HIDDEN>
+                  <INPUT TYPE="hidden" NAME="group_read[<TPL:ID>]" value="<TPL:READ_CHECKED>">
+                  <INPUT TYPE="hidden" NAME="group_write[<TPL:ID>]" value="<TPL:WRITE_CHECKED>">
+                  <INPUT TYPE="hidden" NAME="group_delete[<TPL:ID>]" value="<TPL:DELETE_CHECKED>">
+                </TPL_SUB:PERM_HIDDEN>
+
+                <tr valign="top">
+                  <td class="input">&nbsp;</td>
+                  <td class="input"><input type="button" value="<TPL:BUTTON>" class="submit" onclick="startUpload();" /></td>
+                </tr>
+
+              </table>
+              </form>
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<!-- GC -->
+<script type="text/javascript" src="js/ext/builds/MessageBox.js"></script>
+<script type="text/javascript">
+    var mb;
+    var file_table = document.getElementById("file_table");
+    var details_row = document.getElementById("details_row");
+    var fileUploader = new FileUploader();
+    var filesCount = 0;
+
+    function enableControls() {
+        var btBrowse = document.getElementById("btBrowse");
+        var enabled = fileUploader.isLoaded && Ext;
+        btBrowse.style.display = enabled ? 'block' : 'none';
+    }
+
+    function removeNode(obj) {
+        var parent;
+        parent = obj.parentNode;
+        while (obj.childNodes.length > 0) {
+            removeNode(obj.childNodes[obj.childNodes.length - 1]);
+        }
+        var tag = obj.tagName;
+        parent.removeChild(obj);
+    }
+
+    function getCookie(sName) {
+        // cookies are separated by semicolons
+        var aCookie = document.cookie.split("; ");
+        for (var i=0; i < aCookie.length; i++) {
+            // a name/value pair (a crumb) is separated by an equal sign
+            var aCrumb = aCookie[i].split("=");
+            if (sName == aCrumb[0])
+            return unescape(aCrumb[1]);
+        }
+
+        // a cookie with the requested name does not exist
+        return null;
+    }
+
+    Ext.onReady(enableControls);
+    fileUploader.onLoad = enableControls;
+
+    fileUploader.onAddFile = function(file) {
+        filesCount++;
+        var row = document.createElement('TR');
+        row.file = file;
+        file_table.tBodies[0].insertBefore(row, details_row);
+        var cell = document.createElement('TD');
+        row.appendChild(cell);
+        cell.innerHTML = '<label for="action" class="left"><font color="<TPL:COLOR>">' + file.name + '</font>&nbsp;</label>';
+        var cell = document.createElement('TD');
+        row.appendChild(cell);
+        var input = document.createElement('INPUT');
+        input.type = "text";
+        input.name = "description[" + file.id + "]";
+        cell.appendChild(input);
+        row.textInput = input;
+        var cell = document.createElement('TD');
+        row.appendChild(cell);
+        cell.innerHTML = '<a href="javascript:if (confirm(\'<TPL:TXT_module_filemanager|confirmation>\')) fileUploader.deleteFile(' + row.file.id + ')"><img src="img/delete.gif" border="0" /></a>';
+    }
+
+    fileUploader.onDelete = function(id) {
+        var i;
+        filesCount--;
+        for (i = 1; i < file_table.tBodies[0].childNodes.length; i++) {
+            if (file_table.tBodies[0].childNodes[i].file && file_table.tBodies[0].childNodes[i].file.id == id) {
+                removeNode(file_table.tBodies[0].childNodes[i]);
+                break;
+            }
+        }
+    }
+
+    fileUploader.onProgress = function(currentIndex, count, currentPos, totalPos) {
+        mb.updateProgress(currentPos / 100, '<TPL:TXT_module_filemanager|uploading> ' + currentIndex + ' <TPL:TXT_module_filemanager|of> ' + count);
+        mb.updateProgress2(totalPos / 100);
+    }
+
+    fileUploader.onComplete = function(url) {
+        mb.updateText('<TPL:TXT_module_filemanager|saving>');
+        document.getElementById("vorm").elements["faction"].value = "finish_upload";
+        document.getElementById("vorm").submit();
+    }
+
+    fileUploader.onError = function(type, files, error) {
+        switch (type) {
+            case 'http':
+            case 'io':
+            case 'security':
+                alert('<TPL:TXT_module_filemanager|error_uploading_file> ' + files);
+                mb.hide();
+                break;
+            case 'size':
+                var max_file_size = document.forms["vorm"].elements["max_size"].value;
+                var tmp = "";
+                for (var i = 0; i < files.length; i++) {
+                    if (tmp != "") tmp += ", ";
+                    tmp += files[i].name;
+                }
+                if (files.length > 1) {
+                    tmp = '<TPL:TXT_module_filemanager|sizes_of_files> ' + tmp + ' <TPL:TXT_module_filemanager|are_invalid>.';
+                } else {
+                    tmp = '<TPL:TXT_module_filemanager|size_of_file> ' + tmp + ' <TPL:TXT_module_filemanager|is_invalid>.';
+                }
+                tmp += ' <TPL:TXT_module_filemanager|file_size_should_be_from> 1 <TPL:TXT_module_filemanager|till> ' + max_file_size + ' <TPL:TXT_module_filemanager|bytes>';
+                alert(tmp);
+            break;
+        }
+    }
+
+    function startUpload() {
+        if (filesCount <= 0) {
+            alert('<TPL:TXT_module_filemanager|no_selected_files>');
+            return;
+        }
+        mb = Ext.MessageBox.show({
+            title: '<TPL:TXT_module_filemanager|please_wait>',
+            msg: '<TPL:TXT_module_filemanager|starting>',
+            width:240,
+            progress:true,
+            progress2:true,
+            closable:false
+        });
+        var form_data = new Object;
+        var form = document.getElementById('vorm');
+        var conn = new Ext.data.Connection();
+        var i;
+        var el;
+        for (i = 0; i < form.elements.length; i++) {
+            el = form.elements[i];
+            if (el.type != 'checkbox' || el.checked) {
+                form_data[el.name] = el.value;
+            }
+        }
+        form_data['faction'] = 'prepare_upload';
+        conn.request({
+            url: form.action,
+            params: form_data,
+            method: 'POST',
+            callback: uploadFiles
+        });
+    }
+
+    function uploadFiles() {
+      var port = document.location.port;
+      if (port == '') {
+          if (document.location.protocol == 'http:') {
+            port = '80';
+          } else {
+            port = '443';
+          }
+      }
+      var url = document.location.protocol + '//' + document.location.hostname + ':' + port + '<TPL:SELF>';
+      var cookie = getCookie("USR_SESS_SID");
+      var phpcookie = getCookie("PHPSESSID");
+      if (!cookie) {
+        cookie = getCookie("PHPSESSID");
+      }
+      fileUploader.startUpload(url + "&SID=" + cookie + "&PHPSESSID=" + phpcookie + "&form_id=" + document.getElementById('vorm').elements['form_id'].value + "&faction=savefile&file=");
+    }
+
+    enableControls();
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><TPL:PAGETITLE></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="<TPL:KEYWORDS>">
+    <meta name="Description" content="<TPL:PAGETITLE>">
+    <link href="img/style_admin.css" rel="stylesheet" type="text/css" />
+
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    function printwindow(url) {
+        var win=window.open(url,'print','width=640,height=450,scrollbars=yes,resizable=yes');
+    }
+    function openPicture(loct) {
+        var win=window.open('picture.php?image='+loct,'','width=180,height=100,scrollbars=no');
+    }
+    //-->
+    </script>
+
+</head>
+<body onLoad="print();">
+<div id="marekmandGSdiv">
+
+        <img src="<TPL:LOGO>" border="0" alt=""><br /><br />
+
+        <div id="content">
+            <h1><TPL:TITLE></h1>
+            <h2><TPL:SITEPATH></h2>
+            <TPL_OBJECT:tagsearch>
+                <TPL_OBJECT_PARAM:setTemplate('module_tagsearch.html')>
+                <TPL_OBJECT_OUTPUT:show()>
+            </TPL_OBJECT:tagsearch>
+        </div>
+
+    <div id="footer">
+        <TPL:COPY>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<TPL_SUB:CLOCK>
+            <script type="text/javascript">
+                var s1 = new SWFObject("img/clock_analog_timezone.swf?timeoffset=<TPL:OFFSET>&city=<TPL:NAME>","","58","64","8");
+                s1.addParam('allowscriptaccess','always');
+                s1.addParam("menu","false");
+                s1.addParam("wmode","transparent");
+                s1.addParam("quality","best");
+                s1.write("clock<TPL:NUMBER>");
+            </script>
+</TPL_SUB:CLOCK>

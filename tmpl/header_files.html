@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><TPL:PAGETITLE></title>
+    <META name="robots" content="index,follow">
+    <META NAME="rating" CONTENT= "General">
+    <META NAME="revisit" CONTENT="1 day">
+    <META NAME="revisit-after" CONTENT= "1 day">
+    <META NAME="audience" CONTENT= "all">
+    <META NAME="Keywords" content="content management, cms, intranet, extranet, wysiwyg, dynamic, modera.net">
+    <META NAME="Description" content="modera.net demo site">
+    <script language="javascript" type="text/javascript" src="img/scripts.js"></script>
+    <script language="javascript" type="text/javascript" src="img/nav.js"></script>
+    <script language="javascript" type="text/javascript" src="img/panel.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swfobject.js"></script>
+    <script type="text/javascript" src="js/ext/adapter/yui/yui-utilities.js"></script>
+    <script type="text/javascript" src="js/ext/adapter/yui/ext-yui-adapter.js"></script>
+    <script type="text/javascript" src="js/ext/ext-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/ext/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="js/ext/resources/css/xtheme-gray.css" />
+    <link rel="stylesheet" type="text/css" href="js/ext/resources/css/modera-tree.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="img/templates/global_css/base.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="img/templates/<TPL:SKIN>/css/base.css" />
+    <TPL:AJAX_JS>
+</head>
+
+<body>
+
+<!-- #container start -->
+<div id="container">
+
+  <!-- #header start -->
+  <div id="header">
+  <table width="100%" class="frame">
+  <tr>
+    <td id="logo" valign="middle">
+      <div><a href="<TPL:SELF>"><img src="<TPL:LOGO>" border=0 alt=""/></a></div>
+    </td>
+    <td valign="middle" width="50%">
+      <TPL_OBJECT:user>
+        <TPL_OBJECT_OUTPUT:show()>
+      </TPL_OBJECT:user>
+    </td>
+    <td valign="middle" align="right" width="50%">
+      <div id="time">
+        <TPL_OBJECT:clock>
+            <TPL_OBJECT_OUTPUT:show()>
+        </TPL_OBJECT:clock>
+        <div id="timeSettings">
+          <p><TPL:DATE_DAY>, <TPL:DATE_DATE><!--<br /><a href="#">Localisation settings</a>--></p>
+         </div>
+      </div>
+    </td>
+  </tr>
+  </table>
+  </div>
+  <!-- #header end -->
+
+  <img src="img/gradient.png" width="100%" height="15" alg="" />
+
+  <!-- #content start -->
+  <div id="content">
+  <table width="100%" class="frame">
+  <tr>
+    <td width="100%" valign="top" id="contentColumn">
+    <div id="contentColumnSpan">
+
+      <!-- #nav start -->
+      <div id="nav">
+                <TPL_OBJECT:xslprocess>
+                <TPL_OBJECT_OUTPUT:menu('tmpl/menu_top.xsl')>
+                </TPL_OBJECT:xslprocess>
+        <div class="clearer"></div>
+      </div>
+      <!-- #nav end -->
+
+      <TPL_OBJECT:xslprocess>
+        <TPL_OBJECT_OUTPUT:menu('tmpl/menu_sub.xsl')>
+      </TPL_OBJECT:xslprocess>
+
+      <TPL_OBJECT:xslprocess>
+        <TPL_OBJECT_OUTPUT:menu('tmpl/menu_sub_sub.xsl')>
+      </TPL_OBJECT:xslprocess>
+
+      <div class="clearer"></div>

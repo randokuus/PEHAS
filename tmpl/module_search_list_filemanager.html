@@ -1,0 +1,27 @@
+<TPL_SUB:FILEMANA_SEARCHSUB>
+<div class="blockHeaderSimple">
+  <h2><TPL:TITLE></h2>
+  <div class="clearer"></div>
+</div>
+<div class="blockBodyText">
+
+  <table class="data">
+  <tr valign="top">
+    <th>&nbsp;</th>
+    <th><TPL:TXT_module_filemanager|file></th>
+    <th><TPL:TXT_module_filemanager|size></th>
+    <th><TPL:TXT_module_filemanager|date></th>
+  </tr>
+
+    <TPL_SUB:SEARCH_STRUCTURE>
+    <tr valign="top" class="<TPL:STYLE>">
+      <td class="ico"><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:ICON></a></td>
+      <td><a href="<TPL:URL>"><b><TPL:TEXT></b><br/><TPL:NAME></a></td>
+      <td class="info"><TPL:SIZE></td>
+      <td class="info"><TPL:LASTMOD></td>
+    </tr>
+    </TPL_SUB:SEARCH_STRUCTURE>
+  </table>
+  <div class="clearer"></div>
+</div>
+</TPL_SUB:FILEMANA_SEARCHSUB>

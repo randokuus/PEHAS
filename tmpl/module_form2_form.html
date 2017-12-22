@@ -1,0 +1,45 @@
+                            <!--contactForm-->
+                            <div class="contactForm">
+                                <TPL_SUB:INFO>
+                                <!--msgWrap-->
+                                <div class="msgWrap">
+                                    <p class="msg msgError msgGray">
+                                        <span><TPL:TXT_output|error_occurred> <TPL:INFO></span>
+                                    </p>
+                                </div>
+                                <!--/msgWrap-->
+                                </TPL_SUB:INFO>
+                                
+                                <TPL_SUB:MESSAGE>
+                                <!--msgWrap-->
+                                <div class="msgWrap">
+                                    <p class="msg msgOk">
+                                        <span><TPL:MESSAGE></span>
+                                    </p>
+                                </div>
+                                <!--/msgWrap-->
+                                </TPL_SUB:MESSAGE>
+                            <TPL_SUB:FORM>
+                                <form  method="post" action="<TPL:SELF>" class="jNice">
+                                <input type="hidden" name="write" value="true">
+                                <TPL:HIDDEN>
+
+                                    <TPL_SUB:FIELD>
+                                    <!--cLine-->
+                                    <div class="cLine <TPL:REQUIRED>">
+                                        <label for=""><TPL:TITLE>:</label>
+                                        <TPL:QUESTION1>
+                                    </div>
+                                    <!--/cLine-->
+                                    </TPL_SUB:FIELD>
+
+                                    <!--cSubmit-->
+                                    <div class="cSubmit">
+                                        <input type="submit" name="" value="<TPL:BUTTON>" />
+                                    </div>
+                                    <!--/cSubmit-->
+                                </form>
+                            </TPL_SUB:FORM>
+                            </div>
+                            <!--/contactForm-->
+                            

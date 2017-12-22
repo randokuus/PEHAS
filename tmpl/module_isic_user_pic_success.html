@@ -1,0 +1,29 @@
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TXT_module_isic_user|user_pics></h2>
+                    </div>
+
+                    <TPL_SUB:ERROR>
+                    <!--msgWrap-->
+                    <div class="msgWrap">
+                        <p class="msg msgError msgGray">
+                            <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                        </p>
+                    </div>
+                    <!--/msgWrap-->
+                    </TPL_SUB:ERROR>
+                    
+                    <TPL_SUB:SUCCESS>
+                    <!--msgWrap-->
+                    <div class="msgWrap">
+                        <p class="msg msgOk">
+                            <span><TPL:MESSAGE></span>
+                        </p>
+                    </div>
+                    <!--/msgWrap-->
+                    </TPL_SUB:SUCCESS>
+                </div>
+            </div>
+            <!--box-->

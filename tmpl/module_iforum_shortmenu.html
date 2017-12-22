@@ -1,0 +1,22 @@
+<div class="blockHeaderSimple">
+  <h2><TPL:TXT_module_iforum|switch_forums></h2>
+  <div class="clearer"></div>
+</div>
+<div class="shortcuts">
+  <TPL_SUB:FORUMSELECTOR>
+  <ul>
+    <TPL_SUB:FORUM>
+      <TPL_SUB:ACTIVE>
+        <li class="on"><a href="<TPL:URL>"><TPL:NAME></a></li>
+      </TPL_SUB:ACTIVE>
+      <TPL_SUB:INACTIVE>
+        <li><a href="<TPL:URL>"><TPL:NAME></a></li>
+      </TPL_SUB:INACTIVE>
+    </TPL_SUB:FORUM>
+  </ul>
+  </TPL_SUB:FORUMSELECTOR>
+  <div class="clearer"></div>
+  <!--
+  <p class="more"><a href="<TPL:INDEX_URL>"><TPL:INDEX_TEXT></a></p>
+  -->
+</div>

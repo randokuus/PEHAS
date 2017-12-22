@@ -1,0 +1,145 @@
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+
+function fieldsetInit(maxfs) {
+	for (i = 0; i < maxfs; i++) {
+		if ((i+1) != 1) {
+			document.getElementById("fieldset"+(i+1)).style.display = "none";										
+		}
+	}
+}
+
+function enableFieldset(current, fs, fs_extra, maxtab, maxfs) {
+	for (i = 0; i < maxtab; i++) {
+		document.getElementById("tabset"+(i+1)).className = "";										
+	}
+	document.getElementById("tabset"+current).className = "active";			
+	
+	for (i = 0; i < maxfs; i++) {
+		if ((i+1) != fs && (i+1) != fs_extra) {
+			document.getElementById("fieldset"+(i+1)).style.display = "none";										
+		}
+	}		
+	if (document.getElementById(fs).style.display !="none"){document.getElementById(fs).style.display = "none";}
+	else {document.getElementById(fs).style.display = "block";}
+	
+	if (fs_extra != '') {
+		if (document.getElementById(fs_extra).style.display !="none"){document.getElementById(fs_extra).style.display = "none";}
+		else {document.getElementById(fs_extra).style.display = "block"; }	
+	}
+	
+	if (valueCheck(document.forms["vorm"].elements["editor_reload"]) == true) {
+		if (current == 2 && document.forms["vorm"].elements["editor_reload"].value == 0) {
+			document.forms["vorm"].elements["editor_reload"].value = 1;
+			document.all.contentFreim.src = document.forms["vorm"].elements["editor_src"].value;
+		}
+	}
+	
+	return;
+}
+
+function fieldJump(current, maxtab, jumpto) {
+	for (i = 0; i < maxtab; i++) {
+		document.getElementById("tabset"+(i+1)).className = "";										
+	}
+	document.getElementById("tabset"+current).className = "active";			
+	
+	document.location = jumpto;
+	
+	return;
+}
+
+function enableSingleFieldset(fs) {
+	if (fs != '') {
+		if (document.getElementById(fs).style.display !="none"){document.getElementById(fs).style.display = "none";}
+		else {document.getElementById(fs).style.display = "block"; }	
+	}
+	return;	
+}
+
+function valueCheck(objToTest) {
+	if (null == objToTest) {
+		return false;
+	}
+	if ("undefined" == typeof(objToTest) ) {
+		return false;
+	}
+	return true;
+
+}
+
+</SCRIPT>
+
+<form method="post" action="<TPL:PHP_SELF>" <TPL:ENCTYPE> class="formpanel" name="vorm">
+
+<TPL_SUB:INFO>
+	<fieldset title="<TPL:TITLE>" <TPL:STYLE>>
+	<legend><TPL:TITLE></legend>
+		<table class="inputfield">
+		<tr>
+			<td><img src="pic/bullet_<TPL:TYPE>.gif" alt="" border="0"></td>
+			<td><label for="action" class="left"><TPL:INFO></label></td>
+		</tr>
+		</table>
+	</fieldset>
+</TPL_SUB:INFO>
+
+<TPL_SUB:FIELDSET>
+	<fieldset id="fieldset<TPL:ID>" title="<TPL:TITLE>" <TPL:STYLE>>
+	<legend><TPL:TITLE></legend>
+		<table class="inputfield">
+		<TPL_SUB:MAIN>		
+		<tr>
+			<td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>
+			<td align="left"><TPL:FIELD>&nbsp;<label for="action" class="left"><TPL:EXTRA></label></td>
+			<td align="left">&nbsp;</td>			
+		</tr>
+		</TPL_SUB:MAIN>		
+		<TPL_SUB:BUTTONS>		
+		<tr>
+			<td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>		
+			<td aling="left" colspan="2">
+				<table border="0">
+					<tr>
+						<td align="left"><TPL:FIELD></td>
+						<td align="left"><TPL:EXTRA></td>							
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</TPL_SUB:BUTTONS>			
+		<TPL_SUB:EXTERN>		
+		<tr>
+			<td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>
+			<td align="left"><TPL:FIELD></td>
+			<td align="left"><label for="action" class="left"><TPL:EXTRA></label></td>			
+		</tr>
+		</TPL_SUB:EXTERN>	
+		<TPL_SUB:NOTHING>	
+		<table class="inputfield" width="100%"> 			
+		<tr>
+			<td align="left" colspan="3"><TPL:FIELD></td>
+		</tr>
+		</table>
+		</TPL_SUB:NOTHING>				
+		</table>
+	</fieldset>
+</TPL_SUB:FIELDSET>
+
+		<TPL_SUB:NOTHING>	
+		<table class="inputfield" width="100%"> 			
+		<tr>
+			<td align="left" colspan="3"><TPL:FIELD></td>
+		</tr>
+		</table>
+		</TPL_SUB:NOTHING>	
+	
+<TPL_SUB:HIDDEN>
+	<input type="hidden" name="<TPL:NAME>" value="<TPL:VALUE>">
+</TPL_SUB:HIDDEN>
+
+<p></p>
+<div class="buttonbar">
+	<button type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:SENDBUTTONTXT></button>
+</div>
+
+</form>

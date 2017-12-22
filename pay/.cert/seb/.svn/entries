@@ -1,0 +1,88 @@
+8
+
+dir
+2474
+https://svn.dev.modera.net/modera_projects/minukool_khs/trunk/pay/.cert/seb
+https://svn.dev.modera.net/modera_projects
+
+
+
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+
+svn:special svn:externals svn:needs-lock
+
+eyp_pub.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+34423f92c43a5d1f8d34a689ff9c34e4
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+cert_req.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+7ff12ddaf477459aea57595255d034d2
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+new_cert.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+852bd297951cf776101b7b4532b24c41
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+privkey.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+e1a35a0531cc6f541151afdad4102460
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+kaupmees_priv.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+04b487b1df6a49ef35171391cb58ffeb
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+eypcert.pem
+file
+
+
+
+
+2011-07-22T07:29:50.000000Z
+4af48749815a33c8df1a33d2d28811ba
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+

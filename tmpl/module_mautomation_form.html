@@ -1,0 +1,77 @@
+<TPL_SUB:THANKS>
+<div class="container">
+<h2><TPL:TXT_module_mautomation|clients_add_subtitle></h2>  
+<div class="content">
+        <table class="form" align = "center">
+            <tr>
+                <td class="label" colspan="2"><TPL:MESSAGE></td>
+            </tr>
+        </table>
+</div>
+</div>
+</TPL_SUB:THANKS>
+
+<TPL_SUB:CLIENT>
+<script language="javascript">
+    function checkParam(f_name){
+        if (document.getElementById('phone').value.search(/^\+{0,1}[\d-]*(\([\d-]+\)){0,1}[\d-]+$/) == -1){
+            alert('<TPL:TXT_module_mautomation|error_impossible_phone>');
+            document.getElementById('phone').focus();
+            return false;
+        }
+        if (document.getElementById('email').value.search(/^([\w-]+@[\w-]+\.)+[\w-]+$/) == -1){
+            alert('<TPL:TXT_module_mautomation|error_impossible_email>');
+            document.getElementById('email').focus();
+            return false;
+        }
+        for (i=0; i<f_name.length; i++){
+            if (f_name.elements[i].value <= 0){
+                alert('<TPL:TXT_module_mautomation|error_not_fields>');                 
+                f_name.elements[i].focus();
+                return false;
+            }
+        } 
+        return true;
+    }
+</script>
+<div class="container">
+<h2><TPL:TXT_module_mautomation|clients_add_subtitle></h2>  
+<div class="content">
+        <form name="vorm" method="post" action="<TPL:SELF>" onSubmit="return checkParam(this);">
+        <input type="hidden" name="campaign_id" value="<TPL:CAMPAIGN_ID>">
+        <table class="form" align = "center">
+            <tr>
+                <td class="label" colspan="2"><font color="red"><TPL:ERROR_MESSAGE></font></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|name></td>
+                <td class="input"><input type="text" id="name" name="name" value="<TPL:CLIENT_NAME>" size="20" maxlength="255"></td>                
+            </tr>   
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|email></td>
+                <td class="input"><input type="text" id="email" name="email" value="<TPL:CLIENT_EMAIL>" size="20" maxlength="255"></td>             
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|cell_phone></td>
+                <td class="input"><input type="text" id="phone" name="phone" value="<TPL:CLIENT_PHONE>" size="20" maxlength="255"></td>             
+            </tr>       
+            <TPL_SUB:DATA>
+            <tr>
+                <td class="label"><TPL:FIELD_NAME></td>
+                <td class="input"><TPL:FIELD_VALUE></td>
+            </tr>
+            </TPL_SUB:DATA>
+            <tr>
+                <td colspan="2" align="right"> 
+                <input type="submit" value="<TPL:TXT_module_mautomation|save>" class="submit">
+                <input type="button" value="<TPL:TXT_module_mautomation|cancel>" class="submit" onClick="document.location = '<TPL:BACK_URL>'">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>   
+        </form>
+        </table>
+</div>
+</div>
+</TPL_SUB:CLIENT>

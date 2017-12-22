@@ -1,0 +1,38 @@
+
+<h2><TPL:TXT_module_mautomation|last_send_list></h2>
+<form method="post" action="<TPL:SELF>">
+    <TPL:HIDDEN>
+</form>
+
+<TPL_SUB:FILTER>
+<table class="filter">
+<tr>
+    <td class="label">
+        <TPL:PAGES>
+    </td>
+<tr>
+</table>
+</TPL_SUB:FILTER>
+
+<table class="data" width="100%">
+    <tr valign="top">
+        <th><a href="<TPL:SORT_URL>id"><TPL:TXT_module_mautomation|id></a><TPL:SI_id></th>
+        <th><a href="<TPL:SORT_URL>client_name"><TPL:TXT_module_mautomation|name></a><TPL:SI_client_name> </th>
+        <th><a href="<TPL:SORT_URL>create_date"><TPL:TXT_module_mautomation|create_date></a><TPL:SI_create_date> </th>
+        <th><a href="<TPL:SORT_URL>group_list"><TPL:TXT_module_mautomation|groups></a><TPL:SI_group_list></th>
+        <th><a href="<TPL:SORT_URL>email"><TPL:TXT_module_mautomation|email></a><TPL:SI_email></th>
+        <th><a href="<TPL:SORT_URL>is_read"><TPL:TXT_module_mautomation|read></a><TPL:SI_is_read></th>
+        <th><a href="<TPL:SORT_URL>count"><TPL:TXT_module_mautomation|clicks></a><TPL:SI_count></th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:ID></a></td>
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:NAME></a></td>
+        <td><a href="<TPL:DETAIL>"><TPL:CREATE_DATE></a></td>
+        <td><a href="<TPL:DETAIL>"><TPL:GROUP_LIST></a> </td>
+        <td><a href="<TPL:DETAIL>"><TPL:EMAIL></a></td>
+        <td><a href="<TPL:DETAIL>"><TPL:IS_READ></a></td>
+        <td><a href="<TPL:DETAIL>"><TPL:URL></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

@@ -1,0 +1,20 @@
+<div class="block">
+  <div class="blockHeaderSimple">
+    <h2><TPL:TXT_module_poll|module_title>: <TPL:QUESTION></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBodyText">
+  <table class="form">
+  <TPL_SUB:OPTION>
+    <tr>
+      <td class="label"><TPL:OPTION></td>
+      <td class="input"><TPL:PERCENT>% - <TPL:SCORE></td>
+    </tr>
+  </TPL_SUB:OPTION>
+  </table>
+  </div>
+  <p class="actions">
+    <input type="button" onClick="document.location='<TPL:URL_ARCHIVE>'" class="submit" value="<TPL:TXT_module_poll|archive>">
+  </p>
+  <div class="clearer"></div>
+</div>

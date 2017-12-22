@@ -1,0 +1,35 @@
+<form action="<TPL:ACTION>" method="post">
+<table cellpadding="2" cellspacing="2" border="0">
+<tr>
+    <td>
+        <select name="available_languages" multiple="multiple" size="10" style="width:120px"
+            onDblClick="moveSelectedOptions(this.form['available_languages'],this.form['selected_languages[]'],false)">
+            <TPL_SUB:A_LANGS>
+            <option value="<TPL:CODE>"><TPL:TITLE></option>
+            </TPL_SUB:A_LANGS>
+        </select>
+    </td>
+    <td valign="middle" nowrap="nowrap" width="60px">
+		<input type="button" name="right" value="»»" onclick="moveSelectedOptions(this.form['available_languages'],this.form['selected_languages[]'],false);" style="width:100%;" /><br />
+		<input type="button" name="right" value="<TPL:ALL> »»" onclick="moveAllOptions(this.form['available_languages'],this.form['selected_languages[]'],false);" style="width:100%;" /><br />
+		<input type="button" name="left" value="««" onclick="moveSelectedOptions(this.form['selected_languages[]'],this.form['available_languages'],false);" style="width:100%;" /><br />
+		<input type="button" name="left" value="<TPL:ALL> ««" onclick="moveAllOptions(this.form['selected_languages[]'],this.form['available_languages'],false);" style="width:100%;" />
+    </td>
+    <td>
+        <select name="selected_languages[]" multiple="multiple" size="10" style="width:120px"
+            onDblClick="moveSelectedOptions(this.form['selected_languages[]'],this.form['available_languages'],false)">
+            <TPL_SUB:S_LANGS>
+            <option value="<TPL:CODE>"><TPL:TITLE></option>
+            </TPL_SUB:S_LANGS>
+        </select>
+    </td>
+    <td valign="middle" nowrap="nowrap">
+        <input type="button" value="<TPL:UP>" onClick="moveOptionUp(this.form['selected_languages[]'])" style="width:100%;" />
+        <br />
+        <input type="button" value="<TPL:DOWN>" onClick="moveOptionDown(this.form['selected_languages[]'])" style="width:100%;" />
+    </td>
+</tr>
+</table>
+<br />
+<input type="submit" value="<TPL:SUBMIT>" style="width: 100px; margin-left: 110px;" onclick="this.disabled = true;selectAllOptions(this.form['selected_languages[]']);this.form.submit();" />
+</form>

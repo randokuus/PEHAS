@@ -1,0 +1,64 @@
+8
+
+dir
+2474
+https://svn.dev.modera.net/modera_projects/minukool_khs/trunk/pay/.cert/swed
+https://svn.dev.modera.net/modera_projects
+
+
+
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+
+svn:special svn:externals svn:needs-lock
+
+cert_req.pem
+file
+
+
+
+
+2011-08-01T10:58:24.000000Z
+7ff12ddaf477459aea57595255d034d2
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+new_cert.pem
+file
+
+
+
+
+2011-08-01T10:58:24.000000Z
+852bd297951cf776101b7b4532b24c41
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+IpizzaHPavalikvoti.pem
+file
+
+
+
+
+2011-08-01T10:58:24.000000Z
+2e95a9ab4ceaa5b3f9e679f79d58b0aa
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+privkey.pem
+file
+
+
+
+
+2011-08-01T10:58:24.000000Z
+e1a35a0531cc6f541151afdad4102460
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+

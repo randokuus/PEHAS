@@ -1,0 +1,227 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+var deactivate_url = '';
+
+function assignDeactivate() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_user|confirm_deactivate_multiple>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_user|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.process.processAction.value = 'Deactivate';
+                document.process.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function checkAll(name, isChecked) {
+    var elements = document.getElementsByName(name);
+    for(var i=0; i<elements.length; i++) {
+        elements[i].checked = isChecked;
+        if (isChecked) {
+            $(elements[i]).next().addClass('jNiceChecked');
+        } else {
+            $(elements[i]).next().removeClass('jNiceChecked');
+        }
+    }
+}
+
+function submitForm(submitType) {
+    if (submitType == 'export') {
+        document.filter.export.value = 1;
+    } else {
+        document.filter.export.value = 0;
+    }
+    document.filter.submit();
+}
+
+//-->
+</script>
+
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+
+            <TPL_SUB:IMESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgOk">
+                    <span><TPL:IMESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:IMESSAGE>
+
+
+
+            <TPL_SUB:SEARCH>
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable threeCols">
+                            <form method="post" action="<TPL:SELF>" name="filter" class="jNice">
+                                <input type="hidden" id="export" name="export" value="" />
+                            <TPL:HIDDEN>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|name_first>:</label>
+                                        <TPL:FIELD_filter_name_first>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|name_last>:</label>
+                                        <TPL:FIELD_filter_name_last>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|user_code>:</label>
+                                        <TPL:FIELD_filter_user_code>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|region>:</label>
+                                        <TPL:FIELD_filter_region>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|school>:</label>
+                                        <TPL:FIELD_filter_school>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|stru_unit>:</label>
+                                        <TPL:FIELD_filter_stru_unit>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|faculty>:</label>
+                                        <TPL:FIELD_filter_faculty>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|status>:</label>
+                                        <TPL:FIELD_filter_status>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|active>:</label>
+                                        <TPL:FIELD_filter_active>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons" style="top: 25%;">
+                                    <input type="button" value="<TPL:TXT_module_isic_user|search>" onclick="javascript:submitForm('');" />
+                                    <input type="button" value="<TPL:TXT_module_isic_user|export>" onclick="javascript:submitForm('export');" />
+                                </div>
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+            </TPL_SUB:SEARCH>
+
+           <form method="post" action="<TPL:SELF>" name="process" id="process" class="jNice">
+           <TPL:HIDDEN>
+           <input type="hidden" id="processAction" name="processAction" value="" />
+
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                        </div>
+                        <h2><_TPL:PAGETITLE></h2>
+                    </div>
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList">
+                            <tr>
+                                <th><TPL:TXT_module_isic_user|select></th>
+                                <TPL_SUB:TITLE>
+                                <th><span class="<TPL:CLASS>"><a href="<TPL:URL>"><TPL:NAME></a></span></th>
+                                </TPL_SUB:TITLE>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <TPL_SUB:DATA>
+                            <tr>
+                                <td><input type="checkbox" name="processItems[]" value="<TPL:DATA_ID>" /></td>
+                                <td><a href="<TPL:URL_IMAGE>"><TPL:IMAGE></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NAME_FIRST></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NAME_LAST></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_USER_CODE></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_SCHOOL></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_STATUS></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_STRU_UNIT></a></td>
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_FACULTY></a></td>
+                                <!--<td><a href="<TPL:URL_DETAIL>"><TPL:DATA_CLASS></a></td>-->
+                                <!--<td><a href="<TPL:URL_DETAIL>"><TPL:DATA_COURSE></a></td>-->
+                                <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ACTIVE></a></td>
+                                <td>
+                                    <div class="wicons">
+                                        <TPL_SUB:MOD><a href="<TPL:URL_MODIFY>" class="ico iedit" title="Edit">Edit</a></TPL_SUB:MOD>
+                                        <TPL_SUB:DEL><a href="<TPL:URL_DELETE>" class="ico idel" title="Delete">Delete</a></TPL_SUB:DEL>
+                                    </div>
+                                </td>
+                            </tr>
+                            </TPL_SUB:DATA>
+                            <tr>
+                                <td colspan="14"><input type="checkbox" onclick="checkAll('processItems[]', this.checked)" /> <TPL:TXT_module_isic_user|select_all></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+                </div>
+            </div>
+            <!--/box-->
+            <TPL_SUB:ACTIONS>
+            <div class="wButtons tListButtons">
+                <input type="button" id="button_deactivate" value="<TPL:TITLE>" onclick="javascript:assignDeactivate();" />
+            </div>
+            </TPL_SUB:ACTIONS>
+            </form>

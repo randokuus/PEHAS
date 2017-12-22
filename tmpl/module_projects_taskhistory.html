@@ -1,0 +1,23 @@
+<div class="blockHeaderSimple">
+  <h2><TPL:TXT_module_projects|name>: <TPL:TASK></h2>
+  <div class="clearer"></div>
+</div>
+<div class="blockBodyText">
+<table class="data">
+    <TPL_SUB:TASKS>
+    <tr valign="top" class="even">
+        <td colspan="2"><b><TPL:LASTMOD>, <TPL:STATUS></b><br><br></td>
+    </tr>
+    <tr valign="top">
+        <td>&nbsp;</td>
+        <td><TPL:SOLUTION><br/><br/><i><TPL:TXTREADY></i>: <TPL:DATE3></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    </TPL_SUB:TASKS>
+</table>
+</div>
+<p class="actions">
+<input type="button" class="submit" onClick="document.location='<TPL:BACK_URL>'" value="<TPL:TXT_back>" />
+</p>

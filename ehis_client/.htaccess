@@ -1,0 +1,4 @@
+AuthUserFile /home/minukool/htaccess/.minukool
+AuthType Basic
+AuthName "..."
+Require valid-user

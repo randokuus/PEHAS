@@ -1,0 +1,30 @@
+<h2><TPL:TXT_module_mautomation|task_history></h2>
+
+<TPL_SUB:FILTER>
+<table class="filter">
+<tr>
+    <td class="label">
+        <TPL:PAGES>
+    </td>
+<tr>
+</table>
+</TPL_SUB:FILTER>
+
+<table class="data" width="100%">
+    <tr valign="top">
+        <th><a href="<TPL:SORT_URL>send_date"><TPL:TXT_module_mautomation|date_send></a><TPL:SI_send_date></th>
+        <th><a href="<TPL:SORT_URL>client_count"><TPL:TXT_module_mautomation|clients_title></a><TPL:SI_client_count> </th>
+        <th><a href="<TPL:SORT_URL>readed"><TPL:TXT_module_mautomation|readed_procent></a><TPL:SI_readed> </th>
+        <th><TPL:TXT_module_mautomation|clicks></th>
+        <th><a href="<TPL:SORT_URL>cron_message"><TPL:TXT_module_mautomation|cron_message></a><TPL:SI_cron_message></th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:SEND_DATE></a></td>
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:CLIENT_COUNT></a>    </td>
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:READ></a></td>
+        <td class="nowrap"><a href="<TPL:DETAIL>"><TPL:CLICK></a></td>
+        <td><a href="<TPL:DETAIL>"><TPL:CRON_MSG></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

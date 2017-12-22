@@ -1,0 +1,42 @@
+            <TPL_SUB:NEWS_SEARCHSUB>
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TITLE></h2>
+                    </div>
+                
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList tResult">
+                            <tr>
+                                <th>
+                                    <span class="">Teema</span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_news|column_title></span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_news|date></span>
+                                </th>
+                                <th>
+                                    <span class=""><TPL:TXT_module_news|author></span>
+                                </th>
+                            </tr>
+                            <TPL_SUB:SEARCH_STRUCTURE>
+                            <tr>
+                                <td>
+                                    <span class="icow inews">Uudised</span>
+                                </td>
+                                <td><a href="<TPL:URL>"><TPL:TITLE></a></td>
+                                <td><TPL:ENTRYDATE></td>
+                                <td><TPL:AUTHOR></td>
+                            </tr>
+                            </TPL_SUB:SEARCH_STRUCTURE>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                </div>
+            </div>
+            <!--/box-->
+            </TPL_SUB:NEWS_SEARCHSUB>

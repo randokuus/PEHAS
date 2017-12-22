@@ -1,0 +1,52 @@
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+
+            
+
+            <form method="post" action="<TPL:SELF>" name="vorm" class="jNice">
+            <TPL:HIDDEN>        
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TXT_module_isic_card|application_pics></h2>
+                    </div>
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList">
+                            <tr>
+								<th><TPL:TXT_module_isic_card|row></th>
+								<th><TPL:TXT_module_isic_card|new_pic></th>
+								<th><TPL:TXT_module_isic_card|old_pic></th>
+								<th><TPL:TXT_module_isic_card|person_number></th>
+								<th><TPL:TXT_module_isic_card|person_name></th>
+								<th><TPL:TXT_module_isic_pic|save_pic></th>
+                            </tr>
+							<TPL_SUB:ROW>
+							<tr>
+							  <th><TPL:ROW></th>
+							  <td><TPL:PERSON_PIC></td>
+							  <td><TPL:PERSON_PIC_OLD></td>
+							  <td><TPL:PERSON_NUMBER></td>
+							  <td><TPL:PERSON_NAME></td>
+							  <td><TPL:SAVE_PIC></td>
+							</tr>
+							</TPL_SUB:ROW>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                </div>
+            </div>
+            <!--/box-->
+            <div class="tListSubmit">
+                <input type="submit" value="<TPL:BUTTON>" />
+            </div>
+            </form>

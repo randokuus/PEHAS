@@ -1,0 +1,20 @@
+<div class="block">
+    <div class="blockHeaderSimple">
+        <h2><TPL:TXT_module_projects|members></h2>
+        <div class="clearer"></div>
+    </div>
+
+    <div class="blockBodyText">
+        <ol>
+            <TPL_SUB:ROW>
+            <li><a href="mailto:<TPL:EMAIL>"><TPL:NAME></a> (<TPL:PHONE>)</li>
+            </TPL_SUB:ROW>
+        </ol>
+        <div class="clearer"></div>
+    </div>
+    <div class="shortcuts">
+        <ul>
+            <li><a href="#" onClick="window.open('img/projectgraph.php?project=<TPL:PROJECTID>','projectgraph','width=600,height=300,scrollbars=yes,resizable=yes');"><TPL:TXT_module_projects|showgraph></a></li>
+        </ul>
+    </div>
+</div>

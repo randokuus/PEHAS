@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+.thumb{
+    background: #dddddd;
+    padding:3px;
+}
+.thumb img{
+    border:1px solid white;
+    height: 60px;
+    width: 80px;
+}
+.thumb-wrap{
+    float: left;
+    margin: 4px;
+    margin-right: 0;
+    padding: 5px;
+}
+.thumb-wrap span{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+.x-view-selected .thumb{
+    background:#8db2e3;
+}
+.x-tree-node{
+    color: black;
+    font: normal 11px arial, tahoma, helvetica, sans-serif;
+    white-space: nowrap;
+}
+.x-tree-node-leaf .x-tree-node-icon{
+    background-image:url(../js/ext/resources/images/default/tree/folder.gif);
+}
+.x-grid-col-2 {
+    text-align: right;
+}
+div.item-selected {
+    background-color: #3165ce;
+    color: #ffffff;
+}
+.trash img.x-tree-node-icon  {
+    background-image: url(../admin/img/cm_remove.gif);
+}
+.ext-mb-input {
+    font-size: 100%;
+}
+.folder-noowner img.x-tree-node-icon  {
+    background-image: url(../admin/img/folder-noowner.gif);
+}
+.ext-file-noowner {
+    text-decoration:underline
+}
+.ext-file-disabled {
+    color: #cecfce;
+}
+.x-menu-item-active a:hover{
+    text-decoration:none
+}
+.x-item-disabled a:hover{
+    text-decoration:none
+}

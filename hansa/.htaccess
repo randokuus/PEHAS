@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /khs/hansa/
+
+# Realestate url redirection
+RewriteRule ^id/([0-9]+)          /khs/hansa/?id=$1

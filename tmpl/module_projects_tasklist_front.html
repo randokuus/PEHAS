@@ -1,0 +1,37 @@
+<div class="block" id="block1">
+    <div class="blockHeader">
+      <h2><TPL:TXT_module_projects|my_tasks></h2>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="blockBody" id="block1Body">
+        <table class="style1" width="100%">
+            <tr>
+              <th>&nbsp;</th>
+              <th><TPL:TXT_module_projects|project></th>
+              <th><TPL:TXT_module_projects|task></th>
+              <th><TPL:TXT_module_projects|begin></th>
+              <th><TPL:TXT_module_projects|end></th>
+              <th><TPL:TXT_module_projects|type></th>
+              <th><TPL:TXT_module_projects|status></th>
+            </tr>
+            <TPL_SUB:TASKS>
+            <tr class="<TPL:STYLE>">
+              <td><img src="img/ico_priority_<TPL:DATA_PRIORITY0>.gif" alt="" /></td>
+              <td><TPL:DATA_PROJECT></td>
+              <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_TASK></a></td>
+              <td><TPL:DATA_DATE1></td>
+              <td><TPL:DATA_DATE2></td>
+              <td><TPL:DATA_TYPE></td>
+              <td><TPL:DATA_STATUS></td>
+            </tr>
+            </TPL_SUB:TASKS>
+        </table>
+
+        <div class="shortcuts clear">
+            <ul>
+                <li class="readMore"><a href="<TPL:URL>"><TPL:TXT_module_projects|all_tasks>&#187;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

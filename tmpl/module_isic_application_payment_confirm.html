@@ -1,0 +1,144 @@
+    <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|payment></h2>
+                        </div>
+
+                        <!--formTable-->
+                        <div class="formTable">
+                            <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+                              <TPL:HIDDEN>
+                              <!--fRow-->
+                              <div class="fRow">
+                                <TPL_SUB:PAYMENT_METHOD>
+                                <!--fLine-->
+                                <div class="fLine <TPL:REQUIRED>">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|payment_method>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:FIELD_payment_method>
+                                    </div>
+                                 <div class="fHint">
+
+                                 </div>
+                                </div>
+                                <!--/fLine-->
+                                </TPL_SUB:PAYMENT_METHOD>
+                                <TPL_SUB:ACTUAL_PAYMENT_DATE>
+                                  <!--fLine-->
+                                  <div class="fLine <TPL:REQUIRED>" id="actual_payment_date_row">
+                                      <div class="fHead">
+                                          <TPL:TXT_module_isic_card|actual_payment_date>:
+                                      </div>
+                                      <div class="fCell">
+                                          <TPL:FIELD_actual_payment_date>
+                                      </div>
+                                      <div class="fHint">
+
+                                      </div>
+                                  </div>
+                                  <!--/fLine-->
+                                </TPL_SUB:ACTUAL_PAYMENT_DATE>
+                                <TPL_SUB:BANK_ID>
+                                  <!--fLine-->
+                                  <div class="fLine <TPL:REQUIRED>" id="bank_id_row">
+                                      <div class="fHead">
+                                          <TPL:TXT_module_isic_card|bank>:
+                                      </div>
+                                      <div class="fCell">
+                                          <TPL:FIELD_bank_id>
+                                      </div>
+                                      <div class="fHint">
+
+                                      </div>
+                                  </div>
+                                  <!--/fLine-->
+                                </TPL_SUB:BANK_ID>
+                                <TPL_SUB:BANK_PAYMENT>
+                                  <!--fLine-->
+                                  <div class="fLine <TPL:REQUIRED>" id="bank_payment_row">
+                                      <div class="fHead">
+                                          <TPL:TXT_module_isic_card|bank>:
+                                      </div>
+                                      <div class="fCellWide">
+                                          <p>
+                                              <a href="pay/?bank=1&appl=<TPL:APPL_ID>&payment_type=<TPL:PAYMENT_TYPE>"><img src="img/logo_unet.gif" border="0"></a>
+                                              <a href="pay/?bank=2&appl=<TPL:APPL_ID>&payment_type=<TPL:PAYMENT_TYPE>"><img src="img/logo_swedbank.gif" border="0"></a>
+                                              <a href="pay/?bank=3&appl=<TPL:APPL_ID>&payment_type=<TPL:PAYMENT_TYPE>"><img src="img/logo_danske.gif" border="0"></a>
+                                              <a href="pay/?bank=4&appl=<TPL:APPL_ID>&payment_type=<TPL:PAYMENT_TYPE>"><img src="img/logo_nordea.gif" border="0"></a>
+                                              <a href="pay/?bank=7&appl=<TPL:APPL_ID>&payment_type=<TPL:PAYMENT_TYPE>"><img src="img/logo_krediidi.gif" border="0"></a>
+                                          </p>
+                                      </div>
+                                      <div class="fHint">
+
+                                      </div>
+                                  </div>
+                                  <!--/fLine-->
+                                </TPL_SUB:BANK_PAYMENT>
+                            </div>
+                            <!--/fRow-->
+
+                            <!--wButtons-->
+                            <div class="wButtons">
+                                 <input type="button" class="grayButton" onClick="document.location='<TPL:URL_BACK_CONFIRM>'" value="<TPL:TXT_module_isic_card|back_only>" />
+                                 <TPL_SUB:SUBMIT>
+                                     <span id="submit_button"><input type="submit" value="<TPL:BUTTON>" /></span>
+                                 </TPL_SUB:SUBMIT>
+                             </div>
+                             <!--/wButtons-->
+                             </div>
+                            </form>
+                        </div>
+                        <!--/formTable-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->
+<script type="text/javascript" charset="utf-8">
+    function showFields(paymentMethod) {
+        var hideList = ['actual_payment_date_row', 'bank_id_row', 'bank_payment_row'];
+        var showList = [];
+        switch (paymentMethod) {
+            case '1':
+                showList.push('submit_button');
+                break;
+            case '2':
+                showList.push('actual_payment_date_row');
+                showList.push('bank_id_row');
+                showList.push('submit_button');
+                break;
+            case '3':
+                hideList.push('submit_button');
+                showList.push('bank_payment_row');
+                break;
+        }
+        for (var i = 0; i < hideList.length; i++) {
+            document.getElementById(hideList[i]).style.display = 'none';
+        }
+        for (var i = 0; i < showList.length; i++) {
+            document.getElementById(showList[i]).style.display = '';
+        }
+    }
+    jQuery(document).ready(function() {
+        showFields(document.getElementById('payment_method').value);
+    });
+</script>

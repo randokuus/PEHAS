@@ -1,0 +1,36 @@
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|title_cards></h2>
+                        </div>
+                        <ul class="userlist cardlist">
+                            <TPL_SUB:DATA>
+                            <li>
+                                <div class="img">
+                                    <a href="<TPL:URL_DETAIL>"><TPL:IMAGE></a>
+                                </div>
+                                <div class="control">
+                                </div>
+                                <div class="lead">
+                                    <h4><TPL:PERSON_NAME_FIRST> <TPL:PERSON_NAME_LAST></h4>
+                                    <small><TPL:CARD_TYPE_NAME></small>
+                                    <p><TPL:TXT_module_isic_card_status|status>: <b class="ok"><TPL:STATE_NAME></b></p>
+                                </div>
+                            </li>
+                            </TPL_SUB:DATA>
+                        </ul>
+                        <!--bpanel-->
+                        <div class="bpanel">
+                            <div class="bpinner">
+                                <div class="bpleft">
+                                    <a href="<TPL:URL>" class="icow inext"><TPL:TXT_module_isic_card|all_cards></a>
+                                </div>
+                                <div class="bpright">
+                                </div>
+                            </div>
+                        </div>
+                        <!--/bpanel-->
+                    </div>
+                </div>
+                <!--/box-->

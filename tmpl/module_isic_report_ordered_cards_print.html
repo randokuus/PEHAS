@@ -1,0 +1,121 @@
+<TPL_INCLUDE:tmpl/header_report_print.html>
+			<!--filterSettings-->
+			<div class="filterSettings">
+			    <table>
+			        <tr>
+			            <td>
+			                <table>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|start_date>:</th>
+                                    <td><TPL:FIELD_filter_start_date></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|end_date>:</th>
+                                    <td><TPL:FIELD_filter_end_date></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_card|person_name_first>:</th>
+                                    <td><TPL:FIELD_filter_person_name_first></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_card|person_name_last>:</th>
+                                    <td><TPL:FIELD_filter_person_name_last></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_card|person_id>:</th>
+                                    <td><TPL:FIELD_filter_person_number></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|isic_number>:</th>
+                                    <td><TPL:FIELD_filter_isic_number></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_card|currency>:</th>
+                                    <td><TPL:FIELD_filter_currency></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|sum_all_types>:</th>
+                                    <td><TPL:FIELD_filter_sum_all_types></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|card_type>:</th>
+                                    <td><TPL:FIELD_filter_type_id></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|school>:</th>
+                                    <td><TPL:FIELD_filter_school_id></td>
+                                </tr>
+                                <tr>
+                                    <th><TPL:TXT_module_isic_report|show_collateral>:</th>
+                                    <td><TPL:FIELD_filter_collateral></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--/filterSettings-->
+
+            <TPL_SUB:SCHOOL>
+            <!--block-->
+            <div class="block">
+	            <div class="heading">
+	                <h2><TPL:NAME></h2>
+	            </div>
+                    
+                <TPL_SUB:CARD_TYPE>
+                <h3 class="tHeading"><b><TPL:NAME></b></h3>
+                <!--tableWrap-->
+                <div class="tableWrap">
+                    <table class="tList tCard">
+                        <tr class="tHeader1">
+                            <th></th>
+                            <th colspan="<TPL:COLS_KIND>"><TPL:TXT_module_isic_report|regular></th>
+                            <th colspan="<TPL:COLS_KIND>"><TPL:TXT_module_isic_report|combined></th>
+                        </tr>
+                        <tr class="tHeader2">
+                            <th></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|first></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|replace></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|prolong></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|total></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|first></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|replace></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|prolong></th>
+                            <th colspan="<TPL:COLS_STAT>"><TPL:TXT_module_isic_report|total></th>
+                        </tr>
+                        <tr class="tHeader3">
+                            <th><TPL:TXT_module_isic_report|order_date></th>
+                            <TPL_SUB:TITLE>
+                            <th><TPL:TITLE></th>
+                            </TPL_SUB:TITLE>
+                        </tr>
+                        <TPL_SUB:DATA>
+                        <tr class="<TPL:STYLE>">
+                            <td><TPL:DATE></td>
+                            <TPL_SUB:KIND>
+                            <td><TPL:VAL></td>
+                            </TPL_SUB:KIND>
+                        </tr>   
+                        </TPL_SUB:DATA> 
+                    </table>
+                </div>
+                <!--/tableWrap-->
+                </TPL_SUB:CARD_TYPE>
+	        </div>
+	        <!--/block-->
+            </TPL_SUB:SCHOOL>
+
+<TPL_INCLUDE:tmpl/footer_report_print.html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+    <title>Files</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+    <script type="text/javascript" src="img/activity_indicator.js"></script>
+    <style type="text/css">
+    #activity_indicator{
+        position:absolute;
+        display:inline;
+        margin:0px;
+        padding:0px;
+        z-index:2;
+    }
+    #activity_indicator_box{
+        padding:10px;
+        background:white;
+        border:1px solid #999;
+        z-index:1;
+    }
+    #activity_indicator_box img{
+        vertical-align:middle;
+        display:inline;
+        margin-right:10px;
+        float:left;
+    }
+    #activity_indicator_label{
+        font-style: verdana,serif;
+        font-size:12px;
+    }
+    #activity_indicator .display_inline{
+        display:inline;
+        margin:0px;clear:none;
+    }
+    #activity_indicator .display_block{
+        display:block;
+    }
+    #activity_indicator .display_none{
+        display:none;
+    }
+    #activity_indicator .el_show{
+        display:block;
+        background:green;
+        color:white;
+    }
+    #activity_indicator .el_hide{
+        display:none;
+        background:red;
+        color:red;
+    }
+
+
+    #bunch_trans_res .msg_ok , #bunch_trans_res .msg_failed{
+        font-weight:bolder;
+        width:40px;
+    }
+    #bunch_trans_res .msg_ok{
+        color:green;
+    }
+    #bunch_trans_res .msg_failed{
+        color:red;
+    }
+    </style>
+</head>
+
+<body id="body-frame">
+
+<script type="text/javascript">
+var ai = new ActivityIndicator();
+ai.Init();
+ai.setLabel('<TPL:JS_AI_LABEL>');
+</script>
+<div class="infopanel">
+    <h1><TPL:TITLE></h1>
+</div>
+<script type="text/javascript" language="javascript">
+bunch_add_new_line = function( icon, file,status,msg,status_class )
+{
+    var bunch_table = document.getElementById( 'bunch_trans_res' );
+    var tbody = bunch_table.getElementsByTagName('tbody');
+    tbody = tbody[0];
+    var new_tr  = document.createElement('tr');
+    if ( icon.length > 1 ) {
+        var img_el = document.createElement('img');
+        img_el.src = icon;
+        img_el.style.border = '0px';
+        img_el.align = 'center';
+        img_el.valign = 'middle';
+        icon = img_el;
+    } else { icon = '-'; }
+
+    var data = new Array(icon,file,status,msg );
+
+    for( i = 0 ; i < data.length ; i++ )
+    {
+        var td_el = document.createElement('td');
+        if (i==0) {
+            td_el.align = 'center';
+            td_el.width = '10';
+        }
+        if (i==2) td_el.className = status_class;
+        //alert( data[i].length );
+        if (i ==0 && data[i] && data[i] !='-') {
+            var td_text = data[i];
+        } else {
+            var td_text = document.createTextNode( data[i] );
+        }
+        td_el.appendChild(td_text);
+        new_tr.appendChild(td_el);
+    }
+    tbody.appendChild(new_tr);
+}
+
+bunch_add_new_dir_tr = function( dir ){
+    var bunch_table = document.getElementById( 'bunch_trans_res' );
+    var tbody = bunch_table.getElementsByTagName('tbody');
+    tbody = tbody[0];
+    var new_tr  = document.createElement('tr');
+    var td_el = document.createElement('td');
+    td_el.setAttribute('colspan',4,null);
+    td_el.style.background = '#efefef';
+    try { td_el.style.setProperty('font-size','12px',null) }
+    catch(e){}
+    var bold = document.createElement('strong');
+    if (dir.length <=0 ) dir = '/';
+    var td_text = document.createTextNode(dir);
+    bold.appendChild(td_text);
+    td_el.appendChild(bold);
+    new_tr.appendChild(td_el);
+    tbody.appendChild(new_tr);
+}
+</script>
+
+<!-- begin list -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable" id="bunch_trans_res">
+<thead>
+<tr>
+    <TPL_SUB:HEADERS>
+    <th><TPL:NAME></th>
+    </TPL_SUB:HEADERS>
+</tr>
+</thead>
+<tbody>
+</tbody>
+<tfoot></tfoot>
+</table>
+
+<p></p>
+<!-- end list -->

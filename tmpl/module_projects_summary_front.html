@@ -1,0 +1,30 @@
+<div class="block" id="block3">
+    <div class="blockHeader">
+        <h2><TPL:TXT_module_projects|my_projects></h2>
+        <div class="clearer"></div>
+    </div>
+    <div class="blockBody2" id="block1Body">
+        <div class="w100p clear">
+            <table class="projectstats2">
+                <TPL_SUB:PROJECT>
+                <tr>
+                    <th><a href="<TPL:URL>"><TPL:NAME></a></th>
+                    <td>
+                        <div class="bar">
+                            <div class="w100p">
+                                <table>
+                                    <tr>
+                                        <TPL_SUB:STATUS>
+                                        <td class="color<TPL:COLOR>" style="width: <TPL:PERCENT>%"></td>
+                                        </TPL_SUB:STATUS>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </TPL_SUB:PROJECT>
+            </table>
+        </div>
+    </div>
+</div>

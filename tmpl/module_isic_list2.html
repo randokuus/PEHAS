@@ -1,0 +1,443 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+Ext.BLANK_IMAGE_URL = 'js/ext/resources/images/default/s.gif';
+
+Ext.onReady(function(){
+    Ext.LoadMask.prototype.msg = 'Loading...';
+    var maxRows = <TPL:DATA_MAXROWS>;
+    var fieldWidth = 100;
+    var picHeight = 100;
+
+    var ds = new Ext.data.Store({
+        proxy: new Ext.data.HttpProxy({
+            url: '<TPL:DATA_URL>&getlist=1'
+        }),
+        reader: new Ext.data.JsonReader({
+            root: "rows",
+            totalProperty: "total",
+            id: "id"
+        }, <TPL:DATA_FIELDS>),
+        // turn on remote sorting
+        remoteSort: true
+    });
+
+    ds.on('beforeload', function(obj, options){
+
+        if (!options.params) {
+            options.params = {};
+        }
+
+        if (options.params.start == undefined) {
+            options.params.start = 0;
+        }
+
+        if (filter_params.length) {
+            for (i = 0; i < filter_params.length; i++) {
+                // dynamically assigning all the filter parameter values to option params
+                options.params[filter_params[i].name] = filter_params[i].obj.getValue();
+            }
+        }
+    }, this);
+
+    function showPic(val) {
+        var pic = '';
+        if (val) {
+            pic = '<img src="' + val + '">';
+        }
+        pic += '<img src="img/tyhi.gif" height="' + picHeight + '">'
+        return pic;
+    }
+
+    function formatDate(val) {
+        return val.substr(8, 2) + '/' + val.substr(5, 2) + '/' + val.substr(0, 4);
+    }
+
+    var cm = new Ext.grid.ColumnModel(<TPL:DATA_GRID_COLUMN>);
+
+    var sm = new Ext.grid.RowSelectionModel({
+        singleSelect: true
+    });
+
+    sm.addListener('rowselect', function(sm, index, record){
+        //Ext.Msg.alert('Selected', record.id);
+        //showDialog(record.id);
+    });
+
+    var grid = new Ext.grid.Grid('isic-grid', { 
+        ds: ds, 
+        cm: cm,
+        sm: sm,
+        autoSizeColumns: false,
+        loadMask: true
+    }); 
+
+    grid.addListener('rowdblclick', function(g, rowIndex){
+        var record = g.getDataSource().getAt(rowIndex);
+        showDialog(record.id);
+    });
+
+    grid.render();
+
+    function runFilter (f, r, i) {
+        ds.load();
+    }
+
+    var gridHead = grid.getView().getHeaderPanel(true);
+    var filter_tb = new Ext.Toolbar(gridHead);
+
+    var filter_descr = <TPL:DATA_FILTERS>;
+
+    var filter_params = Array();
+
+    for (i = 0; i < filter_descr.length; i++) {
+        t_desc = filter_descr[i];
+        filter_params[i] = {name: t_desc.name, obj: {}};
+        if (t_desc.type == 'combobox') {
+            filter_params[i].obj = new Ext.form.ComboBox({
+                store: new Ext.data.SimpleStore({
+                    fields: t_desc.ds_fields,
+                    data: t_desc.ds_data
+                }),
+                displayField: 'name',
+                typeAhead: true,
+                mode: 'local',
+                valueField: 'id',
+                editable: true,
+                triggerAction: 'all',
+                emptyText: t_desc.emptyText,
+                selectOnFocus: true,
+                width: fieldWidth
+            });
+            filter_params[i].obj.on('select', runFilter);
+        } else if (t_desc.type == 'textfield') {
+            filter_params[i].obj = new Ext.form.TextField({
+                width: fieldWidth
+            });
+        }
+        filter_tb.addText(t_desc.field_title);
+        filter_tb.add(filter_params[i].obj);
+        filter_tb.addSeparator();
+    }
+
+    // Filter - button
+    filter_button = filter_tb.addButton({text: 'Filter', cls: 'x-btn-text-icon', icon: 'img/filter.gif'});
+    filter_button.on('click', runFilter);
+    filter_tb.addSeparator();
+
+    // Dialog button
+    dialog_button = filter_tb.addButton({text: 'Add Card'});
+    dialog_button.on('click', showDialog);
+
+    // footer panel
+    var gridFoot = grid.getView().getFooterPanel(true);
+    // add a paging toolbar to the grid's footer
+    var paging = new Ext.PagingToolbar(gridFoot, ds, {
+        pageSize: maxRows,
+        displayInfo: true
+//        displayMsg: 'Displaying topics {0} - {1} of {2}',
+//        emptyMsg: "No topics to display"
+    });
+
+    ds.load();
+
+    Ext.QuickTips.init();
+    // turn on validation errors beside the field globally
+    Ext.form.Field.prototype.msgTarget = 'side';
+
+    var form = new Ext.form.Form({
+        labelAlign: 'right',
+        labelWidth: 100,
+        reader: new Ext.data.JsonReader({
+            root: 'data',
+            success: '@success'
+        }, <TPL:DATA_FORM_FIELDS_MAPPING>)
+    });
+
+    /*
+    form.on('beforeaction', function(tform, action){
+        //console.log(form);
+        console.log(action);
+        if (action.type == 'submit') {
+            console.log(form_field_list['school_id'].getValue());
+            action.params.school_id = form_field_list['school_id'].getValue();
+            console.log(form.getValues());
+        }
+    }, this);
+    */
+
+    function setPersonPic (pic_src) {
+        var person_pic_parent = Ext.get('person_pic_parent');
+
+        if (person_pic_parent == undefined) {
+            var photo = Ext.get(pic_fieldset);
+            if (photo != undefined) {
+                person_pic_parent = photo.createChild({
+                    id: 'person_pic_parent',
+                    tag:'center'
+                });
+            }
+        } else {
+            person_pic_parent.update('');
+        }
+
+        if (!pic_src || pic_src == undefined) {
+            pic_src = 'img/blank.gif';
+        }
+
+        if (person_pic_parent != undefined && pic_src) {
+            person_pic_parent.createChild({
+                tag:'img',
+                src: pic_src,
+                style:'margin-bottom:5px;'
+            });
+        }
+    }
+
+    function setFormFields (type) {
+        for (var i in form_field_list) {
+            if (type == 'enabled') {
+                if (form_field_list[i].disabled) {
+                    form_field_list[i].enable();
+                }
+            } else {
+                if (form_field_list[i].enabled) {
+                    form_field_list[i].disable();
+                }
+            }
+            form_field_list[i].allowBlank = true;
+        }
+    }
+
+    form.on('actionfailed', function(form, action){
+//        alert('af: ' + action.type);
+    }, this);
+
+    form.on('beforeaction', function(form, action){
+//        alert('b: ' + action.type);
+    }, this);
+
+    form.on('actioncomplete', function(form, action){
+//        alert(action.type);
+        if (action.type == 'load') {
+            if (action.result.data.pic != undefined) {
+                setPersonPic(action.result.data.pic);
+            }
+            
+            var t_disable = action.reader.jsonData.disable;
+
+            // disabling fields that were in disable node of the jsondata
+            setFormFields('enabled');
+            for (var i in form_field_list) {
+                for (j = 0; j < t_disable.length; j++) {
+                    if (t_disable[j] == i) {
+                        form_field_list[i].disable();
+                    }
+                }
+            }
+
+            var t_require = action.reader.jsonData.require;
+            // setting allowBlank for fields that were in require node of the jsondata
+            for (var i in form_field_list) {
+                for (j = 0; j < t_require.length; j++) {
+                    if (t_require[j] == i) {
+                        form_field_list[i].allowBlank = false;
+                        if (!form_field_list[i].getValue()) {
+                            form_field_list[i].markInvalid();
+                        }
+                    }
+                }
+            }
+
+        }
+    }, this);
+
+
+    var form_column_descr = <TPL:DATA_FORM_COLUMNS>;
+    var form_fieldset_descr = <TPL:DATA_FORM_FIELDSETS>;
+    var form_field_descr = <TPL:DATA_FORM_FIELDS>;
+    var form_field_list = Array();
+
+    for (i = 0; i < form_column_descr.length; i++) {
+        if (i > 0) {
+            t_col_style = 'margin-left:5px;';
+        } else {
+            t_col_style = '';
+        }
+        form.column({
+            width: form_column_descr[i].width, 
+            labelWidth: form_column_descr[i].labelWidth,
+            style: t_col_style,
+            clear: true
+        }); // open column, without auto close
+
+        for (j = 0; j < form_fieldset_descr[i].length; j++) {
+            if (form_field_descr[i][j] != undefined && form_field_descr[i][j] != false) {
+                form.fieldset({
+                    legend: form_fieldset_descr[i][j].legend,
+                    id: 'form_fs_' + form_fieldset_descr[i][j].fieldset_id
+                });
+
+                for (k = 0; k < form_field_descr[i][j].length; k++) {
+                    t_field_name = form_field_descr[i][j][k].name;
+                    form_field_list[t_field_name] = false;
+
+                    switch (form_field_descr[i][j][k].type) {
+                        case 'textfield':
+                            form_field_list[t_field_name] = new Ext.form.TextField({
+                                fieldLabel: form_field_descr[i][j][k].field_title,
+                                name: t_field_name,
+                                id: t_field_name
+                            });
+                        break;
+                        case 'datefield':
+                            form_field_list[t_field_name] = new Ext.form.DateField({
+                                fieldLabel: form_field_descr[i][j][k].field_title,
+                                name: t_field_name,
+                                id: t_field_name,
+                                format: 'd/m/Y'
+                            });
+                        break;
+                        case 'combobox':
+                            form_field_list[t_field_name] = new Ext.form.ComboBox({
+                                store: new Ext.data.SimpleStore({
+                                    fields: form_field_descr[i][j][k].ds_fields,
+                                    data: form_field_descr[i][j][k].ds_data
+                                }),
+                                mode: 'local',
+                                fieldLabel: form_field_descr[i][j][k].field_title,
+                                name: t_field_name,
+                                hiddenName: t_field_name + '_value',
+                                id: t_field_name,
+                                valueField: 'id',
+                                displayField: 'name',
+                                typeAhead: true,
+                                editable: true,
+                                triggerAction: 'all',
+                                emptyText: form_field_descr[i][j][k].emptyText,
+                                selectOnFocus: true
+                            });
+                        break;
+                        case 'checkbox':
+                            form_field_list[t_field_name] = new Ext.form.Checkbox({
+                                boxLabel: ' ',
+                                fieldLabel: form_field_descr[i][j][k].field_title,
+                                name: t_field_name,
+                                id: t_field_name,
+                                width:'auto'
+                            });
+                        break;
+                        case 'pic':
+                            var pic_fieldset = 'form_fs_' + form_fieldset_descr[i][j].fieldset_id;
+                        break;
+                        default:
+                            //
+                        break;
+                    }
+                    if (form_field_list[t_field_name]) {
+                        if (form_field_descr[i][j][k].tooltip) {
+                            Ext.QuickTips.register({
+                                target: form_field_list[t_field_name],
+                                text: form_field_descr[i][j][k].tooltip
+                            });
+                        }
+                        form_field_list[t_field_name].blankText = '<TPL:TXT_module_isic_card|field_required>';
+
+                        form.add(form_field_list[t_field_name]);
+                    }
+                }
+                form.end(); // close fieldset
+            }
+        }
+        form.end(); // close column
+    }
+
+    form.applyIfToFields({
+        width:150
+    });
+
+    function submitForm() {
+        form.submit({
+            waitMsg: 'submitting',
+            url: '<TPL:DATA_URL>&submitform=1',
+            params: {card_id: current_record_id},
+            success: function(form, e) {
+                Ext.Msg.alert('success', 'saved: ' + e.result.msg);
+                ds.reload();
+                dialog.hide();
+            },
+            failure: function(form, e) {
+                if (e.failureType == 'server') {
+
+                } else {
+                    //console.log(e);
+                    if (e.result) {
+                        if (typeof e.result.msg == 'string') {
+                            Ext.Msg.alert('error', e.result.msg);
+                        }
+                    } else {
+                        Ext.Msg.alert('error', 'Please fill all of the required fields ...');
+                    }
+                }
+            },
+            scope:form
+       });
+    }
+
+    // dialog
+    var dialog = false;
+    var current_record_id = false;
+    function showDialog(rec_id){
+        if (!dialog) { // lazy initialize the dialog and only create it once
+            var div = Ext.DomHelper.insertFirst(document.body, {tag: "div"}, true);
+
+            dialog = new Ext.BasicDialog(div, { 
+                title: 'Dialog',
+                autoTabs:false,
+                width:960,
+                height:700,
+                shadow:true,
+                minWidth:300,
+                minHeight:250,
+                proxyDrag: true,
+                modal: true
+            });
+            dialog.addKeyListener(27, dialog.hide, dialog);
+//            dialog.addButton('Submit', dialog.hide, dialog).disable();
+            dialog.addButton('Submit', submitForm, dialog);
+            dialog.addButton('Close', dialog.hide, dialog);
+        }
+
+        if (typeof rec_id == 'undefined' || typeof rec_id == 'object') {
+            rec_id = 0;
+        }
+        current_record_id = rec_id;
+        dialog.setTitle('record: ' + rec_id);
+
+        //form.render(dialog.body.dom.childNodes[1]);
+        form.reset();
+        setFormFields('enabled');
+        setPersonPic('');
+        if (true || rec_id) {
+            form.load({
+                url: '<TPL:DATA_URL>&getdetail=1',
+                params: {
+                    card_id: rec_id
+                },
+                waitMsg: 'loading form data'
+            });
+        }
+        form.render(dialog.body);
+
+        
+        dialog.show();
+
+    }
+});
+
+
+//-->
+</script>
+
+<div class="blockBodyText">
+    <div id="isic-grid" style="border:1px solid #99bbe8;overflow: hidden; width: 1000px; height: 600px;position:relative;left:0;top:0;"></div>
+</div>

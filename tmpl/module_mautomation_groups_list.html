@@ -1,0 +1,65 @@
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function del(url) {
+        conf = window.confirm('<TPL:TXT_module_mautomation|confirm_delete_group>');
+        if (conf) document.location = url;
+    }
+    //-->
+</script>
+<h2><TPL:TXT_module_mautomation|groups_list_subtitle></h2>
+<!-- Start tabs -->
+<div class="tabs">
+    <div><a href="<TPL:SELF>&action=EditField"><TPL:TXT_module_mautomation|groups_add_field_subtitle></a></div>
+    <div class="active"><a href="<TPL:SELF>&action=ShowList"><TPL:TXT_module_mautomation|groups_list_subtitle></a></div>    
+</div>
+<!-- End tabs -->
+<form method="post" action="<TPL:SELF>">
+<input type="hidden" name="action" value="Filter">
+<table class="filter">
+    <TPL_SUB:FILTER>
+    <tr>
+        <td class="label"><TPL:TXT_module_mautomation|string>:</td>
+        <td class="input"><input name="filter[string]" value="<TPL:STRING>" class="i120" maxlength="" size="20" type="text"></td>
+        <td class="label"><TPL:TXT_module_mautomation|rows_per_page>:</td>
+        <td class="input">
+            <select name="filter[cpp]">
+                <TPL_SUB:CPP>
+                <option<TPL:SELECTED>><TPL:VALUE></option>
+                </TPL_SUB:CPP>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="label" colspan="2"><TPL:PAGES></td>
+        <td class="action" colspan="2" valign="bottom">
+            <button onclick="this.form.elements['action'].value = 'ClearFilter'; this.form.submit()" class="submit"><TPL:TXT_module_mautomation|clear></button>
+            <button onclick="this.form.submit()" class="submit"><TPL:TXT_module_mautomation|apply></button>
+        </td>
+    </tr>
+    </TPL_SUB:FILTER>
+</table>
+</form>
+<table class="data">
+    <tr valign="top">
+        <th><a href="<TPL:URL_SORT>id"><TPL:TXT_module_mautomation|id></a><TPL:SI_id></th>
+        <th><a href="<TPL:URL_SORT>update_date"><TPL:TXT_module_mautomation|update_date></a><TPL:SI_update_date></th>
+        <th><a href="<TPL:URL_SORT>name"><TPL:TXT_module_mautomation|name></a><TPL:SI_name></th>
+        <th><a href="<TPL:URL_SORT>clients"><TPL:TXT_module_mautomation|clients_title></a><TPL:SI_clients></th>
+        <th><a href="<TPL:URL_SORT>is_active"><TPL:TXT_module_mautomation|status></a><TPL:SI_is_active></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td class="nowrap"><a href="<TPL:URL_MODIFY>"><TPL:ID></a></td>
+        <td class="nowrap"><TPL:UPDATE_DATE></td>
+        <td class="nowrap"><a href="<TPL:URL_MODIFY>"><TPL:NAME></a></td>       
+        <td class="nowrap"><TPL:CLIENTS></td>
+        <td class="nowrap"><TPL:STATUS></td>
+        <td><a href="<TPL:URL_UPDATE>"><TPL:TXT_module_mautomation|update></a></td>
+        <td><a href="<TPL:URL_MODIFY>"><img src="img/ico/edit.gif" alt="" border="0"></a></td>
+        <td><a href="javascript:del('<TPL:URL_DELETE>');"><img src="img/ico/delete.gif" alt="" border="0"></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

@@ -1,0 +1,27 @@
+<TPL_SUB:IFORUM_SEARCHSUB>
+<div class="blockHeaderSimple">
+  <h2><TPL:TITLE></h2>
+  <div class="clearer"></div>
+</div>
+<div class="blockBodyText">
+    <table class="data">
+      <tr valign="top">
+        <th><TPL:TXT_module_iforum|subject></th>
+        <th><TPL:TXT_module_iforum|views></th>
+        <th><TPL:TXT_module_iforum|replies></th>
+        <th><TPL:TXT_module_iforum|author></th>
+        <th><TPL:TXT_module_iforum|last_post></th>
+      </tr>
+    <TPL_SUB:SEARCH_STRUCTURE>
+      <tr valign="top">
+        <td><a href="<TPL:URL>"><TPL:NAME></a></td>
+        <td class="center"><TPL:VIEWS></td>
+        <td class="center"><TPL:POSTS></td>
+        <td><TPL:AUTHOR_NAME></td>
+        <td><!--<TPL:LAST_POST_AUTHOR_NAME> --><TPL:LAST_POST_TIME></td>
+      </tr>
+    </TPL_SUB:SEARCH_STRUCTURE>
+    </table>
+  <div class="clearer"></div>
+</div>
+</TPL_SUB:IFORUM_SEARCHSUB>

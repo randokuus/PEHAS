@@ -1,0 +1,22 @@
+<script language="JavaScript" type="text/javascript">
+function showDetailsByName(elem)
+    {
+        var elements = document.getElementsByTagName('TR');
+        for (i = 0; i < elements.length; i++) {
+            if (elements[i].style.display == "none") {
+                if (elements[i].id == elem)
+                    elements[i].style.display = "";
+            } else {
+                if (elements[i].id.indexOf(elem) >= 0) {
+                    elements[i].style.display = "none";
+                }
+            }
+        }
+}
+
+</script>
+<h2><TPL:TXT_module_mautomation|links_details></h2>
+<table class="data" width="100%">
+<TPL:DATA_TABLE>
+</table>
+<input type="button" onclick="document.location = '<TPL:BACK_URL>'" class="submit" value="<TPL:TXT_module_mautomation|back>" />

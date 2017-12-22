@@ -1,0 +1,35 @@
+<div id="container">
+  <div class="block">
+    <div id="calendar">
+      <table width="100%">
+        <tr class="month">
+          <th><a href="<TPL:URL_PREVIOUS>"><img src="img/b_previous.gif" alt=" < " /></a></th>
+          <th class="month" colspan="6"><a href="#"><TPL:CURRENT_MONTH></a></th>
+          <th><a href="<TPL:URL_NEXT>"><img src="img/b_next.gif" alt=" > " /></a></th>
+        </tr>
+        <tr class="day">
+          <TPL:WEEKDAYS>
+        </tr>
+        <TPL:DAYS>
+      </table>
+    </div>
+    <div class="blockBodyText">
+      <form name="datevorm" method="get" action="calendar.php">
+      <input type=hidden name="year" value="<TPL:YEAR>">
+      <input type=hidden name="month" value="<TPL:MONTH>">
+      <input type=hidden name="day" value="<TPL:DAY>">
+      <input type=hidden name="field" value="<TPL:FIELD>">
+      <input type=hidden name="type" value="<TPL:TYPE>">
+      <table class="form">
+        <tr>
+          <td class="label"><TPL:TXT_module_calendar|hour>:</td>
+          <td class="input"><select name="hour"><TPL:HOURS></select></td>
+          <td class="label"><TPL:TXT_module_calendar|minute>:</td>
+          <td class="input"><select name="minute"><TPL:MINUTES></select></td>
+          <td class="label"><input type="button" onClick="ChooseDate()" value="OK" class="submit" /></td>
+        </tr>
+      </table>
+    </div>
+    </form>
+  </div>
+</div>

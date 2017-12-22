@@ -1,0 +1,77 @@
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    function del(urliMeez) {
+        conf = window.confirm('<TPL:TXT_module_filemanager|confirmation>');
+        if (conf) document.location = urliMeez;
+    }
+    //-->
+    </script>
+
+  <div class="blockHeaderSimple">
+    <h2><TPL:TXT_module_filemanager|folder>: <TPL:FOLDER></h2>
+    <div class="clearer"></div>
+  </div>
+  <TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+  </TPL_SUB:MESSAGE>
+
+  <!-- Start tabs -->
+  <div class="tabs">
+    <ul>
+      <li><a href="<TPL:URL_GENERAL>&mode=list"><TPL:TXT_module_filemanager|selection1></a></li>
+      <li class="on"><a href="<TPL:URL_GENERAL>&mode=icon"><TPL:TXT_module_filemanager|selection2></a></li>
+    </ul>
+    <div class="clearer"></div>
+  </div>
+  <!-- End tabs -->
+
+    <div class="blockBodyText">
+  <form method="post" action="<TPL:SELF>">
+  <TPL:HIDDEN>
+    <table class="form">
+      <tr>
+        <td class="label"><TPL:TXT_module_filemanager|file>:</td>
+        <td class="input"><TPL:FIELD_filter_file></td>
+        <td class="label"><TPL:TXT_module_filemanager|type>:</td>
+        <td class="input" colspan="2"><TPL:FIELD_filter_type></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_filemanager|info>:</td>
+        <td class="input"><TPL:FIELD_filter_text></td>
+        <td class="label"><TPL:TXT_module_filemanager|category>:</td>
+        <td class="input" colspan="2"><TPL:FIELD_filter_category></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_filemanager|keywords>:</td>
+        <td class="input"><TPL:FIELD_filter_keywords></td>
+        <td class="label"><TPL:TXT_module_filemanager|all_folders>:</td>
+        <td class="input"><TPL:FIELD_filter_all_folders></td>
+        <td class="action"><input type="submit" class="submit" value="<TPL:TXT_module_filemanager|search>"></td>
+      </tr>
+    </table>
+  </form>
+  </div>
+
+    <table class="thumbs">
+    <TPL_SUB:ROWS><TPL:DUMMY>
+    <tr>
+    <TPL_SUB:DATA>
+      <td>
+      <a href="<TPL:URL>">
+        <span><TPL:NAME></span>
+        <TPL:ICON>
+      </a>
+      </td>
+    </TPL_SUB:DATA>
+    </tr>
+    </TPL_SUB:ROWS>
+  </table>
+
+<p class="actions">
+  <TPL_SUB:FILEADD><input type="button" class="submit" onClick="document.location='<TPL:URL_ADD>'" value="<TPL:TXT_module_filemanager|button_add>"></TPL_SUB:FILEADD>
+  <TPL_SUB:DIRADD><input type="button" class="submit" onClick="document.location='<TPL:URL_DIRADD>'" value="<TPL:TXT_module_filemanager|button_diradd>"></TPL_SUB:DIRADD>
+  <TPL_SUB:DIRMOD><input type="button" class="submit" onClick="document.location='<TPL:URL_DIRMOD>'" value="<TPL:TXT_module_filemanager|button_dirmod>"></TPL_SUB:DIRMOD>
+  <TPL_SUB:DIRDEL><input type="button" class="submit" onClick="javascript:del('<TPL:URL_DIRDEL>');" value="<TPL:TXT_module_filemanager|button_dirdel>"></TPL_SUB:DIRDEL>
+</p>

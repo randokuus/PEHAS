@@ -1,0 +1,93 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+    var filter_start_time = new Ext.form.DateField({
+            name: 'filter_start_time',
+            width:120,
+            allowBlank:true,
+            format:'d/m/Y H:i:s',
+            value: '<TPL:FIELD_filter_start_time>'
+        });
+
+    filter_start_time.render('filter_start_time');
+
+    var filter_end_time = new Ext.form.DateField({
+            name: 'filter_end_time',
+            width:120,
+            allowBlank:true,
+            format:'d/m/Y H:i:s',
+            value: '<TPL:FIELD_filter_end_time>'
+        });
+
+    filter_end_time.render('filter_end_time');
+});
+</script>
+
+<form method="post" action="<TPL:SELF>" name="filter">
+<div class="blockBodyText">
+  <TPL:HIDDEN>
+    <table class="form">
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_bypass|person_name>:</td>
+        <td class="input"><TPL:FIELD_filter_person_name></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|access>:</td>
+        <td class="input"><TPL:FIELD_filter_access></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|lock>:</td>
+        <td class="input"><TPL:FIELD_filter_lock_id></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|isic_number>:</td>
+        <td class="input"><TPL:FIELD_filter_isic_number></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|start_time>:</td>
+        <td class="input"><span id="filter_start_time"></span></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_bypass|person_id>:</td>
+        <td class="input"><TPL:FIELD_filter_person_number></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|direction>:</td>
+        <td class="input"><TPL:FIELD_filter_direction></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|school>:</td>
+        <td class="input"><TPL:FIELD_filter_school_id></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|card_number>:</td>
+        <td class="input"><TPL:FIELD_filter_card_number></td>
+        <td class="label"><TPL:TXT_module_isic_bypass|end_time>:</td>
+        <td class="input"><span id="filter_end_time"></span></td>
+      </tr>
+    </table>
+</div>
+
+<p class="actions">
+  <input type="submit" class="submit" value="<TPL:TXT_module_isic_bypass|search>">
+</p>
+</form>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+
+<p><TPL:RESULTS></p>
+
+<table class="data">
+    <tr>
+        <th><a href="<TPL:URL_GENERAL>"><TPL:TXT_module_isic_bypass|number></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=lock_name"><TPL:TXT_module_isic_bypass|lock_name></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=event_time"><TPL:TXT_module_isic_bypass|event_time></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=direction"><TPL:TXT_module_isic_bypass|direction></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=access"><TPL:TXT_module_isic_bypass|access></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=person_name"><TPL:TXT_module_isic_bypass|person_name></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=isic_number"><TPL:TXT_module_isic_bypass|isic_number></a></th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr class="<TPL:STYLE>">
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NUMBER></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_LOCK_NAME></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_EVENT_TIME></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_DIRECTION></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ACCESS></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NAME></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ISIC_NUMBER></a></td>
+    </tr>   
+    </TPL_SUB:DATA> 
+</table>
+
+<p><TPL:PAGES></p>
+</div>

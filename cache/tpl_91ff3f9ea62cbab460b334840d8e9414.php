@@ -1,0 +1,2 @@
+<?php die('cachefile');?><p>Kasutajatugi: <!--., --><a href="mailto:info@minukool.ee?Subject=minukool.ee:%20Kasutajatugi&Body=Kasutaja%20e-mail:%20%0D%0AKasutaja%20isikukood:%2037609262726%0D%0AKasutaja%20nimi:%20Martin%20Vels">info@minukool.ee</a>
+&emsp;&#124;&emsp;Ettepanekud: <a href="mailto:ettepanekud@minukool.ee?Subject=minukool.ee:%20Tagasiside&Body=Kasutaja%20e-mail:%20%0D%0AKasutaja%20isikukood:%2037609262726%0D%0AKasutaja%20nimi:%20Martin%20Vels">ettepanekud@minukool.ee</a></p>

@@ -1,0 +1,84 @@
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function del(url) {
+        conf = window.confirm('<TPL:TXT_module_mautomation|delete_client_confirmation>');
+        if (conf) document.location = url;
+    }
+    //-->
+</script>
+<h2><TPL:TXT_module_mautomation|clients_list_subtitle></h2>
+<!-- Start tabs -->
+<div class="tabs">
+    <div><a href="<TPL:SELF>&action=AddField"><TPL:TXT_module_mautomation|clients_add_field_subtitle></a></div>
+    <div><a href="<TPL:SELF>&action=ShowFields"><TPL:TXT_module_mautomation|clients_fields_subtitle></a></div>
+    <div><a href="<TPL:SELF>&action=AddClient"><TPL:TXT_module_mautomation|clients_add_subtitle></a></div>
+    <div class="active"><a href="<TPL:SELF>&action=ShowClients"><TPL:TXT_module_mautomation|clients_list_subtitle></a></div>
+</div>
+<!-- End tabs -->
+<form method="post" action="<TPL:SELF>">
+<input type="hidden" name="action" value="Filter">
+<table class="filter">
+    <TPL_SUB:FILTER>
+    <tr>
+        <td class="label"><TPL:TXT_module_mautomation|string>:</td>
+        <td class="input"><input name="filter[string]" value="<TPL:STRING>" class="i120" maxlength="" size="20" type="text"></td>
+        <td class="label"><TPL:TXT_module_mautomation|clients_list_filter_group>:</td>
+        <td class="input">
+            <select name="filter[group]">
+                <option value=""><TPL:TXT_module_mautomation|clients_list_filter_all_groups></option>
+                <TPL_SUB:GROUPS>
+                <option value="<TPL:ID>"<TPL:SELECTED>><TPL:NAME></option>
+                </TPL_SUB:GROUPS>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="label"><TPL:TXT_module_mautomation|in_blacklist>:</td>
+        <td class="input">
+            <select name="filter[blacklist]">
+                <option value=""><TPL:TXT_module_mautomation|all></option>
+                <option value="y"<TPL:BLACKLIST_SELECTED_y>><TPL:TXT_module_mautomation|yes></option>
+                <option value="n"<TPL:BLACKLIST_SELECTED_n>><TPL:TXT_module_mautomation|no></option>
+            </select>
+        </td>
+        <td class="label"><TPL:TXT_module_mautomation|rows_per_page>:</td>
+        <td class="input">
+            <select name="filter[cpp]">
+                <TPL_SUB:CPP>
+                <option<TPL:SELECTED>><TPL:VALUE></option>
+                </TPL_SUB:CPP>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="label" colspan="2"><TPL:PAGES></td>
+        <td class="action" colspan="2" valign="bottom">
+            <button onclick="this.form.elements['action'].value = 'ClearFilter'; this.form.submit()" class="submit"><TPL:TXT_module_mautomation|clear></button>
+            <button onclick="this.form.submit()" class="submit"><TPL:TXT_module_mautomation|apply></button>
+        </td>
+    </tr>
+    </TPL_SUB:FILTER>
+</table>
+</form>
+<table class="data">
+    <tr valign="top">
+        <th><a href="<TPL:SELF>&action=Sort&field=id"><TPL:TXT_module_mautomation|id></a><TPL:SI_id></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=name"><TPL:TXT_module_mautomation|name></a><TPL:SI_name></th>
+        <th><TPL:TXT_module_mautomation|groups><TPL:SI_groups></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=is_active"><TPL:TXT_module_mautomation|status></a><TPL:SI_is_active></th>
+        <th><a href="<TPL:SELF>&action=Sort&field=in_blacklist">BL</a><TPL:SI_in_blacklist></th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr valign="top" class="<TPL:STYLE>">
+        <td><TPL:ID></td>
+        <td><TPL:NAME></td>
+        <td><TPL:GROUPS></td>
+        <td><TPL:STATUS></td>
+        <td><TPL:LINK_BLACKLIST></td>
+        <td><a href="<TPL:URL_MODIFY>"><img src="img/ico/edit.gif" alt="" border="0"></a></td>
+        <td><a href="javascript:del('<TPL:URL_DELETE>');"><img src="img/ico/delete.gif" alt="" border="0"></a></td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>

@@ -1,0 +1,156 @@
+<script type="text/javascript">
+var start_date_list = Array(<TPL:PRESET_DATES_START>);
+var end_date_list = Array(<TPL:PRESET_DATES_END>);
+
+function assignStartEndDateByPreseset() {
+    filter_preset_date = document.getElementById("filter_preset_dates");
+    filter_start_date = document.getElementById("filter_start_date");
+    filter_end_date = document.getElementById("filter_end_date");
+    filter_start_date.value = start_date_list[filter_preset_date.value];
+    filter_end_date.value = end_date_list[filter_preset_date.value];
+}    
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgAtt msgGray">
+                <span><TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        <!--singleCol-->
+        <div class="singleCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable threeCols">
+                            <form method="post" action="<TPL:SELF>" name="report_filter" class="jNice">
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|user_code>:</label>
+                                        <TPL:FIELD_filter_user_code>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|school>:</label>
+                                        <TPL:FIELD_filter_school_id>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|status>:</label>
+                                        <TPL:FIELD_filter_status_id>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|preset_dates>:</label>
+                                        <TPL:FIELD_filter_preset_dates>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|start_date>:</label>
+                                        <TPL:FIELD_filter_start_date>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|end_date>:</label>
+                                        <TPL:FIELD_filter_end_date>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|mod_action>:</label>
+                                        <TPL:FIELD_filter_mod_action>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|mod_origin>:</label>
+                                        <TPL:FIELD_filter_mod_origin>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|mod_user>:</label>
+                                        <TPL:FIELD_filter_mod_user>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" name="submit" value="<TPL:TXT_module_isic_report|query>" />
+                                </div>
+                                <input type="hidden" name="filter" value="1">
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <TPL_SUB:RESULT>
+                    <div class="heading">
+                        <div class="control">
+                            <TPL_SUB:PRINT><a href="<TPL:URL>" target="_blank" title="Print page" class="ico iprint">Print page</a></TPL_SUB:PRINT>
+                        </div>
+                        <h2><TPL:TITLE></h2>
+                    </div>
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList tCard">
+                            <tr class="tHeader1">
+								<th><TPL:TXT_module_isic_user|user_code></th>
+								<th><TPL:TXT_module_isic_user|name_first></th>
+								<th><TPL:TXT_module_isic_user|name_last></th>
+								<th><TPL:TXT_module_isic_user|status></th>
+								<th><TPL:TXT_module_isic_user|school></th>
+								<th><TPL:TXT_module_isic_report|mod_action></th>
+								<th><TPL:TXT_module_isic_report|mod_origin></th>
+								<th><TPL:TXT_module_isic_report|mod_date></th>
+								<th><TPL:TXT_module_isic_report|mod_user></th>
+                            </tr>
+							<TPL_SUB:RECORD>
+							<tr>
+							    <td><TPL:user_code></td>
+							    <td><TPL:user_name_first></td>
+							    <td><TPL:user_name_last></td>
+							    <td><TPL:status_name></td>
+							    <td><TPL:school_name></td>
+							    <td><TPL:mod_action></td>
+							    <td><TPL:mod_origin></td>
+							    <td><TPL:mod_date></td>
+							    <td><TPL:mod_user_name></td>
+							</tr>
+							</TPL_SUB:RECORD>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                    </TPL_SUB:RESULT>
+                    
+					<TPL_SUB:PAGES>
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+						    <TPL_SUB:PAGE>
+						        <TPL_SUB:CURRENT>
+						            <span><TPL:NUMBER></span>
+						        </TPL_SUB:CURRENT>
+						        <TPL_SUB:NOT_CURRENT>
+						            <a href="<TPL:URL>"><TPL:NUMBER></a>
+						        </TPL_SUB:NOT_CURRENT>
+						    </TPL_SUB:PAGE>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+					</TPL_SUB:PAGES>
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->
+

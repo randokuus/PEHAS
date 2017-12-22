@@ -1,0 +1,57 @@
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+<TPL:HIDDEN>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+  <table class="form">
+    <tr>
+        <td valign="top">
+          <table class="form">
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|language></label></td>
+            <td class="input"><TPL:FIELD_language_id></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|kind></label></td>
+            <td class="input"><TPL:FIELD_kind_id></td>
+          </tr>
+          <tr>
+            <td class="label"><TPL:TXT_module_isic_card|bank></td>
+            <td class="input"><TPL:FIELD_bank_id></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|type></label></td>
+            <td class="input"><TPL:FIELD_type_id></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|school></label></td>
+            <td class="input"><TPL:FIELD_school_id></td>
+          </tr>
+         
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|datafile></label></td>
+            <td class="input"><TPL:FIELD_datafile></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|separator></label></td>
+            <td class="input"><TPL:FIELD_separator></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="fField1" class="required"><TPL:TXT_module_isic_card|title_row></label></td>
+            <td class="input"><TPL:FIELD_title_row></td>
+          </tr>
+          </table>
+            <p class="actions">
+              <input type="submit" value="<TPL:BUTTON>" class="submit" />
+            </p>
+        </td>
+        <td valign="top">
+            <TPL:TXT_module_isic_card|csv_import_description>
+        </td>
+    </tr>
+</table>
+</div>
+</form>

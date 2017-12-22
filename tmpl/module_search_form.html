@@ -1,0 +1,22 @@
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:SEARCH></h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--mainSearch-->
+                        <div class="mainSearch">
+                            <form action="<TPL:SELF>" method="get" class="jNice">
+                                <div class="sTitle"><TPL:SEARCH_INFO>:</div>
+                                <input type="text" name="search_query" value="<TPL:SEARCH_QUERY>" />
+                                 <input type="submit" value="<TPL:SEARCH>" />
+                            </form>
+                        </div>
+                        <!--/mainSearch-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->

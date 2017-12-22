@@ -1,0 +1,131 @@
+<script type="text/javascript"><!--
+
+function getElementsByClass(searchClass,node,tag) {
+    var i, j;
+    var classElements = new Array();
+    if ( node == null )
+        node = document;
+    if ( tag == null )
+        tag = '*';
+    var els = node.getElementsByTagName(tag);
+    var elsLen = els.length;
+    var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+    for (i = 0, j = 0; i < elsLen; i++) {
+        if ( pattern.test(els[i].className) ) {
+            classElements[j] = els[i];
+            j++;
+        }
+    }
+    return classElements;
+}
+
+var toggle_plurals = function(plurals_enabled) {
+    var els, i;
+
+    els = getElementsByClass('plural-ctrl', document.getElementById('translations-table'));
+    for (i = 0; i < els.length; i++) {
+       if (plurals_enabled) {
+           els[i].style.display = '';
+       } else if ('none' != els[i].style.display){
+           els[i].style.display = 'none';
+       }
+    }
+
+}
+
+var process_domain = function(preserve_domain) {
+    var domain_sel = document.getElementById('domain-sel');
+    if ('_new-domain' == domain_sel.value) {
+        // enable new domain text input
+        var domain_txt = document.getElementById('domain');
+        domain_txt.style.color = '#000000';
+        domain_txt.disabled = false;
+        if (!preserve_domain) domain_txt.value = '';
+    } else {
+        // disable new domain text input
+        var domain_txt = document.getElementById('domain');
+        domain_txt.style.color = '#999999';
+        domain_txt.disabled = true;
+        domain_txt.value = domain_sel.value;
+    }
+}
+
+--></script>
+
+<form method="post" action="<TPL:FORM_ACTION>" class="formpanel">
+
+<TPL_SUB:INFO>
+<fieldset title="<TPL:TITLE>">
+<legend><TPL:TITLE></legend>
+    <table class="inputfield">
+    <tr>
+        <td><img src="pic/bullet_<TPL:TYPE>.gif" alt="" border="0"></td>
+        <td><label><TPL:INFO></label></td>
+    </tr>
+    </table>
+</fieldset>
+</TPL_SUB:INFO>
+
+
+<fieldset id="fieldset1">
+<legend><TPL:LEGEND></legend>
+
+<table class="inputfield" id="translations-table">
+    <tr>
+        <td><label for="token"><TPL:TOKEN></label></td>
+        <td><input type="text" name="token" id="token" size="30" maxlength="50" value="<TPL:TOKEN_VALUE>" /></td>
+    </tr>
+    <tr>
+        <td><label for="domain"><TPL:DOMAIN></label></td>
+        <td>
+            <select name="domain-sel" id="domain-sel" onChange="process_domain();">
+                <option value="_new-domain"><TPL:NEW_DOMAIN></option>
+                <TPL:DOMAIN_OPTIONS>
+            </select>
+            <input type="text" name="domain" id="domain" size="25" maxlength="50" value="<TPL:DOMAIN_VALUE>" />
+        </td>
+    </tr>
+    <tr>
+        <td><label for="plural"><TPL:HAS_PLURAL_FORMS></label></td>
+        <td><input type="checkbox" name="plural" id="plural" value="1" <TPL:PLURAL_CHECKED> onClick="toggle_plurals(this.checked);" /></td>
+    </tr>
+
+    <TPL_SUB:LANGUAGE>
+    <tr>
+        <td><label for="<TPL:LANGUAGE_CODE>"><strong><TPL:LANGUAGE_NAME></strong><br />
+            <span class="plural-ctrl"><TPL:PLURAL_FORM_DESCR></span></label></td>
+        <td><textarea name="<TPL:LANGUAGE_CODE>" id="<TPL:LANGUAGE_CODE>" cols="40" rows="2"><TPL:TRANSLATION></textarea></td>
+    </tr>
+        <TPL_SUB:LANGUAGE_PLURALS>
+        <tr class="plural-ctrl">
+            <td><label for="<TPL:PLURAL_FORM_ID>"><strong><TPL:LANGUAGE_NAME></strong><br />
+                <span class="plural-ctrl"><TPL:PLURAL_FORM_DESCR></span></label></td>
+            <td><textarea name="<TPL:PLURAL_FORM_ID>" id="<TPL:PLURAL_FORM_ID>" cols="40" rows="2"><TPL:TRANSLATION></textarea></td>
+        </tr>
+        </TPL_SUB:LANGUAGE_PLURALS>
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    </TPL_SUB:LANGUAGE>
+
+</table>
+
+<br />
+<div class="buttonbar">
+    <button type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:SUMBIT_TXT></button>
+    <TPL:ADDITIONAL_BUTTONS>
+</div>
+
+<script type="text/javascript"><!--
+    /* form initialization */
+    toggle_plurals('' != '<TPL:PLURAL_CHECKED>' ? true : false);
+    process_domain(true);
+--></script>
+
+</fieldset>
+
+<TPLSUB:HIDDEN_FIELDS>
+    <input type="hidden" name="<TPL:NAME>" value="<TPL:VALUE>" />
+</TPLSUB:HIDDEN_FIELDS>
+
+</form>

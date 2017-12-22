@@ -1,0 +1,224 @@
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+<TPL:HIDDEN>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+    <TPL_SUB:SHOW_PIC>
+        <div class="img-right"><img src="<TPL:DATA_pic>" alt="" border="0" /></div>
+    </TPL_SUB:SHOW_PIC>
+  <table class="form">
+  <TPL_SUB:STATE_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|state></label></td>
+    <td class="input" width="300"><TPL:FIELD_state_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STATE_ID>
+  <TPL_SUB:STATUS_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|status></label></td>
+    <td class="input" width="300"><TPL:FIELD_status_id></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_card|status>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:STATUS_ID>
+  <TPL_SUB:KIND_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|kind></label></td>
+    <td class="input" width="300"><TPL:FIELD_kind_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:KIND_ID>
+  <TPL_SUB:BANK_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|bank></label></td>
+    <td class="input" width="300"><TPL:FIELD_bank_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:BANK_ID>
+  <TPL_SUB:SCHOOL_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|school></label></td>
+    <td class="input" width="300"><TPL:FIELD_school_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:SCHOOL_ID>
+  <TPL_SUB:TYPE_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|type></label></td>
+    <td class="input" width="300"><TPL:FIELD_type_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:TYPE_ID>
+  <TPL_SUB:PERSON_NAME_FIRST>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_name_first></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_name_first></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_NAME_FIRST>
+  <TPL_SUB:PERSON_NAME_LAST>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_name_last></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_name_last></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_NAME_LAST>
+  <TPL_SUB:PERSON_NUMBER>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_id></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_number></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_NUMBER>
+  <TPL_SUB:PERSON_BIRTHDAY>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_birthday></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_birthday></span></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_BIRTHDAY>
+  <TPL_SUB:PERSON_BANKACCOUNT>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_bankaccount></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_bankaccount></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_card|person_bankaccount>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:PERSON_BANKACCOUNT>
+  <TPL_SUB:PERSON_BANKACCNAME>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_bankaccount_name></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_bankaccount_name></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_BANKACCNAME>
+  <TPL_SUB:PERSON_EMAIL>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_email></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_email></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_EMAIL>
+  <TPL_SUB:PERSON_PHONE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_phone></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_phone></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_PHONE>
+  <TPL_SUB:PERSON_POSITION>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_position></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_position></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_POSITION>
+  <TPL_SUB:PERSON_CLASS>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_class></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_class></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_CLASS>
+  <TPL_SUB:PERSON_STRU_UNIT>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_structure_unit></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_stru_unit></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_STRU_UNIT>
+  <TPL_SUB:PERSON_STRU_UNIT2>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|person_structure_unit2></label></td>
+    <td class="input" width="300"><TPL:FIELD_person_stru_unit2></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PERSON_STRU_UNIT2>
+  <TPL_SUB:ACTIVATION_DATE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|activation_date></label></td>
+    <td class="input" width="300"><TPL:FIELD_activation_date></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ACTIVATION_DATE>
+  <TPL_SUB:EXPIRATION_DATE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|expiration_date></label></td>
+    <td class="input" width="300"><TPL:FIELD_expiration_date></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:EXPIRATION_DATE>
+  <TPL_SUB:ISIC_NUMBER>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|isic_number></label></td>
+    <td class="input" width="300"><TPL:FIELD_isic_number></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ISIC_NUMBER>
+  <TPL_SUB:CARD_NUMBER>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|card_number></label></td>
+    <td class="input" width="300"><TPL:FIELD_card_number></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:CARD_NUMBER>
+  <TPL_SUB:CNFRM_PAY_COLL>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|confirm_payment_collateral></label></td>
+    <td class="input" width="300"><TPL:FIELD_confirm_payment_collateral></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_card|confirm_payment_collateral>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:CNFRM_PAY_COLL>
+  <TPL_SUB:CNFRM_PAY_COLL_REG>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|confirm_payment_collateral></label></td>
+    <td class="input" width="300"><TPL_SUB:OK><TPL:DONE></TPL_SUB:OK><TPL_SUB:PAY><TPL:SUM><br/><a href="seb_eyl/?card=<TPL:CARD_ID>"><img src="img/unet.gif" border="0"></a> <a href="hansa_eyl/?card=<TPL:CARD_ID>"><img src="img/hanza.gif" border="0"></a><br /><a href="sampo_eyl/?card=<TPL:CARD_ID>"><img src="img/sampo.gif" border="0"></a> <a href="nordea_eyl/?card=<TPL:CARD_ID>"><img src="img/nordea.gif" border="0"></a>
+    <TPL:DESCRIPTION>
+    </TPL_SUB:PAY></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_card|confirm_payment_collateral>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:CNFRM_PAY_COLL_REG>
+  <TPL_SUB:CNFRM_PAY_COST>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|confirm_payment_cost></label></td>
+    <td class="input" width="300"><TPL:FIELD_confirm_payment_cost></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:CNFRM_PAY_COST>
+  <TPL_SUB:CNFRM_PAY_COST_REG>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|confirm_payment_cost></label></td>
+    <td class="input" width="300"><TPL_SUB:OK><TPL:DONE></TPL_SUB:OK><TPL_SUB:PAY><TPL:SUM><br/><a href="seb_eyl2/?card=<TPL:CARD_ID>"><img src="img/unet.gif" border="0"></a> <a href="hansa_eyl2/?card=<TPL:CARD_ID>"><img src="img/hanza.gif" border="0"></a><br /><a href="sampo_eyl2/?card=<TPL:CARD_ID>"><img src="img/sampo.gif" border="0"></a> <a href="nordea_eyl2/?card=<TPL:CARD_ID>"><img src="img/nordea.gif" border="0"></a></TPL_SUB:PAY></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:CNFRM_PAY_COST_REG>
+  <TPL_SUB:RETURNED>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|card_returned></label></td>
+    <td class="input" width="300"><TPL:FIELD_returned> <TPL:FIELD_returned_date></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:RETURNED>
+  <TPL_SUB:COL_RET>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_card|collateral_returned></label></td>
+    <td class="input" width="300"><TPL:FIELD_collateral_returned> <TPL:FIELD_collateral_returned_date></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:COL_RET>
+  </table>
+</div>
+<p class="actions">
+  <TPL_SUB:SUBMIT>
+    <input type="submit" value="<TPL:BUTTON>" class="submit" />
+  </TPL_SUB:SUBMIT>
+  <TPL_SUB:REPLACE>
+  <input type="submit" id="replacement_button" value="<TPL:BUTTON>" class="submit" onclick="javascript:assignReplacement();" />
+  </TPL_SUB:REPLACE>
+  <TPL_SUB:PROLONG>
+  <input type="submit" id="prolong_button" value="<TPL:BUTTON>" class="submit" onclick="javascript:assignProlong();" />
+  </TPL_SUB:PROLONG>
+</p>
+</form>

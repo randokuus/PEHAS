@@ -1,0 +1,308 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+function del(url) {
+    del_url = url;
+    var $dialog = $('<div></div>')
+    .html('<TPL:CONFIRMATION>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.location = del_url;
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignDistribute() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_distribute_multiple>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.confirm.confirm_type.value = 'distribute';
+                document.confirm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignActivate() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_activate_multiple>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.confirm.confirm_type.value = 'activate';
+                document.confirm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+/**
+ * marks all rows and selects its first checkbox inside the given element
+ * the given element is usaly a table or a div containing the table or tables
+ *
+ * @param    container    DOM element
+ */
+function markAllRows( container_id ) {
+    var rows = document.getElementById(container_id).getElementsByTagName('tr');
+    var checkbox;
+
+    for ( var i = 0; i < rows.length; i++ ) {
+        checkbox = rows[i].getElementsByTagName( 'input' )[0];
+
+        if ( checkbox && checkbox.type == 'checkbox' ) {
+            if ( checkbox.disabled == false ) {
+                checkbox.checked = true;
+                $(checkbox).next().addClass('jNiceChecked');
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
+ * marks all rows and selects its first checkbox inside the given element
+ * the given element is usaly a table or a div containing the table or tables
+ *
+ * @param    container    DOM element
+ */
+function unMarkAllRows( container_id ) {
+    var rows = document.getElementById(container_id).getElementsByTagName('tr');
+    var checkbox;
+
+    for ( var i = 0; i < rows.length; i++ ) {
+        checkbox = rows[i].getElementsByTagName( 'input' )[0];
+
+        if ( checkbox && checkbox.type == 'checkbox' ) {
+            checkbox.checked = false;
+            $(checkbox).next().removeClass('jNiceChecked');
+        }
+    }
+
+    return true;
+}
+
+function toggleAllRows(container_id) {
+    var check_all = document.getElementById('check_all');
+    if (check_all.checked) {
+        markAllRows(container_id);
+    } else {
+        unMarkAllRows(container_id);
+    }
+}
+
+//-->
+</script>
+
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:TXT_output|error_occurred> <TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+
+            <TPL_SUB:IMESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgOk">
+                    <span><TPL:IMESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:IMESSAGE>
+
+
+
+            <TPL_SUB:SEARCH>
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable threeCols">
+                            <form method="post" action="<TPL:SELF>" name="filter" class="jNice">
+                            <TPL:HIDDEN>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_name_first>:</label>
+                                        <TPL:FIELD_filter_person_name_first>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_name_last>:</label>
+                                        <TPL:FIELD_filter_person_name_last>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_id>:</label>
+                                        <TPL:FIELD_filter_person_number>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|isic_number>:</label>
+                                        <TPL:FIELD_filter_isic_number>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|region>:</label>
+                                        <TPL:FIELD_filter_region_id>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|school>:</label>
+                                        <TPL:FIELD_filter_school_id>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_stru_unit>:</label>
+                                        <TPL:FIELD_filter_structure_unit>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|type>:</label>
+                                        <TPL:FIELD_filter_type_id>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" value="<TPL:TXT_module_isic_card|search>" />
+                                </div>
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+            </TPL_SUB:SEARCH>
+
+           <form method="post" action="<TPL:SELF>" name="confirm" id="confirm" class="jNice">
+           <input type="hidden" name="write_confirm" value="1" id="write_confirm">
+           <input type="hidden" name="confirm_type" value="" id="confirm_type">
+           <TPL:HIDDEN>
+
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                        </div>
+                        <h2><_TPL:PAGETITLE></h2>
+                    </div>
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList">
+                            <tr>
+                                <TPL_SUB:CONFIRM_TITLE>
+                                <th><TPL:TITLE></th>
+                                </TPL_SUB:CONFIRM_TITLE>
+                                <TPL_SUB:TITLE>
+                                <th><span class="<TPL:CLASS>"><a href="<TPL:URL>"><TPL:NAME></a></span></th>
+                                </TPL_SUB:TITLE>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <TPL_SUB:DATA>
+                            <tr>
+                                <TPL_SUB:CONFIRM>
+                                <td><TPL:DATA></td>
+                                </TPL_SUB:CONFIRM>
+                                <TPL_SUB:DATA>
+                                <td><a href="<TPL:URL>"><TPL:VALUE></a></td>
+                                </TPL_SUB:DATA>
+                                <td>
+                                    <div class="wicons">
+                                        <TPL_SUB:MOD><a href="<TPL:URL_MODIFY>" class="ico iedit" title="Edit">Edit</a></TPL_SUB:MOD>
+                                        <TPL_SUB:DEL><a href="<TPL:URL_DELETE>" class="ico idel" title="Delete">Delete</a></TPL_SUB:DEL>
+                                    </div>
+                                </td>
+                            </tr>
+                            </TPL_SUB:DATA>
+                            <TPL_SUB:CHECK_ALL>
+                            <tr>
+                                <td colspan="12"><input type="checkbox" class="checkbox" id="check_all" name="check_all" value="0" onclick="toggleAllRows('confirm')" /> <TPL:TXT_module_isic_card|check_all></TPL:TXT_module_isic_card></td>
+                            <TPL:DUMMY>
+                            </tr>
+                            </TPL_SUB:CHECK_ALL>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+                </div>
+            </div>
+            <!--/box-->
+            <TPL_SUB:CONFIRM_BUTTON>
+            <div class="wButtons tListButtons">
+                <TPL_SUB:DISTRIBUTE>
+                <input type="button" id="button_distribute" value="<TPL:TITLE>" onclick="javascript:assignDistribute();" />
+                </TPL_SUB:DISTRIBUTE>
+                <TPL_SUB:ACTIVATE>
+                <input type="button" id="button_activate" value="<TPL:TITLE>" onclick="javascript:assignActivate();" />
+                </TPL_SUB:ACTIVATE>
+            </div>
+            </TPL_SUB:CONFIRM_BUTTON>
+            </form>

@@ -1,0 +1,76 @@
+8
+
+dir
+2474
+https://svn.dev.modera.net/modera_projects/minukool_khs/trunk/pay/.cert/krediidi
+https://svn.dev.modera.net/modera_projects
+
+
+
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+
+svn:special svn:externals svn:needs-lock
+
+cert_req.pem
+file
+
+
+
+
+2012-06-15T08:57:51.000000Z
+31a4af42902ec5256dce1ee218681282
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+privkey.pem.encrypted
+file
+
+
+
+
+2012-06-15T13:30:06.000000Z
+5a0a24ffb9d19c3fe4003dd1e061b37d
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+new_cert.pem
+file
+
+
+
+
+2012-06-15T08:57:51.000000Z
+07f545b2f7e04653823c180d1053f60a
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+privkey.pem
+file
+
+
+
+
+2012-06-15T13:37:30.000000Z
+c1389c0076b026b7e2fa96b1d6828762
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+krediidi_pub.pem
+file
+
+
+
+
+2012-06-15T08:57:51.000000Z
+7283854060fd374bd3401314e20be0e2
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+

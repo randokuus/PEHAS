@@ -1,0 +1,2433 @@
+18:43:18
+2, 3, 0, 34
+Deleted: Array
+(
+    [0] => 1138
+    [1] => 4265
+    [2] => 4277
+    [3] => 4321
+    [4] => 4340
+    [5] => 4354
+    [6] => 4362
+    [7] => 4408
+    [8] => 4414
+    [9] => 4415
+    [10] => 4423
+    [11] => 4456
+    [12] => 4462
+    [13] => 4604
+    [14] => 4605
+    [15] => 4606
+    [16] => 4607
+    [17] => 4648
+    [18] => 4657
+    [19] => 4658
+    [20] => 4659
+    [21] => 4668
+    [22] => 4669
+    [23] => 4670
+    [24] => 4673
+    [25] => 4688
+    [26] => 4766
+    [27] => 4772
+    [28] => 4773
+    [29] => 4884
+    [30] => 4911
+    [31] => 5612
+    [32] => 6087
+)
+Array
+(
+    [id] => 979
+    [group_type] => 1
+    [name] => Tallinna Ülikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26
+    [allowed_card_types_add] => 3,24,26
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:45:07
+    [adduser] => 21087
+    [modtime] => 2012-09-13 18:25:46
+    [moduser] => 1
+)
+296, 3, 0, 23
+Deleted: Array
+(
+    [0] => 4537
+    [1] => 4627
+    [2] => 4632
+    [3] => 4637
+    [4] => 4684
+    [5] => 4731
+    [6] => 4750
+    [7] => 4808
+    [8] => 4818
+    [9] => 4833
+    [10] => 4858
+    [11] => 4887
+    [12] => 4889
+    [13] => 4891
+    [14] => 4893
+    [15] => 4897
+    [16] => 4899
+    [17] => 4931
+    [18] => 4941
+    [19] => 4943
+    [20] => 4949
+    [21] => 4951
+)
+Array
+(
+    [id] => 774
+    [group_type] => 1
+    [name] => Viimsi Keskkool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 296
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:34:05
+    [adduser] => 21087
+    [modtime] => 2012-03-21 18:37:51
+    [moduser] => 33063
+)
+296, 3, 1, 22
+Deleted: Array
+(
+    [0] => 4538
+    [1] => 4628
+    [2] => 4638
+    [3] => 4685
+    [4] => 4732
+    [5] => 4751
+    [6] => 4809
+    [7] => 4819
+    [8] => 4834
+    [9] => 4859
+    [10] => 4888
+    [11] => 4890
+    [12] => 4892
+    [13] => 4894
+    [14] => 4898
+    [15] => 4900
+    [16] => 4932
+    [17] => 4942
+    [18] => 4944
+    [19] => 4950
+    [20] => 4952
+)
+Array
+(
+    [id] => 2361
+    [group_type] => 1
+    [name] => Viimsi Keskkool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 296
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-01-05 10:16:39
+    [adduser] => 108523
+    [modtime] => 2012-03-21 18:38:04
+    [moduser] => 33063
+)
+1255, 3, 1, 21
+Deleted: Array
+(
+    [0] => 4258
+    [1] => 4687
+    [2] => 4693
+    [3] => 4697
+    [4] => 4701
+    [5] => 4709
+    [6] => 4711
+    [7] => 4730
+    [8] => 4736
+    [9] => 4744
+    [10] => 4759
+    [11] => 4761
+    [12] => 4771
+    [13] => 4799
+    [14] => 4803
+    [15] => 4817
+    [16] => 4857
+    [17] => 4877
+    [18] => 4902
+    [19] => 4918
+)
+Array
+(
+    [id] => 4332
+    [group_type] => 1
+    [name] => Tallinna Liivaku Lasteaed / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1255
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-06 13:46:20
+    [adduser] => 120172
+    [modtime] => 2012-03-15 10:57:52
+    [moduser] => 33063
+)
+1255, 3, 0, 21
+Deleted: Array
+(
+    [0] => 4331
+    [1] => 4686
+    [2] => 4692
+    [3] => 4696
+    [4] => 4700
+    [5] => 4708
+    [6] => 4710
+    [7] => 4729
+    [8] => 4735
+    [9] => 4743
+    [10] => 4758
+    [11] => 4760
+    [12] => 4770
+    [13] => 4798
+    [14] => 4802
+    [15] => 4816
+    [16] => 4856
+    [17] => 4876
+    [18] => 4901
+    [19] => 4917
+)
+Array
+(
+    [id] => 1617
+    [group_type] => 1
+    [name] => Tallinna Liivaku Lasteaed / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1255
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:53:17
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:57:26
+    [moduser] => 33063
+)
+81, 2, 0, 20
+Deleted: Array
+(
+    [0] => 4574
+    [1] => 4885
+    [2] => 5014
+    [3] => 5023
+    [4] => 5028
+    [5] => 5030
+    [6] => 5336
+    [7] => 5408
+    [8] => 5414
+    [9] => 5472
+    [10] => 5494
+    [11] => 5592
+    [12] => 5701
+    [13] => 5703
+    [14] => 5706
+    [15] => 5902
+    [16] => 5947
+    [17] => 6023
+    [18] => 6060
+)
+Array
+(
+    [id] => 977
+    [group_type] => 1
+    [name] => EELK Usuteaduse Instituut / Üliõpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 81
+    [isic_card_type] => 
+    [allowed_card_types_view] => 11,12,2,20
+    [allowed_card_types_add] => 12,20
+    [user_status_id] => 2
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:45:06
+    [adduser] => 21087
+    [modtime] => 2012-08-29 11:01:49
+    [moduser] => 33063
+)
+81, 2, 1, 20
+Deleted: Array
+(
+    [0] => 4575
+    [1] => 4886
+    [2] => 5015
+    [3] => 5024
+    [4] => 5029
+    [5] => 5031
+    [6] => 5337
+    [7] => 5409
+    [8] => 5415
+    [9] => 5473
+    [10] => 5495
+    [11] => 5593
+    [12] => 5702
+    [13] => 5704
+    [14] => 5707
+    [15] => 5903
+    [16] => 5948
+    [17] => 6024
+    [18] => 6061
+)
+Array
+(
+    [id] => 3738
+    [group_type] => 1
+    [name] => EELK Usuteaduse Instituut / Üliõpilane / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 81
+    [isic_card_type] => 
+    [allowed_card_types_view] => 11,12,2,20
+    [allowed_card_types_add] => 12,20
+    [user_status_id] => 2
+    [automatic] => 1
+    [addtime] => 2011-09-08 22:15:09
+    [adduser] => 114436
+    [modtime] => 2012-08-29 11:02:41
+    [moduser] => 33063
+)
+1329, 3, 1, 18
+Deleted: Array
+(
+    [0] => 4226
+    [1] => 4695
+    [2] => 4720
+    [3] => 4728
+    [4] => 4734
+    [5] => 4738
+    [6] => 4791
+    [7] => 4801
+    [8] => 4805
+    [9] => 4829
+    [10] => 4840
+    [11] => 4855
+    [12] => 4865
+    [13] => 4873
+    [14] => 4896
+    [15] => 4913
+    [16] => 4958
+)
+Array
+(
+    [id] => 4314
+    [group_type] => 1
+    [name] => Viljandi Lasteaed Karlsson / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1329
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-02 14:48:43
+    [adduser] => 119901
+    [modtime] => 2012-03-15 11:10:01
+    [moduser] => 33063
+)
+1329, 3, 0, 18
+Deleted: Array
+(
+    [0] => 4313
+    [1] => 4694
+    [2] => 4719
+    [3] => 4727
+    [4] => 4733
+    [5] => 4737
+    [6] => 4790
+    [7] => 4800
+    [8] => 4804
+    [9] => 4828
+    [10] => 4839
+    [11] => 4854
+    [12] => 4864
+    [13] => 4872
+    [14] => 4895
+    [15] => 4912
+    [16] => 4957
+)
+Array
+(
+    [id] => 1712
+    [group_type] => 1
+    [name] => Viljandi Lasteaed Karlsson / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1329
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:53:46
+    [adduser] => 21087
+    [modtime] => 2012-03-15 11:09:20
+    [moduser] => 33063
+)
+1563, 3, 0, 16
+Deleted: Array
+(
+    [0] => 4489
+    [1] => 4678
+    [2] => 4739
+    [3] => 4782
+    [4] => 4812
+    [5] => 4843
+    [6] => 4845
+    [7] => 4850
+    [8] => 4866
+    [9] => 4882
+    [10] => 4935
+    [11] => 4939
+    [12] => 4947
+    [13] => 4994
+    [14] => 5003
+)
+Array
+(
+    [id] => 1875
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Vesiroos / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1563
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 13:04:37
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:55:28
+    [moduser] => 33063
+)
+1563, 3, 1, 16
+Deleted: Array
+(
+    [0] => 4490
+    [1] => 4679
+    [2] => 4740
+    [3] => 4783
+    [4] => 4813
+    [5] => 4844
+    [6] => 4846
+    [7] => 4851
+    [8] => 4867
+    [9] => 4883
+    [10] => 4936
+    [11] => 4940
+    [12] => 4948
+    [13] => 4995
+    [14] => 5004
+)
+Array
+(
+    [id] => 2351
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Vesiroos / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1563
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-01-03 15:04:30
+    [adduser] => 108496
+    [modtime] => 2012-03-15 10:55:51
+    [moduser] => 33063
+)
+394, 1, 0, 14
+Deleted: Array
+(
+    [0] => 4235
+    [1] => 4621
+    [2] => 4622
+    [3] => 4623
+    [4] => 4633
+    [5] => 4634
+    [6] => 4639
+    [7] => 4640
+    [8] => 4976
+    [9] => 5006
+    [10] => 5027
+    [11] => 5509
+    [12] => 6086
+)
+Array
+(
+    [id] => 183
+    [group_type] => 1
+    [name] => Kohila Gümnaasium / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 394
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,28,29,25,27,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:27:39
+    [adduser] => 21087
+    [modtime] => 2011-12-12 15:59:31
+    [moduser] => 33063
+)
+958, 3, 0, 14
+Deleted: Array
+(
+    [0] => 4371
+    [1] => 4725
+    [2] => 4762
+    [3] => 4788
+    [4] => 4820
+    [5] => 4874
+    [6] => 4878
+    [7] => 4880
+    [8] => 4905
+    [9] => 4914
+    [10] => 4921
+    [11] => 4927
+    [12] => 4933
+)
+Array
+(
+    [id] => 1480
+    [group_type] => 1
+    [name] => Tartu Lasteaed Piilupesa / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 958
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:45
+    [adduser] => 21087
+    [modtime] => 2012-03-15 11:02:09
+    [moduser] => 33063
+)
+958, 3, 1, 14
+Deleted: Array
+(
+    [0] => 4372
+    [1] => 4726
+    [2] => 4763
+    [3] => 4789
+    [4] => 4821
+    [5] => 4875
+    [6] => 4879
+    [7] => 4881
+    [8] => 4906
+    [9] => 4915
+    [10] => 4922
+    [11] => 4928
+    [12] => 4934
+)
+Array
+(
+    [id] => 4359
+    [group_type] => 1
+    [name] => Tartu Lasteaed Piilupesa / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 958
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-10 12:07:34
+    [adduser] => 120706
+    [modtime] => 2012-03-15 11:02:32
+    [moduser] => 33063
+)
+835, 3, 1, 10
+Deleted: Array
+(
+    [0] => 4476
+    [1] => 4681
+    [2] => 4703
+    [3] => 4705
+    [4] => 4742
+    [5] => 4747
+    [6] => 4779
+    [7] => 4785
+    [8] => 4853
+)
+Array
+(
+    [id] => 4397
+    [group_type] => 1
+    [name] => Nõva Põhikool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 835
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-19 12:58:49
+    [adduser] => 120505
+    [modtime] => 2012-03-15 10:34:16
+    [moduser] => 33063
+)
+375, 1, 0, 10
+Deleted: Array
+(
+    [0] => 2107
+    [1] => 4598
+    [2] => 4617
+    [3] => 4644
+    [4] => 4964
+    [5] => 4974
+    [6] => 4980
+    [7] => 5361
+    [8] => 5362
+)
+Array
+(
+    [id] => 295
+    [group_type] => 1
+    [name] => Tallinna Õismäe Gümnaasium / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 375
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:28:23
+    [adduser] => 21087
+    [modtime] => 2012-09-13 18:27:17
+    [moduser] => 1
+)
+296, 1, 0, 10
+Deleted: Array
+(
+    [0] => 4545
+    [1] => 4603
+    [2] => 4624
+    [3] => 4967
+    [4] => 4978
+    [5] => 4981
+    [6] => 4983
+    [7] => 5018
+    [8] => 5019
+)
+Array
+(
+    [id] => 210
+    [group_type] => 1
+    [name] => Viimsi Keskkool / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 296
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:27:40
+    [adduser] => 21087
+    [modtime] => 2012-03-21 18:37:38
+    [moduser] => 33063
+)
+835, 3, 0, 10
+Deleted: Array
+(
+    [0] => 4475
+    [1] => 4680
+    [2] => 4702
+    [3] => 4704
+    [4] => 4741
+    [5] => 4746
+    [6] => 4778
+    [7] => 4784
+    [8] => 4852
+)
+Array
+(
+    [id] => 4396
+    [group_type] => 1
+    [name] => Nõva Põhikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 835
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2012-01-19 12:58:49
+    [adduser] => 120505
+    [modtime] => 2012-03-15 10:33:52
+    [moduser] => 33063
+)
+2132, 3, 0, 9
+Deleted: Array
+(
+    [0] => 4224
+    [1] => 4752
+    [2] => 4768
+    [3] => 4806
+    [4] => 4824
+    [5] => 4830
+    [6] => 4835
+    [7] => 4860
+)
+Array
+(
+    [id] => 4217
+    [group_type] => 0
+    [name] => Tori Lasteaed / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2132
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-12-09 15:52:01
+    [adduser] => 0
+    [modtime] => 2012-03-15 11:04:23
+    [moduser] => 33063
+)
+2132, 3, 1, 9
+Deleted: Array
+(
+    [0] => 4216
+    [1] => 4753
+    [2] => 4769
+    [3] => 4807
+    [4] => 4825
+    [5] => 4831
+    [6] => 4836
+    [7] => 4861
+)
+Array
+(
+    [id] => 4225
+    [group_type] => 1
+    [name] => Tori Lasteaed / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2132
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-12 14:57:24
+    [adduser] => 119847
+    [modtime] => 2012-03-15 11:04:32
+    [moduser] => 33063
+)
+593, 3, 0, 8
+Deleted: Array
+(
+    [0] => 4548
+    [1] => 4653
+    [2] => 4664
+    [3] => 4748
+    [4] => 4756
+    [5] => 4774
+    [6] => 4792
+)
+Array
+(
+    [id] => 1362
+    [group_type] => 1
+    [name] => Tarvastu Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 593
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:31
+    [adduser] => 21087
+    [modtime] => 2012-03-27 15:58:47
+    [moduser] => 33063
+)
+593, 3, 1, 8
+Deleted: Array
+(
+    [0] => 4549
+    [1] => 4654
+    [2] => 4665
+    [3] => 4749
+    [4] => 4757
+    [5] => 4775
+    [6] => 4793
+)
+Array
+(
+    [id] => 4389
+    [group_type] => 1
+    [name] => Tarvastu Gümnaasium / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 593
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-18 16:01:02
+    [adduser] => 119900
+    [modtime] => 2012-03-27 15:59:00
+    [moduser] => 33063
+)
+1199, 3, 1, 8
+Deleted: Array
+(
+    [0] => 4356
+    [1] => 4691
+    [2] => 4842
+    [3] => 4871
+    [4] => 4926
+    [5] => 4938
+    [6] => 4985
+)
+Array
+(
+    [id] => 4256
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Sinilind / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1199
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-21 11:54:14
+    [adduser] => 120162
+    [modtime] => 2012-03-15 10:54:20
+    [moduser] => 33063
+)
+1199, 3, 0, 8
+Deleted: Array
+(
+    [0] => 4355
+    [1] => 4690
+    [2] => 4841
+    [3] => 4870
+    [4] => 4925
+    [5] => 4937
+    [6] => 4984
+)
+Array
+(
+    [id] => 1559
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Sinilind / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1199
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:53:01
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:54:01
+    [moduser] => 33063
+)
+727, 3, 1, 8
+Deleted: Array
+(
+    [0] => 4298
+    [1] => 4652
+    [2] => 4663
+    [3] => 4724
+    [4] => 4755
+    [5] => 4838
+    [6] => 4930
+)
+Array
+(
+    [id] => 4302
+    [group_type] => 1
+    [name] => Holstre Kool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 727
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-29 13:42:45
+    [adduser] => 120365
+    [modtime] => 2012-03-15 10:24:08
+    [moduser] => 33063
+)
+727, 3, 0, 8
+Deleted: Array
+(
+    [0] => 4301
+    [1] => 4651
+    [2] => 4662
+    [3] => 4723
+    [4] => 4754
+    [5] => 4837
+    [6] => 4929
+)
+Array
+(
+    [id] => 4299
+    [group_type] => 0
+    [name] => Holstre Kool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 727
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-12-29 13:01:26
+    [adduser] => 0
+    [modtime] => 2012-03-15 10:23:29
+    [moduser] => 33063
+)
+740, 3, 1, 7
+Deleted: Array
+(
+    [0] => 4386
+    [1] => 4656
+    [2] => 4667
+    [3] => 4714
+    [4] => 4722
+    [5] => 4781
+)
+Array
+(
+    [id] => 4137
+    [group_type] => 1
+    [name] => Kärstna Kool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 740
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-10-28 17:59:28
+    [adduser] => 118517
+    [modtime] => 2012-03-15 10:30:40
+    [moduser] => 33063
+)
+740, 3, 0, 7
+Deleted: Array
+(
+    [0] => 4385
+    [1] => 4655
+    [2] => 4666
+    [3] => 4713
+    [4] => 4721
+    [5] => 4780
+)
+Array
+(
+    [id] => 1326
+    [group_type] => 1
+    [name] => Kärstna Kool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 740
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:27
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:30:22
+    [moduser] => 33063
+)
+250, 3, 0, 7
+Deleted: Array
+(
+    [0] => 4572
+    [1] => 4682
+    [2] => 4796
+    [3] => 4822
+    [4] => 4907
+    [5] => 4919
+)
+Array
+(
+    [id] => 4211
+    [group_type] => 0
+    [name] => Kohtla-Järve Slaavi Põhikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 250
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-12-09 14:19:41
+    [adduser] => 0
+    [modtime] => 2012-03-29 17:21:44
+    [moduser] => 33063
+)
+250, 3, 1, 7
+Deleted: Array
+(
+    [0] => 4573
+    [1] => 4683
+    [2] => 4797
+    [3] => 4823
+    [4] => 4908
+    [5] => 4920
+)
+Array
+(
+    [id] => 4212
+    [group_type] => 0
+    [name] => Kohtla-Järve Slaavi Põhikool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 250
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-09 14:20:12
+    [adduser] => 0
+    [modtime] => 2012-03-29 17:21:57
+    [moduser] => 33063
+)
+394, 3, 0, 6
+Deleted: Array
+(
+    [0] => 4231
+    [1] => 4649
+    [2] => 4660
+    [3] => 4671
+    [4] => 4909
+)
+Array
+(
+    [id] => 1010
+    [group_type] => 1
+    [name] => Kohila Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 394
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:45:27
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:28:36
+    [moduser] => 33063
+)
+1217, 3, 0, 6
+Deleted: Array
+(
+    [0] => 4262
+    [1] => 4698
+    [2] => 4786
+    [3] => 4794
+    [4] => 4814
+)
+Array
+(
+    [id] => 1578
+    [group_type] => 1
+    [name] => Haapsalu Lasteaed Pääsupesa / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1217
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:53:06
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:21:15
+    [moduser] => 33063
+)
+573, 1, 0, 6
+Deleted: Array
+(
+    [0] => 4520
+    [1] => 4641
+    [2] => 4970
+    [3] => 4971
+    [4] => 4982
+)
+Array
+(
+    [id] => 510
+    [group_type] => 1
+    [name] => Puhja Gümnaasium / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 573
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:29:04
+    [adduser] => 21087
+    [modtime] => 2012-02-06 14:48:19
+    [moduser] => 33063
+)
+394, 3, 1, 6
+Deleted: Array
+(
+    [0] => 4232
+    [1] => 4650
+    [2] => 4661
+    [3] => 4672
+    [4] => 4910
+)
+Array
+(
+    [id] => 3298
+    [group_type] => 1
+    [name] => Kohila Gümnaasium / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 394
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-08-24 11:29:07
+    [adduser] => 111919
+    [modtime] => 2012-03-15 10:29:01
+    [moduser] => 33063
+)
+1217, 3, 1, 6
+Deleted: Array
+(
+    [0] => 4215
+    [1] => 4699
+    [2] => 4787
+    [3] => 4795
+    [4] => 4815
+)
+Array
+(
+    [id] => 4263
+    [group_type] => 1
+    [name] => Haapsalu Lasteaed Pääsupesa / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1217
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-22 11:56:19
+    [adduser] => 119846
+    [modtime] => 2012-03-15 10:22:13
+    [moduser] => 33063
+)
+727, 1, 0, 5
+Deleted: Array
+(
+    [0] => 4402
+    [1] => 4614
+    [2] => 4615
+    [3] => 4996
+)
+Array
+(
+    [id] => 549
+    [group_type] => 1
+    [name] => Holstre Kool / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 727
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:29:20
+    [adduser] => 21087
+    [modtime] => 2011-12-29 13:00:56
+    [moduser] => 33063
+)
+2876, 3, 0, 5
+Deleted: Array
+(
+    [0] => 4094
+    [1] => 4689
+    [2] => 4767
+    [3] => 4954
+)
+Array
+(
+    [id] => 3881
+    [group_type] => 1
+    [name] => Türi Põhikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2876
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-09-16 08:03:05
+    [adduser] => 21087
+    [modtime] => 2011-09-16 08:03:05
+    [moduser] => 21087
+)
+859, 3, 1, 5
+Deleted: Array
+(
+    [0] => 4460
+    [1] => 4811
+    [2] => 4924
+    [3] => 5614
+)
+Array
+(
+    [id] => 4049
+    [group_type] => 1
+    [name] => Alavere Põhikool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 859
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-10-04 17:08:56
+    [adduser] => 117488
+    [modtime] => 2012-03-15 10:16:31
+    [moduser] => 33063
+)
+554, 3, 0, 5
+Deleted: Array
+(
+    [0] => 2420
+    [1] => 4916
+    [2] => 5025
+    [3] => 5026
+)
+Array
+(
+    [id] => 1979
+    [group_type] => 1
+    [name] => Püünsi kool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 554
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 13:07:07
+    [adduser] => 21087
+    [modtime] => 2010-08-10 13:07:07
+    [moduser] => 21087
+)
+859, 3, 0, 5
+Deleted: Array
+(
+    [0] => 4459
+    [1] => 4810
+    [2] => 4923
+    [3] => 5613
+)
+Array
+(
+    [id] => 1135
+    [group_type] => 1
+    [name] => Alavere Põhikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 859
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:07
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:16:04
+    [moduser] => 33063
+)
+573, 3, 0, 4
+Deleted: Array
+(
+    [0] => 4492
+    [1] => 4764
+    [2] => 4847
+)
+Array
+(
+    [id] => 999
+    [group_type] => 1
+    [name] => Puhja Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 573
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:45:21
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:38:54
+    [moduser] => 33063
+)
+847, 1, 0, 4
+Deleted: Array
+(
+    [0] => 2138
+    [1] => 4597
+    [2] => 4969
+)
+Array
+(
+    [id] => 645
+    [group_type] => 1
+    [name] => Loksa Gümnaasium / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 847
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:30:30
+    [adduser] => 21087
+    [modtime] => 2012-09-13 18:30:01
+    [moduser] => 1
+)
+2130, 3, 0, 4
+Deleted: Array
+(
+    [0] => 4329
+    [1] => 4826
+    [2] => 4868
+)
+Array
+(
+    [id] => 4228
+    [group_type] => 0
+    [name] => Uulu Lasteaed / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2130
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-12-12 16:16:00
+    [adduser] => 0
+    [modtime] => 2012-03-15 11:05:01
+    [moduser] => 33063
+)
+2130, 3, 1, 4
+Deleted: Array
+(
+    [0] => 4227
+    [1] => 4827
+    [2] => 4869
+)
+Array
+(
+    [id] => 4330
+    [group_type] => 1
+    [name] => Uulu Lasteaed / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2130
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-01-06 13:20:13
+    [adduser] => 120439
+    [modtime] => 2012-03-15 11:05:32
+    [moduser] => 33063
+)
+841, 3, 0, 4
+Deleted: Array
+(
+    [0] => 4296
+    [1] => 4706
+    [2] => 4776
+)
+Array
+(
+    [id] => 932
+    [group_type] => 1
+    [name] => Paldiski Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 841
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:44:27
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:36:33
+    [moduser] => 33063
+)
+841, 3, 1, 4
+Deleted: Array
+(
+    [0] => 4230
+    [1] => 4707
+    [2] => 4777
+)
+Array
+(
+    [id] => 4297
+    [group_type] => 1
+    [name] => Paldiski Gümnaasium / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 841
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-12-29 12:16:52
+    [adduser] => 120363
+    [modtime] => 2012-03-15 10:37:01
+    [moduser] => 33063
+)
+573, 3, 1, 4
+Deleted: Array
+(
+    [0] => 4438
+    [1] => 4765
+    [2] => 4848
+)
+Array
+(
+    [id] => 4493
+    [group_type] => 1
+    [name] => Puhja Gümnaasium / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 573
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-03-09 13:16:35
+    [adduser] => 122150
+    [modtime] => 2012-03-15 10:39:22
+    [moduser] => 33063
+)
+557, 3, 1, 3
+Deleted: Array
+(
+    [0] => 4540
+    [1] => 4904
+)
+Array
+(
+    [id] => 4565
+    [group_type] => 1
+    [name] => Kadrina Keskkool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 557
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 3,24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-04-05 17:39:49
+    [adduser] => 106771
+    [modtime] => 2012-04-05 17:39:49
+    [moduser] => 106771
+)
+1409, 3, 1, 3
+Deleted: Array
+(
+    [0] => 4569
+    [1] => 4716
+)
+Array
+(
+    [id] => 4541
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Mudila / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1409
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-03-27 17:23:09
+    [adduser] => 122624
+    [modtime] => 2012-04-02 13:31:43
+    [moduser] => 33063
+)
+238, 1, 0, 3
+Deleted: Array
+(
+    [0] => 4991
+    [1] => 5022
+)
+Array
+(
+    [id] => 185
+    [group_type] => 1
+    [name] => Viljandi Jakobsoni Kool / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 238
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:27:39
+    [adduser] => 21087
+    [modtime] => 2012-08-23 11:08:45
+    [moduser] => 21087
+)
+547, 3, 1, 3
+Deleted: Array
+(
+    [0] => 4571
+    [1] => 4718
+)
+Array
+(
+    [id] => 4542
+    [group_type] => 1
+    [name] => MTÜ Kool 21.sajandil Haabersti Vene Eragümnaasium / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 547
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2012-03-27 17:23:09
+    [adduser] => 122624
+    [modtime] => 2012-04-04 16:06:08
+    [moduser] => 33063
+)
+547, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4570
+    [1] => 4717
+)
+Array
+(
+    [id] => 1001
+    [group_type] => 1
+    [name] => MTÜ Kool 21.sajandil Haabersti Vene Eragümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 547
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:45:21
+    [adduser] => 21087
+    [modtime] => 2012-04-04 16:05:57
+    [moduser] => 33063
+)
+1816, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4172
+    [1] => 4832
+)
+Array
+(
+    [id] => 2176
+    [group_type] => 1
+    [name] => Kabala Lasteaed-Põhikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1816
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-11-11 08:01:17
+    [adduser] => 21087
+    [modtime] => 2010-11-11 08:01:17
+    [moduser] => 21087
+)
+2873, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4129
+    [1] => 4953
+)
+Array
+(
+    [id] => 4099
+    [group_type] => 1
+    [name] => Tartu Jaan Poska Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2873
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2011-10-19 08:07:49
+    [adduser] => 21087
+    [modtime] => 2011-10-19 08:07:49
+    [moduser] => 21087
+)
+1450, 3, 1, 3
+Deleted: Array
+(
+    [0] => 4567
+    [1] => 4946
+)
+Array
+(
+    [id] => 2425
+    [group_type] => 1
+    [name] => Tallinna Mutionu Lasteaed / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1450
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2011-03-13 14:22:11
+    [adduser] => 109820
+    [modtime] => 2012-03-15 10:58:52
+    [moduser] => 33063
+)
+557, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4564
+    [1] => 4903
+)
+Array
+(
+    [id] => 1475
+    [group_type] => 1
+    [name] => Kadrina Keskkool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 557
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:45
+    [adduser] => 21087
+    [modtime] => 2012-03-27 16:43:10
+    [moduser] => 33063
+)
+1409, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4568
+    [1] => 4715
+)
+Array
+(
+    [id] => 1775
+    [group_type] => 1
+    [name] => Tallinna Lasteaed Mudila / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1409
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 13:03:19
+    [adduser] => 21087
+    [modtime] => 2012-04-02 13:31:34
+    [moduser] => 33063
+)
+2021, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4275
+    [1] => 4712
+)
+Array
+(
+    [id] => 2156
+    [group_type] => 1
+    [name] => KEILA Lasteaed Miki / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2021
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-10-19 08:01:05
+    [adduser] => 21087
+    [modtime] => 2010-10-19 08:01:05
+    [moduser] => 21087
+)
+1450, 3, 0, 3
+Deleted: Array
+(
+    [0] => 4566
+    [1] => 4945
+)
+Array
+(
+    [id] => 1093
+    [group_type] => 1
+    [name] => Tallinna Mutionu Lasteaed / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1450
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26,21
+    [allowed_card_types_add] => 24,26,21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:05
+    [adduser] => 21087
+    [modtime] => 2012-03-15 10:58:43
+    [moduser] => 33063
+)
+554, 1, 0, 2
+Deleted: Array
+(
+    [0] => 2431
+)
+Array
+(
+    [id] => 249
+    [group_type] => 1
+    [name] => Püünsi kool / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 554
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:28:17
+    [adduser] => 21087
+    [modtime] => 2010-08-10 12:28:17
+    [moduser] => 21087
+)
+841, 1, 0, 2
+Deleted: Array
+(
+    [0] => 4342
+)
+Array
+(
+    [id] => 634
+    [group_type] => 1
+    [name] => Paldiski Gümnaasium / Õpilane
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 841
+    [isic_card_type] => 
+    [allowed_card_types_view] => 1,28,29,25,27,19
+    [allowed_card_types_add] => 19
+    [user_status_id] => 1
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:30:22
+    [adduser] => 21087
+    [modtime] => 2011-12-13 17:28:42
+    [moduser] => 33063
+)
+375, 3, 0, 2
+Deleted: Array
+(
+    [0] => 2162
+)
+Array
+(
+    [id] => 1439
+    [group_type] => 1
+    [name] => Tallinna Õismäe Gümnaasium / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 375
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-08-10 12:52:39
+    [adduser] => 21087
+    [modtime] => 2012-09-13 18:32:47
+    [moduser] => 1
+)
+1848, 3, 0, 2
+Deleted: Array
+(
+    [0] => 4198
+)
+Array
+(
+    [id] => 2283
+    [group_type] => 1
+    [name] => Põltsamaa Kunstikool / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1848
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-12-13 08:00:48
+    [adduser] => 21087
+    [modtime] => 2010-12-13 08:00:48
+    [moduser] => 21087
+)
+2995, 3, 0, 2
+Deleted: Array
+(
+    [0] => 4532
+    [1] => 4533
+)
+Array
+(
+)
+1239, 3, 0, 2
+Deleted: Array
+(
+    [0] => 2916
+)
+Array
+(
+    [id] => 2318
+    [group_type] => 1
+    [name] => Tallinna Liivamäe Lasteaed / Õpetaja
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 1239
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,21
+    [allowed_card_types_add] => 21
+    [user_status_id] => 3
+    [automatic] => 0
+    [addtime] => 2010-12-22 08:01:54
+    [adduser] => 21087
+    [modtime] => 2010-12-22 08:01:54
+    [moduser] => 21087
+)
+2, 3, 1, 2
+Deleted: Array
+(
+    [0] => 2234
+)
+Array
+(
+    [id] => 2190
+    [group_type] => 1
+    [name] => Tallinna Ülikool / Õpetaja / (auto)
+    [user] => 0
+    [address] => 
+    [country] => 
+    [phone] => 
+    [fax] => 
+    [email] => 
+    [website] => 
+    [type] => 0
+    [typex] => 0
+    [entrydate] => 0000-00-00 00:00:00
+    [isic_school] => 2
+    [isic_card_type] => 
+    [allowed_card_types_view] => 3,24,26
+    [allowed_card_types_add] => 3,24,26
+    [user_status_id] => 3
+    [automatic] => 1
+    [addtime] => 2010-11-24 13:22:50
+    [adduser] => 107091
+    [modtime] => 2011-12-22 16:22:07
+    [moduser] => 33063
+)
+
+done ...18:43:19

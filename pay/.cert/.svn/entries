@@ -1,0 +1,31 @@
+8
+
+dir
+2474
+https://svn.dev.modera.net/modera_projects/minukool_khs/trunk/pay/.cert
+https://svn.dev.modera.net/modera_projects
+
+
+
+2012-10-17T14:39:48.947126Z
+2474
+martin.vels
+
+
+svn:special svn:externals svn:needs-lock
+
+sampo
+dir
+
+swed
+dir
+
+krediidi
+dir
+
+nordea
+dir
+
+seb
+dir
+

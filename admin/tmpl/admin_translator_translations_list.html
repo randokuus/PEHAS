@@ -1,0 +1,139 @@
+<style>.edit {cursor:pointer;} </style>
+<link rel="stylesheet" type="text/css" href="../js/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="../js/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../js/ext/builds/formeditor.js"></script>
+<script type="text/javascript" src="../js/editor.js"></script>
+
+<script type="text/javascript">
+Ext.onReady(function(){
+    Ext.EditorFieldAjax.prototype
+    var editor = new Ext.EditorFieldAjax(
+             new Ext.form.TextArea({allowBlank: true, alignment: 'l', grow: true, growMax:250}),
+             false, {autosize:true,
+                     emptyText:'<TPL:TXT_admin_langfiles|untranslated>',
+                     buttons: {
+                        accept: '<TPL:TXT_admin_langfiles|btn_edit_translation>',
+                        cancel: '<TPL:TXT_admin_langfiles|btn_cancel>'
+                    }});
+
+    editor.addListener('beforrequest', function(editor, value){
+        url = editor.boundEl.getAttributeNS('','name');
+        editor.setUrl(url);
+    });
+
+
+    Ext.select('.edit').on('click',function (e){
+        el = Ext.get(e.target);
+        editor.startEditing(el, el.dom.innerHTML);
+    });
+});
+
+</script>
+
+<div class="formpanel">
+<fieldset>
+<table cellpadding="10" cellspacing="0" border="0" width="100%">
+<tr>
+    <td valign="top">
+        <!-- default button -->
+        <button style="width:0; height:0; margin: 0; padding: 0; visibility: hidden;">default button</button>
+        <button onClick="javascript:popup('./settings_translator_popup.php?do=list_lang_columns', 450, 250);"><TPL:MANAGE_LANG_COLS></button> &nbsp;
+        <button onClick="javascript:popup('./settings_translator_popup.php?do=compile', 450, 250);"><TPL:COMPILE_FILES></button>
+    </td>
+</tr>
+</table>
+
+<script type="text/javascript"><!--
+    var clear_filters = function(form) {
+        var el;
+        for (i = 0; i < form.elements.length; i++) {
+            el = form.elements[i];
+            if ('text' == el.type) {
+                el.value = '';
+            } else if ('select-one' == el.type) {
+                el.selectedIndex = 0;
+            }
+        }
+    }
+    changeFilterDomain = function(domain){
+        var df = document.forms["vorm"]["filters[domain]"];
+        for(var i=0; i < df.length; i++) {
+            if (df[i].value == domain) {
+                df.selectedIndex = i;
+                document.forms["vorm"].submit();
+            }
+        }
+    }
+--></script>
+
+</fieldset>
+</div>
+
+<form action="<TPL:FORM_ACTION>" method="post" style="display: inline;" name="vorm">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="datatable">
+
+<thead>
+<tr>
+    <th width="1"><select name="filters[domain]" onChange="this.form.submit();" style="width: 150px;"><TPL:DOMAINS_OPTIONS></select></th>
+    <th width="<TPL:TOKEN_COL_WIDTH>" class="<TPL:TOKEN_CLASS>"><a href="<TPL:URL_SORT_BY_TOKEN>"><TPL:TOKEN></a></th>
+    <TPL_SUB:LANG_HEADERS>
+        <th width="<TPL:LANG_COL_WIDTH>"><TPL:LANGUAGE> <TPL:REMOVE_LANG></th>
+    </TPL_SUB:LANG_HEADERS>
+    <th>&nbsp;</th>
+</tr>
+<tr>
+    <th><input type="reset" name="clear_filter" value="<TPL:CLEAR_FILTERS>" onClick="clear_filters(this.form); this.form.submit();" />
+        <input type="submit" name="run_filter" value="<TPL:RUN_FILTER>" /></th>
+    <td><input type="text" name="filters[token]" size="50" style="width: 100%;" value="<TPL:FILTER_TOKEN_VALUE>" /></td>
+    <TPL_SUB:LANG_FILTERS>
+        <td><input type="text" name="filters[lang_<TPL:LANG_CODE>]" size="50" style="width: 100%;" value="<TPL:FILTER_LANG_VALUE>"/></td>
+    </TPL_SUB:LANG_FILTERS>
+    <td>&nbsp;</td>
+</tr>
+<tr class="plinks" >
+    <td colspan="<TPL:TOTALCOLS>" style="padding-top: 10px; padding-bottom: 5px;">
+        <div style="float: left;"><TPL:PAGER_INFO></div>
+        <div style="float: right; white-space: nowrap;"><TPL:PAGER></div>
+    </td>
+</tr>
+<tr class="plinks" >
+    <td colspan="<TPL:TOTALCOLS>" style="padding-top: 10px; padding-bottom: 5px;">
+        <div style="float: left;"><TPL:MENU_ROWS_ON_PAGE></div>
+        <div style="float: right; white-space: nowrap;"><TPL:MENU_SHOW_TRANSLATIONS_TYPE></div>
+    </td>
+</tr>
+</thead>
+
+<tbody>
+<TPL_SUB:TRANSLATION_ROW>
+<tr class="<TPL:CLASS>">
+    <td><span style="color: #666; margin-right: 10px;"><TPL:NUM>.</span>
+        <a href="#" onclick="changeFilterDomain('<TPL:DOMAIN>'); return false;"><TPL:DOMAIN></a>
+    </td>
+    <td class="token"><TPL:TOKEN_ICON>&nbsp;&nbsp;<a href="<TPL:URL_TOKEN>"><TPL:TOKEN></a></td>
+    <TPL_SUB:LANGUAGES>
+        <td class="<TPL:CLASS>"><TPL:TD></td>
+    </TPL_SUB:LANGUAGES>
+    <td align="right"><a href="<TPL:URL_DELETE>" onClick="return(confirm('<TPL:CONFIRM_DELETE>'));"><img
+        src="pic/delete.gif" width="9" height="11" border="0" alt="<TPL:DELETE>" /></a></td>
+</tr>
+</TPL_SUB:TRANSLATION_ROW>
+</tbody>
+
+<tfoot>
+<tr class="plinks" >
+    <td colspan="<TPL:TOTALCOLS>" style="padding-top: 10px; padding-bottom: 5px;">
+        <div style="float: left;"><TPL:MENU_ROWS_ON_PAGE></div>
+        <div style="float: right; white-space: nowrap;"><TPL:MENU_SHOW_TRANSLATIONS_TYPE></div>
+    </td>
+</tr>
+<tr class="plinks">
+    <td colspan="<TPL:TOTALCOLS>">
+        <div style="float: left;"><TPL:PAGER_INFO></div>
+        <div style="float: right; white-space: nowrap;"><TPL:PAGER></div>
+    </td>
+</tr>
+</tfoot>
+
+</table>
+<form>

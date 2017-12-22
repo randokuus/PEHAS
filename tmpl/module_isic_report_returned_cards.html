@@ -1,0 +1,146 @@
+<script type="text/javascript">
+var start_date_list = Array(<TPL:PRESET_DATES_START>);
+var end_date_list = Array(<TPL:PRESET_DATES_END>);
+
+function assignStartEndDateByPreseset() {
+    filter_preset_date = document.getElementById("filter_preset_dates");
+    filter_start_date = document.getElementById("filter_start_date");
+    filter_end_date = document.getElementById("filter_end_date");
+    filter_start_date.value = start_date_list[filter_preset_date.value];
+    filter_end_date.value = end_date_list[filter_preset_date.value];
+}    
+</script>
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgAtt msgGray">
+                <span><TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        
+
+        <!--singleCol-->
+        <div class="singleCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable fourCols">
+                            <form method="post" action="<TPL:SELF>" name="report_filter" class="jNice">
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|start_date>:</label>
+                                        <TPL:FIELD_filter_start_date>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|end_date>:</label>
+                                        <TPL:FIELD_filter_end_date>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|preset_dates>:</label>
+                                        <TPL:FIELD_filter_preset_dates>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_name_first>:</label>
+                                        <TPL:FIELD_filter_person_name_first>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_name_last>:</label>
+                                        <TPL:FIELD_filter_person_name_last>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_card|person_id>:</label>
+                                        <TPL:FIELD_filter_person_number>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_report|isic_number>:</label>
+                                        <TPL:FIELD_filter_isic_number>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" name="submit" value="<TPL:TXT_module_isic_report|query>" />
+                                </div>
+	                            <input type="hidden" name="filter" value="1">
+	                            <TPL:HIDDEN>
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+
+            <!--box-->
+		    <TPL_SUB:CARD_RETURNED>
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                            <TPL_SUB:PRINT><a href="<TPL:URL>" target="_blank" title="Print page" class="ico iprint">Print page</a></TPL_SUB:PRINT>
+                        </div>
+                        <h2><TPL:TITLE></h2>
+                    </div>
+                
+					<form method="post" action="<TPL:SELF>" name="confirm" id="confirm" class="jNice">
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList tCard">
+                            <tr class="tHeader1">
+								<th><TPL:TXT_module_isic_report|returned_date></th>
+								<th><TPL:TXT_module_isic_report|school_name></th>
+								<th><TPL:TXT_module_isic_report|type_name></th>
+								<th><TPL:TXT_module_isic_report|person_name_first></th>
+								<th><TPL:TXT_module_isic_report|person_name_last></th>
+								<th><TPL:TXT_module_isic_report|isic_number></th>
+								<th><TPL:TXT_module_isic_report|bank_account></th>
+								<th><TPL:TXT_module_isic_report|collateral_returned></th>
+								<th>&nbsp;</th>
+                            </tr>
+							<TPL_SUB:DATA>
+							<tr class="<TPL:STYLE>">
+							    <td><TPL:RETURNED_DATE></td>
+							    <td><TPL:SCHOOL_NAME></td>
+							    <td><TPL:TYPE_NAME></td>
+							    <td><TPL:PERSON_NAME_FIRST></td>
+							    <td><TPL:PERSON_NAME_LAST></td>
+							    <td><TPL:ISIC_NUMBER></td>
+							    <td><TPL:PERSON_BANK_ACCOUNT></td>
+							    <td><TPL:COLLATERAL_RETURNED></td>
+							    <td>
+                                    <div class="wicons">
+                                        <a href="<TPL:URL_MODIFY>" class="ico iedit" title="Edit">Edit</a>
+                                    </div>
+							    </td>
+							</tr>
+							</TPL_SUB:DATA> 
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+					<TPL_SUB:CONFIRM_BUTTON>
+					<TPL:HIDDEN>
+		            <div class="tListSubmit">
+		              <input type="submit" value="<TPL:BUTTON>" />
+		            </div>
+					</TPL_SUB:CONFIRM_BUTTON>
+                    </form>
+                </div>
+            </div>
+            </TPL_SUB:CARD_RETURNED>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

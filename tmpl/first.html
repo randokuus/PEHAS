@@ -1,0 +1,45 @@
+<TPL_INCLUDE:tmpl/header.html>
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_output|frontpage></h2>
+                        </div>
+                        <!--boxcontent-->
+                        <div class="boxcontent content">
+                            <TPL:INFO>
+                        </div>
+                        <!--/boxcontent-->
+                    </div>
+                </div>
+                <!--/box-->
+			  <TPL_OBJECT:news>
+			    <TPL_OBJECT_PARAM:setCount(3)>
+			    <TPL_OBJECT_PARAM:setTemplate('module_news_short.html')>
+			    <TPL_OBJECT_OUTPUT:show()>
+			  </TPL_OBJECT:news>
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->
+
+        <!--col2-->
+        <div class="col2">
+            <!--colInner-->
+            <div class="colInner">
+				<TPL_OBJECT:isic_card>
+				  <TPL_OBJECT_OUTPUT:showCardListFirst(2)>
+				</TPL_OBJECT:isic_card>
+
+                <TPL_OBJECT:isic_application>
+                  <TPL_OBJECT_OUTPUT:showApplicationListFirst(2)>
+                </TPL_OBJECT:isic_application>
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col2-->
+<TPL_INCLUDE:tmpl/footer.html>

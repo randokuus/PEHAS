@@ -1,0 +1,235 @@
+<script type="text/javascript" charset="utf-8">
+// setup the callback function
+function onEndCrop( coords, dimensions ) {
+    $( 'x1' ).value = coords.x1;
+    $( 'y1' ).value = coords.y1;
+    $( 'x2' ).value = coords.x2;
+    $( 'y2' ).value = coords.y2;
+    $( 'width' ).value = dimensions.width;
+    $( 'height' ).value = dimensions.height;
+}
+
+// basic example
+Event.observe(
+    window,
+    'load',
+    function() {
+        new Cropper.Img(
+            'cropImage',
+            {
+                minWidth: <TPL:MIN_WIDTH>,
+                minHeight: <TPL:MIN_HEIGHT>,
+                ratioDim: { x: <TPL:MIN_WIDTH>, y: <TPL:MIN_HEIGHT> }, 
+                displayOnInit: true,
+                onEndCrop: onEndCrop
+            }
+        )
+    }
+);
+
+// if bank account owner name field is empty and person's name is filled 
+// then using person name for bank-account name as well
+function generateBankAccountName() {
+    var name_first = document.vorm.elements['name_first'];
+    var name_last = document.vorm.elements['name_last'];
+    var bacc_name = document.vorm.elements['bankaccount_name'];
+    if ((name_first.value != '' || name_last.value != '') && bacc_name.value == '') {
+        bacc_name.value = name_first.value + ' ' + name_last.value;
+    }
+}
+
+</script>
+
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+    <input type="hidden" name="x1" id="x1" />
+    <input type="hidden" name="y1" id="y1" />
+    <input type="hidden" name="x2" id="x2" />
+    <input type="hidden" name="y2" id="y2" />
+    <input type="hidden" name="width" id="width" />
+    <input type="hidden" name="height" id="height" />
+    <input type="hidden" name="replacement" value="0" id="replacement">
+    <input type="hidden" name="prolong" value="0" id="prolong">
+
+<TPL:HIDDEN>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+<TPL_SUB:IMESSAGE>
+  <div class="info">
+    <p><TPL:IMESSAGE></p>
+  </div>
+</TPL_SUB:IMESSAGE>
+
+    <TPL_SUB:SHOW_PIC>
+        <div class="img-right"><img src="<TPL:DATA_pic>" alt="" border="0" /></div>
+    </TPL_SUB:SHOW_PIC>
+    <TPL_SUB:EDIT_PIC>
+        <div class="img-right" id="cropWrap">
+            <img src="<TPL:DATA_pic>" alt="" border="0" id="cropImage" width="<TPL:MAX_WIDTH>" />
+        </div>
+        <div class="img-right">
+            <input type="submit" value="<TPL:BUTTON>" class="submit" />
+        </div>
+    </TPL_SUB:EDIT_PIC>
+  <table class="form">
+  <TPL_SUB:ACTIVE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|active></label></td>
+    <td class="input" width="300"><TPL:FIELD_active></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ACTIVE>
+  <TPL_SUB:GGROUP>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|group></label></td>
+    <td class="input" width="300"><TPL:FIELD_ggroup></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:GGROUP>
+  <TPL_SUB:NAME_FIRST>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|name_first></label></td>
+    <td class="input" width="300"><TPL:FIELD_name_first></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:NAME_FIRST>
+  <TPL_SUB:NAME_LAST>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|name_last></label></td>
+    <td class="input" width="300"><TPL:FIELD_name_last></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:NAME_LAST>
+  <TPL_SUB:USER_CODE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|user_code></label></td>
+    <td class="input" width="300"><TPL:FIELD_user_code></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:USER_CODE>
+  <TPL_SUB:BIRTHDAY>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|birthday></label></td>
+    <td class="input" width="300"><TPL:FIELD_birthday></span></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:BIRTHDAY>
+  <TPL_SUB:PIC>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|photo></label></td>
+    <td class="input" width="300"><TPL:FIELD_pic></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_user|photo>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:PIC>
+  <TPL_SUB:BANKACCOUNT>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|bankaccount></label></td>
+    <td class="input" width="300"><TPL:FIELD_bankaccount></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_user|bankaccount>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:BANKACCOUNT>
+  <TPL_SUB:BANKACCOUNT_NAME>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|bankaccount_name></label></td>
+    <td class="input" width="300"><TPL:FIELD_bankaccount_name></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:BANKACCOUNT_NAME>
+  <TPL_SUB:ADDR1>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|addr1></label></td>
+    <td class="input" width="300"><TPL:FIELD_addr1></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ADDR1>
+  <TPL_SUB:ADDR2>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|addr2></label></td>
+    <td class="input" width="300"><TPL:FIELD_addr2></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ADDR2>
+  <TPL_SUB:ADDR3>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|addr3></label></td>
+    <td class="input" width="300"><TPL:FIELD_addr3></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ADDR3>
+  <TPL_SUB:ADDR4>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|addr4></label></td>
+    <td class="input" width="300"><TPL:FIELD_addr4></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:ADDR4>
+  <TPL_SUB:EMAIL>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|email></label></td>
+    <td class="input" width="300"><TPL:FIELD_email></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:EMAIL>
+  <TPL_SUB:PHONE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|phone></label></td>
+    <td class="input" width="300"><TPL:FIELD_phone></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:PHONE>
+  <TPL_SUB:POSITION>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|position></label></td>
+    <td class="input" width="300"><TPL:FIELD_position></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:POSITION>
+  <TPL_SUB:CLASS>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|class></label></td>
+    <td class="input" width="300"><TPL:FIELD_class></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:CLASS>
+  <TPL_SUB:STRU_UNIT>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|structure_unit></label></td>
+    <td class="input" width="300"><TPL:FIELD_stru_unit></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STRU_UNIT>
+  <TPL_SUB:STRU_UNIT2>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|structure_unit2></label></td>
+    <td class="input" width="300"><TPL:FIELD_stru_unit2></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STRU_UNIT2>
+  <TPL_SUB:STAFF_NUMBER>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|staff_number></label></td>
+    <td class="input" width="300"><TPL:FIELD_staff_number></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STAFF_NUMBER>
+  <TPL_SUB:NEWSLETTER>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_isic_user|newsletter></label></td>
+    <td class="input" width="300"><TPL:FIELD_newsletter></td>
+    <td class="input"><img src="img/ico/help.gif" onmouseover="return overlib('<TPL:TOOLTIP>', CAPTION, '<TPL:TXT_module_isic_user|newsletter>', WIDTH, 400, FGCOLOR, '#d1e6f6', BGCOLOR, '#4894d0');" onmouseout="return nd();"></td>
+  </tr>
+  </TPL_SUB:NEWSLETTER>
+  </table>
+</div>
+<p class="actions">
+  <TPL_SUB:BACK>
+    <input type="button" class="submit" onClick="document.location='<TPL:URL>'" value="<TPL:TITLE>">
+  </TPL_SUB:BACK>
+  <TPL_SUB:SUBMIT>
+    <input type="submit" value="<TPL:BUTTON>" class="submit" />
+  </TPL_SUB:SUBMIT>
+</p>
+</form>

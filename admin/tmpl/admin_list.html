@@ -1,0 +1,92 @@
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+
+function fieldsetInit(maxfs) {
+    for (i = 0; i < maxfs; i++) {
+        if ((i+1) != 1) {
+            document.getElementById("fieldset"+(i+1)).style.display = "none";
+        }
+    }
+}
+
+function fieldJump(current, maxtab, jumpto) {
+    for (i = 0; i < maxtab; i++) {
+        document.getElementById("tabset"+(i+1)).className = "";
+    }
+    document.getElementById("tabset"+current).className = "active";
+
+    document.location = jumpto;
+
+    return;
+}
+
+function valueCheck(objToTest) {
+    if (null == objToTest) {
+        return false;
+    }
+    if ("undefined" == typeof(objToTest) ) {
+        return false;
+    }
+    return true;
+
+}
+
+</SCRIPT>
+
+<div class="formpanel">
+    <fieldset title="Node properties">
+    <legend><TPL:FILTER></legend>
+        <table class="inputfield">
+        <form action="<_TPL:PHP_SELF>" method="get">
+        <tr>
+            <td><label for="filter" class="left"><TPL:FILTER></label></td>
+            <td><input type="text" id="filter" name="filter" value="<TPL:VAL_FILTER>" size="16" /></td>
+                <TPL_SUB:EXTRAFILTER>
+                <td><label for="<TPL:ID>" class="left"><TPL:LABEL></label></td>
+                <td><TPL:FIELD></td>
+                </TPL_SUB:EXTRAFILTER>
+            <td align="right"><label for="max_entries" class="left"><TPL:DISPLAY></label></td>
+            <td><select id="max_entries" name="max_entries" onChange="this.form.submit()">
+                <TPL_SUB:ENTRIES>
+                    <option value="<TPL:VALUE>" <TPL:SEL>><TPL:NAME></option>
+                </TPL_SUB:ENTRIES>
+                </select></td>
+            <td>&nbsp;</td>
+            <td><button type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:SUBMIT></button></td>
+        </tr>
+            <TPL:HIDDEN>
+            <input type="hidden" name="sort" value="<TPL:VAL_SORT>">
+            <input type="hidden" name="sort_type" value="<TPL:VAL_SORT_TYPE>">
+            <input type="hidden" name="structure" value="<TPL:VAL_STRUCTURE>">
+        </form>
+        </table>
+    </fieldset>
+</div>
+
+<!-- begin list -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+<!-- <caption><TPL:CAPTION>&nbsp;</caption> -->
+<tr>
+    <TPL_SUB:HEADER>
+    <th class="<TPL:STYLE>"><a href="<TPL:URL>"><TPL:NAME></a></th>
+    </TPL_SUB:HEADER>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</tr>
+<TPL_SUB:ROWS>
+<tr>
+    <TPL:COLUMNS>
+    <td align="right">&nbsp;<a href="<_TPL:PHP_SELF>?show=add&copyto=<TPL:ID>"><img src="pic/copy.gif" width="9" height="10" border="0" alt="Copy?"></a></td>
+    <td align="right">&nbsp;<a href="javascript:del('<_TPL:PHP_SELF>?do=delete&id=<TPL:ID><TPL:HIDDEN1>')"><img src="pic/delete.gif" width="9" height="11" border="0" alt="Delete?"></a></td>
+</tr>
+</TPL_SUB:ROWS>
+</table>
+
+<TPL_SUB:PAGES>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+    <tr><td><br /><TPL:PAGES>: <TPL:LINKS></td></tr>
+    </table>
+</TPL_SUB:PAGES>
+
+<p></p>
+<!-- end list -->

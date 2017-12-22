@@ -1,0 +1,38 @@
+
+BODY, P, TD, SPAN { font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;  }
+A { color : #990000; text-decoration : none; }
+A:HOVER { text-decoration : underline; }
+
+.formInput { color:#003366; background-color:#FFFFFF; font-size:11px; font-weight:normal; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; }
+.formTable { background-color:#F5F5F5 }
+.formFootnote { color:#666666; font-size:10px; }
+.formInputCell { font-size:10px; }
+.formInputDescription { font-size:10px; }
+
+.tableHeaderCell { background-color:#CBE5EA; font-size:10px; font-weight:bold; }
+.tableHeaderCell A { color:Black; }
+.tableRegularCell { font-size:10px; }
+.tableRegularCell1 { background-color:#EFEFEF; font-size : 10px; }
+.tableBody { background-color: #F5F5F5 }
+.tableHeader { background-color: #CCCCCC }
+
+.hrLight { background-color:#FFFFFF }
+.hrDark { background-color:#999999 }
+
+.pageHead { font-size:13px; font-weight:bold; }
+.pageSubHead { color:#004C78; font-size:11px; font-weight:bold; }
+.pageFooter { color:#DDDDDD; font-size:10px; }
+
+.pageSubNavigation1 { font-size:11px; }
+.pageSubNavigation1 A { color:#000000; text-decoration:none;}
+.pageSubNavigation1 A:HOVER { color:#990000 }
+
+.textSmall { font-size:10px; }
+.textMedium { font-size:11px; }
+.textLarge { font-size:12px; }
+.textQuote { font-size:11px; font-weight:bold; }
+
+.colorHueLight { background-color:#EFEFEF }
+.colorHueDark { background-color:#CBE5EA }
+.colorGrayDark { background-color:#CCCCCC }
+.colorGrayLight { background-color:#F0F0F0 }

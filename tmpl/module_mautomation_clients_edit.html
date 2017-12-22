@@ -1,0 +1,133 @@
+<script type="text/javascript">
+    function submitForm(form) {
+        checkParam();
+        form.submit();
+    }
+
+    function checkParam(){
+        checkAll(document.getElementById('select_groups'));
+        checkAll(document.getElementById('all_groups'));
+        return true;
+    }
+    
+    function checkAll(elem){
+        for (i = 0; i < elem.options.length; i++) {
+            elem.options.item(i).selected = true;
+        }
+    }
+    
+    function moveSelectedFields(e_from, e_to){
+        start = e_to.length;
+        selected = e_from.selectedIndex;
+        while (selected >=0){
+            var opt = document.createElement('OPTION');
+            e_to.options.add(opt, start);
+            opt.innerHTML = e_from.options.item(selected).innerHTML;
+            opt.value = e_from.options.item(selected).value;
+            start++;
+            e_from.remove(selected);
+            selected = e_from.selectedIndex;
+        }
+    }
+    
+    function moveAllFields(e_from, e_to){
+        checkAll(e_from);
+        moveSelectedFields(e_from, e_to);
+    } 
+    
+</script>
+<h2><TPL:SUBTITLE></h2> 
+<div class="container">
+    <div class="content">
+        <table class="form">
+        <form name="vorm" method="post" action="<TPL:SELF>">
+        <input type="hidden" name="action" value="SaveClient">
+            <TPL_SUB:MESSAGE>
+            <tr valign="top">
+                <td class="label" colspan="2"><font color="red"><TPL:MESSAGE></font><br><br></td>
+            </tr>   
+            </TPL_SUB:MESSAGE>
+            <TPL_SUB:DATA>
+            <input type="hidden" name="id" value="<TPL:ID>">
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|add_time></td>
+                <td class="input"><input type="text" name="add_time" value="<TPL:ADD_TIME>"></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|name></td>
+                <td class="input"><input type="text" name="name" value="<TPL:NAME>"></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|email></td>
+                <td class="input"><input type="text" name="email" value="<TPL:EMAIL>"></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|cell_phone></td>
+                <td class="input"><input type="text" name="cell_phone" value="<TPL:CELL_PHONE>"></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|status></td>
+                <td class="input"><input type="checkbox" name="is_active" value="1"<TPL:IS_ACTIVE_CHECKED>></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|in_blacklist></td>
+                <td class="input"><input type="checkbox" name="in_blacklist" value="1"<TPL:IN_BLACKLIST_CHECKED>></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|group></td>
+                <td class="input">
+                    <table cellspacing="0" cellspadding="0" border="0" >
+                        <tr>
+                            <td class="label"><TPL:TXT_module_mautomation|available_groups></td>
+                            <td></td>
+                            <td class="label"><TPL:TXT_module_mautomation|client_groups></td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <select id="all_groups" name="all_groups[]" size="6" style="float: left" MULTIPLE>
+                                <TPL_SUB:ALL_GROUPS><TPL:OPTION></TPL_SUB:ALL_GROUPS>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input type="button" value="&gt;&gt;" class="submit" style="width: 30px" onClick="moveAllFields(document.getElementById('all_groups'), document.getElementById('select_groups'));"><br/>
+                                <input type="button" value="&gt;" class="submit" style="width: 30px" onClick="moveSelectedFields(document.getElementById('all_groups'), document.getElementById('select_groups'));"><br/>
+                                <input type="button" value="&lt;" class="submit" style="width: 30px" onClick="moveSelectedFields(document.getElementById('select_groups'), document.getElementById('all_groups'));"><br/>
+                                <input type="button" value="&lt;&lt;" class="submit" style="width: 30px" onClick="moveAllFields(document.getElementById('select_groups'), document.getElementById('all_groups'));"><br/>
+                            </td>
+                            <td align="center">
+                                <select id="select_groups" name="select_groups[]" size="6" style="float: left" MULTIPLE>
+                                <TPL_SUB:SELECTED_GROUPS>
+                                    <TPL:OPTION>
+                                </TPL_SUB:SELECTED_GROUPS>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <TPL_SUB:FIELDS>
+            <tr valign="top">
+                <td class="label"><TPL:LABEL></td>
+                <td class="input"><TPL:INPUT></td>
+            </tr>
+            </TPL_SUB:FIELDS>
+            <tr valign="top">
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr valign="top">
+                <td class="label">&nbsp;</td>
+                <td class="input">
+                    <br />
+                    <input type="button" onclick="submitForm(this.form);" class="submit" value="<TPL:TXT_module_mautomation|save>" />
+                    <input type="button" onclick="if (confirm('<TPL:TXT_module_mautomation|delete_client_confirmation>')) { this.form.elements['action'].value = 'DeleteClient'; submitForm(this.form);}" class="submit" value="<TPL:TXT_module_mautomation|delete>" />
+                    <input type="button" onclick="this.form.elements['action'].value = 'CancelClient'; submitForm(this.form);" class="submit" value="<TPL:TXT_module_mautomation|cancel>" />
+                </td>
+            </tr>
+        </TPL_SUB:DATA>
+        </form>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    changeType();
+</script>

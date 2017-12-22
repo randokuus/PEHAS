@@ -1,0 +1,147 @@
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+        
+        
+
+        <!--singleCol-->
+        <div class="singleCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable threeCols">
+                            <form method="post" action="<TPL:SELF>" name="filter" class="jNice">
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|person_name_first>:</label>
+                                        <TPL:FIELD_filter_person_name_first>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|person_name_last>:</label>
+                                        <TPL:FIELD_filter_person_name_last>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|person_id>:</label>
+                                        <TPL:FIELD_filter_person_number>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|isic_number>:</label>
+                                        <TPL:FIELD_filter_isic_number>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|access>:</label>
+                                        <TPL:FIELD_filter_access>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|direction>:</label>
+                                        <TPL:FIELD_filter_direction>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|lock>:</label>
+                                        <TPL:FIELD_filter_lock_id>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|school>:</label>
+                                        <TPL:FIELD_filter_school_id>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|start_time>:</label>
+                                        <TPL:FIELD_filter_start_time>
+                                    </div>
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_bypass|end_time>:</label>
+                                        <TPL:FIELD_filter_end_time>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" value="<TPL:TXT_module_isic_bypass|search>">
+                                </div>
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                        </div>
+                        <h2><_TPL:PAGETITLE></h2>
+                    </div>
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList tLog">
+                            <tr>
+                                <th><span class=""><TPL:TXT_module_isic_bypass|number></span></th>
+                                <TPL_SUB:TITLE>
+                                <th><span class="<TPL:CLASS>"><a href="<TPL:URL>"><TPL:NAME></a></span></th>
+                                </TPL_SUB:TITLE>
+                            </tr>
+						    <TPL_SUB:DATA>
+						    <tr class="<TPL:STYLE>">
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NUMBER></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_LOCK_NAME></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_EVENT_TIME></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_DIRECTION></a></td>
+						        <td>
+                                    <div class="wicons">
+                                        <span class="ico"><a href="<TPL:URL_DETAIL>"><TPL:DATA_ACCESS></a></span>
+                                    </div>
+						        </td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NAME_FIRST></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NAME_LAST></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ISIC_NUMBER></a></td>
+						    </tr>   
+						    </TPL_SUB:DATA> 
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

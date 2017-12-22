@@ -1,0 +1,44 @@
+      <div class="clearer"></div>
+
+      </div>
+    </td>
+    <td valign="top" id="globalColumn">
+    <div id="globalColumnSpan">
+
+      <div class="columnHeader" style="display: block;">
+        <p id="editColumn"><!--<a href="#"><strong>Edit</strong></a> this column-->&nbsp;</p>
+        <p id="hideColumn"><a id="hideColumnLink" href="#" onClick="show_hide_panel('<TPL:SKIN>');"><TPL:TXT_output|hide></a></p>
+      </div>
+
+      <span id="rightColumn" style="display: <TPL:RIGHTCOLSTATUS>;">
+
+      <!-- #calendar start -->
+      <div id="calendar" style="display: block;">
+        <TPL_OBJECT:projects>
+          <TPL_OBJECT_OUTPUT:calendar()>
+        </TPL_OBJECT:projects>
+      </div>
+      <!-- #calendar end -->
+
+      <!-- #shortcuts start -->
+      <div id="shortcuts" style="display: block;">
+        <TPL_OBJECT:links>
+        <TPL_OBJECT_OUTPUT:show()>
+        </TPL_OBJECT:links>
+      </div>
+      <!-- #shortcuts end -->
+
+      <!-- #search start -->
+      <form id="search" action="<TPL:SELF>">
+      <div class="search" style="display: block;">
+        <h2><TPL:TXT_output|search_topic></h2>
+        <input type="text" id="search-string" name="search_query" />
+        <input type="submit" class="submit" name="submit" value="<TPL:TXT_output|go>" />
+      </div>
+      </form>
+      <!-- #search end -->
+
+      </span>
+
+    </div>
+    </td>

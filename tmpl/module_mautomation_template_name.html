@@ -1,0 +1,19 @@
+<div class="box">
+<TPL_SUB:FORM>
+<form id="composeForm" name="composeForm" method="post" action="<TPL:SELF>">
+<input type="hidden" name="action" value="SaveTemplateName">
+<input type="hidden" name="template_id" value="<TPL:TEMPLATE_ID>">
+<table cellspacing="3" cellpadding="0" border="0" width="500px">
+    <col width="80px">
+    <col width="300px">
+    <tr>
+        <td class="label" colspan="2"><font color="red"><TPL:ER></font></td>
+    </tr>
+    <tr>
+        <td> <TPL:TXT_module_mautomation|template_name>*: </td>
+        <td> <input type="text" name="template_name" value="<TPL:TEMPLATE_NAME>"> <input type="submit" value="<TPL:TXT_module_mautomation|save>" class="submit"> </td>
+    </tr>
+</table>
+</form>
+</TPL_SUB:FORM>
+</div>

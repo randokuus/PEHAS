@@ -1,0 +1,201 @@
+<script type="text/javascript" charset="utf-8">
+function assignPrevStep() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_changes>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignNextStep() {
+    document.vorm.write.value = '1';
+    document.vorm.next_step.value = '1';
+    document.vorm.submit();
+}
+
+function assignDiscontinue() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_discontinue>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.adelete.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignCancel() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_cancel>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.cancel.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+jQuery(document).ready(function() {
+    if (jQuery('div.checkboxList div.newsletter').length == 0) {
+        jQuery('div.checkboxList').css('display', 'none');
+    }
+});
+
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+        
+        <TPL_SUB:IMESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgOk">
+                <span><TPL:IMESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:IMESSAGE>
+
+        
+
+        <TPL:STEPS>
+
+        <!--singleCol-->
+        <div class="singleCol">
+
+            <!--box-->
+            <div class="box">
+
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TXT_module_isic_card|step5_title></h2>
+                    </div>
+
+                    <!--termsWrap-->
+                    <div class="termsWrap">
+                        <h4><TPL:TXT_module_isic_card|conditions></h4>
+                        
+                        <TPL_SUB:INFO_COND>
+                        <!--termsText-->
+                        <div class="termsText">
+                            <div class="termsTextInner">
+                                <iframe src ="<TPL:URL>" width="100%" height="99%" frameborder="0"><span id="info_cond"><TPL:DATA></span></iframe>
+                            </div>
+                        </div>
+                        <!--/termsText-->
+                        </TPL_SUB:INFO_COND>
+
+                        <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+                            <input type="hidden" name="write" value="0" id="write">
+                            <input type="hidden" name="adelete" value="0" id="adelete">
+                            <input type="hidden" name="prev_step" value="0" id="prev_step">
+                            <input type="hidden" name="next_step" value="0" id="next_step">
+                            <input type="hidden" name="discontinue" value="0" id="discontinue">
+                            <input type="hidden" name="cancel" value="0" id="cancel">
+                            <TPL:HIDDEN>
+
+                            <TPL_SUB:AGREE_USER>
+                            <!--wCheck-->
+                            <div class="wCheck <TPL:REQUIRED>">
+                                <label for="termsAgree"><TPL:TXT_module_isic_card|agree_user>:</label>
+                                <TPL:FIELD_agree_user>
+                            </div>
+                            <!--/wCheck-->
+                            </TPL_SUB:AGREE_USER>
+
+                            <TPL_SUB:PERSON_NEWSLETTER>
+                            <!--wCheck-->
+                            <div class="wCheck <TPL:REQUIRED>">
+                                <label for="termsAgree"><TPL:TXT_module_isic_card|person_special_offers>:</label>
+                                <TPL:FIELD_person_newsletter>
+                                <div class="fHint">
+                                    <TPL:TXT_module_isic_card|person_special_offers_help>
+                                </div>
+
+                            </div>
+                            <!--/wCheck-->
+                            </TPL_SUB:PERSON_NEWSLETTER>
+
+                            <!--wButtons-->
+                            <div class="wButtons">
+                                <TPL_SUB:BUTTON_PREV>
+                                <input type="button" id="button_prev" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignPrevStep();" />
+                                </TPL_SUB:BUTTON_PREV>
+                                <TPL_SUB:BUTTON_NEXT>
+                                <input type="button" id="button_next" value="<TPL:TITLE>" class="" onclick="javascript:assignNextStep();" />
+                                </TPL_SUB:BUTTON_NEXT>
+                                <TPL_SUB:BUTTON_DISCONTINUE>
+                                <input type="button" id="button_discontinue" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignDiscontinue();" />
+                                </TPL_SUB:BUTTON_DISCONTINUE>
+                                <TPL_SUB:BUTTON_CANCEL>
+                                <input type="button" id="button_cancel" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignCancel();" />
+                                </TPL_SUB:BUTTON_CANCEL>
+                            </div>
+                            <!--/wButtons-->
+                        </form>
+                    </div>
+                    <!--/termsWrap-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

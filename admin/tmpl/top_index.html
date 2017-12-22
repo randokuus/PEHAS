@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Top Index</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="topindex_<TPL:TYPE>.css" type="text/css" media="all" />
+	
+	<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+		function jumpToMenu(menuid, url) {
+			document.getElementById("menu"+1).className = "";		
+			document.getElementById("menu"+2).className = "";		
+			document.getElementById("menu"+3).className = "";		
+			document.getElementById("menu"+4).className = "";		
+			document.getElementById("menu"+5).className = "";														
+			document.getElementById("menu"+menuid).className = "active";
+			parent.frames['main'].location = url;
+			return;
+		}
+		function openFile(loct) {
+			var win=window.open(loct,'','width=600,height=400,menubar=yes,resizable=yes,status=yes,scrollbars=yes');		
+		}			
+	</SCRIPT>	
+	
+</head>
+<body id="menu-frame">
+	<div id="logo"><img src="pic/topframe-logo-<TPL:TYPE>.gif" alt="<TPL:TYPE>"/></div>
+	<div id="menublock">
+ 		<form method="get" action="index.php" target="_top">	
+		<div id="langmenu">
+			<select name="language" title="<TPL:LANGUAGESELECT>" onChange="this.form.submit()">
+				<TPL_SUB:LANGUAGE>
+				<option value="<TPL:CODE>" <TPL:SEL>><TPL:LANGUAGE></option>
+				</TPL_SUB:LANGUAGE>
+			</select>
+		</div>
+		</form>
+		<div id="mainmenu">
+				<TPL_SUB:MENU>
+					<a id="menu<TPL:ID>" href="#" onClick="<TPL:URL>" target="" class="<TPL:STYLE>"><TPL:NAME></a>
+				</TPL_SUB:MENU>		
+		</div>
+		<div id="infopanel">
+			<TPL:USER> &nbsp;
+			<a href="javascript:openFile('http://www.modera.net/help/?language=<TPL:INTERFACE>&version=<TPL:VERSION>')" class="logout"><img src="pic/ico-help.gif" width="8" height="10" hspace="4" border="0" /><TPL:HELP></a>
+			<a href="logout.php" class="logout"><img src="pic/ico-logout.gif" width="8" height="9" hspace="4" border="0" /><TPL:LOGOUT></a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<script language="javascript">
+ function checkParam(){
+    if (document.getElementById('group_name').value == ""){
+        alert ('<TPL:TXT_module_mautomation|error_enter_group_name>');
+        document.getElementById('group_name').focus();
+        return false;
+    }
+    return true;
+ }
+</script>
+<div class="container">
+<h2><TPL:SUBTITLE></h2>
+<div class="content">
+        <form name="vorm" method="post" action="<TPL:SELF>" onSubmit="return checkParam();">
+        <input type="hidden" name="action" value="SaveField">
+        <input type="hidden" name="group_id" value="<TPL:GROUP_ID>">
+        <table class="form" align = "center">
+            <col width="120px">
+            <tr>
+                <td class="label" colspan="2"><font color="red"><TPL:ERROR_MESSAGE></font></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|name></td>
+                <td class="input"><input type="text" id="group_name" name="group_name" value ="<TPL:GROUP_NAME>" ></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|status></td>
+                <td class="input" >
+                    <TPL:GROUP_ACTIVE>
+                </td>
+            </tr>
+        </table>
+<h2><TPL:TXT_module_mautomation|filter></h2>
+        <table class="form" align = "center">
+            <col width="120px">
+            <TPL_SUB:DATA>
+            <tr>
+                <td class="label"><TPL:FIELD_NAME></td>
+                <td class="input"><TPL:FIELD></td>
+            </tr>
+            </TPL_SUB:DATA>
+            <tr>
+                <td colspan="2" align="right" nowrap>
+                <input type="submit" value="<TPL:TXT_module_mautomation|save>" class="submit">
+                <input type="button" value="<TPL:TXT_module_mautomation|cancel>" class="submit" onClick="document.location = '<TPL:BACK_URL>'">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </form>
+        </table>
+</div>
+</div>

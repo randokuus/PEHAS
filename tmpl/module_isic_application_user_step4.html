@@ -1,0 +1,279 @@
+<script type="text/javascript" charset="utf-8">
+
+<TPL_SUB:EDIT_PIC_JS>
+//setup the callback function
+function onEndCrop( coords ) {
+jQuery('#x1').val(coords.x);
+jQuery('#y1').val(coords.y);
+jQuery('#x2').val(coords.x2);
+jQuery('#y2').val(coords.y2);
+jQuery('#width').val(coords.w);
+jQuery('#height').val(coords.h);
+}
+
+jQuery(document).ready(function() {
+jQuery('#cropImage').Jcrop({
+   minSize: [<TPL:MIN_WIDTH>, <TPL:MIN_HEIGHT>],
+   onChange: onEndCrop,
+   onSelect: onEndCrop,
+   aspectRatio: <TPL:ASPECT_RATIO>,
+   setSelect: [<TPL:X1>, <TPL:Y1>, <TPL:X1> + <TPL:MIN_WIDTH>, <TPL:Y1> + <TPL:MIN_HEIGHT>],
+   allowSelect : false
+});
+});
+</TPL_SUB:EDIT_PIC_JS>
+
+jQuery(document).ready(function() {
+    $('#pic').change(function () {
+        if ($('#pic').val() != '') {
+            filePath = $('#pic').val();
+            lastSlashPos = filePath.lastIndexOf("\\");
+            if (lastSlashPos > 0) {
+                $('.jNiceFilePath').html(filePath.substr(lastSlashPos + 1, filePath.length));
+            }
+            $('.shortButton').css('display', 'block');
+        }
+    });
+});
+
+function assignPrevStep() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_changes>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignNextStep() {
+    document.vorm.write.value = '1';
+    document.vorm.next_step.value = '1';
+    document.vorm.submit();
+}
+
+function UploadPhoto() {
+    document.vorm.write.value = '1';
+    document.vorm.submit();
+}
+
+function assignResizePhoto() {
+    document.vorm.write.value = '1';
+    document.vorm.submit();
+}
+
+function assignDiscontinue() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_discontinue>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.adelete.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignCancel() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_cancel>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.cancel.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        <TPL_SUB:IMESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgOk">
+                <span><TPL:IMESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:IMESSAGE>
+
+
+
+        <TPL:STEPS>
+
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+    <input type="hidden" name="x1" id="x1" />
+    <input type="hidden" name="y1" id="y1" />
+    <input type="hidden" name="x2" id="x2" />
+    <input type="hidden" name="y2" id="y2" />
+    <input type="hidden" name="width" id="width" />
+    <input type="hidden" name="height" id="height" />
+    <input type="hidden" name="write" value="0" id="write">
+    <input type="hidden" name="adelete" value="0" id="adelete">
+    <input type="hidden" name="prev_step" value="0" id="prev_step">
+    <input type="hidden" name="next_step" value="0" id="next_step">
+    <input type="hidden" name="discontinue" value="0" id="discontinue">
+    <input type="hidden" name="cancel" value="0" id="cancel">
+    <TPL:HIDDEN>
+
+        <!--col1-->
+        <div class="col1">
+
+            <!--colInner-->
+            <div class="colInner">
+
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|step4_title></h2>
+                        </div>
+
+                        <!--controlTable-->
+
+                        <div class="formTable controlTable">
+                                <TPL_SUB:PIC>
+                                <!--fLine-->
+                                <div class="fLine">
+                                    <div class="fHead <TPL:REQUIRED>">
+                                        <TPL:TXT_module_isic_card|photo>:
+                                    </div>
+                                    <div class="fCell">
+                                        <div class="twoButtons">
+                                          <div class="longButton">
+                                             <TPL:FIELD_pic>
+                                          </div>
+                                           <div class="shortButton">
+                                             <input type="button" class="uploadButton" value="<TPL:TXT_module_isic_card|upload_pic>" onclick="javascript:UploadPhoto();"/>
+                                           </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fHint">
+                                        <p><TPL:HELP></p>
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                </TPL_SUB:PIC>
+
+                                <!--wButtons-->
+                                <div class="wButtons">
+                                    <TPL_SUB:BUTTON_PREV>
+                                    <input type="button" id="button_prev" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignPrevStep();" />
+                                    </TPL_SUB:BUTTON_PREV>
+                                    <TPL_SUB:BUTTON_NEXT>
+                                    <input type="button" id="button_next" value="<TPL:TITLE>" onclick="javascript:assignNextStep();" />
+                                    </TPL_SUB:BUTTON_NEXT>
+                                    <TPL_SUB:BUTTON_DISCONTINUE>
+                                    <input type="button" id="button_discontinue" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignDiscontinue();" />
+                                    </TPL_SUB:BUTTON_DISCONTINUE>
+                                    <TPL_SUB:BUTTON_CANCEL>
+                                    <input type="button" id="button_cancel" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignCancel();" />
+                                    </TPL_SUB:BUTTON_CANCEL>
+                                </div>
+                                <!--/wButtons-->
+                        </div>
+                        <!--/controlTable-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+
+        </div>
+        <!--/col1-->
+
+        <!--col2-->
+        <div class="col2">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2>&nbsp;</h2>
+                        </div>
+                        <!--studentPhoto-->
+                        <div class="studentPhoto">
+                            <div class="studentPhotoInner">
+                            <TPL_SUB:SHOW_PIC>
+                                <img src="<TPL:DATA_pic>" alt="" border="0" id="pic" />
+                            </TPL_SUB:SHOW_PIC>
+                            <TPL_SUB:EDIT_PIC>
+                                <img src="<TPL:DATA_pic>" alt="" border="0" width="<TPL:MAX_WIDTH>" id="cropImage" />
+                                <div class="wButtons wButtonsCenter">
+                                    <input type="button" id="button_resize" value="<TPL:BUTTON>" onclick="javascript:assignResizePhoto();" />
+                                </div>
+                            </TPL_SUB:EDIT_PIC>
+                            </div>
+                        </div>
+                        <!--/studentPhoto-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col2-->
+
+    </form>

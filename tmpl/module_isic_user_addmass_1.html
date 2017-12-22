@@ -1,0 +1,56 @@
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+
+        
+
+        <!--singleCol-->
+        <div class="singleCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:module_isic_card|fields></h2>
+                    </div>
+
+                    <!--formTable-->
+                    <div class="formTable shortTable">
+                     <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+                         <TPL:HIDDEN>
+                            <!--fRow-->
+                            <div class="fRow">
+                         <TPL_SUB:FIELDS>
+                         <!--fLine-->
+                         <div class="fLine">
+                             <div class="fHead">
+                                 <TPL:TITLE>:
+                             </div>
+                             <div class="fCell">
+                                 <TPL:DATA>
+                             </div>
+                         </div>
+                         <!--/fLine-->
+                         </TPL_SUB:FIELDS>
+                            </div>
+                            <!--/fRow-->
+                         <!--fSubmit-->
+                         <div class="fSubmit">
+                             <div class="fSubmitInner">
+                                 <input type="submit" value="<TPL:BUTTON>" />
+                             </div>
+                         </div>
+                         <!--/fSubmit-->
+                     </form>
+                 </div>
+                 <!--/formTable-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

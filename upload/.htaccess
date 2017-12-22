@@ -1,0 +1,11 @@
+Options FollowSymLinks
+RewriteEngine on
+
+#
+# In some setups mod_rewrite will not work correctly
+# without specifying RewriteBase
+#
+RewriteBase /khs/upload/
+
+RewriteCond %{REQUEST_FILENAME} !file\.php
+RewriteRule (.+) file.php?file=$1

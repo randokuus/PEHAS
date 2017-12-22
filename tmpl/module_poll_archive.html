@@ -1,0 +1,30 @@
+        <div class="blockHeaderSimple">
+            <h2><TPL:TXT_module_poll|archive>: <TPL:QUESTION></h2>
+            <div class="clearer"></div>
+        </div>
+        <div class="blockBodyText">
+            <table class="poll-results">
+            <TPL_SUB:OPTION>
+                <tr>
+                    <td><b><TPL:OPTION></b></td>
+                    <td class="bar"><div class="bar"><div style="width: <TPL:PERCENT>%;"></div></div></td>
+                    <td><TPL:PERCENT>%</td>
+                </tr>
+            </TPL_SUB:OPTION>
+            </table>
+        </div>
+        
+        <div class="blockBodyText">
+            <table class="data">
+                <tr>
+                    <th><TPL:TXT_module_poll|question></th>
+                    <th class="center"><TPL:TXT_module_poll|answers></th>
+                </tr>
+                <TPL_SUB:POLLS>
+                <tr>
+                    <td><a href="<TPL:URL>"><TPL:QUESTION></a></td>
+                    <td class="center"><TPL:ANSWERS></td>
+                </tr>
+                </TPL_SUB:POLLS>
+            </table>
+       </div>

@@ -1,0 +1,10 @@
+<TPL_INCLUDE:tmpl/header.html>
+    <TPL_OBJECT:news>
+      <TPL_OBJECT_PARAM:setCount(40)>
+      <TPL_OBJECT_PARAM:setStartAt(0)>
+      <TPL_OBJECT_PARAM:setDateFormat('d.m.Y')>
+      <TPL_OBJECT_PARAM:setTemplate('module_news_full.html')>
+      <TPL_OBJECT_PARAM:setDetail('module_news_detail.html')>
+      <TPL_OBJECT_OUTPUT:show()>
+    </TPL_OBJECT:news>
+<TPL_INCLUDE:tmpl/footer.html>

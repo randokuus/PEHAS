@@ -1,0 +1,32 @@
+<TPL_INCLUDE:tmpl/header.html>
+        <!--singleCol-->
+        <div class="singleCol">
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TITLE></h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--col3-->
+                        <div class="col3">
+                            <img src="img/books.jpg" alt="" width="292" height="145" />
+                        </div>
+                        <!--/col3-->
+                        <!--col4-->
+                        <div class="col4 content">
+                            <p><TPL:TEXT></p>
+						    <TPL_OBJECT:IsicRiksWeb>
+						      <TPL_OBJECT_OUTPUT:show()>
+						    </TPL_OBJECT:IsicRiksWeb>
+                        </div>
+                        <!--/col4-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->
+<TPL_INCLUDE:tmpl/footer.html>

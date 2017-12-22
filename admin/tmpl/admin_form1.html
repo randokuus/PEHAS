@@ -1,0 +1,272 @@
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+
+// Add from the selection window
+function addToParentList(toList, text, value) {
+    var frm = document.forms["vorm"];
+    var destinationList = frm.elements[toList+"[]"];
+
+    count = destinationList.options.length;
+    destinationList.options[count] = new Option(text, value );
+
+    return true;
+}
+
+// Open new window for the selection
+function newWin(myurl) {
+    var newWindow;
+    var props = 'scrollBars=yes,resizable=yes,toolbar=no,menubar=no,location=no,directories=no,width=580,height=400';
+    newWindow = window.open(myurl, "Add_from_Src_to_Dest", props);
+    newWindow.focus();
+}
+
+// Deletes the selected items of supplied list.
+function deleteSelectedItemsFromList(sourceList) {
+    obj = document.forms["vorm"].elements[sourceList+"[]"];
+    while (obj.selectedIndex != '-1') {
+        if (obj.options[obj.selectedIndex].value != '-1') {
+            obj.options[obj.selectedIndex] = null;
+        } else break;
+    }
+}
+
+//preview button
+function previewContent() {
+    var win = newWindow('../preview_page.php', 600, 400);
+    var old_target = document.forms["vorm"].target;
+    var old_action = document.forms["vorm"].action;
+    document.forms["vorm"].target = "window";
+    document.forms["vorm"].action = "../preview_page.php";
+    selectAll();
+    document.forms["vorm"].target = old_target;
+    document.forms["vorm"].action = old_action;
+}
+
+// select all for submit
+function selectAll() {
+
+    obj = document.forms["vorm"].elements["question[]"];
+    if (obj) {
+        for (i = 0; i < obj.options.length; i++) obj.options[i].selected = true;
+    }
+    obj = document.forms["vorm"].elements["pics[]"];
+    if (obj) {
+        for (i = 0; i < obj.options.length; i++) obj.options[i].selected = true;
+    }
+    obj = document.forms["vorm"].elements["files[]"];
+    if (obj) {
+        for (i = 0; i < obj.options.length; i++) obj.options[i].selected = true;
+    }
+
+    if (valueCheck(document.forms["vorm"].elements['text']) == true && valueCheck(window.frames["contentFreim"].oEdit1) == true) {
+        if (window.frames["contentFreim"].document.forms["Form1"].elements['FullSource'].value == 1) {
+            document.forms["vorm"].elements['text'].value = "<!doctype html public \"-//w3c//dtd xhtml 1.0 transitional//en\" \"http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd\">" + window.frames["contentFreim"].oEdit1.getXHTML();
+        }
+        else {
+            document.forms["vorm"].elements['text'].value = window.frames["contentFreim"].oEdit1.getXHTMLBody();
+        }
+    } else if (typeof submittedContent != "undefined") {
+        document.forms["vorm"].elements['text'].value = submittedContent;
+        document.forms["vorm"].elements['editor_reload'].value = 1;
+    }
+
+    if (valueCheck(document.forms["vorm"].elements['content']) == true && valueCheck(window.frames["contentFreim"].oEdit1) == true) {
+        if (window.frames["contentFreim"].document.forms["Form1"].elements['FullSource'].value == 1) {
+            document.forms["vorm"].elements['content'].value = "<!doctype html public \"-//w3c//dtd xhtml 1.0 transitional//en\" \"http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd\">" + window.frames["contentFreim"].oEdit1.getXHTML();
+        }
+        else {
+            document.forms["vorm"].elements['content'].value = window.frames["contentFreim"].oEdit1.getXHTMLBody();
+        }
+    }
+    if (valueCheck(document.forms["vorm"].elements['pictures']) == true) {
+        document.forms["vorm"].elements['pictures'].value = window.frames["contentFreim"].document.forms["picvorm"].elements['pictures'].value;
+    }
+
+    document.forms["vorm"].submit();
+}
+
+function fieldsetInit(maxfs) {
+    // check if editor found, Moz speciality fix
+    if (valueCheck(document.forms["vorm"].elements["editor_reload"]) == true && valueCheck(document.getElementById("contentFreim"))) {
+        document.getElementById("contentFreim").height = 0;
+        for (i = 0; i < maxfs; i++) {
+            if ((i+1) != 1) {
+                if ((i+1) == 2) {
+                    document.getElementById("fieldset"+(i+1)).className = "inactive";
+                    document.getElementById("fieldset"+(i+1)).style.visibility = "hidden";
+                }
+                else {
+                    document.getElementById("fieldset"+(i+1)).style.display = "none";
+                }
+            }
+        }
+    }
+    else {
+        for (i = 0; i < maxfs; i++) {
+            if ((i+1) != 1) {
+                document.getElementById("fieldset"+(i+1)).style.display = "none";
+            }
+        }
+    }
+}
+
+function enableFieldset(current, fs, fs_extra, maxtab, maxfs) {
+    for (i = 0; i < maxtab; i++) {
+        document.getElementById("tabset"+(i+1)).className = "";
+    }
+    document.getElementById("tabset"+current).className = "active";
+
+    for (i = 0; i < maxfs; i++) {
+        if ((i+1) != fs && (i+1) != fs_extra) {
+            if ((i+1) == 2 && (valueCheck(document.forms["vorm"].elements["editor_reload"]) == true)) {
+                document.getElementById("contentFreim").height = 0;
+                document.getElementById("fieldset"+(i+1)).className = "inactive";
+                document.getElementById("fieldset"+(i+1)).style.visibility = "hidden";
+            }
+            else {
+                document.getElementById("fieldset"+(i+1)).style.display = "none";
+            }
+        }
+    }
+
+    // make selection active, special case for editor under moz
+    if (valueCheck(document.forms["vorm"].elements["editor_reload"]) == true && current == 2) {
+        document.getElementById("contentFreim").height = 350;
+        document.getElementById(fs).className = "";
+        document.getElementById(fs).style.visibility = "visible";
+        document.getElementById(fs).style.display = "block";
+    }
+    else {
+        if (document.getElementById(fs).style.display !="none"){document.getElementById(fs).style.display = "none";}
+        else {document.getElementById(fs).style.display = "block";}
+    }
+
+    if (fs_extra != '') {
+        if (document.getElementById(fs_extra).style.display !="none"){document.getElementById(fs_extra).style.display = "none";}
+        else {document.getElementById(fs_extra).style.display = "block"; }
+    }
+
+    if (valueCheck(document.forms["vorm"].elements["editor_reload"]) == true) {
+        if (current == 2 && document.forms["vorm"].elements["editor_reload"].value == 0) {
+            document.forms["vorm"].elements["editor_reload"].value = 1;
+            document.getElementById("contentFreim").src = document.forms["vorm"].elements["editor_src"].value;
+        }
+    }
+
+    return;
+}
+
+function enableSingleFieldset(fs) {
+    if (fs != '') {
+        if (document.getElementById(fs).style.display !="none"){document.getElementById(fs).style.display = "none";}
+        else {document.getElementById(fs).style.display = "block"; }
+    }
+    return;
+}
+
+function fieldJump(current, maxtab, jumpto) {
+    for (i = 0; i < maxtab; i++) {
+        document.getElementById("tabset"+(i+1)).className = "";
+    }
+    document.getElementById("tabset"+current).className = "active";
+
+    document.location = jumpto;
+
+    return;
+}
+
+function valueCheck(objToTest) {
+    if (null == objToTest) {
+        return false;
+    }
+    if ("undefined" == typeof(objToTest) ) {
+        return false;
+    }
+    return true;
+
+}
+
+</SCRIPT>
+
+
+<form method="post" action="<TPL:PHP_SELF>" <TPL:ENCTYPE> class="formpanel" name="vorm">
+
+<TPL_SUB:NOTICE>
+<div class="form-notice"><TPL:CONTENT></div>
+</TPL_SUB:NOTICE>
+
+<TPL_SUB:INFO>
+    <fieldset title="<TPL:TITLE>" <TPL:STYLE>>
+    <legend><TPL:TITLE></legend>
+        <table class="inputfield">
+        <tr>
+            <td><img src="pic/bullet_<TPL:TYPE>.gif" alt="" border="0"></td>
+            <td><label for="action" class="left"><TPL:INFO></label></td>
+        </tr>
+        </table>
+    </fieldset>
+</TPL_SUB:INFO>
+
+<TPL_SUB:FIELDSET>
+    <fieldset id="fieldset<TPL:ID>" title="<TPL:TITLE>" <TPL:STYLE>>
+    <legend><TPL:TITLE></legend>
+        <table class="inputfield">
+        <TPL_SUB:MAIN>
+        <tr>
+            <td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>
+            <td align="left"><TPL:FIELD>&nbsp;<label for="action" class="left"><TPL:EXTRA></label></td>
+            <td align="left">&nbsp;</td>
+        </tr>
+        </TPL_SUB:MAIN>
+        <TPL_SUB:BUTTONS>
+        <tr>
+            <td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>
+            <td aling="left" colspan="2">
+                <table border="0">
+                    <tr>
+                        <td align="left"><TPL:FIELD></td>
+                        <td align="left"><TPL:EXTRA></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </TPL_SUB:BUTTONS>
+        <TPL_SUB:EXTERN>
+        <tr>
+            <td align="left"><label for="action" class="left"><font color="<TPL:COLOR>"><TPL:DESC>:</font>&nbsp;</label></td>
+            <td align="left"><TPL:FIELD></td>
+            <td align="left"><label for="action" class="left"><TPL:EXTRA></label></td>
+        </tr>
+        </TPL_SUB:EXTERN>
+        <TPL_SUB:NOTHING>
+        <table class="inputfield" width="100%">
+        <tr>
+            <td align="left" colspan="3"><TPL:FIELD></td>
+        </tr>
+        </table>
+        </TPL_SUB:NOTHING>
+        </table>
+    </fieldset>
+</TPL_SUB:FIELDSET>
+
+        <TPL_SUB:NOTHING>
+        <table class="inputfield" width="100%">
+        <tr>
+            <td align="left" colspan="3"><TPL:FIELD></td>
+        </tr>
+        </table>
+        </TPL_SUB:NOTHING>
+
+<TPL_SUB:HIDDEN>
+    <input type="hidden" name="<TPL:NAME>" value="<TPL:VALUE>">
+</TPL_SUB:HIDDEN>
+
+<p></p>
+<div class="buttonbar">
+    <button type="button" onClick="selectAll();"><img src="pic/button_accept.gif" alt="OK!" border="0"><TPL:SENDBUTTONTXT></button>
+    <TPL_SUB:BUTTONS>
+        &nbsp;&nbsp;<button type="button" onClick="<TPL:ACTION>"><img src="<TPL:IMAGE>" alt="" border="0"><TPL:BUTTON></button>
+        <TPL:BTNEXTRA>
+    </TPL_SUB:BUTTONS>
+</div>
+
+</form>

@@ -1,0 +1,60 @@
+                        <h2><TPL:TITLE></h2>
+                        <table class="data">
+                            <tr>
+                                <th><TPL:TXT_module_forum|name></th>
+                                <th><TPL:TXT_module_forum|content></th>
+                            </tr>
+                            <tr class="first">
+                                <td class="forum-date">
+                                    <b><a href="#"><TPL:USER></a></b><br />
+                                    <TPL:DATE>
+                                </td>
+                                <td class="forum-txt">
+                                    <TPL:CONTENT>
+                                </td>
+                            </tr>
+                            <TPL_SUB:POST>
+                            <tr>
+                                <td class="forum-date">
+                                    <b><a href="#"><TPL:USER></a></b><br />
+                                    <TPL:DATE>
+                                </td>
+                                <td class="forum-txt">
+                                    <TPL:CONTENT>
+                                </td>
+                            </tr>
+                            </TPL_SUB:POST>
+                        </table>
+                        <br />
+                            <TPL_SUB:MESSAGE>
+                                <p><TPL:MESSAGE></p>
+                            </TPL_SUB:MESSAGE>
+
+                        <TPL_SUB:FORM>
+                            <form name="vorm" method="post" action="<TPL:PHP_SELF>">
+                            <table class="form">
+                                    <tr>
+                                        <td class="label"><TPL:NAME>:</td>
+                                        <td class="input">
+                                            <input type="text" class="i200" name="name" value="<TPL:name>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label"><TPL:TEXT>:</td>
+                                        <td class="input">
+                                            <textarea class="i300" rows="4" cols="30" name="text"><TPL:text></textarea>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td class="label">&nbsp;</td>
+                                    <td class="input">
+                                        <br />
+                                        <input type="submit" class="submit" value="<TPL:SEND>" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type=hidden name="send" value="true">
+                        </form>
+                    </TPL_SUB:FORM>
+
+                    <p><button class="submit" onClick="document.location='<TPL:BACK_URL>'"><TPL:BACK></button></p>

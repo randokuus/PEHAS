@@ -1,0 +1,33 @@
+<div class="cal">
+
+<div class="cal-body">
+	<a href="<TPL:URL_PREVIOUS>" class="left"><img src="pic/cal_left.gif" alt="" /></a>
+	<a href="<TPL:URL_NEXT>" class="right"><img src="pic/cal_right.gif" alt="" /></a>
+	<div class="month"><TPL:CURRENT_MONTH></div>
+	<div class="days">
+		<br class="fix1" />
+		<TPL:WEEKDAYS>
+		<TPL:DAYS>
+		<br class="fix2" />
+	</div>
+</div>
+<form name="datevorm" method="get" action="">
+<input type=hidden name="year" value="<TPL:YEAR>">
+<input type=hidden name="month" value="<TPL:MONTH>">
+<input type=hidden name="day" value="<TPL:DAY>">
+<input type=hidden name="field" value="<TPL:FIELD>">			
+<input type=hidden name="type" value="<TPL:TYPE>">		
+<div class="cal-time">
+	<TPL:TXT_admin_general|time>:
+	<select name="hour">
+		<TPL:HOURS>
+	</select>
+	:
+	<select name="minute">
+		<TPL:MINUTES>
+	</select>
+	<button class="cal-btn" onClick="ChooseDate()">OK</button>
+</div>
+</form>
+</div>
+

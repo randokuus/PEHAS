@@ -1,0 +1,75 @@
+<style type="text/css">
+table.datatable{
+    empty-cells:show;
+}
+</style>
+<link rel="stylesheet" href="img/diff.css" type="text/css" media="all" />
+<form action="<TPL:FORM_URL>" method="post" class="formpanel" name="vorm">
+<TPL_SUB:DIFF_OPTIONS>
+<div style="position:relative; float:right;clear:none; margin:0px 10px 10px 10px;" class="datatable">
+<table border="0" cellpadding="0" cellspacing="0" class="inputfield">
+    <tr>
+        <td><label>View differences:</label>
+        <select name="view_type">
+        <TPL_SUB:VIEW_TYPES>
+            <option value="<TPL:VALUE>" <TPL:SELECTED> ><TPL:TEXT></option>
+        </TPL_SUB:VIEW_TYPES>
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="text" name="inline" value="<TPL:INLINE_VALUE>" size="3"/> lines around each change</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Ignore:</label><br />
+            <TPL_SUB:IGNORE_TYPES>
+            <label for="ignore_type_<TPL:VALUE>">
+            <input type="checkbox" name="ignore_type[]" id="ignore_type_<TPL:VALUE>" value="<TPL:VALUE>" <TPL:CHECKED> />
+            <TPL:TEXT></label><br />
+            </TPL_SUB:IGNORE_TYPES>
+        </td>
+    </tr>
+    <tr>
+        <td align="right"><input type="submit" name="btn_update" value="Update" /></td>
+    </tr>
+</table>
+</TPL_SUB:DIFF_OPTIONS>
+</div>
+
+<TPL_SUB:CHANGED_ELEMENTS>
+<div class="inputfield">
+<fieldset <TPL:STYLE> >
+    <legend><TPL:TITLE></legend>
+        <table border="0" cellpadding="0" cellspacing="0" class="datatable">
+            <tr>
+            <TPL_SUB:HEADER>
+                <th><TPL:TITLE></th>
+            </TPL_SUB:HEADER>
+            </tr>
+            <TPL_SUB:CHANGES>
+            <tr>
+                <td><TPL:FIELD></td>
+                <td><TPL:OLD></td>
+                <td><TPL:NEW></td>
+            </tr>
+            </TPL_SUB:CHANGES>
+        </table>
+    </fieldset>
+</div>
+</TPL_SUB:CHANGED_ELEMENTS>
+<div style="clear:both;"></div>
+
+<TPL_SUB:DIFFERENCE>
+<fieldset id="fieldset<TPL:ID>" title="<TPL:TITLE>" <TPL:STYLE> >
+<legend><TPL:TITLE></legend>
+    <TPL:DIFF_TABLE>
+</fieldset>
+</TPL_SUB:DIFFERENCE>
+
+<TPL_SUB:HIDDEN_ELEMENTS>
+<input type="hidden" name="<TPL:NAME>" value="<TPL:VALUE>" />
+</TPL_SUB:HIDDEN_ELEMENTS>
+</form>

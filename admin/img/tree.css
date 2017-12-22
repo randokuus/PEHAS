@@ -1,0 +1,27 @@
+#tree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	white-space: nowrap;
+}
+#tree a {
+	color: #000;
+	text-decoration: none;
+}
+#tree i {
+	color: #BBB;
+}
+/*#tree img {
+	border: 0px;
+	width: 19px;
+	height: 16px;
+}
+*/
+.pageActive { font-weight: bold; }
+.pageInactive { font-weight: normal; }
+.pageaddInactive { font-style: italic; color: #BBB; }
+.folderaddInactive { font-style: italic; color: #BBB; }
+td { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px; }
+
+/* mod 130405 */
+.pageaddInactive BUTTON { width: 22px; height: 22px; padding: 0px; margin: 0px; }
+.pageaddInactive BUTTON IMG { position: absolute; margin-left: -8px; margin-top: -8px; } 

@@ -1,0 +1,121 @@
+<SCRIPT language="JavaScript" type="text/javascript">
+function switch_login_type () {
+    var auth_type = document.getElementById('auth_type').value;
+    var un_row = document.getElementById('username_row');
+    var pw_row = document.getElementById('password_row');
+
+    switch (auth_type) {
+        case '1': // regular
+            un_row.style.visibility = "visible";
+            pw_row.style.visibility = "visible";
+            document.getElementById('username').select();
+            document.getElementById('username').focus();
+        break;
+        case '2': // id-card (falls through)
+        case '3': // Hansa (falls through)
+        case '4': // SEB (falls through)
+        case '5': // Sampo (falls through)
+        case '6': // Nordea (falls through)
+        case '7': // Krediidipank (falls through)
+        case '8': // LHV (falls through)
+            un_row.style.visibility = "visible";
+            pw_row.style.visibility = "hidden";
+            document.getElementById('username').select();
+            document.getElementById('username').focus();
+        break;
+    }
+}
+// End -->
+</SCRIPT>
+    <!--box-->
+    <div class="box loginBox">
+        <div class="inner">
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+        
+            <form action="<TPL:SELF>" method="post" name="" class="jNice">
+            <input type="hidden" name="login" value="true">
+            <input type="hidden" name="href" value="<TPL:HREF>">
+            <input type="hidden" name="login_check" value="true">
+            <!--controlTable-->
+            <div class="formTable controlTable">
+                <!--fRow-->
+                <div class="fRow">
+                    <!--fLine-->
+                    <div class="fLine wLogo">
+                        <img src="img/personalikaart_logo.gif" alt="PEHAS" />
+                    </div>
+                    <!--/fLine-->
+                </div>
+                <!--/fRow-->
+
+                <!--fRow-->
+                <div class="fRow">
+                    <!--fLine-->
+                    <div class="fLine">
+                        <div class="fHead">
+                            <TPL:AUTH_TYPE>:
+                        </div>
+                        <div class="fCell">
+                            <TPL:FIELD_AUTH_TYPE>
+                        </div>
+                    </div>
+                    <!--/fLine-->
+
+                    <!--fLine-->
+                    <div class="fLine" id="username_row" style="visibility: hidden;">
+                        <div class="fHead">
+                            <TPL:USERNAME>:
+                        </div>
+                        <div class="fCell">
+                            <input autocomplete="off" type="text" name="username" id="username" value="" />
+                        </div>
+                    </div>
+                    <!--/fLine-->
+
+                    <!--fLine-->
+                    <div class="fLine" id="password_row" style="visibility: hidden;">
+                        <div class="fHead">
+                            <TPL:PASSWORD>:
+                        </div>
+                        <div class="fCell">
+                            <input type="password" name="password" id="password" value="" />
+                        </div>
+                    </div>
+                    <!--/fLine-->
+
+                    <!--fSubmit-->
+                    <div class="fSubmit">
+                        <div class="fSubmitInner">
+                            <input type="submit" name="" value="<TPL:BUTTON>" />
+                        </div>
+                    </div>
+                    <!--/fSubmit-->
+                </div>
+                <!--/fRow-->
+                <!--fRow-->
+                <div class="fRow">
+                    <!--fLine-->
+                    <div class="fLine">
+                        <div class="fHead"></div>
+                        <div class="fCell">
+                            <a href="<TPL:TXT_module_user|conditions_url>" target="_blank"><TPL:TXT_module_user|conditions_title></a>
+                        </div>
+                    </div>
+                    <!--/fLine-->
+                </div>
+                <!--/fRow-->
+
+            </div>
+            <!--/controlTable-->
+            </form>
+        </div>
+    </div>
+    <!--/box-->    

@@ -1,0 +1,79 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    var date1 = new Ext.form.DateField({
+            name: 'date1',
+            width:150,
+            allowBlank:true,
+            format:'Y-m-d H:i:s',
+            value: '<TPL:date1>'
+        });
+
+    date1.render('date1');
+
+    var date2 = new Ext.form.DateField({
+            name: 'date2',
+            width:150,
+            allowBlank:true,
+            format:'Y-m-d H:i:s',
+            value: '<TPL:date2>'
+        });
+
+    date2.render('date2');
+});
+</script>
+
+    <div class="blockHeaderSimple">
+      <h2><TPL:TXT_module_projects|name></h2>
+      <div class="clearer"></div>
+    </div>
+
+    <form name="vorm" method="post" action="<TPL:SELF>">
+    <div class="blockBodyText">
+    <TPL:HIDDEN>
+
+    <table class="form">
+      <TPL_SUB:MESSAGE>
+      <tr valign="top">
+        <td colspan="4" class="label"><font color="red"><TPL:MESSAGE></font><br><br></td>
+      </tr> 
+      </TPL_SUB:MESSAGE>
+    
+      <tr>
+        <td class="label"><TPL:TXT_module_projects|name>:</td>
+        <td class="value" colspan="3"><TPL:select_project></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_projects|task>:</td>
+        <td class="input" colspan="3"><input type="text" name="task" value="<TPL:task>" class="i300" /></td>
+      </tr>
+      <tr>
+        <td class="label" nowrap><TPL:TXT_module_projects|begin>:</td>
+        <td class="input" nowrap><span id="date1"></span></td>
+        <td class="label" nowrap><TPL:TXT_module_projects|end>:</td>
+        <td class="input" nowrap><span id="date2"></span></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_projects|info>:</td>
+        <td class="input" colspan="3">
+          <textarea class="i300" rows="10" name="info"><TPL:info></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_projects|team>:</td>
+        <td class="input" colspan="3">
+          <select name="team[]" size="5" multiple><TPL:select_team></select>
+        </td>
+      </tr>                 
+      <tr>
+        <td class="label"><TPL:TXT_module_projects|type>:</td>
+        <td class="input"><select name="type" class="formInput"><TPL:select_type></select></td>
+        <td class="label"><TPL:TXT_module_projects|priority>:</td>
+        <td class="input"><select name="priority" class="formInput"><TPL:select_priority></select></td>
+      </tr>
+    </table>
+    </div>
+    <p class="actions">
+    <input type="submit" value="<TPL:TXT_module_projects|addtask>" class="submit" />
+    </p>
+  </form>

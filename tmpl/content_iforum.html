@@ -1,0 +1,39 @@
+<TPL_INCLUDE:tmpl/header.html>
+<!-- col 1 start -->
+<div style="float:left; width:23.9%; padding-right:1%;">
+  <div class="block">
+    <TPL_OBJECT:iforum>
+    <TPL_OBJECT_OUTPUT:menu()>
+    </TPL_OBJECT:iforum>
+  </div>
+  <div class="block">
+    <TPL_OBJECT:iforum>
+    <TPL_OBJECT_OUTPUT:topthreadView()>
+    </TPL_OBJECT:iforum>
+  </div>
+  <div class="block">
+    <TPL_OBJECT:iforum>
+    <TPL_OBJECT_OUTPUT:lastthreadView()>
+    </TPL_OBJECT:iforum>
+  </div>
+  <TPL_OBJECT:poll>
+    <TPL_OBJECT_OUTPUT:show()>
+  </TPL_OBJECT:poll>
+  <div class="clearer"></div>
+</div>
+<!-- col 1 end -->
+<!-- col 2 start -->
+<div style="float:left; width:75%;">
+  <div class="block">
+    <TPL_OBJECT:iforum>
+    <!-- TPL_OBJECT_PARAM:setDateFormat('d.m.Y H:i') -->	
+    <TPL_OBJECT_PARAM:setWrap(40)>
+    <TPL_OBJECT_PARAM:setHotLevel(10)>
+    <TPL_OBJECT_OUTPUT:show()>
+    </TPL_OBJECT:iforum>
+  </div>
+  <div class="clearer"></div>
+</div>
+<!-- col 2 end -->
+<TPL_INCLUDE:tmpl/right_column.html>
+<TPL_INCLUDE:tmpl/footer.html>

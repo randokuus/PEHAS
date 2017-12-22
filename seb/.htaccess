@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /khs/seb/
+
+# Realestate url redirection
+RewriteRule ^id/([0-9]+)          /khs/seb/?id=$1

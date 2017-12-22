@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/swed
+END
+cert_req.pem
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/swed/cert_req.pem
+END
+new_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/swed/new_cert.pem
+END
+IpizzaHPavalikvoti.pem
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/swed/IpizzaHPavalikvoti.pem
+END
+privkey.pem
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/swed/privkey.pem
+END

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><TPL:PAGETITLE></title>
+    <META name="robots" content="index,follow">
+    <META NAME="rating" CONTENT= "General">
+    <META NAME="revisit" CONTENT="1 day">
+    <META NAME="revisit-after" CONTENT= "1 day">
+    <META NAME="audience" CONTENT= "all">
+    <META NAME="Keywords" content="content management, cms, intranet, extranet, wysiwyg, dynamic, modera.net">
+    <META NAME="Description" content="modera.net demo site">
+    <link href="img/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="img/scripts.js"></script>
+    <TPL:AJAX_JS>
+</head>
+
+<body onLoad="MM_preloadImages('img/btn_sitemap_on.gif','img/btn_print_on.gif')">
+<div align="center">
+    <table cellspacing="0" cellpadding="6" border="0" width="750" class="box1">
+        <tr>
+            <td>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td height="96" class="box2">
+                            <a href="<TPL:SELF>"><img src="<TPL:LOGO>" border="0" hspace="20" alt=""/></a>
+                        </td>
+                    </tr>
+                </table>
+                <img src="img/tk01.gif" width="738" height="3" alt=""><br>
+                <TPL_OBJECT:xslprocess>
+                <TPL_OBJECT_OUTPUT:menu('tmpl/menu_top.xsl')>
+                </TPL_OBJECT:xslprocess>
+                <img src="img/tk02.gif" width="738" height="2" alt=""><br>
+                <img src="img/1.gif" width="1" height="20" alt=""><br>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr valign="top" align="left">
+                        <td><img src="img/1.gif" width="20" height="1" alt=""></td>
+                        <td width="100%" class="content">
+                        <TPL_OBJECT:tagsearch>
+                            <TPL_OBJECT_PARAM:setTemplate('module_tagsearch.html')>
+                            <TPL_OBJECT_OUTPUT:show()>
+                        </TPL_OBJECT:tagsearch>
+                        </td>
+                        <td><img src="img/1.gif" width="20" height="1" alt=""></td>
+                        <td>
+                            <div align="right">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="22"><a href="<TPL:SITEMAPURL>" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sitemap','','img/btn_sitemap_on.gif',1)"><img name="sitemap" border="0" src="img/btn_sitemap_off.gif" width="22" height="18" hspace="0" align="absmiddle"></a></td>
+                                    <td class="sitemap"><a href="<TPL:SITEMAPURL>" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sitemap','','img/btn_sitemap_on.gif',1)"><TPL:SITEMAP></a>&nbsp;&nbsp;</td>
+                                    <td><a href="javascript:printwindow('<TPL:PRINTURL>');" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('print','','img/btn_print_on.gif',1)"><img name="print" border="0" src="img/btn_print_off.gif" width="24" height="18" align="absmiddle"></a></td>
+                                    <td class="sitemap"><a href="javascript:printwindow('<TPL:PRINTURL>');" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('print','','img/btn_print_on.gif',1)"><TPL:PRINT></a></td>
+                                </tr>
+                                </table>
+                                <img src="img/1.gif" width="1" height="6"><br>
+                            </div>
+                                <TPL_OBJECT:tagcloud>
+                                    <TPL_OBJECT_OUTPUT:show()>
+                                </TPL_OBJECT:tagcloud>
+                            <br>
+                            <!-- Placeholder, do not delete! -->
+                            <img src="img/1.gif" width="160" height="1" alt=""><br>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <img src="img/tk01.gif" width="738" height="3" alt=""><br>
+                <table cellspacing="0" cellpadding="5" border="0" width="100%">
+                    <tr>
+                        <td align="center" class="content">
+                            <TPL:COPY> <TPL:FOOTER>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+</div>
+</body>
+</html>

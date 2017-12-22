@@ -1,0 +1,52 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td class="module-title-1"><img src="img/tk04.gif" alt=""/></td>
+        <td class="module-title-1" width="100%"><TPL:TXT_module_user|title></td>
+        <td class="module-title-1"><img src="img/tk05.gif" alt=""/></td>
+    </tr>
+</table>
+<img src="img/1.gif" alt=""/><br/>
+
+<table cellspacing="0" cellpadding="12" border="0" width="100%">
+    <tr>
+        <td class="module-content">
+        <form action="<TPL:SELF>" method="post">
+        <input type="hidden" name="login" value="true">
+        <table width="100%" border="0" cellpadding="2" cellspacing="1">
+            <TPL_SUB:MESSAGE>
+            <tr valign="top">
+                <td colspan="2"><TPL:MESSAGE></td>
+            </tr>
+            </TPL_SUB:MESSAGE>
+            <tr valign="top">
+                <td><TPL:USERNAME></td>
+                <td><input type="text" size="11" class="string" name="username" id="username" value="<TPL:username>" /></td>
+            </tr>
+            <tr valign="top">
+                <td><TPL:PASSWORD></td>
+                <td><input type="password" size="11" class="string" name="password" id="password" value="" /></td>
+            </tr>
+            <tr valign="top">
+                <td>&nbsp;</td>
+                <td><button type="submit"><TPL:BUTTON></button></td>
+            </tr>
+        </table>
+        <img src="img/1.gif" alt=""/><br/>
+        <table cellspacing="0" cellpadding="4" border="0" width="100%">
+            <tr>
+                <td><img src="img/dot02.gif" alt=""/></td>
+                <td width="100%"><a href="<TPL:REGISTER_URL>"><TPL:REGISTER></a></td>
+            </tr>
+        </table>
+        <input type="hidden" name="login_check" value="true">
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+        document.getElementById('username').select();
+        document.getElementById('username').focus();
+        //]]>
+        </script>
+        </td>
+    </tr>
+</table>
+<img src="img/1.gif" alt=""/><br/>

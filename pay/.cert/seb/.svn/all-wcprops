@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb
+END
+eyp_pub.pem
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/eyp_pub.pem
+END
+cert_req.pem
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/cert_req.pem
+END
+new_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/new_cert.pem
+END
+privkey.pem
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/privkey.pem
+END
+kaupmees_priv.pem
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/kaupmees_priv.pem
+END
+eypcert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/seb/eypcert.pem
+END

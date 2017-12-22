@@ -1,0 +1,17 @@
+# m h  dom mon dow   command
+0 0 * * * /usr/bin/wget -O /home/minukool/log/news_refresh.log https://www.minukool.ee/khs/cron/news_refresh.php
+5 0 * * * /usr/bin/wget -O /home/minukool/log/isic_tryb_codes_notifications.log https://www.minukool.ee/khs/cron/isic_tryb_codes_notifications.php
+0 1 * * * /usr/bin/wget -O /home/minukool/log/isic_deactivate_expired_cards.log https://www.minukool.ee/khs/cron/isic_deactivate_expired_cards.php
+0 2 * * * /usr/bin/wget -O /home/minukool/log/isic_payment_autoreturn.log https://www.minukool.ee/khs/cron/isic_payment_autoreturn.php
+0 3 * * * /usr/bin/wget -O /home/minukool/log/isic_share_payments_of_deactivated_cards.log https://www.minukool.ee/khs/cron/isic_share_payments_of_deactivated_cards.php
+30 3 * * * /usr/bin/wget -O /home/minukool/log/isic_user_manual_status_check.log https://www.minukool.ee/khs/cron/isic_user_manual_status_check.php
+0 4 * * * /usr/bin/wget -O /home/minukool/log/isic_ehis_mass_query.log https://www.minukool.ee/khs/cron/ehisMassQuery.php
+30 4 * * * /usr/bin/wget -O /home/minukool/log/isic_card_home_order_activate.log https://www.minukool.ee/khs/cron/isic_card_home_order_activate.php
+0 5 * * * /usr/bin/wget -O /home/minukool/log/isic_application_unfinished_delete.log https://www.minukool.ee/khs/cron/isic_application_unfinished_delete.php
+30 8,12,16,20 * * * /usr/bin/wget -O /home/minukool/log/isic_tryb_codes_import_order.log https://www.minukool.ee/khs/cron/isic_tryb_codes_import_order.php
+40 8,12,16,20 * * * /usr/bin/wget -O /home/minukool/log/isic_tryb_codes_import_seb.log https://www.minukool.ee/khs/cron/isic_tryb_codes_import_seb.php
+50 8,12,16,20 * * * /usr/bin/wget -O /home/minukool/log/isic_tryb_report_import.log https://www.minukool.ee/khs/cron/isic_tryb_report_import.php
+10 6,10,14,18,22 * * * /home/minukool/sonic/sonic.sh
+0 5 5 * * /usr/bin/wget -O /home/minukool/log/isic_report_seb_cards.log https://www.minukool.ee/khs/cron/isic_report_seb_cards.php
+25 6,10,14,18,22 * * * /usr/bin/wget -O /home/minukool/log/isic_card_sync_ut.log https://www.minukool.ee/khs/cron/isic_card_sync_ut.php
+0 21 * * * /usr/bin/wget -O /home/minukool/log/isic_card_not_synced_with_ut.log https://www.minukool.ee/khs/cron/isic_card_not_synced_with_ut.php

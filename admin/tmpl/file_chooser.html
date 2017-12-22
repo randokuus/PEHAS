@@ -1,0 +1,62 @@
+<!-- BEGIN: doc -->
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>{HEADLINE}</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="0"> 
+	<meta http-equiv="cache-control" content="no-cache">	
+	<link rel="stylesheet" href="admin.css">
+
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+<!--
+function addSelectedItems(toList, text, value) {
+	self.opener.addToParentList(toList, text, value);
+	document.images[id].style.filters.alpha.opacity=10
+	//self.opener.focus();
+	//window.close();
+}
+function highLight(cur) {
+	cur.filters.alpha.opacity=10
+}
+//-->
+</SCRIPT>
+</head>
+
+<body bgcolor="White">
+
+<p class="textMedium"><b>{DESC}</b></p>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="colorGrayDark">
+<tr><td>
+	<table width="100%" border="0" cellspacing="3" cellpadding="0">
+	<form action="{PHP.PHP_SELF}" method="get">
+	<tr> 
+	<td class="textSmall">{TXT.filter}: <input name="filter" class="formInput" value="{FILTER}"></td>
+	</tr>
+	<input type=hidden name="mode" value="{PHP.mode}">
+	</form>
+	</table>
+</td></tr>
+</table>
+
+<br>
+<table width="100%" border="0" cellpadding="2" cellspacing="2">
+<!-- BEGIN: row -->
+	<tr valign="top" align="center">
+		<td class="textSmall"><a href="javascript:addSelectedItems('{TYPE}', '{IMG1_TXT}', {IMG1_VAL});">{IMG1}</a><br>{TEXT1}</td>
+		<td class="textSmall"><a href="javascript:addSelectedItems('{TYPE}', '{IMG2_TXT}', {IMG2_VAL});">{IMG2}</a><br>{TEXT2}</td>
+		<td class="textSmall"><a href="javascript:addSelectedItems('{TYPE}', '{IMG3_TXT}', {IMG3_VAL});">{IMG3}</a><br>{TEXT3}</td>
+		<td class="textSmall"><a href="javascript:addSelectedItems('{TYPE}', '{IMG4_TXT}', {IMG4_VAL});">{IMG4}</a><br>{TEXT4}</td>						
+	</tr>
+<!-- END: row -->
+</table>
+
+<br>
+{PAGES}
+
+<br><br>
+</body>
+</html>
+<!-- END: doc -->

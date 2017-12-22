@@ -1,0 +1,40 @@
+<table border=0 cellpadding="2" cellspacing="1">
+<TPL_SUB:MESSAGE>
+    <tr valign="top">
+        <td colspan="2"><TPL:MESSAGE></td>
+    </tr>
+</TPL_SUB:MESSAGE>
+<TPL_SUB:FORM>
+<form name="vorm" method="post" action="<TPL:SELF>">
+    <tr valign="top">
+        <td><b><TPL:TEXT_username></b></td>
+        <td><TPL:FIELD_username></td>
+    </tr>
+    <tr valign="top">
+        <td><b><TPL:TEXT_password></b></td>
+        <td><TPL:FIELD_password></td>
+    </tr>
+    <tr valign="top">
+        <td><b><TPL:TEXT_password2></b></td>
+        <td><TPL:FIELD_password2></td>
+    </tr>
+    <tr valign="top">
+        <td><b><TPL:TEXT_name></b></td>
+        <td><TPL:FIELD_name></td>
+    </tr>
+    <tr valign="top">
+        <td><b><TPL:TEXT_email></b></td>
+        <td><TPL:FIELD_email></td>
+    </tr>
+    <tr valign="top">
+        <td><TPL:TEXT_phone></td>
+        <td><TPL:FIELD_phone></td>
+    </tr>
+    <tr valign="top">
+        <td>&nbsp;</td>
+        <td><button onClick="this.form.submit()"><TPL:TEXT_register></button></td>
+    </tr>
+    <input type=hidden name="send" value="true">
+</form>
+</TPL_SUB:FORM>
+</table>

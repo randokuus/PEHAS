@@ -1,0 +1,92 @@
+<div class="blockHeader">
+  <h2><TPL:TITLE></h2>
+  <div class="clearer"></div>
+</div>
+<div class="blockBody">
+  <div style="float:left; width:50%;">
+    <div class="buttons">
+      <ul>
+        <li><a href="<TPL:NEW_TOPIC_URL>"><TPL:TXT_module_iforum|new_topic></a></li>
+      </ul>
+      <div class="clearer"></div>
+    </div>
+  </div>
+
+  <form method="post" action="<TPL:SEARCH_URL>">
+  <div style="float:left; width:49%;">
+    <div class="search">
+      <label for="fSearch"><TPL:TXT_module_iforum|search_this_forum>:</label>
+      <input type="text" class="text" id="fSearch" name="fsearch" value="<TPL:SEARCH_KEYWORD>" />
+      <input type="submit" class="submit" name="submit" value="<TPL:TXT_module_iforum|search>" />
+    </div>
+  </div>
+  </form>
+
+  <div class="clearer"></div>
+
+<TPL_SUB:PAGINATOR>
+  <div class="actions">
+    <p>
+    <span class="pagination"><TPL:TXT_module_iforum|pages>:
+    <TPL_SUB:PAGE>
+
+    <TPL_SUB:ACTIVE_PAGE>
+        <strong>[<TPL:NAME>]</strong>
+    </TPL_SUB:ACTIVE_PAGE>
+    <TPL_SUB:INACTIVE_PAGE>
+        <a href="<TPL:URL>">[<TPL:NAME>]</a>
+    </TPL_SUB:INACTIVE_PAGE>
+
+    </TPL_SUB:PAGE>
+    </span>
+    </p>
+  </div>
+</TPL_SUB:PAGINATOR>
+
+<table class="style1" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+    <th style="width:37%; text-align:center;"><TPL:TXT_module_iforum|subject></th>
+    <th class="even" style="width:8%; text-align:center;"><TPL:TXT_module_iforum|views></th>
+    <th class="head1 replies" style="width:8%; text-align:center;"><TPL:TXT_module_iforum|replies></th>
+    <th class="even" style="width:17%; text-align:center;"><TPL:TXT_module_iforum|author></th>
+    <th class="head1 latest" style="width:30%; text-align:center;"><TPL:TXT_module_iforum|last_post></th>
+</tr>
+<TPL_SUB:THREAD>
+<tr>
+    <td><img src="img/iforum/icon_folder_<TPL:ICON>.gif" class="icon" alt="" /> <a href="<TPL:URL>"><TPL:NAME></a>
+<TPL_SUB:PAGINATOR>
+    <br /><span class="pagination"><TPL:TXT_module_iforum|page>:
+    <TPL_SUB:PAGE>
+        <a href="<TPL:URL>"><TPL:NAME></a>
+    </TPL_SUB:PAGE>
+        </span>
+</TPL_SUB:PAGINATOR>
+</td>
+    <td class="even" align="center"><TPL:VIEWS></td>
+    <td align="center"><TPL:REPLIES></td>
+    <td class="even" align="center"><TPL:AUTHOR_NAME></td>
+    <td align="center"><span class="date"><TPL:LAST_POST_TIME></span><br /><span class="author"><TPL:LAST_POST_AUTHOR_NAME></span></td>
+</tr>
+</TPL_SUB:THREAD>
+</table>
+
+<TPL_SUB:PAGINATOR>
+  <div class="actions">
+    <p>
+    <span class="pagination"><TPL:TXT_module_iforum|pages>:
+    <TPL_SUB:PAGE>
+
+    <TPL_SUB:ACTIVE_PAGE>
+        <strong>[<TPL:NAME>]</strong>
+    </TPL_SUB:ACTIVE_PAGE>
+    <TPL_SUB:INACTIVE_PAGE>
+        <a href="<TPL:URL>">[<TPL:NAME>]</a>
+    </TPL_SUB:INACTIVE_PAGE>
+
+    </TPL_SUB:PAGE>
+    </span>
+    </p>
+  </div>
+</TPL_SUB:PAGINATOR>
+  <div class="clearer"></div>
+</div>

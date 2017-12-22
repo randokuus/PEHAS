@@ -1,0 +1,27 @@
+<div class="block">
+    <div class="blockHeaderSimple">
+        <h2><TPL:TXT_module_projects|project_summary>: <TPL:PROJECT_NAME></h2>
+        <div class="clearer"></div>
+    </div>
+    <div class="blockBodyText clear">
+        <div class="w100p">
+            <table class="projectstats">
+                <TPL_SUB:STATUSLIST>
+                <tr>
+                    <th><TPL:NAME></th>
+                    <td><TPL:COUNT></td>
+                    <td><div class="bar"><div style="width: <TPL:PERCENT>%;"></div></td>
+                    <td><TPL:PERCENT>%</td>
+                </tr>
+                </TPL_SUB:STATUSLIST>
+            </table>
+        </div>
+    </div>
+    <!--
+    <div class="shortcuts clear">
+        <ul>
+            <li class="readMore"><a href="#">Read more &#187;</a></li>
+        </ul>
+    </div>
+    -->
+</div>

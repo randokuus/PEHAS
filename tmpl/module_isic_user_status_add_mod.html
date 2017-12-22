@@ -1,0 +1,85 @@
+<form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data">
+<TPL:HIDDEN>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+<TPL_SUB:IMESSAGE>
+  <div class="info">
+    <p><TPL:IMESSAGE></p>
+  </div>
+</TPL_SUB:IMESSAGE>
+
+<TPL_SUB:SHOW_PIC>
+  <div class="img-right"><img src="<TPL:DATA_pic>" alt="" border="0" /></div>
+</TPL_SUB:SHOW_PIC>
+  <table class="form">
+  <TPL_SUB:USER_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|user></label></td>
+    <td class="input" width="300"><TPL:FIELD_user_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:USER_ID>
+  <TPL_SUB:SCHOOL_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|school></label></td>
+    <td class="input" width="300"><TPL:FIELD_school_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:SCHOOL_ID>
+  <TPL_SUB:STATUS_ID>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|status></label></td>
+    <td class="input" width="300"><TPL:FIELD_status_id></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STATUS_ID>
+  <TPL_SUB:STRUCTURE_UNIT>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|structure_unit></label></td>
+    <td class="input" width="300"><TPL:FIELD_structure_unit></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:STRUCTURE_UNIT>
+  <TPL_SUB:FACULTY>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|faculty></label></td>
+    <td class="input" width="300"><TPL:FIELD_faculty></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:FACULTY>
+  <TPL_SUB:CLASS>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|class></label></td>
+    <td class="input" width="300"><TPL:FIELD_class></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:CLASS>
+  <TPL_SUB:COURSE>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|course></label></td>
+    <td class="input" width="300"><TPL:FIELD_course></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:COURSE>
+  <TPL_SUB:POSITION>
+  <tr>
+    <td class="label"><label for="fField1" class="<TPL:REQUIRED>"><TPL:TXT_module_user_status|position></label></td>
+    <td class="input" width="300"><TPL:FIELD_position></td>
+    <td class="input">&nbsp;</td>
+  </tr>
+  </TPL_SUB:POSITION>
+  </table>
+</div>
+<p class="actions">
+  <TPL_SUB:BACK>
+    <input type="button" class="submit" onClick="document.location='<TPL:URL>'" value="<TPL:TITLE>">
+  </TPL_SUB:BACK>
+  <TPL_SUB:SUBMIT>
+    <input type="submit" value="<TPL:BUTTON>" class="submit" />
+  </TPL_SUB:SUBMIT>
+</p>
+</form>

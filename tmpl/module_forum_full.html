@@ -1,0 +1,21 @@
+                        <table class="data">
+                            <tr>
+                                <th><TPL:TXT_module_forum|topic></th>
+                                <th><TPL:TXT_module_forum|name></th>
+                            </tr>
+                            <TPL_SUB:TOPIC>
+                            <tr>
+                                <td>
+                                    <div class="title">
+                                        <a href="<TPL:URL>"><TPL:TITLE></a> (<TPL:POSTS>)
+                                    </div>
+                                    <TPL:CONTENT>
+                                </td>
+                                <td class="forum-date">
+                                    <b><TPL:USER></b><br />
+                                    <TPL:DATE>
+                                </td>
+                            </tr>
+                            </TPL_SUB:TOPIC>
+                        </table>
+                        <p><button class="submit" onClick="document.location='<TPL:NEWURL>'"><img src="img/ico/add.gif" alt="Add new topic" /> <TPL:NEWTOPIC></button></p>

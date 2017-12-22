@@ -1,0 +1,124 @@
+BODY {
+	margin: 0px;
+	padding: 2px;
+	background: #F8F8F8;
+}
+BODY, INPUT, SELECT, TEXTAREA, P, TD, TH { font: 11px Tahoma, Arial, Helvetica, sans-serif; color: #828282; }
+
+IMG { border: 0px; }
+A { text-decoration: none; color: #0C458A; }
+A:hover { text-decoration: underline; }
+A.active { text-decoration: underline; }
+A IMG { color: #FFFFFF; }
+
+FORM { margin: 0px; padding: 0px; }
+
+.box1 { background: #FFFFFF; }
+.box2 { background: url('header03.jpg'); text-align: left; }
+
+/* NS fix*/
+.menu { color: #414141; }
+.menu A { color: #414141; }
+
+.menu-level-1 TD { background: url('bg01.gif'); text-align: left; font: 11px Tahoma, Arial, Helvetica, sans-serif; }
+.menu-level-1 TD.active { background: url('bg02.gif'); }
+.menu-level-1 TD.hover { background: url('bg02.gif'); }
+.menu-level-1 TD A { color: #414141; text-decoration: none !important; }
+
+.menu-level-2 { background: #E4E4E4; }
+.menu-level-2 TD { vertical-align: top; color: #414141; }
+.menu-level-2 TD A { color: #414141; }
+.menu-level-2-open { background: #F3F3F3; }
+.menu-level-2-open TD { vertical-align: top; color: #414141; }
+.menu-level-2-open TD A { color: #414141; }
+
+.menu-level-2-deactive { background: #E4E4E4; }
+.menu-level-2-deactive TD { vertical-align: top; color: #414141; }
+.menu-level-2-deactive TD A { color: #414141; }
+.menu-level-2-active { background: #F3F3F3; }
+.menu-level-2-active TD { vertical-align: top; color: #414141; }
+.menu-level-2-active TD A { text-decoration: underline; color: #414141; }
+
+.menu-level-3 { background: #FFFFFF; }
+.menu-level-3 TD { vertical-align: top; color: #414141; }
+.menu-level-3 TD A { color: #414141; }
+.menu-level-3-open { background: #FFFFFF; }
+.menu-level-3-open TD { vertical-align: top; color: #414141; }
+.menu-level-3-open TD A { color: #414141; }
+.menu-level-3-deactive { background: #FFFFFF; }
+.menu-level-3-deactive TD { vertical-align: top; color: #414141; }
+.menu-level-3-deactive TD A { color: #414141; }
+.menu-level-3-active { background: #FFFFFF; }
+.menu-level-3-active TD { vertical-align: top; color: #414141; }
+.menu-level-3-active TD A { text-decoration: underline; color: #414141; }
+
+.menu-level-4 { background: #FFFFFF; }
+.menu-level-4 TD { vertical-align: top; color: #414141; }
+.menu-level-4 TD A { color: #414141; }
+.menu-level-4-active { background: #FFFFFF; }
+.menu-level-4-active TD { vertical-align: top; color: #414141; }
+.menu-level-4-active TD A { text-decoration: underline; color: #414141; }
+
+/* Content styles */
+
+.content { color: #828282; }
+
+H1 { font: 19px Arial, Helvetica, sans-serif; font-weight: normal; color: #D9292D; }
+H2 { font: 14px Arial, Helvetica, sans-serif; font-weight: bold; color: #D9292D; }
+P { line-height: 16px; }
+
+.sitemap A { font-weight: normal; color: #737373; text-decoration: none;}
+.sitemap A:hover { color: #414141; text-decoration: none;}
+
+/* Change color of module tabs */
+.module-title-1 { background: #0C458A; font-weight: bold; color: #FFFFFF; }
+
+.module-title-2 { background: #D3D3D3; text-align: right; }
+.module-content { background: url('bg03.gif'); color: #414141; line-height: 16px; }
+
+DIV.search {  }
+DIV.search INPUT.string { font-size: 10px; }
+DIV.search INPUT.btn { font-size: 10px; background: #FFFFFF; color: #828282; }
+
+UL.news { margin-left: 0px; padding-left: 0px; }
+UL.news A { color: #828282; }
+
+BUTTON {  border: 1px solid #B6B8BC; vertical-align: middle; font-size: 10px; background: #FFFFFF; color: #828282; }
+
+@media all {
+	DIV.search INPUT.string { vertical-align: middle; width: 75px; }
+	DIV.search INPUT.btn { border: 1px solid #B6B8BC; vertical-align: middle; }
+	UL.news LI { list-style-image: url('dot01.gif'); margin-left: 10px; padding-left: 6px; line-height: normal; margin-bottom: 4px; padding-bottom: 4px; border-bottom: 1px solid #E4E4E4; }
+}
+
+.thumblist {
+	font: 11px Tahoma, Arial, Helvetica, sans-serif; color: #828282;
+	padding: 10px 0px 0px 0px;
+	vertical-align: top;
+	}
+.thumblist .item {
+	float: left;
+	width: 122px;
+	height: 126px;
+	margin: 10px 10px 0px 0px;
+	border: solid 1px #CCC;
+ 	}
+.thumblist .item P{
+	font: 11px Tahoma, Arial, Helvetica, sans-serif; color: #828282;
+ 	}
+.thumblist a {
+	display: block;
+	width: auto;
+ 	}
+.thumblist a img {
+	border: none;
+	margin-top: 5px;
+	vertical-align: bottom;
+ 	}
+.thumblist a p {
+	margin: 5px 5px 0px 5px;
+ 	}
+
+.form2_error{
+    color:red;
+}

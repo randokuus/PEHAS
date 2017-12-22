@@ -1,0 +1,291 @@
+<?php
+
+require_once('ehis_client.php');
+require_once('ehis_types.php');
+
+$data = array();
+
+$queryLines = explode("\n", $_POST['query']);
+foreach($queryLines as $queryLine)
+{
+	$parts = explode(';', $queryLine);
+	
+	$isik = new EYL_IsikParing;
+	$tmp = trim(@$parts[0]);
+	$isik->isikukood = $tmp == '' ? null : $tmp;
+	$tmp = trim(@$parts[1]);
+	$isik->eesnimi = $tmp == '' ? null : $tmp;
+	$tmp = trim(@$parts[2]);
+	$isik->perenimi = $tmp == '' ? null : $tmp;
+	$tmp = trim(@$parts[3]);
+	$isik->synni_kp = $tmp == '' ? null : $tmp;
+	
+	$data[] = $isik;
+}
+
+$isSearch = @$_POST['search']=='Otsi';
+$result->data = array();
+
+if($isSearch)
+{
+	$par = new eyl_isic_paring();
+	$par->data = $data;
+
+	$wsdl = 'adapter.wsdl';
+	$eh = new EhisClient($wsdl, '11458311', '37712130231');
+	
+	try
+	{
+		$result = $eh->eyl_isic($par);
+	}
+	catch(Exception $ex)
+	{
+		var_dump($ex);	
+	}
+	
+	$requestHeaders = $eh->getLastRequestHeaders();
+	$request = $eh->getLastRequest();
+	$responseHeaders = $eh->getLastResponseHeaders();
+	$response = $eh->getLastResponse();	
+}
+?><html>
+	<head>
+			<title>EhisClient()</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<style>
+				.resultsTable { border-collapse: collapse; }
+				.resultsTable, .resultsTable td, .resultsTable th 
+				{
+					border: 1px solid darkgray;	
+				}
+			</style>
+	</head>
+	<body>
+		<h2>Isikute otsing</h2>
+		
+		<form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td colspan="2">Otsingu tingimused:</td>
+					<tr>
+						<td valign="top">							
+							<textarea name="query" cols="40" rows="7"><?php echo @$_POST['query'] ?></textarea><br />
+							<input type="submit" value="Otsi" name="search" />
+						</td>
+						<td valign="top" style="padding-left:20px">
+								<p>Sisesta üks või mitu rida kujul:</p>
+								<p>isikukood;eesnimi;perenimi;synni_kp</p>
+								<p>Isikukoodide korral piisab ainult isikukoodi sisestamisest,<br/>mitme isikukoodi korral kõik eraldi ridadele.</p>
+						</td>
+					</tr>
+				</table>
+		</form>
+		
+		<?php 
+			if($isSearch)
+			{
+				echo 'Leiti <strong>'.count($result->data).'</strong> tulemust';		
+		?>
+			<table class="resultsTable">
+				<tr>
+					<th rowspan="2">Isikukood</th>
+					<th rowspan="2">Eesnimi</th>
+					<th rowspan="2">Perenimi</th>
+					<th rowspan="2">Sünnipäev</th>
+					<th colspan="4">Õpetamine</th>
+					<th colspan="9">Õppimine</th>
+				</tr>
+				<tr>
+					<th>Kool</th>
+					<th>ID</th>
+					<th>Reg. nr</th>
+					<th>Ametikohad</th>
+					<th>Kool</th>
+					<th>ID</th>
+					<th>Reg. nr</th>
+					<th>Klass</th>
+					<th>ok_kood</th>
+					<th>ok_nimetus</th>
+					<th>Õppevorm</th>
+					<th>Koormus</th>
+					<th>Kursus</th>
+				</tr>
+				<?php foreach($result->data as $value) { ?>
+					<tr>
+						<td><?php echo @$value->isikukood ?></td>
+						<td><?php echo @$value->eesnimi ?></td>
+						<td><?php echo @$value->perenimi ?></td>
+						<td><?php echo @$value->synni_kp ?></td>
+						<td><?php echo @$value->opetamine->oas_nimetus ?></td>
+						<td><?php echo @$value->opetamine->oas_id ?></td>
+						<td><?php echo @$value->opetamine->oas_regnr ?></td>
+						<td><?php echo @$value->opetamine->ametikohad->ametikoht ?></td>
+						<td><?php echo @$value->oppimine_yld->oas_nimetus ?></td>
+						<td><?php echo @$value->oppimine_yld->oas_id ?></td>
+						<td><?php echo @$value->oppimine_yld->oas_regnr ?></td>
+						<td><?php echo @$value->oppimine_yld->klass ?></td>
+						<td><?php echo @$value->oppimine_yld->ok_kood ?></td>
+						<td><?php echo @$value->oppimine_yld->ok_nimetus ?></td>
+						<td><?php echo @$value->oppimine_yld->oppevorm ?></td>
+						<td><?php echo @$value->oppimine_yld->koormus ?></td>
+						<td><?php echo @$value->oppimine_yld->kursus ?></td>
+					</tr>
+				<?php } ?>
+			</table>
+			
+			<table width="100%">
+				<tr>
+					<th>Päringu päised</th>
+					<th>Vastuse päised</th>
+				</tr>
+				<tr>
+					<td width="50%"><textarea rows="10" style="width:100%"><?php echo $requestHeaders ?></textarea></td>
+					<td width="50%"><textarea rows="10" style="width:100%"><?php echo $responseHeaders ?></textarea></td>
+				</tr>
+				<tr>
+					<th>Päringu keha</th>
+					<th>Vastuse keha</th>
+				</tr>
+				<tr>
+					<td><textarea style="width:100%" rows="50"><?php echo $request ?></textarea></td>
+					<td><textarea style="width:100%" rows="50"><?php echo $response ?></textarea></td>
+				</tr>
+			</table>
+		<?php } ?>
+	</body>
+</html>
+
+<?php
+function xml_highlight($s)
+{        
+    $s = htmlspecialchars($s);
+    $s = preg_replace("#&lt;([/]*?)(.*)([\s]*?)&gt;#sU",
+        "<font color=\"#0000FF\">&lt;\\1\\2\\3&gt;</font>",$s);
+    $s = preg_replace("#&lt;([\?])(.*)([\?])&gt;#sU",
+        "<font color=\"#800000\">&lt;\\1\\2\\3&gt;</font>",$s);
+    $s = preg_replace("#&lt;([^\s\?/=])(.*)([\[\s/]|&gt;)#iU",
+        "&lt;<font color=\"#808000\">\\1\\2</font>\\3",$s);
+    $s = preg_replace("#&lt;([/])([^\s]*?)([\s\]]*?)&gt;#iU",
+        "&lt;\\1<font color=\"#808000\">\\2</font>\\3&gt;",$s);
+    $s = preg_replace("#([^\s]*?)\=(&quot;|')(.*)(&quot;|')#isU",
+        "<font color=\"#800080\">\\1</font>=<font color=\"#FF00FF\">\\2\\3\\4</font>",$s);
+    $s = preg_replace("#&lt;(.*)(\[)(.*)(\])&gt;#isU",
+        "&lt;\\1<font color=\"#800080\">\\2\\3\\4</font>&gt;",$s);
+    return nl2br($s);
+}
+
+
+
+exit;
+
+$reqListProducers = '<?xml version="1.0" encoding="UTF-8" ?>  
+ <SOAP-ENV:Envelope  
+     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:ns4="http://x-tee.riik.ee/xsd/xtee.xsd"  
+   SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 
+<SOAP-ENV:Header> 
+  <ns4:asutus xsi:type="xsd:string">11458311</ns4:asutus>  
+  <ns4:andmekogu xsi:type="xsd:string">xtee</ns4:andmekogu>  
+  <!--ns4:isikukood 
+xsi:type="xsd:string">EE30101010007</ns4:isikukood-->  
+  <ns4:id 
+xsi:type="xsd:string">990c046413466aa32a80d3c472326a112f0
+48571</ns4:id>  
+  <ns4:nimi xsi:type="xsd:string">xtee.listProducers</ns4:nimi>  
+  <ns4:toimik xsi:type="xsd:string" />  
+ </SOAP-ENV:Header> 
+ <SOAP-ENV:Body> 
+   <ns4:listProducers> 
+  <keha xsi:type="xsd:string" />  
+  </ns4:listProducers> 
+  </SOAP-ENV:Body> 
+  </SOAP-ENV:Envelope> 
+';
+
+$reqAllowedMethods = '<?xml version="1.0" encoding="UTF-8" ?>  
+ <SOAP-ENV:Envelope  
+     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:ns4="http://x-tee.riik.ee/xsd/xtee.xsd"  
+   SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 
+<SOAP-ENV:Header> 
+  <ns4:asutus xsi:type="xsd:string">11458311</ns4:asutus>  
+  <ns4:andmekogu xsi:type="xsd:string">ehis</ns4:andmekogu>  
+  <ns4:isikukood xsi:type="xsd:string">EE37712130231</ns4:isikukood>  
+  <ns4:id 
+xsi:type="xsd:string">990c046413466aa32a80d3c472326a112f0
+48571</ns4:id>  
+  <ns4:nimi xsi:type="xsd:string">ehis.allowedMethods</ns4:nimi>  
+  <ns4:toimik xsi:type="xsd:string" />  
+ </SOAP-ENV:Header> 
+ <SOAP-ENV:Body> 
+   <ns4:allowedMethods> 
+  <keha xsi:type="xsd:string" />  
+  </ns4:allowedMethods> 
+  </SOAP-ENV:Body> 
+  </SOAP-ENV:Envelope> 
+';
+
+$reqEylIsic = '<?xml version="1.0" encoding="UTF-8" ?>  
+ <SOAP-ENV:Envelope  
+		xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+		xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+		xmlns:ns4="http://x-tee.riik.ee/xsd/xtee.xsd"
+		xmlns:ns5="http://producers.ehis.xtee.riik.ee/producer/ehis"
+
+		SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> 
+<SOAP-ENV:Header> 
+  <ns4:asutus xsi:type="xsd:string">11458311</ns4:asutus>  
+  <ns4:andmekogu xsi:type="xsd:string">ehis</ns4:andmekogu>  
+  <ns4:isikukood xsi:type="xsd:string">EE37712130231</ns4:isikukood>  
+  <ns4:id xsi:type="xsd:string">990c046413466aa32a80d3c472326a112f048571</ns4:id>  
+  <ns4:nimi xsi:type="xsd:string">ehis.eyl_isic.v1</ns4:nimi>  
+  <ns4:toimik xsi:type="xsd:string" />  
+ </SOAP-ENV:Header> 
+ <SOAP-ENV:Body> 
+   <ns5:eyl_isic> 
+  	<keha>
+  		<item>
+  			<isikukood xsi:type="ns5:EHIS_Isikukood"></isikukood>
+  			<synni_kp xsi:type="xsd:date">12.01.2010</synni_kp>
+  			<eesnimi xsi:type="xsd:string">Mati</eesnimi>
+  			<perenimi xsi:type="xsd:string">Meri</perenimi>
+  		</item>
+  	</keha>  
+  </ns5:eyl_isic> 
+  </SOAP-ENV:Body> 
+  </SOAP-ENV:Envelope> 
+';
+//http://213.180.8.21/cgi-bin/uriproxy?provider=ehis
+$host = '213.180.8.21';
+$fp = fsockopen($host, 80);
+ 
+    // send the request headers:
+    //fputs($fp, "GET /cgi-bin/uriproxy?producer=sais HTTP/1.1\r\n");
+    fputs($fp, "POST /cgi-bin/consumer_proxy HTTP/1.1\r\n");
+    fputs($fp, "Host: $host\r\n");
+    //fputs($fp, "Referer: $referer\r\n");
+    fputs($fp, "Content-type: text/xml; charset=UTF-8\r\n");
+    fputs($fp, "Content-length: ". strlen($reqEylIsic) ."\r\n");
+    fputs($fp, "SOAPAction: \r\n");
+    fputs($fp, "Connection: close\r\n\r\n");
+    fputs($fp, $reqEylIsic);
+ 
+    $result = ''; 
+    while(!feof($fp)) {
+        // receive the results of the request
+        $result .= fgets($fp, 128);
+    }
+ 
+    // close the socket connection:
+    fclose($fp);
+    
+    var_dump($result);
+?>

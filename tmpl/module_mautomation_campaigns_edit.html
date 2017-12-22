@@ -1,0 +1,168 @@
+<div class="container">
+<h2><TPL:TITLE></h2>
+<div class="content">
+<script language="javascript">
+    function checkParam(){
+        if (document.getElementById('name').value.length == 0){
+            alert('<TPL:TXT_module_mautomation|error_not_fields>');
+            document.getElementById('name').focus();
+            return false;
+        }
+        if (document.getElementById('group').value.length == 0){
+            alert('<TPL:TXT_module_mautomation|error_not_fields>');
+            document.getElementById('group').focus();
+            return false;
+        }
+        if (document.getElementById('start_date').value.length == 0 ){
+            alert('<TPL:TXT_module_mautomation|error_not_fields>');
+            document.getElementById('start_date').focus();
+            return false;
+        }
+/*      if (document.getElementById('select_fields').options.length <= 0 ){
+            alert('<TPL:TXT_module_mautomation|error_select_fields_opt-in>');
+            document.getElementById('select_fields').focus();
+            return false;
+        }*/
+        checkAll(document.getElementById('select_fields'));
+        checkAll(document.getElementById('all_fields'));
+        /*if (document.getElementById('start_date').value.search(/^\d{4}-d{2}-d{2} d{2}:d{2}:d{2}$/) == -1){
+            alert('<TPL:TXT_module_mautomation|error_date_format>');
+            document.getElementById('start_date').focus();
+            return false;
+        }*/
+        //return false;
+        return true;
+    }
+
+    function checkAll(elem){
+        for (i = 0; i < elem.options.length; i++) {
+            elem.options.item(i).selected = true;
+        }
+    }
+
+    function moveSelectedFields(e_from, e_to){
+        start = e_to.length;
+        selected = e_from.selectedIndex;
+        while (selected >=0){
+            var opt = document.createElement('OPTION');
+            e_to.options.add(opt, start);
+            opt.innerHTML = e_from.options.item(selected).innerHTML;
+            opt.value = e_from.options.item(selected).value;
+            start++;
+            e_from.remove(selected);
+            selected = e_from.selectedIndex;
+        }
+    }
+
+    function moveAllFields(e_from, e_to){
+        checkAll(e_from);
+        moveSelectedFields(e_from, e_to);
+    }
+
+</script>
+        <form name="vorm" method="post" action="<TPL:SUBMIT_URL>" onSubmit="return checkParam();">
+        <TPL:ID>
+        <table class="form" align = "center">
+            <tr>
+                <td class="label" colspan="2"><font color="red"><TPL:ERROR_MESSAGE></font></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|name>*</td>
+                <td class="input"><input type="text" id="name" name="name" value ="<TPL:NAME>" ></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|clients_list_filter_group>*</td>
+                <td class="input">
+                    <select id="group" name="group[]" MULTIPLE >
+                    <TPL_SUB:GROUPS>
+                        <option <TPL:ID>><TPL:NAME></option>
+                    </TPL_SUB:GROUPS>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|send_method></td>
+                <td class="input">
+                <TPL_SUB:SEND_METHOD>
+                    <input type="radio" name="send_method" <TPL:NAME> > <TPL:DESCRIPTION>
+                </TPL_SUB:SEND_METHOD>
+                </td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|periodicity></td>
+                <td class="input">
+                    <select name="period" >
+                    <TPL_SUB:PERIODICITY>
+                        <option <TPL:ID>><TPL:NAME></option>
+                    </TPL_SUB:PERIODICITY>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|start_from>*</td>
+                <td class="input">
+                    <input type="text" id="start_date" name="start_date" value ="<TPL:START_DATE>" >
+                </td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|redefine_in_mautomation></td>
+                <td class="input">
+                <input type="checkbox" name="redefine" value ="1" <TPL:REDEFINE>></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|template_name></td>
+                <td class="input">
+                    <select id="template" name="template" >
+                    <TPL_SUB:TEMPLATE>
+                        <option <TPL:ID>><TPL:NAME></option>
+                    </TPL_SUB:TEMPLATE>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|opt-in-fields>*</td>
+                <td>
+                    <table cellspacing="0" cellspadding="0" border="0" >
+                        <tr>
+                            <td><TPL:TXT_module_mautomation|fields_list></td>
+                            <td></td>
+                            <td><TPL:TXT_module_mautomation|form_fields></td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <select id="all_fields" name="all_fields[]" size="6" style="float: left" MULTIPLE>
+                                <TPL_SUB:ALL_FIELDS>
+                                    <TPL:FIELD>
+                                </TPL_SUB:ALL_FIELDS>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input type="button" value="&gt;&gt;" class="submit" style="width: 30px" onClick="moveAllFields(document.getElementById('all_fields'), document.getElementById('select_fields'));"><br/>
+                                <input type="button" value="&gt;" class="submit" style="width: 30px" onClick="moveSelectedFields(document.getElementById('all_fields'), document.getElementById('select_fields'));"><br/>
+                                <input type="button" value="&lt;" class="submit" style="width: 30px" onClick="moveSelectedFields(document.getElementById('select_fields'), document.getElementById('all_fields'));"><br/>
+                                <input type="button" value="&lt;&lt;" class="submit" style="width: 30px" onClick="moveAllFields(document.getElementById('select_fields'), document.getElementById('all_fields'));"><br/>
+                            </td>
+                            <td align="center">
+                                <select id="select_fields" name="select_fields[]" size="6" style="float: left" MULTIPLE>
+                                <TPL_SUB:SELECTED_FIELDS>
+                                    <TPL:FIELD>
+                                </TPL_SUB:SELECTED_FIELDS>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                <input type="submit" value="<TPL:TXT_module_mautomation|save>" class="submit">
+                <input type="button" value="<TPL:TXT_module_mautomation|edit_template>" class="submit" onClick="document.location = '<TPL:URL_EDIT_TEMPLATE>'+document.getElementById('template').value">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </form>
+        </table>
+</div>
+</div>

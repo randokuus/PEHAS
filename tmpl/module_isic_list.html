@@ -1,0 +1,158 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+
+  function del(urliMeez) {
+    conf = window.confirm('<TPL:CONFIRMATION>');
+    if (conf) document.location = urliMeez;
+  }
+
+/**
+ * marks all rows and selects its first checkbox inside the given element
+ * the given element is usaly a table or a div containing the table or tables
+ *
+ * @param    container    DOM element
+ */
+function markAllRows( container_id ) {
+    var rows = document.getElementById(container_id).getElementsByTagName('tr');
+    var checkbox;
+
+    for ( var i = 0; i < rows.length; i++ ) {
+        checkbox = rows[i].getElementsByTagName( 'input' )[0];
+
+        if ( checkbox && checkbox.type == 'checkbox' ) {
+            if ( checkbox.disabled == false ) {
+                checkbox.checked = true;
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
+ * marks all rows and selects its first checkbox inside the given element
+ * the given element is usaly a table or a div containing the table or tables
+ *
+ * @param    container    DOM element
+ */
+function unMarkAllRows( container_id ) {
+    var rows = document.getElementById(container_id).getElementsByTagName('tr');
+    var checkbox;
+
+    for ( var i = 0; i < rows.length; i++ ) {
+        checkbox = rows[i].getElementsByTagName( 'input' )[0];
+
+        if ( checkbox && checkbox.type == 'checkbox' ) {
+            checkbox.checked = false;
+        }
+    }
+
+    return true;
+}
+
+function toggleAllRows(container_id) {
+    var check_all = document.getElementById('check_all');
+    if (check_all.checked) {
+        markAllRows(container_id);
+    } else {
+        unMarkAllRows(container_id);
+    }
+}
+
+//-->
+</script>
+
+<TPL_SUB:SEARCH>
+<form method="post" action="<TPL:SELF>" name="filter">
+<div class="blockBodyText">
+  <TPL:HIDDEN>
+    <table class="form">
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_card|person_name_first>:</td>
+        <td class="input"><TPL:FIELD_filter_person_name_first></td>
+        <td class="label"><TPL:TXT_module_isic_card|type>:</td>
+        <td class="input"><TPL:FIELD_filter_type_id></td>
+        <td class="label"><TPL:TXT_module_isic_card|person_id>:</td>
+        <td class="input"><TPL:FIELD_filter_person_number></td>
+      </tr>
+      <tr>
+        <td class="label"><TPL:TXT_module_isic_card|person_name_last>:</td>
+        <td class="input"><TPL:FIELD_filter_person_name_last></td>
+        <td class="label"><TPL:TXT_module_isic_card|school>:</td>
+        <td class="input"><TPL:FIELD_filter_school_id></td>
+        <td class="label"><TPL:TXT_module_isic_card|isic_number>:</td>
+        <td class="input"><TPL:FIELD_filter_isic_number></td>
+      </tr>
+    </table>
+</div>
+<p class="actions">
+  <input type="submit" class="submit" value="<TPL:TXT_module_isic_card|search>">
+</p>
+</form>
+</TPL_SUB:SEARCH>
+<div class="blockBodyText">
+<TPL_SUB:MESSAGE>
+  <div class="error">
+    <p><TPL:MESSAGE></p>
+  </div>
+</TPL_SUB:MESSAGE>
+
+<p><TPL:RESULTS></p>
+
+<form method="post" action="<TPL:SELF>" name="confirm" id="confirm">
+<table class="data">
+    <tr>
+        <TPL_SUB:CONFIRM_TITLE>
+        <th><TPL:TITLE></th>
+        </TPL_SUB:CONFIRM_TITLE>
+        <th><a href="<TPL:URL_GENERAL>&sort=pic"><TPL:TXT_module_isic_card|pic></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=person_name_first"><TPL:TXT_module_isic_card|person_name_first></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=person_name_last"><TPL:TXT_module_isic_card|person_name_last></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=person_number"><TPL:TXT_module_isic_card|person_id></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=expiration_date"><TPL:TXT_module_isic_card|expiration_date></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=isic_number"><TPL:TXT_module_isic_card|isic_number></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=confirm_payment_collateral"><TPL:TXT_module_isic_card|confirm_payment_collateral></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=confirm_payment_cost"><TPL:TXT_module_isic_card|confirm_payment_cost></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=card_type_name"><TPL:TXT_module_isic_card|type></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=person_stru_unit"><TPL:TXT_module_isic_card|person_stru_unit></a></th>
+        <th><a href="<TPL:URL_GENERAL>&sort=active"><TPL:TXT_module_isic_card|active></a></th>
+        <th>&nbsp;</th>
+    </tr>
+    <TPL_SUB:DATA>
+    <tr class="<TPL:STYLE>">
+        <TPL_SUB:CONFIRM>
+        <td><TPL:DATA></td>
+        </TPL_SUB:CONFIRM>
+        <td><a href="<TPL:URL_IMAGE>"><TPL:IMAGE></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NAME_FIRST></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NAME_LAST></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_NUMBER></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_EXPIRATION_DATE></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ISIC_NUMBER></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_CONFIRM_PAYMENT_COLLATERAL></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_CONFIRM_PAYMENT_COST></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_CARD_TYPE_NAME></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_PERSON_STRU_UNIT></a></td>
+        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_ACTIVE></a></td>
+        <td><TPL_SUB:MOD><a href="<TPL:URL_MODIFY>"><img src="img/templates/global_img/b_edit.gif" alt="" border="0"></a></TPL_SUB:MOD>
+        <TPL_SUB:DEL><br /><a href="<TPL:URL_DELETE>"><img src="img/templates/global_img/b_close.gif" alt="" border="0"></a></TPL_SUB:DEL>
+        </td>
+    </tr>
+    </TPL_SUB:DATA>
+</table>
+
+<TPL_SUB:CHECK_ALL>
+<input type="checkbox" class="checkbox" id="check_all" name="check_all" value="0" onclick="toggleAllRows('confirm')"> <TPL:TXT_module_isic_card|check_all>
+<TPL:DUMMY>
+</TPL_SUB:CHECK_ALL>
+
+<TPL_SUB:CONFIRM_BUTTON>
+<p class="actions">
+    <TPL:HIDDEN>
+    <input type="submit" value="<TPL:BUTTON>" class="submit" />
+</p>
+</TPL_SUB:CONFIRM_BUTTON>
+</form>
+
+<p><TPL:PAGES></p>
+</div>

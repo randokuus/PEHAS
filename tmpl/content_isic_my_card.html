@@ -1,0 +1,20 @@
+<TPL_INCLUDE:tmpl/header_projects.html>
+<!-- col 1 start -->
+<!-- col 1 end -->
+<!-- col 2 start -->
+<div style="float:left; width:100%;">
+  <div class="block">
+    <div class="blockHeaderSimple">
+      <h2><TPL:TITLE></h2>
+      <div class="clearer"></div>
+    </div>
+    <TPL_OBJECT:isic>
+      <TPL_OBJECT_PARAM:setListType('my_card')>
+      <TPL_OBJECT_OUTPUT:show()>
+    </TPL_OBJECT:isic>
+  </div>
+  <div class="clearer"></div>
+</div>
+<!-- col 2 end -->
+<TPL_INCLUDE:tmpl/right_column_hidden.html>
+<TPL_INCLUDE:tmpl/footer.html>

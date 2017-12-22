@@ -1,0 +1,95 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    var date3 = new Ext.form.DateField({
+            name: 'date3',
+            width:150,
+            allowBlank:true,
+            format:'Y-m-d H:i:s',
+            value: '<TPL:date3>'
+        });
+
+    date3.render('date3');
+});
+</script>
+
+<div class="blockHeaderSimple">
+    <h2><TPL:TXT_module_projects|name></h2>
+    <div class="clearer"></div>
+</div>
+
+<form name="vorm" method="post" action="<TPL:SELF>">
+
+<div class="blockBodyText">
+    <table class="form">
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|task>:</td>
+            <td class="value"><TPL:TASK></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|begin>:</td>
+            <td class="value"><TPL:DATE1></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|end>:</td>
+            <td class="value"><TPL:DATE2></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|info>:</td>
+            <td class="value"><TPL:INFO></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|type>:</td>
+            <td class="value"><TPL:TYPE></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|priority>:</td>
+            <td class="value"><TPL:PRIORITY></td>
+        </tr>
+        <tr valign="top">
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|owner>:</td>
+            <td class="value"><TPL:OWNER></td>
+        </tr>
+        <tr>
+            <td class="label" nowrap="nowrap"><TPL:TXT_module_projects|lastmod>:</td>
+            <td class="value"><TPL:LASTMOD></td>
+        </tr>
+    </table>
+
+    <table class="form">
+        <TPL:HIDDEN>
+        <TPL_SUB:MESSAGE>
+        <tr valign="top">
+            <td class="label" colspan="2"><font color="red"><TPL:MESSAGE></font><br><br></td>
+        </tr> 
+        </TPL_SUB:MESSAGE>
+        <tr valign="top">
+            <td class="label"><TPL:TXT_module_projects|status></td>
+            <td class="input"><select name="status"><TPL:select_status></select></td>
+        </tr>
+        <tr valign="top">
+            <td class="label"><TPL:TXT_module_projects|team></td>
+            <td class="input"><select name="team[]" size="5" multiple><TPL:select_team></select></td>
+        </tr>
+        <tr valign="top">
+            <td class="label"><TPL:TXT_module_projects|hours></td>
+            <td class="input"><input type="text" name="hours" class="i40" value="<TPL:HOURS>"></td>
+        </tr>
+        <tr valign="top">
+            <td class="label"><TPL:TXT_module_projects|solution></td>
+            <td class="input"><textarea class="i300" rows="10" name="solution"><TPL:SOLUTION></textarea></td>
+        </tr>
+        <tr valign="top">
+            <td class="label"><TPL:TXT_module_projects|ready></td>
+            <td class="input"><span id="date3"></span></td>
+        </tr>
+    </table>
+</div>
+
+<p class="actions">
+    <input type="submit" value="<TPL:TXT_module_projects|modifytask>" class="submit" />&nbsp;
+    <input type="button" onClick="document.location='<TPL:HISTORY>'" class="submit" value="<TPL:TXT_module_projects|taskhistory>" />
+    <input type="button" class="submit" onClick="document.location='<TPL:url_files>'" value="<TPL:TXT_module_projects|files>" />
+    <input type="button" class="submit" onClick="document.location='<TPL:BACK_URL>'" value="<TPL:TXT_back>" />
+</p>
+</form>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><TPL:PAGETITLE></title>
+    <meta name="Keywords" content="<TPL:KEYWORDS>">
+    <meta name="Description" content="<TPL:LEAD>">
+    <link href="img/style.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="img/scripts.js"></script>
+    <TPL:AJAX_JS>
+</head>
+
+<body onLoad="MM_preloadImages('img/btn_sitemap_on.gif','img/btn_print_on.gif')">
+<div align="center">
+    <table cellspacing="0" cellpadding="6" border="0" width="750" class="box1">
+        <tr>
+            <td>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td height="96" class="box2">
+                            <a href="<TPL:SELF>"><img src="<TPL:LOGO>" hspace="20" border=0 alt=""/></a>
+                        </td>
+                    </tr>
+                </table>
+                <img src="img/tk01.gif" width="738" height="3" alt=""><br>
+                <TPL_OBJECT:xslprocess>
+                <TPL_OBJECT_OUTPUT:menu('tmpl/menu_top.xsl')>
+                </TPL_OBJECT:xslprocess>
+                <img src="img/tk02.gif" width="738" height="2" alt=""><br>
+                <img src="img/1.gif" width="1" height="20" alt=""><br>
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr valign="top" align="left">
+                        <td class="menu">
+                        <TPL_OBJECT:xslprocess>
+                        <TPL_OBJECT_OUTPUT:menu('tmpl/menu_sub.xsl')>
+                        </TPL_OBJECT:xslprocess>
+                            <!-- Placeholder, do not delete! -->
+                            <img src="img/1.gif" width="160" height="1" alt=""><br>
+                        </td>
+                        <td><img src="img/1.gif" width="20" height="1" alt=""></td>
+                        <td width="100%" class="content">
+                            <table border="0" cellspacing="0" cellpadding="0" align="right">
+                                <tr>
+                                    <td width="22"><a href="<TPL:SITEMAPURL>" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sitemap','','img/btn_sitemap_on.gif',1)"><img name="sitemap" border="0" src="img/btn_sitemap_off.gif" width="22" height="18" hspace="0" align="absmiddle"></a></td>
+                                    <td class="sitemap"><a href="<TPL:SITEMAPURL>" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sitemap','','img/btn_sitemap_on.gif',1)"><TPL:SITEMAP></a>&nbsp;&nbsp;</td>
+                                    <td><a href="javascript:printwindow('<TPL:PRINTURL>');" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('print','','img/btn_print_on.gif',1)"><img name="print" border="0" src="img/btn_print_off.gif" width="24" height="18" align="absmiddle"></a></td>
+                                    <td class="sitemap"><a href="javascript:printwindow('<TPL:PRINTURL>');" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('print','','img/btn_print_on.gif',1)"><TPL:PRINT></a></td>
+                                </tr>
+                            </table>
+                            <h1><TPL:TITLE></h1>
+                            <TPL:TEXT>
+
+                            <TPL_OBJECT:user>
+                        <!-- text elements to replace from language files -->
+                            <TPL_OBJECT_PARAM:setText('username,password,password2,name,phone,email,register')>
+                        <!-- fields in the form -->
+                            <TPL_OBJECT_PARAM:setFields('username,password,password2,name,phone,email')>
+                        <!-- define any field type - textinput, select, select2, radio, checkbox,textfield, password -->
+                            <TPL_OBJECT_PARAM:setFieldType('password','password')>
+                            <TPL_OBJECT_PARAM:setFieldType('password2','password')>
+                        <!-- define field property - size,max,cols,rows,java,wrap -->
+                            <TPL_OBJECT_PARAM:setFieldProp('username','size', '20')>
+                        <!-- set required fields -->
+                            <TPL_OBJECT_PARAM:setRequired('username,password,password2,name,email')>
+                        <!-- set fields to write to database -->
+                            <TPL_OBJECT_PARAM:setWrite('username,password,name,email,phone,added')>
+                            <TPL_OBJECT_OUTPUT:register()>
+                            </TPL_OBJECT:user>
+                            </td>
+                        <td><img src="img/1.gif" width="40" height="1" alt=""></td>
+                        <td>&nbsp;
+                            </td>
+                    </tr>
+                </table>
+                <br>
+                <img src="img/tk01.gif" width="738" height="3" alt=""><br>
+                <table cellspacing="0" cellpadding="5" border="0" width="100%">
+                    <tr>
+                        <td align="center" class="content">
+                            <TPL:COPY> <TPL:FOOTER>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br>
+</div>
+</body>
+</html>

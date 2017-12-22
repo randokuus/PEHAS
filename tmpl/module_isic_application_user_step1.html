@@ -1,0 +1,200 @@
+<script type="text/javascript" charset="utf-8">
+function assignPrevStep() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_changes>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.prev_step.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignNextStep() {
+    document.vorm.write.value = '1';
+    document.vorm.next_step.value = '1';
+    document.vorm.submit();
+}
+
+function assignDiscontinue() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_discontinue>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.write.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+                document.vorm.adelete.value = '1';
+                document.vorm.discontinue.value = '1';
+                document.vorm.submit();
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function assignCancel() {
+    var $dialog = $('<div></div>')
+    .html('<TPL:TXT_module_isic_card|confirm_cancel>')
+    .dialog({
+        autoOpen: false,
+        title: '<TPL:TXT_module_isic_card|question>',
+        resizable: false,
+        modal: true,
+        width: 450,
+        buttons: {
+            "<TPL:TXT_module_isic_card|ok>": function() {
+                $(this).dialog("close");
+                document.vorm.cancel.value = '1';
+                document.vorm.submit();
+            },
+            "<TPL:TXT_module_isic_card|cancel>": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('div.ui-dialog').append('<i class="ll"><i></i></i><i class="rr"><i></i></i><i class="tt"><i></i></i><i class="bb"><i></i></i><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>');
+    $('div.ui-dialog div.ui-dialog-buttonpane span.ui-button-text').wrap('<span></span>');
+    $dialog.dialog('open');
+}
+
+function do_get_all_schools_data() {
+	var sel = document.vorm.elements['school_id'];
+	<TPL_SUB:ALL_SCHOOLS>
+	var options = <TPL:OPTIONS>;  
+	sel.updateOptions(options);
+	$(sel).focus();
+	sel.expand();
+	</TPL_SUB:ALL_SCHOOLS>
+}
+
+</script>
+
+        <TPL_SUB:MESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgError msgGray">
+                <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:MESSAGE>
+        
+        <TPL_SUB:IMESSAGE>
+        <!--msgWrap-->
+        <div class="msgWrap">
+            <p class="msg msgOk">
+                <span><TPL:IMESSAGE></span>
+            </p>
+        </div>
+        <!--/msgWrap-->
+        </TPL_SUB:IMESSAGE>
+
+        
+
+        <TPL:STEPS>
+
+        <!--singleCol-->
+        <div class="singleCol">
+
+            <!--box-->
+            <div class="box">
+
+                <div class="inner">
+                    <div class="heading">
+                        <h2><TPL:TXT_module_isic_card|step1_title></h2>
+                    </div>
+
+                    <!--controlTable-->
+                    <div class="formTable schoolTable">
+                        <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+						    <input type="hidden" name="write" value="0" id="write">
+						    <input type="hidden" name="adelete" value="0" id="adelete">
+						    <input type="hidden" name="prev_step" value="0" id="prev_step">
+						    <input type="hidden" name="next_step" value="0" id="next_step">
+						    <input type="hidden" name="discontinue" value="0" id="discontinue">
+						    <input type="hidden" name="cancel" value="0" id="cancel">
+	    					<TPL:HIDDEN>
+                        
+                            <TPL_SUB:SCHOOL_ID>
+                            <!--fLine-->
+                            <div class="fLine <TPL:REQUIRED>">
+                                <div class="fHead">
+                                    <TPL:TXT_module_isic_card|school>:
+                                </div>
+                                <div class="fCell">
+                                    <TPL:FIELD_school_id>
+                                </div>
+                                <div class="fHint">
+                                    <TPL_SUB:ALL><input type="button" id="button_all" value="<TPL:TITLE>" onclick="javascript:do_get_all_schools_data();" /></TPL_SUB:ALL>
+                                </div>
+                            </div>
+                            <!--/fLine-->
+                            <!--fLine-->
+                            <div class="fLine <TPL:REQUIRED>">
+                                <div class="fHead">
+
+                                </div>
+                                <div class="fCell">
+
+                                </div>
+                                <div class="fHint">
+                                    <p class="opened"><TPL:TXT_module_isic_card|all_schools_help></p>
+                                </div>
+                            </div>
+                            <!--/fLine-->
+                            </TPL_SUB:SCHOOL_ID>
+
+                            <!--wButtons-->
+                            <div class="wButtons">
+								<TPL_SUB:BUTTON_PREV>
+								<input type="button" id="button_prev" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignPrevStep();" />
+								</TPL_SUB:BUTTON_PREV>
+								<TPL_SUB:BUTTON_NEXT>
+								<input type="button" id="button_next" value="<TPL:TITLE>" onclick="javascript:assignNextStep();" />
+								</TPL_SUB:BUTTON_NEXT>
+								<TPL_SUB:BUTTON_DISCONTINUE>
+								<input type="button" id="button_discontinue" value="<TPL:TITLE>" class="grayButton" onclick="javascript:assignDiscontinue();" />
+								</TPL_SUB:BUTTON_DISCONTINUE>
+								<TPL_SUB:BUTTON_CANCEL>
+								<input type="button" id="button_cancel" value="<TPL:TITLE>" onclick="javascript:assignCancel();" />
+								</TPL_SUB:BUTTON_CANCEL>
+                            </div>
+                            <!--/wButtons-->
+                        </form>
+                    </div>
+                    <!--/controlTable-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

@@ -1,0 +1,42 @@
+<div class="container">
+<h2><TPL:TXT_module_mautomation|view_send_info></h2>
+<div class="content">
+        <TPL:ID>
+        <table class="data" align = "center">
+            <tr>
+                <td class="label" colspan="2"><font color="red"><TPL:ERROR_MESSAGE></font></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|name></td>
+                <td class="input"><TPL:NAME></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|create_date></td>
+                <td class="input"><TPL:CREATE_DATE></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|groups></td>
+                <td class="input"><TPL:GROUP_LIST></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|email></td>
+                <td class="input"><TPL:EMAIL></td>
+            </tr>
+            <tr>
+                <td class="label"><TPL:TXT_module_mautomation|read></td>
+                <td class="input"><TPL:IS_READ></td>
+            </tr>
+            <tr>
+                <th><TPL:TXT_module_mautomation|linck></th>
+                <th><TPL:TXT_module_mautomation|clicks></th>
+            </tr>
+            <TPL_SUB:URL>
+            <tr>
+                <td class="label"><TPL:LINCK></td>
+                <td class="input"><TPL:CLICK></td>
+            </tr>
+            </TPL_SUB:URL>
+        </table>
+        <input type="button" onclick="document.location = '<TPL:BACK_URL>'" class="submit" value="<TPL:TXT_module_mautomation|back>" />
+</div>
+</div>

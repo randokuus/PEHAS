@@ -1,0 +1,154 @@
+<script type="text/javascript">
+    function changeType() {
+        var select_type = document.getElementById('field_type');
+        var field_options_input = document.getElementById('field_options_input');
+        var field_params_input = document.getElementById('field_params_input');
+        if (select_type && field_options_input && field_params_input) {
+            if (select_type.value == 1 || select_type.value == 2) {
+                field_options_input.style.display = 'none';
+                field_params_input.style.display = 'block';
+            } else {
+                field_params_input.style.display = 'none';
+                field_options_input.style.display = 'block';
+            }
+        }
+    }
+    
+    function addOption() {
+        var list_labels = document.getElementById('options_labels');
+        var list_values = document.getElementById('options_values');
+        if (!list_labels || !list_values) return;
+        var val = window.prompt('<TPL:TXT_module_mautomation|enter_option_value>');
+        if (val) {
+            if (list_labels.options.length == 1 &&
+                list_labels.options[0].innerHTML == ' ' &&
+                list_values.options.length == 1 &&
+                list_values.options[0].innerHTML == 'new') {
+                list_labels.options[0].innerHTML = val;
+            } else {
+                var opt_label = document.createElement('OPTION');
+                opt_label.innerHTML = val;
+                list_labels.options.add(opt_label);
+                var opt_value = document.createElement('OPTION');
+                opt_value.innerHTML = 'new';
+                list_values.options.add(opt_value);
+            }
+        }
+    }
+    
+    function modifyOption() {
+        var list_labels = document.getElementById('options_labels');
+        if (!list_labels) return;
+        if (list_labels.selectedIndex < 0) return;
+        var val = window.prompt('<TPL:TXT_module_mautomation|enter_option_value>', list_labels.options[list_labels.selectedIndex].innerHTML);
+        if (val) {
+            list_labels.options[list_labels.selectedIndex].innerHTML = val;
+        }
+    }
+    
+    function deleteOption() {
+        var list_labels = document.getElementById('options_labels');
+        var list_values = document.getElementById('options_values');
+        if (!list_labels || !list_values) return;
+        if (list_labels.selectedIndex < 0) return;
+        if (window.confirm('<TPL:TXT_module_mautomation|confirm_delete_option>')) {
+            var i = list_labels.selectedIndex;
+            list_labels.remove(i);
+            list_values.remove(i);
+        }
+        if (list_labels.options.length == 0 && list_values.options.length == 0) {
+            var opt_label = document.createElement('OPTION');
+            opt_label.innerHTML = ' ';
+            list_labels.options.add(opt_label);
+            var opt_value = document.createElement('OPTION');
+            opt_value.innerHTML = 'new';
+            list_values.options.add(opt_value);
+        }
+    }
+    
+    function beforeSubmit() {
+        var list_labels = document.getElementById('options_labels');
+        var list_values = document.getElementById('options_values');
+        if (!list_labels || !list_values) return;
+//      list_labels.multiple = true;
+//      list_values.multiple = true;
+        var i;
+        for (i = 0; i < list_labels.options.length && i < list_values.options.length; i++) {
+            list_labels.options[i].selected = true;
+            list_values.options[i].selected = true;
+        }
+    }
+    
+    function submitForm(form) {
+        beforeSubmit();
+        form.submit();
+    }
+</script>
+<h2><TPL:SUBTITLE></h2> 
+<div class="container">
+    <div class="content">
+        <table class="form">
+        <form name="vorm" method="post" action="<TPL:SELF>">
+        <input type="hidden" name="action" value="SaveField">
+            <TPL_SUB:MESSAGE>
+            <tr valign="top">
+                <td class="label" colspan="2"><font color="red"><TPL:MESSAGE></font><br><br></td>
+            </tr>   
+            </TPL_SUB:MESSAGE>
+            <TPL_SUB:DATA>
+            <input type="hidden" name="old_id" value="<TPL:OLD_ID>">
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|field_id></td>
+                <td class="input"><input type="text" name="id" value="<TPL:ID>"></td>
+            </tr>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|field_type></td>
+                <td class="input">
+                    <select name="type" id="field_type" onchange="changeType()">
+                    <TPL:TYPE_OPTIONS>
+                    </select>
+                </td>
+            </tr>
+            <TPL_SUB:LABELS>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|field_label> (<TPL:LANGUAGE_NAME>)</td>
+                <td class="input"><input type="text" name="label[<TPL:LANGUAGE_ID>]" value="<TPL:LABEL>"/></td>
+            </tr>
+            </TPL_SUB:LABELS>
+            <tr valign="top">
+                <td class="label"><TPL:TXT_module_mautomation|field_options></td>
+                <td class="input">
+                    <span id="field_options_input" style="display: none">
+                        <select name="options_labels[]" multiple="multiple" size="6" style="float: left" id="options_labels">
+<TPL:OPTIONS_LABELS>
+                        </select>
+                        <select name="options_values[]" multiple="multiple" style="display: none" id="options_values">
+<TPL:OPTIONS_VALUES>
+                        </select>
+                        <input type="button" value="<TPL:TXT_module_mautomation|fields_options_add>" style="width: 70px" onclick="addOption()"/><br/>
+                        <input type="button" value="<TPL:TXT_module_mautomation|fields_options_modify>" style="width: 70px" onclick="modifyOption()"/><br/>
+                        <input type="button" value="<TPL:TXT_module_mautomation|fields_options_delete>" style="width: 70px" onclick="deleteOption()"/><br/>
+                    </span>
+                    <span id="field_params_input" style="display: none"><input type="text" name="length" value="<TPL:LENGTH>"/></span>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr valign="top">
+                <td class="label">&nbsp;</td>
+                <td class="input">
+                    <br />
+                    <input type="button" onclick="submitForm(this.form);" class="submit" value="<TPL:TXT_module_mautomation|save>"/>
+                    <input type="button" onclick="if (confirm('<TPL:CONFIRM_DELETE>')) { this.form.elements['action'].value = 'DeleteField'; submitForm(this.form);}" class="submit" value="<TPL:TXT_module_mautomation|delete>" />              
+                    <input type="button" onclick="this.form.elements['action'].value = 'CancelField'; submitForm(this.form);" class="submit" value="<TPL:TXT_module_mautomation|cancel>" />
+                </td>
+            </tr>
+        </TPL_SUB:DATA>
+        </form>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    changeType();
+</script>

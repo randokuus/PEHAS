@@ -1,0 +1,35 @@
+                            <TPL_SUB:MESSAGE>
+                                <p><TPL:MESSAGE></p>
+                            </TPL_SUB:MESSAGE>
+
+                        <TPL_SUB:FORM>
+                            <form name="vorm" method="post" action="<TPL:PHP_SELF>">
+                                <table class="form">
+                                    <tr>
+                                        <td class="label"><TPL:NAME>:</td>
+                                        <td class="input">
+                                            <input type="text" class="i120" name="name" value="<TPL:name>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label"><TPL:TOPIC>:</td>
+                                        <td class="input">
+                                            <input type="text" class="i200" name="topic" value="<TPL:topic>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label"><TPL:TEXT>:</td>
+                                        <td class="input">
+                                            <textarea class="i400" rows="5" name="text"><TPL:text></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">&nbsp;</td>
+                                        <td class="input"><input type="submit" value="<TPL:SEND>" class="submit" /></td>
+                                    </tr>
+                                </table>
+                                <input type=hidden name="send" value="true">
+                            </form>
+                        </TPL_SUB:FORM>
+
+    <!-- <p><button class="submit" onClick="document.location='<TPL:BACK_URL>'"><TPL:BACK></button></p>  -->

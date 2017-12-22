@@ -1,0 +1,129 @@
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+            
+            <TPL_SUB:IMESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgOk">
+                    <span><TPL:IMESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:IMESSAGE>
+
+            
+
+            <TPL_SUB:SEARCH>
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2>Filter</h2>
+                    </div>
+                    <!--boxcontent-->
+                    <div class="boxcontent">
+                        <!--filterTable-->
+                        <div class="filterTable threeCols">
+                            <form method="post" action="<TPL:SELF>" name="filter" class="jNice">
+                            <TPL:HIDDEN>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|name_first>:</label>
+                                        <TPL:FIELD_filter_name_first>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|name_last>:</label>
+                                        <TPL:FIELD_filter_name_last>
+                                    </div>
+                                </div>
+                                <div class="tCol">
+                                    <div class="tLine">
+                                        <label for=""><TPL:TXT_module_isic_user|user_code>:</label>
+                                        <TPL:FIELD_filter_user_code>
+                                    </div>
+                                </div>
+                                <div class="tLineButtons">
+                                    <input type="submit" value="<TPL:TXT_module_isic_user|search>" />
+                                </div>
+                            </form>
+                        </div>
+                        <!--/filterTable-->
+                    </div>
+                    <!--/boxcontent-->
+                </div>
+            </div>
+            <!--/box-->
+            </TPL_SUB:SEARCH>
+            
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <div class="control">
+                        </div>
+                        <h2><_TPL:PAGETITLE></h2>
+                    </div>
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+
+                    <form method="post" action="<TPL:SELF>" name="process" id="process">
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList">
+						    <tr>
+                                <TPL_SUB:TITLE>
+                                <th><span class="<TPL:CLASS>"><a href="<TPL:URL>"><TPL:NAME></a></span></th>
+                                </TPL_SUB:TITLE>
+						        <th>&nbsp;</th>
+						    </tr>
+						    <TPL_SUB:DATA>
+						    <tr>
+						        <td><a href="<TPL:URL_IMAGE>"><TPL:IMAGE></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NAME_FIRST></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_NAME_LAST></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_USER_CODE></a></td>
+						        <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_EMAIL></a></td>
+						        <td>
+						            <div class="wicons">
+								        <TPL_SUB:MOD><a href="<TPL:URL_MODIFY>" class="ico iedit" title="Edit">Edit</a></TPL_SUB:MOD>
+								        <TPL_SUB:DEL><a href="<TPL:URL_DELETE>" class="ico idel" title="Delete">Delete</a></TPL_SUB:DEL>
+								    </div>
+						        </td>
+						    </tr>
+						    </TPL_SUB:DATA>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                    </form>
+
+                    <!--pagin-->
+                    <div class="pagin">
+                        <div>
+                            <TPL:PAGES>
+                        </div>
+                        <div>
+                            <small>(<TPL:RESULTS>)</small>
+                        </div>
+                    </div>
+                    <!--/pagin-->
+                </div>
+            </div>
+            <!--/box-->

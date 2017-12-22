@@ -1,0 +1,37 @@
+        <!--userpanel-->
+        <div class="userpanel">
+            <div class="selectw">
+                <a href="#" class="icow iuser select">
+                    <TPL:MESSAGE>
+                </a>
+                <small><TPL:USER_TYPE></small>
+                
+                <div class="selectopt">
+                    <ul>
+                        <TPL_SUB:USER_LIST>
+                        <li class="<TPL:CLASS>">
+                            <a href="<TPL:URL>" class="icow iuser<TPL:TYPE_ID>">
+                                <TPL:NAME>
+                            </a>
+                            <small><TPL:TYPE_NAME></small>
+                        </li>
+                        </TPL_SUB:USER_LIST>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--/userpanel-->
+
+        <TPL_OBJECT:isic_school>
+          <TPL_OBJECT_OUTPUT:showList()>
+        </TPL_OBJECT:isic_school>        
+
+        <!--userpanel-->
+        <div class="userpanel">
+            <div class="selectw">
+                <a href="<TPL:LOGOUT_URL>" class="icow ilogout">
+                    <TPL:LOGOUT>
+                </a>
+            </div>
+        </div>
+        <!--/userpanel-->

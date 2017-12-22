@@ -1,0 +1,198 @@
+<script type="text/javascript"><!--
+/**
+ * Perform action with all checkboxed at 'frm-search-results' form
+ *
+ * @param string action wether 'check' or 'uncheck'
+ */
+var checkboxes = function(action)
+{
+    var form, el;
+
+    form = document.getElementById('frm-search-results');
+    for (i = 0; i < form.elements.length; i++) {
+        el = form.elements[i];
+        if ('checkbox' == el.type) {
+            if ('check' == action) {
+                el.checked = true;
+            } else if ('uncheck' == action) {
+                el.checked = false;
+            }
+        }
+    }
+
+    on_checkbox_change();
+}
+
+var on_checkbox_change = function()
+{
+    var form, el, replace_btn, is_disabled;
+
+    is_disabled = true;
+
+    form = document.getElementById('frm-search-results');
+    replace_btn = document.getElementById('replace-btn');
+    approve_btn = document.getElementById('approve-btn');
+    decline_btn = document.getElementById('decline-btn');
+
+    for (i = 0; i < form.elements.length; i++) {
+        el = form.elements[i];
+        if ('checkbox' == el.type) {
+            if (el.checked) {
+                is_disabled = false;
+                break;
+            }
+        }
+    }
+
+    if (approve_btn && decline_btn) {
+        if (approve_btn.disabled) {
+            if (!is_disabled) {
+                approve_btn.disabled = false;
+                decline_btn.disabled = false;
+            }
+        } else {
+            if (is_disabled) {
+                approve_btn.disabled = true;
+                decline_btn.disabled = true;
+            }
+        }
+    } else if (replace_btn) {
+        if (replace_btn.disabled) {
+            if (!is_disabled) replace_btn.disabled = false;
+        } else {
+            if (is_disabled) replace_btn.disabled = true;
+        }
+    }
+}
+
+/**
+ * Load right frame content
+ *
+ * @param string location relative uri
+ */
+var load_right = function(location)
+{
+    var right = parent.frames[1].document;
+    right.location.href = location;
+}
+
+/**
+ * Load left navigation menu
+ *
+ * @param string location relative uri
+ * @param int parent_id parent item id
+ * @param int|NULL child_id child item id
+ */
+var load_left_navi = function(location)
+{
+    var left = parent.frames[0].document;
+    left.location.href = location;
+}
+
+/**
+ * Load left content navigation menu
+ *
+ */
+var load_left_content = function()
+{
+    var left = parent.frames[0].document;
+}
+
+/**
+ * Select specified tab on top menu
+ *
+ * @param int tab_num
+ */
+var select_top_tab = function(tab_num)
+{
+    var top = parent.parent.frames[0].document;
+    top.getElementById('menu1').className = '';
+    top.getElementById('menu' + tab_num).className = 'active';
+}
+
+--></script>
+<style type="text/css">
+    .datatable td a { color: #0000ff; }
+</style>
+<form method="post" action="<TPL:FORM_SEARCH_ACTION>" class="formpanel">
+	<fieldset id="fieldset1" title="Search" >
+	<legend><TPL:SEARCH_FORM_TITLE></legend>
+		<table class="inputfield">
+		<tr><td><label for="search" class="left"><TPL:SEARCH_LABEL>:&nbsp;</label>
+		<input type="text" id="search" name="search" value="<TPL:SEARCH_VAL>" class="" maxlength="255" size="30">
+		<label><TPL:IN_LABEL></label> <TPL:OBJECTS_SELECT>
+		<button type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:GO></button></td></tr>
+		</table>
+    </fieldset>
+</form>
+
+<form method="post" action="<TPL:FORM_REPLACE_ACTION>" class="formpanel" name="frm-search-results" id="frm-search-results">
+	<fieldset>
+	<legend><TPL:FORM_TITLE></legend>
+
+	    <input type="hidden" name="search" value="<TPL:SEARCH_VAL>" />
+	    <input type="hidden" name="do" id="do" value="replace" />
+
+        <div style="background-color: #ccc; padding: 5px; color: #999;">
+          <TPL_SUB:REPLACE_CTRLS>
+              <label for="replace" class="left"><TPL:REPLACE_LABEL>:&nbsp;</label>
+              <input type="text" id="replace" name="replace" value="<TPL:REPLACE_VAL>" class="" maxlength="255" size="30">
+              <button id="replace-btn" disabled="disabled" type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:REPLACE_CHECKED></button>
+              <br />
+          </TPL_SUB:REPLACE_CTRLS>
+          <button type="button" onClick="checkboxes('check')"><TPL:CHECK_ALL></button>
+          <button type="button" onClick="checkboxes('uncheck')"><TPL:UNCHECK_ALL></button>
+          <TPL_SUB:WORKFLOW_CTRLS>
+            &nbsp;
+            <button id="approve-btn" disabled="disabled" onclick="getElementById('do').value='approve';" type="submit">Approve</button>
+            <button id="decline-btn" disabled="disabled" onclick="getElementById('do').value='decline';" type="submit">Decline</button>
+          </TPL_SUB:WORKFLOW_CTRLS>
+        </div>
+
+        <br />
+
+        <TPL_SUB:SEARCH_TBL>
+    		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+    		<tr>
+                <th><TPL:COL1_HDR></th>
+    			<th><TPL:COL2_HDR></th>
+    			<th><TPL:COL3_HDR></th>
+    			<th><TPL:COL4_HDR></th>
+    		</tr>
+            <TPL_SUB:RESULT_ROW>
+    		<tr>
+                <td><TPL:COL1>&nbsp;</td>
+    			<td><TPL:COL2>&nbsp;</td>
+    			<td><TPL:COL3>&nbsp;</td>
+    			<td><TPL:COL4>&nbsp;</td>
+    		</tr>
+            </TPL_SUB:RESULT_ROW>
+        </TPL_SUB:SEARCH_TBL>
+
+        <TPL_SUB:WORKFLOW_TBL>
+    		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+    		<tr>
+                <th><TPL:COL1_HDR></th>
+    			<th><TPL:COL2_HDR></th>
+    			<th><TPL:COL3_HDR></th>
+    			<th><TPL:COL4_HDR></th>
+    			<th><TPL:COL5_HDR></th>
+    			<th><TPL:COL6_HDR></th>
+    			<th><TPL:COL7_HDR></th>
+    		</tr>
+            <TPL_SUB:RESULT_ROW>
+    		<tr>
+                <td><TPL:COL1>&nbsp;</td>
+    			<td><TPL:COL2>&nbsp;</td>
+    			<td><TPL:COL3>&nbsp;</td>
+    			<td><TPL:COL4>&nbsp;</td>
+    			<td><TPL:COL5>&nbsp;</td>
+    			<td><TPL:COL6>&nbsp;</td>
+    			<td><TPL:COL7>&nbsp;</td>
+    		</tr>
+            </TPL_SUB:RESULT_ROW>
+        </TPL_SUB:WORKFLOW_TBL>
+
+		</table>
+	</fieldset>
+</form>

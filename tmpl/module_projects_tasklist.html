@@ -1,0 +1,105 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+
+    var filter_date1 = new Ext.form.DateField({
+            name: 'filter_date1',
+            width:90,
+            allowBlank:true,
+            format:'Y-m-d',
+            value: '<TPL:filter_date1>'
+        });
+
+    filter_date1.render('filter-date1');
+
+    var filter_date2 = new Ext.form.DateField({
+            name: 'filter_date2',
+            width:90,
+            allowBlank:true,
+            format:'Y-m-d',
+            value: '<TPL:filter_date2>'
+        });
+
+    filter_date2.render('filter-date2');
+
+    var filter_lastmod = new Ext.form.DateField({
+            name: 'filter_lastmod',
+            width:90,
+            allowBlank:true,
+            format:'Y-m-d',
+            value: '<TPL:filter_lastmod>'
+        });
+
+    filter_lastmod.render('filter-lastmod');
+
+});
+</script>
+
+<div class="blockHeader">
+  <h2><TPL:TXT_module_projects|name>: <TPL:select_project></h2>
+  <div class="clearer"></div>
+</div>
+
+<div class="blockBody">
+    <div class="blockBodyText">
+        <div class="w100p clear">
+            <form method="post" action="<TPL:SELF>">
+
+            <TPL:HIDDEN>
+            <table class="form">
+              <tr>
+                <td class="label"><TPL:TXT_module_projects|begin>:</td>
+                <td class="input"><span id="filter-date1"></span></td>
+                <td class="label"><TPL:TXT_module_projects|end>:</td>
+                <td class="input"><span id="filter-date2"></span></td>
+                <td class="label"><TPL:TXT_module_projects|lastmod>:</td>
+                <td class="input"><span id="filter-lastmod"></span></td>
+              </tr>
+              <tr>
+                <td class="label"><TPL:TXT_module_projects|type>:</td>
+                <td class="input"><select name="filter_type" class="formInput"><TPL:select_type></select></td>
+                <td class="label"><TPL:TXT_module_projects|status>:</td>
+                <td class="input"><select name="filter_status" class="formInput"><TPL:select_status></select></td>
+                <td class="label"><TPL:TXT_module_projects|priority>:</td>
+                <td class="input"><select name="filter_priority" class="formInput"><TPL:select_priority></select></td>
+              </tr>
+              <tr>
+                <td class="label"><TPL:TXT_module_projects|name>:</td>
+                <td class="input"><TPL:select_project></td>
+                <td class="label" colspan="2"><input type="checkbox" name="where_member" value="1" <TPL:wheremember> > <TPL:TXT_module_projects|where_member></td>
+                <td class="input" colspan="2"><input type="submit" value="<TPL:TXT_module_projects|search>" class="submit" /></td>
+              </tr>
+            </table>            
+            </form>
+            <p><TPL:RESULTS></p>
+        </div>
+    </div>
+
+    <table class="style1" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <th>&nbsp;</th>
+          <th><a href="<TPL:url_general>&sort="><TPL:TXT_module_projects|number></a></th>
+          <th><a href="<TPL:url_general>&sort=task"><TPL:TXT_module_projects|task></a></th>
+          <th><a href="<TPL:url_general>&sort=date1"><TPL:TXT_module_projects|begin></a></th>
+          <th><a href="<TPL:url_general>&sort=date2"><TPL:TXT_module_projects|end></a></th>
+          <th><a href="<TPL:url_general>&sort=type"><TPL:TXT_module_projects|type></a></th>
+          <th><a href="<TPL:url_general>&sort=status"><TPL:TXT_module_projects|status></a></th>
+        </tr>
+        <TPL_SUB:TASKS>
+        <tr class="<TPL:STYLE>">
+          <td><img src="img/ico_priority_<TPL:DATA_PRIORITY0>.gif" alt="" /></td>
+          <td><TPL:NR></td>
+          <td><a href="<TPL:URL_DETAIL>"><TPL:DATA_TASK></a></td>
+          <td><TPL:DATA_DATE1></td>
+          <td><TPL:DATA_DATE2></td>
+          <td><TPL:DATA_TYPE></td>
+          <td><TPL:DATA_STATUS></td>
+        </tr>
+        </TPL_SUB:TASKS>
+    </table>
+
+    <p><TPL:PAGES></p>
+    <p class="actions">
+        <input type="button" class="submit" onClick="document.location='<TPL:url_general>&add_task=true'" value="<TPL:TXT_module_projects|addtask>" />
+        <input type="button" class="submit" onClick="document.location='<TPL:url_files>'" value="<TPL:TXT_module_projects|addfile>" />
+    </p>
+</div>

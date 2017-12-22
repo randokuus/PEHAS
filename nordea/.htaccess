@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /khs/nordea/
+
+# Realestate url redirection
+RewriteRule ^id/([0-9]+)          /khs/nordea/?id=$1

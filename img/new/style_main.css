@@ -1,0 +1,3185 @@
+/*
+    Site Main Styles
+    Version:  31.12.10
+
+    Structure
+    --------------------------------------------
+    1. reset
+    2. base style
+    3. base content style
+    4. header
+    5. menu
+    6. footer
+    7. icons
+    8. box
+    9. elements
+    10. form elements
+    11. asTables
+    12. tables
+    13. messages
+    14. home
+    15. postSearch
+    16. postRead
+    17. contact
+    18. terms
+    19. calendar
+    20. login
+    21. popap
+*/
+
+
+/* 1. reset -----------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, /*sub sup,*/ tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+/*body { line-height: 1; }*/
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles! */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; font-size: 100%; }
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner, 
+input[type="button"]::-moz-focus-inner, 
+input[type="submit"]::-moz-focus-inner, 
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    padding: 0;
+    border: none; 
+}
+
+
+
+/* 2. base style ------------------------------------------*/
+
+/*--- fonts definition ---*/
+body, input, select, button, textarea,
+.box .heading h2,
+ul.newslist li h4, ul.userlist li .lead h4 {
+    font-family: Tahoma, "Geneva CY", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+/*--- /fonts definition ---*/
+
+body {
+    background-color: #fff;
+    color: #000;
+    font-size: 70%;
+}
+input, select, button, textarea {
+    font-size: 100%;
+}
+textarea  {
+    line-height: 1.2em;
+}
+
+a, a font {
+    color: #266db6;
+    text-decoration: none;
+    outline-style: none;
+}
+/*a:active, a:active font {
+    color: #c2201d;
+}
+a:visited, a:visited font {
+    color: #800080;
+}*/
+a:hover, a:hover font {
+    color: #000;
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+}
+
+.mainWrap {
+    position: relative;
+    min-width: 980px;
+}
+
+td {
+    background-color: #fff;
+}
+.even, .even td {
+    background-color: #ececec;
+}
+.colorBlue,
+.formTable .fColorBlue,
+.formTable .fColorBlue .fHead,
+.formTable .fColorBlue .fCell,
+.formTable .fColorBlue .fHint {
+    color: #266db6 !important;
+    font-weight: bold;
+}
+.colorGreen,
+.formTable .fColorGreen,
+.formTable .fColorGreen .fHead,
+.formTable .fColorGreen .fCell,
+.formTable .fColorGreen .fHint {
+    color: #117800 !important;
+    font-weight: bold;
+}
+
+.clear:after, .header:after, .menuWrap:after, .wrapper:after, .boxcontent:after, .footer:after,
+.filterTable:after, .tLine:after, .pagin:after,
+.formTable .fLine:after, .wButtons:after,
+.ui-helper-clearfix:after, .mainSearch:after,
+.contactWrap:after, .contactForm .cSubmit:after, .termsWrap .wCheck:after,
+.loginBox .formTable .fSubmit:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+
+
+/* 3. base content style ----------------------------------*/
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    margin-bottom: 1em;
+    color: #000;
+    line-height: normal;
+}
+.content h1 {
+    font-size: 146%;
+    font-weight: normal;
+}
+.content h2 {
+    font-size: 127%;
+}
+.content h3 {
+    font-size: 118%;
+}
+.content h4 {
+    font-size: 109%;
+}
+.content h5 {
+    font-size: 100%;
+}
+.content h6 {
+    font-size: 91%;
+}
+
+.content p {
+    margin-bottom: 1.8em;
+    line-height: 1.6em;
+}
+
+.content ul {
+    list-style: disc;
+    margin: 0 0 1.4em 1em;
+    padding-left: 1em;
+}
+.content ul ul {
+    margin-bottom: 1em;
+}
+.content ol {
+    list-style: decimal;
+    margin: 0 0 1.4em 1em;
+    padding-left: 1em;
+    font-weight: bold;
+}
+.content ol p {
+    font-weight: normal;
+}
+.content ol ol {
+    margin-bottom: 1em;
+}
+.content li {
+    margin-bottom: 0.2em;
+    line-height: 1.5em;
+    position: relative;
+}
+.content table {
+    margin-bottom: 1em;
+    font-size: 100%;
+    width: auto;
+    border: 1px solid #e0e0e0;
+}
+.content th, .content td {
+    border: 1px solid #e0e0e0;
+    padding: 4px;
+    text-align: left;
+}
+.content th {
+    font-weight: bold;
+    text-align: center;
+}
+
+.content img[align=left] {
+    margin: 0 0.6em 0.6em 0;
+    float: left;
+}
+.content img[align=right] {
+    margin: 0 0 0.6em 0.6em;
+    float: right;
+}
+.content .imgLeft {
+    margin: 0 0.6em 0.6em 0;
+    float: left;
+}
+.content .imgRight {
+    margin: 0 0 0.6em 0.6em;
+    float: right;
+}
+.content dl {
+    margin: 0 0 1em 0;
+}
+.content dt {
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+.content dd {
+    margin-bottom: 0.6em;
+}
+
+.content hr {
+    margin: 1em 0;
+    height: 1px;
+    border: none;
+    color: #e0e0e0;
+    background: #e0e0e0;
+    clear: both;
+}
+
+
+
+/* 4. header ----------------------------------------------*/
+
+.header {
+    padding: 1.6em 16px 0.8em;
+}
+.logo {
+    float: left;
+    /*width: 158px;
+    height: 41px;*/
+    margin-right: 3%;
+    /*background: url('logos.gif') no-repeat 0 0;
+    text-indent: -10000em;*/
+    overflow: hidden;
+}
+.logo1 {
+    float: right;
+    /*width: 139px;
+    height: 43px;*/
+    margin-left: 2%;
+    /*background: url('logos.gif') no-repeat 0 -43px;
+    text-indent: -10000em;*/
+    overflow: hidden;
+}
+.logo img,
+.logo1 img {
+    display: block;
+    margin: 0;
+}
+
+.userpanel {
+    float: left;
+    width: 17%;
+    height: 2.4em;
+    margin-top: 4px;
+    padding: 0.2em 1em;
+    border-left: 2px solid #cecece;
+}
+.userpanel a {
+    color: #8c8c8c;
+    font-weight: bold;
+}
+.userpanel a.ilogout {
+    display: inline;
+    font-weight: normal;
+}
+
+.selectw {
+    position: relative;
+    z-index: 3;
+    padding: 0.5em 0.6em;
+}
+.selectw a {
+    display: block;
+}
+.selectw a:hover {
+    color: #000;
+}
+
+.selectopt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    margin: -8px;
+    padding: 8px;
+    overflow: hidden;
+}
+.selectopt .tl, .selectopt .tr, .selectopt .bl, .selectopt .br {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 500px;
+    background: url('shadow.png') no-repeat 0 0;
+}
+.selectopt .tl {
+    top: -8px;
+    left: -8px;
+    height: 100%;
+}
+.selectopt .tr {
+    top: -8px;
+    left: 100%;
+    height: 100%;
+    margin-left: -8px;
+}
+.selectopt .bl {
+    left: -8px;
+}
+.selectopt .br {
+    left: 100%;
+    margin-left: -8px;
+}
+
+.selectopt ul {
+    position: relative;
+    z-index: 2;
+    max-height: 470px;
+    background-color: #fff;
+    overflow: auto;
+}
+.selectopt li {
+    padding: 0.5em 0.6em;
+}
+
+.userpanel small {
+    display: block;
+    padding-left: 22px;
+    font-size: 90%;
+    color: #b7b7b7;
+    font-weight: normal;
+}
+
+.selectopt li.active a {
+    color: #000;
+}
+
+
+
+/* 5. menu ------------------------------------------------*/
+
+.menuWrap {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.menu {
+    padding: 0 8px;
+    background: #002ea0 url('gradients.gif') repeat-x 0 0;
+}
+.menu ul {
+    width: 75%;
+    overflow: hidden;
+}
+.menu li {
+    float: left;
+}
+.menu li a, .menu li span {
+    display: block;
+    padding: 1.2em 0.8em;
+    color: #fff;
+}
+.menu li a.active, .menu li span {
+    color: #000;
+    background: #8097d0 url('gradients.gif') repeat-x 0 -544px;
+}
+.menu li a:hover {
+    color: #fff;
+}
+.menu li a.active:hover {
+    color: #000;
+}
+
+.menu1 {
+    padding: 0 8px;
+    background: #d2d8e1 url('gradient1.gif') repeat-x 0 100%;
+}
+.menu1 ul {
+    overflow: hidden;
+}
+.menu1 li {
+    float: left;
+}
+.menu1 li a, .menu1 li span {
+    display: block;
+    padding: 0.8em 0.8em;
+    color: #000;
+}
+.menu1 li a.active, .menu1 li span {
+    color: #266db6;
+    background: #e9ecf0 url('gradient2.gif') repeat-x 0 100%;
+}
+.menu1 li a:hover {
+    background-color: #b4cbff;
+    text-decoration: none;
+}
+.menu1 li a.active:hover {
+    background-color: #e9ecf0;
+    text-decoration: underline;
+}
+
+.menu2 {
+    padding: 0 8px;
+    background-color: #eff5fd;
+}
+.menu2 ul {
+    overflow: hidden;
+}
+.menu2 li {
+    float: left;
+}
+.menu2 li a, .menu2 li span {
+    display: block;
+    padding: 0.8em 0.8em;
+    color: #000;
+}
+.menu2 li a.active, .menu2 li span {
+    color: #266db6;
+}
+.menu2 li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+.menu2 li a.active:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.menu3 {
+    padding: 0 0.8em;
+}
+.menu3 li {
+    padding: 1.6em 1em 1em;
+    border-top: 2px solid #d3d9e2;
+}
+.menu3 li:first-child, .menu3 li.first-child {
+    border-top: none;
+}
+.menu3 li a {
+    color: #000;
+    font-weight: bold;
+}
+.menu3 ul {
+    margin: 1em -1em -1em;
+    counter-reset: step;
+}
+.menu3 li li {
+    padding: 0;
+    border-top: 1px solid #d3d9e2;
+}
+.menu3 li li a, .menu3 li li span {
+    display: block;
+    padding: 0.4em 1em 0.4em 3em;
+    font-weight: normal;
+}
+.menu3 li li a:before, .menu3 li li span:before {
+    counter-increment: step;
+    content: counter(step) ". ";
+}
+.menu3 li li a:hover, .menu3 li li span {
+    background-color: #f5f5f5;
+    color: #266db6;
+    text-decoration: none;
+}
+
+.menu4 {
+    text-align: center;
+    counter-reset: step;
+}
+.menu4 li {
+    display: inline-block;
+    margin: 0 3px;
+}
+.menu4 li a, .menu4 li span {
+    display: inline-block;
+    height: 39px;
+    margin: 4px 0;
+    padding-right: 5px;
+    background: url('form_elements.png') no-repeat 100% -833px;
+}
+.menu4 li a span, .menu4 li span span {
+    display: inline-block;
+    height: 39px;
+    margin: 0;
+    padding: 0 10px 0 15px;
+    background: url('form_elements.png') no-repeat 0 -833px;
+    line-height: 39px;
+    color: #555;
+    font-size: 145%;
+}
+.menu4 li a span:before, .menu4 li span span:before {
+    counter-increment: step;
+    content: counter(step) ". ";
+}
+.menu4 li span.active {
+    background-position: 100% -792px;
+}
+.menu4 li span.active span {
+    background-position: 0 -792px;
+    color: #010101;
+}
+.menu4 li a {
+    background-position: 100% -751px;
+}
+.menu4 li a span {
+    background-position: 0 -751px;
+    color: #b0b0b0;
+}
+.menu4 li a:hover {
+    background-position: 100% -874px;
+    text-decoration: none;
+}
+.menu4 li a:hover span {
+    background-position: 0 -874px;
+    color: #555;
+    cursor: pointer;
+}
+
+
+
+/* 6. footer ---------------------------------------------*/
+
+.footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 4px;
+    padding: 2em 8px;
+    color: #666;
+    background: #fff url('gradients.gif') repeat-x 0 -1130px;
+}
+.footer p {
+    padding: 0 0.8em;
+    line-height: 160%;
+}
+.footer a {
+    color: #666;
+}
+.footer a:hover {
+    color: #000;
+}
+
+.footer a.ico {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    margin-top: -8px;
+}
+
+
+
+/* 7. icons ----------------------------------------------*/
+
+.icow {
+    position: relative;
+    padding-left: 22px;
+}
+.icow i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: -1px;
+    background: url('icons.gif') no-repeat 0 0;
+    font-size: 0;
+    line-height: 0;
+}
+a.icow i {
+    cursor: pointer;
+}
+
+.ico {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -10000em;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.ico i {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('icons.gif') no-repeat 16px 16px;
+    font-size: 0;
+    line-height: 0;
+}
+a.ico i {
+    cursor: pointer;
+}
+a.ico:hover {
+    text-decoration: none;
+}
+
+.bpanel .icow {
+    padding-left: 14px;
+}
+
+.iuser i { background-position: 0 0; }
+.iuser1 i { background-position: -16px 0; }
+.iuser2 i { background-position: -32px 0; }
+.iuser3 i { background-position: -48px 0; }
+.ihome i { background-position: -64px 0; }
+.ilogout i { background-position: -80px 0; }
+.ihome1 i { background-position: -96px 0; width: 17px; }
+.ifav i { background-position: 0 -16px; }
+.irefresh i { background-position: -16px -16px; }
+.iadd i { background-position: -32px -16px; }
+.idel i { background-position: -48px -16px; }
+.iok i { background-position: -64px -16px; }
+.imail i { background-position: -80px -16px; }
+.isendmail i { background-position: -96px -16px; }
+.iedit i { background-position: -112px -16px; }
+.inew i { background-position: -128px -16px; }
+.inews i { background-position: -144px -16px; }
+.icart i { background-position: -160px -16px; }
+.ilist i { background-position: -176px -16px; }
+.iarchive i { background-position: -192px -16px; }
+.iprint i { background-position: -208px -16px; }
+.iexel i { background-position: -224px -16px; }
+.imovel i { background-position: -16px -48px; }
+.imover i { background-position: -32px -48px; }
+
+.bpanel .iadd i { background-position: -2px -32px; }
+.bpanel .inext i { background-position: -18px -32px; }
+.bpanel .imail i { background-position: -34px -32px; }
+.bpanel .iprint i { background-position: -50px -33px; }
+
+.iup i { background-position: 0 -48px; }
+
+.even .iuser i { background-position: 0 -80px; }
+.even .iuser1 i { background-position: -16px -80px; }
+.even .iuser2 i { background-position: -32px -80px; }
+.even .iuser3 i { background-position: -48px -80px; }
+.even .ihome i { background-position: -64px -80px; }
+.even .ilogout i { background-position: -80px -80px; }
+.even .ihome1 i { background-position: -96px -80px; }
+.even .ifav i { background-position: 0 -96px; }
+.even .irefresh i { background-position: -16px -96px; }
+.even .iadd i { background-position: -32px -96px; }
+.even .idel i { background-position: -48px -96px; }
+.even .iok i { background-position: -64px -96px; }
+.even .imail i { background-position: -80px -96px; }
+.even .isendmail i { background-position: -96px -96px; }
+.even .iedit i { background-position: -112px -96px; }
+.even .inew i { background-position: -128px -96px; }
+.even .inews i { background-position: -144px -96px; }
+.even .icart i { background-position: -160px -96px; }
+.even .ilist i { background-position: -176px -96px; }
+.even .iarchive i { background-position: -192px -96px; }
+.even .iprint i { background-position: -208px -96px; }
+.even .iexel i { background-position: -224px -96px; }
+
+.sidemenu .iuser i { background-position: 0 -112px; }
+.sidemenu .iuser1 i { background-position: -16px -112px; }
+.sidemenu .iuser2 i { background-position: -32px -112px; }
+.sidemenu .iuser3 i { background-position: -48px -112px; }
+.sidemenu .ihome i { background-position: -64px -112px; }
+.sidemenu .ilogout i { background-position: -80px -112px; }
+.sidemenu .ihome1 i { background-position: -96px -112px; }
+.sidemenu .ifav i { background-position: 0 -128px; }
+.sidemenu .irefresh i { background-position: -16px -128px; }
+.sidemenu .iadd i { background-position: -32px -128px; }
+.sidemenu .idel i { background-position: -48px -128px; }
+.sidemenu .iok i { background-position: -64px -128px; }
+.sidemenu .imail i { background-position: -80px -128px; }
+.sidemenu .isendmail i { background-position: -96px -128px; }
+.sidemenu .iedit i { background-position: -112px -128px; }
+.sidemenu .inew i { background-position: -128px -128px; }
+.sidemenu .inews i { background-position: -144px -128px; }
+.sidemenu .icart i { background-position: -160px -128px; }
+.sidemenu .ilist i { background-position: -176px -128px; }
+.sidemenu .iarchive i { background-position: -192px -128px; }
+.sidemenu .iprint i { background-position: -208px -128px; }
+.sidemenu .iexel i { background-position: -224px -128px; }
+
+.select {
+    position: relative;
+    padding-right: 22px;
+}
+.select b {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: -1px;
+    background: url('icons.gif') no-repeat -64px -48px;
+    font-size: 0;
+    line-height: 0;
+}
+
+
+
+/* 8. box ---------------------------------------------*/
+
+.box {
+    position: relative;
+    float: left;
+    min-width: 100%;
+    margin-bottom: 4px;
+    padding-top: 6px;
+}
+.box .inner {
+    /*position: relative;
+    z-index: 2;*/
+    padding: 0 8px 2px;
+    background-color: #fff;
+}
+.box .heading {
+    position: relative;
+    padding: 0.6em 1.6em;
+    background: #ededed url('gradients.gif') repeat-x 0 -1656px;
+    overflow: hidden;
+}
+.box .heading h2 {
+    color: #8d8d8d;
+    font-size: 136%;
+    font-weight: normal;
+}
+.box .heading .control {
+    position: absolute;
+    right: 1.6em;
+    top: 50%;
+    margin-top: -8px;
+    color: #676767;
+}
+.box .heading .control a {
+    margin-left: 5px;
+}
+.box .heading .control b {
+    margin-left: 1.6em;
+    font-weight: normal;
+    color: #000;
+}
+.box .boxcontent {
+    padding: 1.2em 1.6em 0.6em;
+}
+
+.box .tt, .box .bb, .box .ll, .box .rr, .box .tl, .box .tr, .box .bl, .box .br {
+    position: absolute;
+    background-image: url('corners.gif');
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+
+.box .tt, .box .bb {
+    width: 100%;
+    height: 6px;
+    background-image: url('shadow.gif');
+    background-repeat: repeat-x;
+}
+.box .ll, .box .rr {
+    width: 6px;
+    height: 100%;
+    background-repeat: repeat-y;
+}
+.box .tt {
+    top: 0;
+    left: 0;
+    background-position: 0 -2px;
+}
+.box .bb {
+    left: 0;
+    background-position: 0 -8px;
+}
+.box .ll  {
+    top: 0;
+    left: 0;
+    background-position: -46px 0;
+}
+.box .rr {
+    top: 0;
+    left: -6px;
+    margin-left: 100%;
+    background-position: -52px 0;
+}
+
+.box .tl, .box .tr, .box .bl, .box .br {
+    width: 9px;
+    height: 9px;
+}
+.box .tl {
+    top: 0;
+    left: 0;
+    background-position: -2px -2px;
+}
+.box .tr {
+    top: 0;
+    left: -9px;
+    margin-left: 100%;
+    background-position: -11px -2px;
+}
+.box .bl {
+    left: 0;
+    margin-top: -3px;
+    background-position: -2px -11px;
+}
+.box .br {
+    margin: -3px 0 0 100%;
+    left: -9px;
+    background-position: -11px -11px;
+}
+
+.sidemenu .inner {
+    background: #afccf3 url('gradients.gif') repeat-x 0 -3274px;
+}
+.sidemenu .heading {
+    background-color: #fff;
+    background-position: 0 -1130px;
+}
+.sidemenu .tl {
+    background-position: -24px -2px;
+}
+.sidemenu .tr {
+    background-position: -33px -2px;
+}
+.sidemenu .bl {
+    background-position: -24px -11px;
+}
+.sidemenu .br {
+    background-position: -33px -11px;
+}
+.sidemenu li {
+    margin-bottom: 0.9em;
+}
+.sidemenu li a {
+    color: #676767;
+    font-size: 120%;
+    font-weight: bold;
+}
+.sidemenu li a:hover {
+    color: #000;
+}
+
+.bpanel {
+    position: relative;
+    padding-top: 2px;
+}
+.bpinner {
+    padding: 0.6em 1.6em;
+    background: #d0dbe8 url('gradients.gif') repeat-x 0 -2748px;
+    overflow: hidden;
+}
+.bpleft {
+    float: left;
+    width: 49%;
+}
+.bpleft a {
+    margin-right: 1em;
+}
+.bpright {
+    float: right;
+    width: 49%;
+    text-align: right;
+}
+.bpright a {
+    margin-left: 1em;
+}
+
+.bpanel .bl, .bpanel .br {
+    width: 2px;
+    height: 2px;
+}
+.bpanel .bl {
+    margin-top: -2px;
+    background-position: -61px -16px;
+}
+.bpanel .br {
+    left: -2px;
+    margin-top: -2px;
+    background-position: -63px -16px;
+}
+
+
+
+/* 9. elements ---------------------------------------------*/
+
+.wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 0 4px;
+}
+
+.path {
+    display: none;
+    padding: 0 0.8em;
+    line-height: normal;
+    font-size: 90%;
+    color: #b0b0b0;
+}
+.path a {
+    position: relative;
+    padding-right: 20px;
+    color: #676767;
+}
+.path a i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -9px;
+    background: url('icons.gif') no-repeat -48px -48px;
+    font-size: 0;
+    line-height: 0;
+}
+.path a:hover {
+    color: #000;
+}
+
+.search {
+    position: absolute;
+    top: 0.7em;
+    right: 3%;
+    width: 22%;
+}
+.search table {
+    
+}
+.search table th, .search table td {
+    vertical-align: top;
+    background: none;
+}
+.search table th {
+    padding-left: 3px;
+}
+.search table td  {
+    width: 100%;
+}
+.search table td input {
+    width: 97%;
+}
+.search .wtext {
+    height: 23px;
+    padding-right: 4px;
+    background: url('form_elements.png') no-repeat 100% -677px;
+}
+.search .wtext div {
+    height: 15px;
+    padding: 4px 2px 4px 6px;
+    background: url('form_elements.png') no-repeat 0 -653px;
+}
+.search .wtext div input {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+}
+.search .wbutt {
+    height: 23px;
+    padding-right: 4px;
+    background: url('form_elements.png') no-repeat 100% -726px;
+}
+.search .wbutt div {
+    padding-left: 4px;
+    line-height: 20px;
+    background: url('form_elements.png') no-repeat 0 -702px;
+    text-align: center;
+}
+.search .wbutt div button {
+    height: 23px;
+    padding: 0 11px;
+    margin: 0;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    color: #676767;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.col1 {
+    float: left;
+    width: 67%;
+}
+.col2 {
+    position: relative;
+    float: left;
+    width: 33%;
+    margin-right: -100%;
+}
+.col1 .colinner {
+    /*margin-left: -8px;
+    padding-right: 5px;*/
+}
+.col2 .colinner {
+    /*margin-right: -8px;*/
+}
+.col3 {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+}
+.col4 {
+    float: left;
+    width: 67%;
+    margin-right: -100%;
+}
+.singleCol {
+    
+}
+.wideCol {
+    clear: both;
+}
+
+.pagin {
+    padding: 0 1.6em;
+    background: #d2d8e1 url('gradient1.gif') repeat-x 0 100%;
+}
+.pagin div {
+    float: right;
+}
+.pagin div:first-child, .pagin div.first-child {
+    float: left;
+    width: 40%;
+}
+.pagin a, .pagin span, .pagin i, .pagin small {
+    float: left;
+    padding: 0.5em;
+}
+.pagin a {
+    color: #000;
+}
+.pagin span {
+    color: #266db6;
+    background: #e9ecf0 url('gradient2.gif') repeat-x 0 100%;
+}
+.pagin i {
+    font-style: normal;
+}
+.pagin small {
+    color: #676767;
+}
+.pagin .prev,
+.pagin .next {
+    position: relative;
+}
+.pagin .prev i,
+.pagin .next i {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -7px;
+    padding: 0;
+    background-image: url('icons.gif');
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+.pagin .prev i,
+.pagin .next i {
+    cursor: pointer;
+}
+.pagin .prev {
+    padding-left: 14px;
+}
+.pagin .next {
+    padding-right: 14px;
+}
+.pagin .prev i {
+    left: 0;
+    background-position: -128px -48px;
+}
+.pagin .next i {
+    right: 0;
+    background-position: -112px -48px;
+}
+
+.listCount {
+    padding: 0.9em 1.6em;
+    background: #d2d8e1 url('gradient1.gif') repeat-x 0 100%;
+    color: #676767;
+    text-align: right;
+}
+
+.studentPhoto {
+    position: relative;
+    z-index: 2;
+    padding: 1.2em 0;
+    /*overflow: auto;*/
+    text-align: center;
+}
+.studentPhotoInner {
+    display: inline-block;
+}
+.studentPhoto img {
+    display: block;
+    margin-bottom: 1.2em;
+}
+.studentPhoto p {
+    margin-top: 1.2em;
+    text-align: left;
+}
+.studentPhoto p b {
+    display: block;
+    color: #676767;
+}
+.studentPhoto p small {
+    color: #8d8d8d;
+    font-size: 91%;
+}
+.studentCart .studentPhotoInner {
+    position: relative;
+}
+.studentCart span {
+    position: absolute;
+    left: 18px;
+    background-color: #fff;
+    color: #626262;
+    font-size: 82%;
+}
+.studentCart span.sSchool {
+    top: 71px;
+}
+.studentCart span.sName {
+    top: 99px;
+}
+.studentCart span.sBirth {
+    top: 126px;
+}
+.studentCart span.sDate {
+    top: 154px;
+}
+.studentCart span.sPhoto {
+    top: 24px;
+    left: 166px;
+    width: 84px;
+    height: 108px;
+    overflow: hidden;
+}
+
+
+.tHeading {
+    padding: 0.8em 1.6em;
+    background: #d2d8e1 url('gradient1.gif') repeat-x 0 100%;
+    font-weight: normal;
+}
+
+.arrowsWrap {
+    position: relative;
+    float: left;
+    width: 36px;
+    height: 15em;
+}
+.arrowsWrap .ico {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin-left: -8px;
+    cursor: pointer;
+}
+.arrowsWrap .imovel {
+    margin-top: -17px;
+}
+.arrowsWrap .imover {
+    margin-top: 1px;
+}
+
+.alphabet {
+    font-weight: normal;
+}
+.alphabet span {
+    display: block;
+    margin-bottom: 0.2em;
+    text-decoration: underline;
+}
+.alphabet a, .alphabet b {
+    margin-right: 1px;
+}
+.alphabet a {
+    color: #676767;
+}
+.alphabet a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.payLogo {
+    margin-right: 0.6em;
+}
+
+.calLink {
+    position: relative;
+    z-index: 2;
+    padding: 0 22px 0 0;
+    color: #000;
+    cursor: pointer;
+}
+.formTable .fHint p span.calLink {
+    display: inline;
+    padding-right: 22px;
+}
+.calLink i {
+    left: auto;
+    right: 0;
+    background-position: -80px -48px;
+}
+.formTable .fHint p span.calLink i {
+    left: auto;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    background-position: -80px -48px;
+}
+.ownerBirsday {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.ownerBirsday div {
+    padding-left: 0;
+}
+
+
+
+/* 10. form elements ---------------------------------------------*/
+
+.jNiceInputWrapper {
+    height: 23px;
+    padding-right: 5px;
+    background: url('form_elements.png') no-repeat 100% -24px;
+}
+.jNiceInputInner {
+    height: 18px;
+    padding: 5px 4px 0 9px;
+    background: url('form_elements.png') no-repeat 0 0;
+}
+.jNiceInput {
+    width: 98%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+.datePicker {
+    padding-right: 19px;
+    background-position: 100% -72px;
+}
+
+.jNiceButton {
+    height: 47px;
+    margin: 0 -5px;
+    padding-right: 10px;
+    background: url('form_elements.png') no-repeat 100% -97px;
+}
+.jNiceButton div {
+    height: 47px;
+    padding-left: 10px;
+    line-height: 46px;
+    text-align: center;
+    background: url('form_elements.png') no-repeat 0 -97px;
+}
+.jNiceButton div button,
+.jNiceButton div input,
+.jNiceButtonInput {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin: 0;
+    padding: 0 10px;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jNiceButton:hover, .jNiceButtonHover {
+    background-position: 100% -146px;
+}
+.jNiceButton:hover div, .jNiceButtonHover div {
+    background-position: 0 -146px;
+}
+.even .jNiceButton {
+    background-position: 100% -293px;
+}
+.even .jNiceButton div {
+    background-position: 0 -293px;
+}
+.even .jNiceButton:hover, .even .jNiceButtonHover {
+    background-position: 100% -342px;
+}
+.even .jNiceButton:hover div, .even .jNiceButtonHover div {
+    background-position: 0 -342px;
+}
+
+.asButton {
+    position: relative;
+    float: left;
+    height: 47px;
+    margin: 0 5px 0 -5px;
+    padding-right: 10px;
+    background: url('form_elements.png') no-repeat 100% -97px;
+}
+.asButton span {
+    float: left;
+    height: 47px;
+    padding: 0 25px 0 35px;
+    line-height: 46px;
+    background: url('form_elements.png') no-repeat 0 -97px;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.asButton:hover {
+    background-position: 100% -146px;
+    text-decoration: none;
+}
+.asButton:hover span {
+    background-position: 0 -146px;
+}
+.grayButton {
+    background-position: 100% -195px;
+}
+.grayButton div, .grayButton span {
+    background-position: 0 -195px;
+}
+.grayButton:hover, .grayButtonHover {
+    background-position: 100% -244px;
+}
+.grayButton:hover div, .grayButtonHover div, .grayButton:hover span {
+    background-position: 0 -244px;
+}
+
+.jNiceWrapperSelect {
+    position: relative;
+}
+.jNiceWrapperSelect iframe {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #fff;
+    color: #fff;
+}
+.jNiceWrapperSelect select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.jNiceSelectWrapper {
+    position: relative;
+    z-index: 2;
+    height: 23px;
+    padding-right: 19px;
+    background: url('form_elements.png') no-repeat 100% -48px;
+}
+.jNiceSelectWrapper .jNiceSelectCurrent {
+    height: 17px;
+    padding: 5px 0 1px 5px;
+    background: url('form_elements.png') no-repeat 0 0;
+}
+.jNiceSelectWrapper .jNiceSelectCurrent .jNiceSelectText {
+    display: block;
+    height: 14px;
+    padding: 0 4px;
+    color: #676767;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jNiceSelectWrapper .jNiceSelectArrow {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 3;
+    height: 23px;
+    width: 23px;
+}
+.jNiceSelectWrapper .jNiceSelectList {
+    position: absolute;
+    top: 19px;
+    left: 0;
+    z-index: 999;
+    min-width: 100%;
+    padding: 4px 0 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.jNiceSelectWrapper .jNiceSelectList .sll, .jNiceSelectWrapper .jNiceSelectList .srr {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 1000px;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background-image: url('form_elements.png');
+    background-repeat: no-repeat;
+}
+.jNiceSelectWrapper .jNiceSelectList .sll {
+    left: 0;
+    width: 100%;
+    background-position: -5px -910px;
+}
+.jNiceSelectWrapper .jNiceSelectList .srr {
+    left: -5px;
+    width: 5px;
+    margin-left: 100%;
+    background-position: 0 -910px;
+}
+.jNiceSelectWrapper ul {
+    position: relative;
+    z-index: 2;
+    max-height: 20em;
+    margin: 0 5px;
+    overflow: auto;
+}
+.jNiceSelectWrapper ul li {
+    
+}
+.jNiceSelectWrapper ul li span {
+    display: block;
+    position: relative;
+    padding: 3px 5px;
+    color: #676767;
+    cursor: default;
+}
+.jNiceSelectWrapper ul li span.selected {
+    color: #000;
+    background-color: #eee;
+    border: 1px solid #aaa;
+}
+.jNiceSelectWrapper ul li span:hover,
+.jNiceSelectWrapper ul li span.hover,
+.jNiceSelectWrapper ul li span.selected:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.jCheckboxWrapper {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 1px 5px 5px;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 0;
+}
+.jCheckboxWrapper input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+}
+.jNiceCheckbox {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('form_elements.png') no-repeat 0 -1917px;
+}
+.jCheckboxWrapper .jNiceChecked {
+    background-position: -14px -1917px;
+}
+
+.jNiceFileWrapper {
+    overflow: hidden;
+}
+.jNiceFileWrapper .jNiceFile {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jNiceFileWrapper .jNiceFile span {
+    position: relative;
+    float: left;
+    height: 23px;
+    padding-right: 4px;
+    background: url('form_elements.png') no-repeat 100% -579px;
+}
+.jNiceFileWrapper .jNiceFile span span {
+    line-height: 23px;
+    padding: 0 22px 0 26px;
+    background-position: 0 -555px;
+    color: #676767;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.jNiceFileWrapper .jNiceFile input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 23px;
+    cursor: pointer;
+    /* for IE8 */
+    font-size: 10em\0/;
+}
+.jNiceFileWrapper .jNiceFilePath {
+    float: left;
+    height: 23px;
+    margin-right: -100%;
+    padding: 0 1em;
+    line-height: 23px;
+}
+
+.jNiceTextAreaWrapper,
+.jNiceMultiSelectWrapper,
+.termsText {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+}
+.jNiceTextAreaWrapper .atl, .jNiceTextAreaWrapper .atr, .jNiceTextAreaWrapper .abl, .jNiceTextAreaWrapper .abr,
+.jNiceMultiSelectWrapper .stl, .jNiceMultiSelectWrapper .str, .jNiceMultiSelectWrapper .sbl, .jNiceMultiSelectWrapper .sbr,
+.termsText .ttl, .termsText .ttr, .termsText .tbl, .termsText .tbr  {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    background-image: url('form_elements.png');
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+.even .jNiceTextAreaWrapper .atl, .even .jNiceTextAreaWrapper .atr, .even .jNiceTextAreaWrapper .abl, .even .jNiceTextAreaWrapper .abr,
+.even .jNiceMultiSelectWrapper .stl, .even .jNiceMultiSelectWrapper .str, .even .jNiceMultiSelectWrapper .sbl, .even .jNiceMultiSelectWrapper .sbr,
+.even .termsText .ttl, .even .termsText .ttr, .even .termsText .tbl, .even .termsText .tbr {
+    background-color: #ececec;
+}
+.jNiceTextAreaWrapper .atl,
+.jNiceMultiSelectWrapper .stl,
+.termsText .ttl {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-position: -5px -1910px
+}
+.jNiceTextAreaWrapper .atr,
+.jNiceMultiSelectWrapper .str,
+.termsText .ttr {
+    top: 0;
+    left: -5px;
+    width: 5px;
+    height: 5px;
+    margin-left: 100%;
+    background-position: 0 -1910px
+}
+.jNiceTextAreaWrapper .abl,
+.jNiceMultiSelectWrapper .sbl,
+.termsText .tbl {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 995px;
+    background-position: -5px -915px
+}
+.jNiceTextAreaWrapper .abr,
+.jNiceMultiSelectWrapper .sbr,
+.termsText .tbr {
+    bottom: 0;
+    left: -5px;
+    width: 5px;
+    height: 995px;
+    margin-left: 100%;
+    background-position: 0 -915px
+}
+.jNiceTextArea,
+.jNiceMultiSelect {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 14em;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+.mainSearch .jNiceSelectWrapper div {
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+.mainSearch .jNiceSelectWrapper div span {
+    position: relative;
+    z-index: 1000;
+    padding: 1px 5px 1px 22px;
+}
+.mainSearch .jNiceSelectWrapper div span i {
+    margin-top: 0;
+}
+.mainSearch .jNiceSelectWrapper ul {
+    padding: 6px 0 0;
+}
+.mainSearch .jNiceSelectWrapper ul li {
+    padding: 2px 0;
+}
+.mainSearch .jNiceSelectWrapper ul li.sll, .mainSearch .jNiceSelectWrapper ul li.srr {
+    padding: 0;
+}
+.mainSearch .jNiceSelectWrapper ul li a {
+    padding: 1px 5px 5px 22px;
+}
+.mainSearch .sTitle {
+    float: left;
+    width: 10%;
+    padding-top: 5px;
+    color: #676767;
+}
+.mainSearch .jNiceInputWrapper {
+    float: left;
+    width: 15%;
+    margin-right: 4px
+}
+.mainSearch .jNiceWrapperSelect {
+    float: left;
+    width: 15%;
+    margin-right: 4px;
+}
+.mainSearch .jNiceButton {
+    position: relative;
+    float: left;
+    width: 15%;
+    margin-top: -8px;
+}
+
+
+.filterTable .tLineButtons .jNiceButton,
+.mainSearch .jNiceButton {
+    height: 39px;
+    background-position: 100% -391px;
+}
+.filterTable .tLineButtons .jNiceButton div,
+.mainSearch .jNiceButton div {
+    height: 39px;
+    line-height: 39px;
+    background-position: 0 -391px;
+}
+.filterTable .tLineButtons .jNiceButton div button,
+.mainSearch .jNiceButton div button,
+.filterTable .tLineButtons .jNiceButton div input,
+.mainSearch .jNiceButton div input {
+    height: 37px;
+    text-transform: none;
+}
+.filterTable .tLineButtons .jNiceButton:hover, .filterTable .tLineButtons .jNiceButtonHover,
+.mainSearch .jNiceButton:hover, .mainSearch .jNiceButtonHover {
+    background-position: 100% -432px;
+}
+.filterTable .tLineButtons .jNiceButton:hover div, .filterTable .tLineButtons .jNiceButtonHover div,
+.mainSearch .jNiceButton:hover div, .mainSearch .jNiceButtonHover div {
+    background-position: 0 -432px;
+}
+.filterTable .tLineButtons .grayButton,
+.mainSearch .grayButton {
+    background-position: 100% -473px;
+}
+.filterTable .tLineButtons .grayButton div,
+.mainSearch .grayButton div {
+    background-position: 0 -473px;
+}
+.filterTable .tLineButtons .grayButton:hover, .filterTable .tLineButtons .grayButtonHover,
+.mainSearch .grayButton:hover, .mainSearch .grayButtonHover {
+    background-position: 100% -514px;
+}
+.filterTable .tLineButtons .grayButton:hover div, .filterTable .tLineButtons .grayButtonHover div,
+.mainSearch .grayButton:hover div, .mainSearch .grayButtonHover div {
+    background-position: 0 -514px;
+}
+
+
+.formTable .fCell .jNiceInputWrapper,
+.formTable .fCell .jNiceWrapperSelect,
+.formTable .fCell .jNiceFileWrapper,
+.formTable .fCell .jNiceMultiSelectWrapper {
+    margin: -5px -9px;
+}
+.formTable .fCell .wCheck .jCheckboxWrapper {
+    margin-left: 0;
+}
+.formTable .fHint .jNiceButton {
+    position: relative;
+    float: left;
+    max-width: 100%;
+    height: 23px;
+    margin: 0;
+    padding-right: 4px;
+    background-position: 100% -579px;
+}
+.formTable .fHint .jNiceButton div {
+    float: left;
+    width: 100%;
+    height: 23px;
+    margin-left: -4px;
+    padding-left: 4px;
+    background-position: 0 -555px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.formTable .fHint .jNiceButton div button,
+.formTable .fHint .jNiceButton div input {
+    height: 21px;
+    padding: 0 15px;
+    color: #676767;
+    text-transform: none;
+}
+.formTable .fHint .jNiceButtonDisabled {
+    background-position: 100% -628px;
+}
+.formTable .fHint .jNiceButtonDisabled div {
+    background-position: 0 -604px;
+}
+.formTable .fHint .jNiceButtonDisabled div button,
+.formTable .fHint .jNiceButtonDisabled div input {
+    color: #a2a2a2;
+    cursor: auto;
+}
+.formTable .fSubmit .jNiceButton {
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+
+.controlTable .fCell .jNiceInputWrapper,
+.controlTable .fCell .jNiceWrapperSelect,
+.controlTable .fCell .jNiceFileWrapper,
+.controlTable .fCell .jNiceMultiSelectWrapper  {
+    margin-right: 0;
+}
+.controlTable .jCheckboxWrapper {
+    margin-left: 0;
+}
+.controlTable .fSubmit .jNiceButton  {
+    margin-left: -14px;
+    margin-right: -5px;
+}
+
+.sortTable .jNiceMultiSelectWrapper {
+    float: Left;
+    width: 40%;
+}
+
+.filterTable .jCheckboxWrapper {
+    margin-top: 7px;
+}
+
+.sortTable .fCell .jNiceInputWrapper,
+.sortTable .fCell .jNiceWrapperSelect,
+.sortTable .fCell .jNiceFileWrapper,
+.sortTable .fCell .jNiceMultiSelectWrapper {
+    margin-left: 0;
+    margin-right: 0;
+}
+.sortTable .fSubmit .jNiceButton  {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
+.filterTable .tLine .jNiceInputWrapper, .filterTable .tLine .jNiceWrapperSelect {
+    margin-left: 45%;
+}
+/*.filterTable .tLineButtons .jNiceButton {
+    float: right;
+    width: 55%;
+    margin-left: 5px;
+}
+.twoCols .tLineButtons .jNiceButton {
+    width: 26.2%;
+}
+.threeCols .tLineButtons .jNiceButton {
+    width: 16.6%;
+}
+.fourCols .tLineButtons .jNiceButton {
+    width: 12%;
+}*/
+
+
+.sortTable .jNiceInputWrapper {
+    width: 40%;
+    padding-right: 10px;
+}
+
+
+.postSearch .jNiceInputWrapper {
+    float: left;
+    width: 70%;
+    margin-right: 5px;
+}
+.postSearch .jNiceButton {
+    height: 23px;
+    margin: 0;
+    padding-right: 4px;
+    background-position: 100% -579px;
+    overflow: hidden;
+}
+.postSearch .jNiceButton div {
+    height: 23px;
+    line-height: 23px;
+    padding-left: 4px;
+    background-position: 0 -555px;
+}
+.postSearch .jNiceButton div button,
+.postSearch .jNiceButton div input {
+    height: 21px;
+    color: #676767;
+    text-transform: none;
+}
+
+
+.contactForm .cLine .jNiceInputWrapper {
+    width: 30%;
+}
+.contactForm .cLine .jNiceTextAreaWrapper {
+    width: 70%;
+}
+.contactForm .cLine .jNiceTextArea {
+    height: 10em;
+}
+.contactForm .cSubmit .jNiceButton {
+    float: left;
+    background-position: 100% -293px;
+}
+.contactForm .cSubmit .jNiceButton div {
+    float: left;
+    background-position: 0 -293px;
+}
+.contactForm .cSubmit .jNiceButton div button,
+.contactForm .cSubmit .jNiceButton div input {
+    padding: 0 70px;
+}
+.contactForm .cSubmit .jNiceButton:hover, .contactForm .cSubmit .jNiceButtonHover {
+    background-position: 100% -342px;
+}
+.contactForm .cSubmit .jNiceButton:hover div, .contactForm .cSubmit .jNiceButtonHover div {
+    background-position: 0 -342px;
+}
+
+
+.wButtons {
+    
+}
+.wButtons .jNiceButton {
+    float: left;
+    margin-right: 5px;
+}
+.wButtons .jNiceButton div {
+    float: left;
+}
+.wButtons .jNiceButton div button,
+.wButtons .jNiceButton div input {
+    padding: 0 30px;
+}
+.schoolTable .wButtons .jNiceButton,
+.controlTable .wButtons .jNiceButton {
+    margin-left: -14px;
+    margin-right: 14px;
+}
+.wButtonsCenter {
+    text-align: center;
+}
+.wButtonsCenter .jNiceButton {
+    float: none;
+    display: inline-block;
+    margin-right: -5px;
+    vertical-align: top;
+}
+
+.tWide .jNiceInput {
+    width: auto;
+}
+
+
+
+/* 11. asTables ---------------------------------------------*/
+
+.filterWrap {
+    z-index: 1;
+}
+.filterTable {
+    position: relative;
+    z-index: 3;
+    margin: -0.8em -2% 0;
+}
+.filterTable .tCol {
+    float: left;
+    width: 70%;
+}
+.filterTable .tCol:first-child .tLine, .filterTable .first-child .tLine {
+    border-left: none;
+}
+.filterTable .tLine {
+    padding: 0.2em 3%;
+    border-left: 2px solid #d3d9e2;
+}
+.filterTable .tLine label {
+    float: left;
+    width: 45%;
+    padding: 4px 0;
+    color: #676767;
+}
+.filterTable .tLineButtons {
+    /*clear: both;
+    padding: 0 2%;
+    overflow: hidden;*/
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    width: 22%;
+    margin: -19px 0 0 -24%;
+}
+
+.twoCols .tCol {
+    width: 42%;
+}
+.twoCols .tLine {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.twoCols .tLineButtons {
+    width: 14%;
+    margin-left: -16%;
+}
+
+.threeCols .tCol {
+    width: 29%;
+}
+/*.threeCols .tCol:first-child, .threeCols .first-child {
+    width: 34%;
+}*/
+.threeCols .tLine {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.threeCols .tLineButtons {
+    width: 11%;
+    margin-left: -13%;
+}
+
+.fourCols .tCol {
+    width: 23%;
+}
+.fourCols .tLine {
+    padding-left: 9%;
+    padding-right: 9%;
+}
+.fourCols .tLineButtons {
+    width: 6%;
+    margin-left: -8%;
+}
+
+
+.formTable {
+    
+}
+.formTable .fRow {
+    padding: 1.2em 1.6em;
+}
+.formTable .fLine {
+    margin-bottom: 5px;
+}
+.formTable .fHead {
+    float: left;
+    width: 26%;
+    margin-right: 4%;
+    padding: 5px 0;
+    color: #676767;
+}
+.formTable .fHead b {
+    color: #000;
+}
+.formTable .fRequired .fHead {
+    color: #000;
+    font-weight: bold;
+}
+.formTable .fError .fHead {
+    color: #f00;
+    font-weight: bold;
+}
+.formTable .fCell {
+    float: left;
+    width: 36%;
+    margin-right: 4%;
+    padding: 5px 0;
+}
+.formTable .fCell p {
+    padding: 5px;
+}
+.formTable .fCell i {
+    color: #676767;
+    font-style: normal;
+}
+.formTable .fCellWide {
+    float: left;
+    width: 70%;
+    margin-right: -100%;
+    padding: 5px 0;
+}
+.formTable .fCellWide p {
+    margin-bottom: 1em;
+    color: #676767;
+}
+.formTable .fHint {
+    position: relative;
+    float: left;
+    width: 30%;
+    margin-right: -100%;
+    color: #8d8d8d;
+}
+.formTable .fHint p {
+    position: absolute;
+    width: 100%;
+    padding-top: 5px;
+    height: 2.4em;
+    overflow: hidden;
+}
+.formTable .fHint p span {
+    display: block;
+    padding-right: 14px;
+}
+.formTable .fHint p i,
+.formTable .fHint p b {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 11px;
+    height: 12px;
+    margin-left: -11px;
+    background: #fff url('icons.gif') no-repeat -83px -50px;
+    color: #266db6;
+    cursor: pointer;
+    text-indent: -1000em;
+    overflow: hidden;
+}
+.formTable .even .fHint p i,
+.formTable .even .fHint p b {
+    background-color: #ececec;
+}
+.formTable .fHint p b,
+.formTable .fHint p.opened i {
+    display: none;
+}
+.formTable .fHint p.opened {
+    position: static;
+    height: auto;
+}
+.formTable .fHint p.opened b {
+    display: block;
+    background-position: -99px -50px;
+}
+.formTable .fHint p.oneLine {
+    position: static;
+}
+.formTable .fSubmit {
+    padding: 1.2em 0;
+    margin: 0 34.5% 0 31%;
+}
+.formTable .wButtons {
+    padding: 1.2em 1.6em;
+}
+
+.controlTable {
+    padding: 1.2em 1.6em 0.6em;
+}
+.controlTable .fHead {
+    font-weight: bold;
+}
+.controlTable .fCell {
+    width: 70%;
+    margin-right: -100%;
+}
+.controlTable .fHint {
+    width: 70%;
+    margin: 0 -100% 0 30%;
+    padding-top: 1em;
+    clear: both;
+}
+.controlTable .fHint p {
+    position: static;
+    height: auto;
+}
+.controlTable .fHint p i {
+    display: none;
+}
+.controlTable .fSubmit {
+    margin: 0 0 0 30%;
+    padding-bottom: 0;
+}
+.controlTable .wButtons {
+    margin: 0 0 0 30%;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+.controlTable .ico {
+    float: right;
+}
+
+.col3 .controlTable {
+    padding: 0;
+}
+
+.sortTable {
+    
+}
+.sortTable .fHead {
+    width: 16%;
+    color:#000;
+    font-weight: bold;
+}
+.sortTable .fCell {
+    width: 80%;
+    margin-right: -100%;
+}
+.sortTable .fSubmit {
+    margin: 0 60% 0 20%;
+    padding-left: 1em;
+}
+
+.schoolTable {
+    padding: 1.2em 1.6em;
+}
+.schoolTable .fRow {
+    padding: 0;
+}
+.schoolTable .fHead {
+    width: 16%;
+}
+.schoolTable .fHead b {
+    color: #676767;
+}
+.schoolTable .fCell {
+    width: 28%;
+}
+.schoolTable .wButtons {
+    margin-left: 20%;
+    padding: 1.2em 0 0;
+
+}
+
+.shortTable {
+    max-width: 800px;
+}
+.shortTable .fHead {
+    width: 20%;
+}
+.shortTable .fCell {
+    width: 50%;
+}
+.shortTable .fSubmit {
+    margin-left: 25%;
+    margin-right: 27%;
+    text-align: center;
+}
+.shortTable .fSubmit .jNiceButton {
+    display: inline-block;
+    margin: 0;
+}
+.shortTable .fSubmit .jNiceButton div button,
+.shortTable .fSubmit .jNiceButton div input,
+.shortTable .fSubmit .jNiceButtonInput {
+    padding: 0 30px;
+}
+
+
+/* 12. tables ---------------------------------------------*/
+
+.tableWrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    /*overflow: auto;*/
+}
+.tList {
+    width: 100%;
+}
+.tList th, .tList td {
+    padding: 0.2em 0.6em;
+    border-left: 1px solid #bdd6f5;
+    vertical-align: middle;
+    text-align: left;
+}
+.tList th:first-child, .tList td:first-child, .tList th.first-child, .tList td.first-child {
+    border-left: none;
+}
+.tList th {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    background-color: #eff5fd;
+    color: #676767;
+}
+.tList th span.sort {
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+    cursor: pointer;
+}
+.tList th span.sort i {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background: url('icons.gif') no-repeat -80px -48px;
+    font-size: 0;
+    line-height: 0;
+}
+.tList th span.sort i {
+    cursor: pointer;
+}
+.tList th span.sortUp, .tList th span.sort:hover, .tList th span.hover {
+    color: #000;
+}
+.tList th span.sort:hover, .tList th span.hover {
+    text-decoration: underline;
+}
+.tList th span.sortUp i {
+    background-position: -96px -48px;
+}
+.tList td .wicons {
+    text-align: center;
+}
+.tListOk {
+    color: #1db200;
+    font-weight: bold;
+}
+.tListNotOk {
+    color: #bd0000;
+    font-weight: bold;
+}
+
+.tList .jCheckboxWrapper {
+    margin: 0;
+}
+.tListSubmit {
+    margin: 0 40%;
+    clear: both;
+}
+.tListButtons {
+    margin: 0 5px;
+}
+
+.mList {
+    
+}
+.mList th {
+    padding-left: 1.6em;
+    padding-right: 1.6em;
+}
+.mList td {
+    padding: 0.7em 1.6em;
+    vertical-align: top;
+}
+.mList td h5 {
+    color: #000;
+    font-size: 118%;
+}
+.mList td p {
+    margin-top: 0.4em;
+    line-height: 1.6em;
+}
+
+.tLog th, .tLog td {
+    background-image: url('table_border.gif');
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+}
+.tLog td {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+.tLog .tRowOk td {
+    background-color: #ccffe3;
+}
+.tLog .tRowNotOk td {
+    background-color: #ffd2cc;
+}
+
+.tCard .tHeader1 th {
+    border-color: #ebedf1;
+    background-color: #afb9c8;
+    color: #010101;
+}
+.tCard .tHeader2 th {
+    border-color: #d8e4f4;
+    background-color: #c4ccd8;
+}
+.tCard td {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+.tCard .tTotal td {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    border-color: #b4cdec;
+    background-color: #dcdcdc;
+}
+.tCard .tTotal td b {
+    color: #676767;
+}
+
+.tResult td {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.tResult td .icow {
+    color: #8d8d8d;
+}
+.tResult td .ico {
+    vertical-align: middle;
+}
+.tResult td a {
+    color: #676767;
+    font-weight: bold;
+}
+.tResult td a strong {
+    color: #266db6;
+}
+.tResult1 td {
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+}
+.tResult1 td:first-child, .tResult1 th:first-child, .tResult1 td.first-child, .tResult1 th.first-child {
+    text-align: center;
+}
+
+
+
+/* 13. messages ---------------------------------------------*/
+
+.msgWrap {
+    margin-bottom: 1.4em;
+    text-align: center;
+}
+.box .msgWrap {
+    margin-bottom: 0;
+    padding: 1.8em 1.4em 0.6em;
+    text-align: left;
+}
+.msg {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.2em 1em;
+    border: 1px solid #151515;
+}
+.msg span {
+    display: block;
+    padding: 6px 10px 6px 30px;
+}
+.msg .ico, .msg .tl, .msg .tr, .msg .bl, .msg .br {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-image: url('corners.gif');
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+.msg .ico {
+    top: 5px;
+    left: 7px;
+    width: 16px;
+    height: 16px;
+    background-image: url('icons.gif');
+    background-position: 0 16px;
+}
+.msg .tl {
+    top: -1px;
+    left: -1px;
+    background-position: -61px 0;
+}
+.msg .tr {
+    top: -1px;
+    left: -3px;
+    margin-left: 100%;
+    background-position: -65px 0;
+}
+.msg .bl {
+    left: -1px;
+    margin-top: -3px;
+    background-position: -61px -4px;
+}
+.msg .br {
+    left: -3px;
+    margin: -3px 0 0 100%;
+    background-position: -65px -4px;
+}
+
+.msgError {
+    border-color: #f66;
+    color: #f00;
+}
+.msgError .ico {
+    background-position: -32px -64px;
+}
+.msgError .tl {
+    background-position: -77px 0;
+}
+.msgError .tr {
+    background-position: -81px 0;
+}
+.msgError .bl {
+    background-position: -77px -4px;
+}
+.msgError .br {
+    background-position: -81px -4px;
+}
+.msgAtt {
+    border-color: #ed9240;
+    color: #9d6700;
+}
+.msgAtt .ico {
+    background-position: -16px -64px;
+}
+.msgAtt .tl {
+    background-position: -69px -8px;
+}
+.msgAtt .tr {
+    background-position: -73px -8px;
+}
+.msgAtt .bl {
+    background-position: -69px -12px;
+}
+.msgAtt .br {
+    background-position: -73px -12px;
+}
+.msgOk {
+    border-color: #40a74d;
+    color: #008a11;
+}
+.msgOk .ico {
+    background-position: 0 -64px;
+}
+.msgOk .tl {
+    background-position: -69px 0;
+}
+.msgOk .tr {
+    background-position: -73px 0;
+}
+.msgOk .bl {
+    background-position: -69px -4px;
+}
+.msgOk .br {
+    background-position: -73px -4px;
+}
+.msgGray {
+    border-color: #bfbfbf;
+}
+.msgGray .tl {
+    background-position: -61px -8px;
+}
+.msgGray .tr {
+    background-position: -65px -8px;
+}
+.msgGray .bl {
+    background-position: -61px -12px;
+}
+.msgGray .br {
+    background-position: -65px -12px;
+}
+.msgBlack, .msgAllBlack {
+    border-color: #151515;
+}
+.msgAllBlack {
+    color: #000;
+}
+.msgBlack .tl, .msgAllBlack .tl {
+    background-position: -61px 0;
+}
+.msgBlack .tr, .msgAllBlack .tr {
+    background-position: -65px 0;
+}
+.msgBlack .bl, .msgAllBlack .bl {
+    background-position: -61px -4px;
+}
+.msgBlack .br, .msgAllBlack .br {
+    background-position: -65px -4px;
+}
+
+
+
+/* 14. home ---------------------------------------------*/
+
+ul.newslist {
+    position: relative;
+}
+ul.newslist li {
+    position: relative;
+    padding: 1.2em 1.6em;
+}
+ul.newslist li div {
+    position: relative;
+    padding-left: 5.6em;
+}
+ul.newslist li small {
+    position: absolute;
+    top: 0.1em;
+    left: 0;
+    width: 5.2em;
+    color: #8d8d8d;
+}
+ul.newslist li h4 {
+    margin-bottom: 0.4em;
+    font-size: 118%;
+}
+ul.newslist li p {
+    line-height: 125%;
+}
+ul.newslist li p.hnews {
+    margin-bottom: 0.8em;
+    color: #8d8d8d;
+    font-weight: bold;
+}
+ul.newslist li p.lnews {
+    margin-top: 0.8em;
+}
+ul.newslist li p.lnews a {
+    margin-right: 2em;
+}
+
+ul.userlist {
+    
+}
+ul.userlist li {
+    position: relative;
+    padding: 1.2em 1.6em;
+    overflow: hidden;
+}
+ul.userlist li .img {
+    float: left;
+}
+ul.userlist li .lead {
+    margin-left: 60px;
+    color: #676767;
+}
+ul.userlist li .lead h4 {
+    font-size: 118%;
+}
+ul.userlist li .lead small {
+    color: #8d8d8d;
+    font-size: 90%;
+}
+ul.userlist li .lead p {
+    margin-top: 0.6em;
+    line-height: 160%;
+}
+ul.userlist li .lead p b.ok {
+    color: #19a959;
+}
+ul.userlist li .lead p b.notok {
+    color: #fe342a;
+}
+ul.userlist li .control {
+    position: absolute;
+    top: 1.4em;
+    right: 1.6em;
+}
+ul.userlist li .control .ico {
+    float: left;
+    margin-left: 5px;
+}
+
+ul.cardlist li .lead {
+    margin-left: 100px;
+}
+
+
+
+/* 15. postSearch ---------------------------------------------*/
+
+.postSearch {
+    color: #676767;
+}
+.postSearch .wCheck {
+    margin-top: 1em;
+}
+
+
+
+/* 16. postRead ---------------------------------------------*/
+
+.postRead {
+    padding: 1.6em;
+}
+.postReadInner {
+    position: relative;
+    padding-left: 5.6em;
+}
+.postRead small {
+    position: absolute;
+    top: 0.1em;
+    left: 0;
+    width: 5.2em;
+    color: #8d8d8d;
+}
+.postRead p.hnews {
+    margin-bottom: 1.8em;
+    color: #8d8d8d;
+    font-weight: bold;
+}
+.postRead p.lnews {
+    margin-top: 0.8em;
+}
+.postRead p.lnews a {
+    margin-right: 2em;
+}
+
+
+
+/* 17. contact ---------------------------------------------*/
+
+.contactWrap {
+    padding-top: 2px;
+}
+.contactLead {
+    float: left;
+    width: 40%;
+}
+.contactLeadInner {
+    padding: 1.4em 1.6em;
+}
+.contactForm {
+    float: left;
+    width: 60%;
+    margin-right: -100%;
+    background-color: #eee;
+}
+.contactForm .cLine {
+    padding: 1.4em 2em 0;
+}
+.contactForm .cLine label {
+    display: block;
+    margin-bottom: 0.4em;
+}
+.contactForm .cSubmit {
+    padding: 1em 2em;
+}
+
+
+
+/* 18. terms ---------------------------------------------*/
+
+.termsWrap {
+    padding: 1.2em 1.6em;
+    color: #676767;
+}
+.termsWrap h4 {
+    margin-bottom: 1.4em;
+}
+.termsTextInner {
+    position: relative;
+    z-index: 2;
+    height: 450px;
+    margin: 4px 0;
+    padding: 0 8px;
+    overflow: auto;
+}
+.termsText {
+    margin-bottom: 1.6em;
+}
+.termsText h3, .termsText p {
+    margin-bottom: 1.4em;
+    line-height: 1.6em;
+}
+.termsText ul {
+    margin: 0 0 1.4em 1em;
+    padding-left: 1em;
+}
+.termsText li {
+    margin-bottom: 0.4em;
+    line-height: 1.5em;
+}
+.termsWrap .wCheck {
+    margin-bottom: 1em;
+}
+.termsWrap .wCheck  label {
+    float: left;
+    width: 20%;
+    font-weight: bold;
+}
+
+
+
+/* 19. calendar ---------------------------------------------*/
+
+.ui-helper-hidden-accessible {
+    position: absolute;
+    left: -99999999px;
+}
+.ui-corner-all {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.ui-widget-content {
+    border: 1px solid #aaa;
+    background: #fff url('ui/ui-bg_flat_75_ffffff_40x100.png') repeat-x 50% 50%;
+    color: #222;
+}
+.ui-widget-header {
+    border: 1px solid #d7d7d7;
+    background: #ededed url('ui/ui-bg_highlight-hard_75_ededed_1x100.png') repeat-x 50% 50%;
+    color: #222;
+    font-weight: bold;
+}
+
+.ui-state-default {
+    border: 1px solid #d3d3d3;
+    background: #e6e6e6 url('ui/ui-bg_glass_75_e6e6e6_1x400.png') repeat-x 50% 50%;
+    color: #555;
+}
+
+.ui-state-hover, .ui-state-focus {
+    border: 1px solid #999;
+    background: #dadada url('ui/ui-bg_glass_75_dadada_1x400.png') repeat-x 50% 50%;
+    color: #212121;
+}
+.ui-state-active {
+    border: 1px solid #aaa;
+    background: #fff url('ui/ui-bg_glass_65_ffffff_1x400.png') repeat-x 50% 50%;
+    font-weight: normal;
+    color: #212121;
+}
+.ui-state-highlight {
+    border: 1px solid #fcefa1;
+    background: #fbf9ee url('ui/ui-bg_glass_55_fbf9ee_1x400.png') repeat-x 50% 50%;
+    color: #363636;
+}
+
+.ui-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('ui/ui-icons_222222_256x240.png'); 
+    background-repeat: no-repeat;
+    background-position: -80px -192px;
+    text-indent: -99999px;
+    overflow: hidden;
+}
+.ui-icon-circle-triangle-e {
+    background-position: -48px -192px;
+}
+.ui-icon-circle-triangle-w {
+    background-position: -80px -192px;
+}
+
+.ui-datepicker {
+    width: 17em;
+    padding: 0.2em 0.2em 0;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: 0.2em 0;
+}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover {
+    top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+    left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+    right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    margin-left: -8px;
+    margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+    font-size: 1em;
+    margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month-year {
+    width: 100%;
+}
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    width: 49%;
+}
+.ui-datepicker table {
+    width: 100%;
+    margin: 0 0 0.4em;
+    font-size: 0.9em;
+}
+.ui-datepicker th {
+    padding: 0.7em 0.3em;
+    border: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.ui-datepicker td {
+    padding: 1px;
+    border: 0;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    display: block;
+    padding: 0.2em;
+    text-align: right;
+    text-decoration: none;
+}
+.ui-datepicker td a:hover {
+    text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+    margin: 0.7em 0 0 0;
+    padding: 0 0.2em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background-image: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+    float: right;
+    width: auto;
+    margin: 0.5em 0.2em 0.4em;
+    padding: 0.2em 0.6em 0.3em;
+    cursor: pointer;
+    overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+    width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+    float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+    width: 95%;
+    margin: 0 auto 0.4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+    width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+    width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header, .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+    border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+    clear: left;
+}
+.ui-datepicker-row-break {
+    width: 100%;
+    clear: both;
+}
+
+
+
+/* 20. login ---------------------------------------------*/
+
+.loginBox {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 308px;
+    min-width: 308px;
+    margin: 0 0 0 -162px;
+}
+.loginBox .formTable {
+    padding: 0;
+}
+.loginBox .wLogo {
+    margin: 0;
+}
+.loginBox .formTable .fRow {
+    padding-top: 1.4em;
+    padding-bottom: 0.8em;
+}
+.loginBox .formTable .fHead {
+    width: 36%;
+}
+.loginBox .formTable .fCell {
+    width: 60%;
+}
+.loginBox .formTable .fSubmit {
+    margin: 0 0 0 40%;
+    padding-top: 0.4em;
+}
+.loginBox .formTable .fSubmit .jNiceButton,
+.loginBox .formTable .fSubmit .jNiceButton div {
+    float: left;
+}
+.loginBox .formTable .fSubmit .jNiceButton div button,
+.loginBox .formTable .fSubmit .jNiceButton div input {
+    padding: 0 30px;
+}
+
+
+
+/* 21. popap ----------------------------------------------*/
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+    cursor: default !important;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #666;
+    opacity: .50;
+    filter:Alpha(Opacity=50);
+}
+
+.ui-dialog {
+    position: absolute;
+    background-color: #fff;
+    padding: 0;
+    border: none;
+    text-align: left;
+    /* for Mozzila */
+    -moz-border-radius: 0;
+    /* for Webkit */
+    -webkit-border-radius: 0;
+    /* default */
+    border-radius: 0;
+}
+.ui-dialog-titlebar {
+    position: relative;
+    padding: 1.2em 1.6em;
+    background: #ededed url('gradients.gif') repeat-x 0 -1656px;
+    border: none;
+    /* for Mozzila */
+    -moz-border-radius: 0;
+    /* for Webkit */
+    -webkit-border-radius: 0;
+    /* default */
+    border-radius: 0;
+}
+.ui-dialog-titlebar span.ui-dialog-title {
+    color: #8d8d8d;
+    font-size: 145%;
+    font-weight: normal;
+}
+
+.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 1.2em;
+    top: 1.4em;
+}
+.ui-dialog-titlebar-close .ui-icon {
+    background: url('icons.gif') no-repeat -48px -64px;
+    cursor: pointer;
+}
+.ui-dialog .ui-state-hover {
+    border: none;
+    background: none;
+}
+
+.ui-dialog-content {
+    padding: 1.2em 1.6em;
+    border: none;
+}
+
+.ui-dialog-buttonpane {
+    padding: 1.2em 1.6em;
+    border: none;
+    text-align: center;
+}
+.ui-dialog .ui-button {
+    margin: 0 10px 0 0;
+    padding: 0;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    color: #676767;
+    font-weight: bold;
+    overflow: visible;
+
+    /* default */
+    border-radius: 0;
+    /* for Mozzila */
+    -moz-border-radius: 0;
+    /* for Webkit */
+    -webkit-border-radius: 0;
+}
+.ui-dialog button.ui-button span {
+    display: block;
+    height: 23px;
+    margin: 0;
+    padding-right: 4px;
+    background: url('form_elements.png') no-repeat 100% -579px;
+}
+.ui-dialog button.ui-button span span {
+    display: block;
+    height: 23px;
+    padding: 0 16px 0 20px;
+    background-position: 0 -555px;
+    line-height: 23px;
+}
+.ui-dialog button.ui-state-hover span span,
+.ui-dialog button.ui-state-focus span span {
+    color: #000;
+}
+
+.ui-dialog i.ll,
+.ui-dialog i.rr {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 100%;
+    margin-top: 10px;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.ui-dialog i.ll {
+    left: -10px;
+}
+.ui-dialog i.rr {
+    left: 100%;
+}
+.ui-dialog i.ll i,
+.ui-dialog i.rr i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    background-image: url('corners.png');
+    background-repeat: repeat-y;
+}
+.ui-dialog i.ll i {
+    background-position: -21px 0;
+}
+.ui-dialog i.rr i {
+    background-position: -31px 0;
+}
+.ui-dialog i.tt,
+.ui-dialog i.bb {
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.ui-dialog i.tt {
+    top: -10px;
+}
+.ui-dialog i.bb {
+    margin-bottom: -10px;
+}
+.ui-dialog i.tt i,
+.ui-dialog i.bb i {
+    display: block;
+    width: 100%;
+    height: 10px;
+    font-size: 0;
+    line-height: 0;
+    background-image: url('corners1.png');
+    background-repeat: repeat-x;
+}
+.ui-dialog i.tt i {
+    background-position: 0 0;
+}
+.ui-dialog i.bb i {
+    background-position: 0 -10px;
+}
+.ui-dialog i.tl,
+.ui-dialog i.tr,
+.ui-dialog i.bl,
+.ui-dialog i.br {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    font-size: 0;
+    line-height: 0;
+    background-image: url('corners.png');
+    background-repeat: no-repeat;
+}
+.ui-dialog i.tl {
+    top: -10px;
+    left: -10px;
+    background-position: 0 0;
+}
+.ui-dialog i.tr {
+    top: -10px;
+    left: 100%;
+    background-position: -10px 0;
+}
+.ui-dialog i.bl {
+    left: -10px;
+    margin-bottom: -10px;
+    background-position: 0 -10px;
+}
+.ui-dialog i.br {
+    left: 100%;
+    margin-bottom: -10px;
+    background-position: -10px -10px;
+}

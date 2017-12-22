@@ -1,0 +1,420 @@
+Data transfer from Trueb: 
+/usr/bin/scp -p -B -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa isic@213.35.252.226:./share/tryb2isic/log_ISIC*.txt /var/www/minukool.ee/khs/cache/tryb/log_ISIC2013022503.txt<br>
+1, 3C501C43 -> S372226260599L, Chip number assigned.; 9233731680120052256, PAN number assigned.<br>
+2, FC5C1C43 -> S372226260597S, Chip number assigned.; 9233731680120052231, PAN number assigned.<br>
+3, 6CFE1C43 -> S372226260598K, Chip number assigned.; 9233731680120052249, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022503.txt'log_ISIC2013022509.txt<br>
+1, BCED2C43 -> S372226260605N, Chip number assigned.; 9233731680120052165, PAN number assigned.<br>
+2, DC171B43 -> S372226260601G, Chip number assigned.; 9233731680120052124, PAN number assigned.<br>
+3, 9C171B43 -> S372226260602H, Chip number assigned.; 9233731680120052132, PAN number assigned.<br>
+4, BCB01B43 -> S372226260606E, Chip number assigned.; 9233731680120052173, PAN number assigned.<br>
+5, CCBC1B43 -> S372226260603J, Chip number assigned.; 9233731680120052140, PAN number assigned.<br>
+6, 3C511C43 -> S372226260609K, Chip number assigned.; 9233731680120052207, PAN number assigned.<br>
+7, 5CF21C43 -> S372226260608T, Chip number assigned.; 9233731680120052199, PAN number assigned.<br>
+8, 2CFE1C43 -> S372226260604L, Chip number assigned.; 9233731680120052157, PAN number assigned.<br>
+9, 3C5D1C43 -> S372226260607R, Chip number assigned.; 9233731680120052181, PAN number assigned.<br>
+10, 5CF31C43 -> S372226260600P, Chip number assigned.; 9233731680120052116, PAN number assigned.<br>
+11, 3C511C43 -> S372226260609K, Chip number already assigned.; 9233731680120052207, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022509.txt'log_ISIC2013022204.txt<br>
+1, 5C342143 -> S372226258234J, Chip number assigned.; 9233731680120052462, PAN number assigned.<br>
+2, BC4F1C43 -> S372226258232P, Chip number assigned.; 9233731680120052447, PAN number assigned.<br>
+3, DCF21C43 -> S372226258233R, Chip number assigned.; 9233731680120052454, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022204.txt'log_ISIC2013022507.txt<br>
+1, 7C501C43 -> S372226258235V, Chip number assigned.; 9233731680120052215, PAN number assigned.<br>
+2, ECFD1C43 -> S372226258236N, Chip number assigned.; 9233731680120052223, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022507.txt'log_ISIC2013022501.txt<br>
+1, AC8C65F9 -> O372023000069, Chip number assigned.; 9233731680109014038, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022501.txt'log_ISIC2013022201.txt<br>
+1, BEBA0E82 -> 05094213, Chip number already assigned.; 9233731680108002422, PAN number already assigned.<br>
+2, EE370A82 -> 05094214, Chip number already assigned.; 9233731680108002430, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022201.txt'log_ISIC2013030102.txt<br>
+1, B392C695 -> S372226546555T, Chip number assigned.; 9233731680110016972, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030102.txt'log_ISIC2013030104.txt<br>
+1, DC231B43 -> S372226260655F, Chip number assigned.; 9233731680120052926, PAN number assigned.<br>
+2, ACB01B43 -> S372226260648R, Chip number assigned.; 9233731680120052850, PAN number assigned.<br>
+3, DC5D2D43 -> S372226260647E, Chip number assigned.; 9233731680120052843, PAN number assigned.<br>
+4, DC221B43 -> S372226260651T, Chip number assigned.; 9233731680120052884, PAN number assigned.<br>
+5, 9C231B43 -> S372226260646D, Chip number assigned.; 9233731680120052835, PAN number assigned.<br>
+6, 0CB11B43 -> S372226260649J, Chip number assigned.; 9233731680120052868, PAN number assigned.<br>
+7, 5C221B43 -> S372226260654N, Chip number assigned.; 9233731680120052918, PAN number assigned.<br>
+8, AC8A2D43 -> S372226260652B, Chip number assigned.; 9233731680120052892, PAN number assigned.<br>
+9, 6C8B2D43 -> S372226260653C, Chip number assigned.; 9233731680120052900, PAN number assigned.<br>
+10, 6C032E43 -> S372226260645L, Chip number assigned.; 9233731680120052827, PAN number assigned.<br>
+11, EC042E43 -> S372226260650R, Chip number assigned.; 9233731680120052876, PAN number assigned.<br>
+12, AC032E43 -> S372226260644K, Chip number assigned.; 9233731680120052819, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030104.txt'log_ISIC2013022704.txt<br>
+1, 5C231B43 -> S372226260637K, Chip number assigned.; 9233731680120052561, PAN number assigned.<br>
+2, 1C5E2D43 -> S372226260628J, Chip number assigned.; 9233731680120052470, PAN number assigned.<br>
+3, DC4D1943 -> S372226260639N, Chip number assigned.; 9233731680120052587, PAN number assigned.<br>
+4, 6C871943 -> S372226260630H, Chip number assigned.; 9233731680120052496, PAN number assigned.<br>
+5, 1C4D1943 -> S372226260636J, Chip number assigned.; 9233731680120052553, PAN number assigned.<br>
+6, 5CC51943 -> S372226260634P, Chip number assigned.; 9233731680120052538, PAN number assigned.<br>
+7, 6C861943 -> S372226260635R, Chip number assigned.; 9233731680120052546, PAN number assigned.<br>
+8, 9C3F2143 -> S372226260632L, Chip number assigned.; 9233731680120052512, PAN number assigned.<br>
+9, 0C3F2143 -> S372226260629J, Chip number assigned.; 9233731680120052488, PAN number assigned.<br>
+10, 5C352143 -> S372226260631U, Chip number assigned.; 9233731680120052504, PAN number assigned.<br>
+11, DCCD2143 -> S372226260633N, Chip number assigned.; 9233731680120052520, PAN number assigned.<br>
+12, 6CC62C43 -> S372226260638C, Chip number assigned.; 9233731680120052579, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022704.txt'log_ISIC2013022801.txt<br>
+1, BED50B82 -> 05094217, Chip number assigned.; 9233731680108002471, PAN number assigned.<br>
+2, CE060C82 -> 05094216, Chip number assigned.; 9233731680108002463, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022801.txt'log_ISIC2013030502.txt<br>
+1, 9C1F1943 -> S372226258250V, Chip number assigned.; 9233731680120053106, PAN number assigned.<br>
+2, 3C011943 -> S372226258249M, Chip number assigned.; 9233731680120053098, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030502.txt'log_ISIC2013022209.txt<br>
+1, 3CEB66F9 -> P372005001114, Chip number assigned.; 9233731680109014053, PAN number assigned.<br>
+2, ECEF66F9 -> P372005001113, Chip number assigned.; 9233731680109014046, PAN number assigned.<br>
+3, DCF066F9 -> P372005001116, Chip number assigned.; 9233731680109014079, PAN number assigned.<br>
+4, 8CF566F9 -> P372005001115, Chip number assigned.; 9233731680109014061, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022209.txt'log_ISIC2013030411.txt<br>
+1, 5CB766F9 -> P372005001159, Chip number assigned.; 9233731680109014541, PAN number assigned.<br>
+2, 5CE966F9 -> P372005001158, Chip number assigned.; 9233731680109014533, PAN number assigned.<br>
+3, FCEE66F9 -> P372005001160, Chip number assigned.; 9233731680109014558, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030411.txt'log_ISIC2013022806.txt<br>
+1, 24E7994A -> T372150932760Q, Chip number assigned.; 9233731680150028812, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022806.txt'log_ISIC2013030509.txt<br>
+1, 2C811A43 -> S372226260683Q, Chip number assigned.; 9233731680120053007, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030509.txt'log_ISIC2013022205.txt<br>
+1, 1C342143 -> S372226260592J, Chip number assigned.; 9233731680120052413, PAN number assigned.<br>
+2, 9C352143 -> S372226260589R, Chip number assigned.; 9233731680120052389, PAN number assigned.<br>
+3, DC3E2143 -> S372226260581C, Chip number assigned.; 9233731680120052306, PAN number assigned.<br>
+4, CC3F2143 -> S372226260593K, Chip number assigned.; 9233731680120052421, PAN number assigned.<br>
+5, DCBB1B43 -> S372226260579N, Chip number assigned.; 9233731680120052280, PAN number assigned.<br>
+6, ECB01B43 -> S372226260586L, Chip number assigned.; 9233731680120052355, PAN number assigned.<br>
+7, FC501C43 -> S372226260588P, Chip number assigned.; 9233731680120052371, PAN number assigned.<br>
+8, 1CF31C43 -> S372226260580K, Chip number assigned.; 9233731680120052298, PAN number assigned.<br>
+9, DCF31C43 -> S372226260585U, Chip number assigned.; 9233731680120052348, PAN number assigned.<br>
+10, 9C221B43 -> S372226260594N, Chip number assigned.; 9233731680120052439, PAN number assigned.<br>
+11, 7C5D1C43 -> S372226260582N, Chip number assigned.; 9233731680120052314, PAN number assigned.<br>
+12, 5CB01B43 -> S372226260584H, Chip number assigned.; 9233731680120052330, PAN number assigned.<br>
+13, 9CF21C43 -> S372226260587N, Chip number assigned.; 9233731680120052363, PAN number assigned.<br>
+14, 1CF41C43 -> S372226260590E, Chip number assigned.; 9233731680120052397, PAN number assigned.<br>
+15, FCAF1B43 -> S372226260591R, Chip number assigned.; 9233731680120052405, PAN number assigned.<br>
+16, CCAF1B43 -> S372226260583G, Chip number assigned.; 9233731680120052322, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022205.txt'log_ISIC2013022701.txt<br>
+1, EE3B0D82 -> 05094215, Chip number assigned.; 9233731680108002448, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022701.txt'log_ISIC2013022803.txt<br>
+1, ECAF1B43 -> S372226260642Q, Chip number assigned.; 9233731680120052959, PAN number assigned.<br>
+2, 4C2F2E43 -> S372226260641N, Chip number assigned.; 9233731680120052942, PAN number assigned.<br>
+3, EC8A2D43 -> S372226260643S, Chip number assigned.; 9233731680120052967, PAN number assigned.<br>
+4, 2C8B2D43 -> S372226260640N, Chip number assigned.; 9233731680120052934, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022803.txt'log_ISIC2013030508.txt<br>
+1, CC0068F9 -> P372005001161, Chip number assigned.; 9233731680109014517, PAN number assigned.<br>
+2, 2CEC66F9 -> P372005001162, Chip number assigned.; 9233731680109014525, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030508.txt'log_ISIC2013030407.txt<br>
+1, EC032E43 -> S372226260671H, Chip number assigned.; 9233731680120053312, PAN number assigned.<br>
+2, 4CDFA449 -> S372226260661C, Chip number assigned.; 9233731680120053213, PAN number assigned.<br>
+3, 7C32A549 -> S372226260658L, Chip number assigned.; 9233731680120053189, PAN number assigned.<br>
+4, BC32A549 -> S372226260673L, Chip number assigned.; 9233731680120053338, PAN number assigned.<br>
+5, FC33A549 -> S372226260659N, Chip number assigned.; 9233731680120053197, PAN number assigned.<br>
+6, CC7DA549 -> S372226260672U, Chip number assigned.; 9233731680120053320, PAN number assigned.<br>
+7, BC33A549 -> S372226260657U, Chip number assigned.; 9233731680120053171, PAN number assigned.<br>
+8, CCDFA449 -> S372226260682N, Chip number assigned.; 9233731680120053429, PAN number assigned.<br>
+9, 0CE0A449 -> S372226260677T, Chip number assigned.; 9233731680120053379, PAN number assigned.<br>
+10, 7C33A549 -> S372226260665K, Chip number assigned.; 9233731680120053254, PAN number assigned.<br>
+11, 6C7EA549 -> S372226260660M, Chip number assigned.; 9233731680120053205, PAN number assigned.<br>
+12, 6C811A43 -> S372226260680K, Chip number assigned.; 9233731680120053403, PAN number assigned.<br>
+13, BC171B43 -> S372226260663R, Chip number assigned.; 9233731680120053239, PAN number assigned.<br>
+14, FC171B43 -> S372226260656H, Chip number assigned.; 9233731680120053163, PAN number assigned.<br>
+15, EC811A43 -> S372226260662E, Chip number assigned.; 9233731680120053221, PAN number assigned.<br>
+16, 2C821A43 -> S372226260667N, Chip number assigned.; 9233731680120053270, PAN number assigned.<br>
+17, 4C171B43 -> S372226260664J, Chip number assigned.; 9233731680120053247, PAN number assigned.<br>
+18, 8CBC1B43 -> S372226260670F, Chip number assigned.; 9233731680120053304, PAN number assigned.<br>
+19, 0C241B43 -> S372226260674N, Chip number assigned.; 9233731680120053346, PAN number assigned.<br>
+20, 1C211943 -> S372226260669J, Chip number assigned.; 9233731680120053296, PAN number assigned.<br>
+21, DC1F1943 -> S372226260675F, Chip number assigned.; 9233731680120053353, PAN number assigned.<br>
+22, 6C011943 -> S372226260678K, Chip number assigned.; 9233731680120053387, PAN number assigned.<br>
+23, DC011943 -> S372226260679D, Chip number assigned.; 9233731680120053395, PAN number assigned.<br>
+24, 5C201943 -> S372226260681D, Chip number assigned.; 9233731680120053411, PAN number assigned.<br>
+25, 2C021943 -> S372226260668Q, Chip number assigned.; 9233731680120053288, PAN number assigned.<br>
+26, EC011943 -> S372226260666N, Chip number assigned.; 9233731680120053262, PAN number assigned.<br>
+27, 2C011943 -> S372226260676R, Chip number assigned.; 9233731680120053361, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030407.txt'log_ISIC2013022506.txt<br>
+1, 3378CA95 -> S372226546073N, Chip number assigned.; 9233731680110016709, PAN number assigned.<br>
+2, B325CA95 -> S372226546074Q, Chip number assigned.; 9233731680110016717, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022506.txt'log_ISIC2013022202.txt<br>
+1, 7325CA95 -> S372500243002N, Chip number assigned.; 9233731680110016923, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022202.txt'log_ISIC2013030101.txt<br>
+1, 8E070C82 -> 05094218, Chip number assigned.; 9233731680108002455, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030101.txt'log_ISIC2013022604.txt<br>
+1, EC861943 -> S372226260620N, Chip number assigned.; 9233731680120052710, PAN number assigned.<br>
+2, AC861943 -> S372226260610J, Chip number assigned.; 9233731680120052611, PAN number assigned.<br>
+3, 9CC51943 -> S372226260613N, Chip number assigned.; 9233731680120052645, PAN number assigned.<br>
+4, AC871943 -> S372226260623J, Chip number assigned.; 9233731680120052744, PAN number assigned.<br>
+5, 2C861943 -> S372226260612C, Chip number assigned.; 9233731680120052637, PAN number assigned.<br>
+6, EC851943 -> S372226260617M, Chip number assigned.; 9233731680120052686, PAN number assigned.<br>
+7, 9CC41943 -> S372226260611K, Chip number assigned.; 9233731680120052629, PAN number assigned.<br>
+8, 2C871943 -> S372226260621E, Chip number assigned.; 9233731680120052728, PAN number assigned.<br>
+9, 0C4E1943 -> S372226260622R, Chip number assigned.; 9233731680120052736, PAN number assigned.<br>
+10, 3CED2C43 -> S372226260614Q, Chip number assigned.; 9233731680120052652, PAN number assigned.<br>
+11, 7CED2C43 -> S372226260625N, Chip number assigned.; 9233731680120052769, PAN number assigned.<br>
+12, BCEE2C43 -> S372226260627Q, Chip number assigned.; 9233731680120052785, PAN number assigned.<br>
+13, 5C5D2D43 -> S372226260624K, Chip number assigned.; 9233731680120052751, PAN number assigned.<br>
+14, 9C342143 -> S372226260615H, Chip number assigned.; 9233731680120052660, PAN number assigned.<br>
+15, ACCD2143 -> S372226260619P, Chip number assigned.; 9233731680120052702, PAN number assigned.<br>
+16, 6C3F2143 -> S372226260618N, Chip number assigned.; 9233731680120052694, PAN number assigned.<br>
+17, 0CCE2143 -> S372226260616U, Chip number assigned.; 9233731680120052678, PAN number assigned.<br>
+18, 2CC62C43 -> S372226260626N, Chip number assigned.; 9233731680120052777, PAN number assigned.<br>
+19, 9C342143 -> S372226260615H, Chip number already assigned.; 9233731680120052660, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022604.txt'log_ISIC2013022608.txt<br>
+1, 1C9C67F9 -> P372005001117, Chip number assigned.; 9233731680109014137, PAN number assigned.<br>
+2, 5C1665F9 -> P372005001118, Chip number assigned.; 9233731680109014145, PAN number assigned.<br>
+3, DC0966F9 -> P372005001119, Chip number assigned.; 9233731680109014152, PAN number assigned.<br>
+4, EC1165F9 -> P372005001120, Chip number assigned.; 9233731680109014160, PAN number assigned.<br>
+5, 7C9667F9 -> P372005001121, Chip number assigned.; 9233731680109014178, PAN number assigned.<br>
+6, 3C1A65F9 -> P372005001122, Chip number assigned.; 9233731680109014186, PAN number assigned.<br>
+7, 4C1765F9 -> P372005001123, Chip number assigned.; 9233731680109014194, PAN number assigned.<br>
+8, 1CAA68F9 -> P372005001124, Chip number assigned.; 9233731680109014202, PAN number assigned.<br>
+9, 2C9B67F9 -> P372005001125, Chip number assigned.; 9233731680109014210, PAN number assigned.<br>
+10, 0C1265F9 -> P372005001126, Chip number assigned.; 9233731680109014228, PAN number assigned.<br>
+11, 4CA768F9 -> P372005001127, Chip number assigned.; 9233731680109014236, PAN number assigned.<br>
+12, 8C0B66F9 -> P372005001128, Chip number assigned.; 9233731680109014244, PAN number assigned.<br>
+13, 1C0F65F9 -> P372005001129, Chip number assigned.; 9233731680109014251, PAN number assigned.<br>
+14, 6C4A66F9 -> P372005001130, Chip number assigned.; 9233731680109014269, PAN number assigned.<br>
+15, EC9E67F9 -> P372005001131, Chip number assigned.; 9233731680109014277, PAN number assigned.<br>
+16, 0CF864F9 -> P372005001132, Chip number assigned.; 9233731680109014285, PAN number assigned.<br>
+17, 6C1765F9 -> P372005001133, Chip number assigned.; 9233731680109014293, PAN number assigned.<br>
+18, 6CB666F9 -> P372005001134, Chip number assigned.; 9233731680109014301, PAN number assigned.<br>
+19, 5C0E66F9 -> P372005001135, Chip number assigned.; 9233731680109014319, PAN number assigned.<br>
+20, 7C1465F9 -> P372005001136, Chip number assigned.; 9233731680109014327, PAN number assigned.<br>
+21, 7C0C66F9 -> P372005001137, Chip number assigned.; 9233731680109014335, PAN number assigned.<br>
+22, BC0966F9 -> P372005001138, Chip number assigned.; 9233731680109014343, PAN number assigned.<br>
+23, EC1B65F9 -> P372005001139, Chip number assigned.; 9233731680109014350, PAN number assigned.<br>
+24, FC1065F9 -> P372005001140, Chip number assigned.; 9233731680109014368, PAN number assigned.<br>
+25, 3CF564F9 -> P372005001141, Chip number assigned.; 9233731680109014376, PAN number assigned.<br>
+26, 3C0F65F9 -> P372005001142, Chip number assigned.; 9233731680109014384, PAN number assigned.<br>
+27, 9C1465F9 -> P372005001143, Chip number assigned.; 9233731680109014392, PAN number assigned.<br>
+28, FC9D67F9 -> P372005001144, Chip number assigned.; 9233731680109014400, PAN number assigned.<br>
+29, 4C9967F9 -> P372005001145, Chip number assigned.; 9233731680109014418, PAN number assigned.<br>
+30, 8CAC68F9 -> P372005001146, Chip number assigned.; 9233731680109014426, PAN number assigned.<br>
+31, 3CA868F9 -> P372005001147, Chip number assigned.; 9233731680109014434, PAN number assigned.<br>
+32, 4CEA66F9 -> P372005001148, Chip number assigned.; 9233731680109014442, PAN number assigned.<br>
+33, 1C1A65F9 -> P372005001149, Chip number assigned.; 9233731680109014459, PAN number assigned.<br>
+34, AC0B66F9 -> P372005001150, Chip number assigned.; 9233731680109014467, PAN number assigned.<br>
+35, 2C1965F9 -> P372005001151, Chip number assigned.; 9233731680109014475, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022608.txt'log_ISIC2013022702.txt<br>
+1, 532EC995 -> S372226546077L, Chip number assigned.; 9233731680110016949, PAN number assigned.<br>
+2, E3E6C895 -> S372226546076K, Chip number assigned.; 9233731680110016931, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022702.txt'log_ISIC2013022206.txt<br>
+1, 04E4994A -> T372150931675E, Chip number assigned.; 9233731680150028788, PAN number assigned.<br>
+2, 7402644A -> T372150931672T, Chip number assigned.; 9233731680150028754, PAN number assigned.<br>
+3, E4F9994A -> T372150931673L, Chip number assigned.; 9233731680150028762, PAN number assigned.<br>
+4, 943B654A -> T372150931674B, Chip number assigned.; 9233731680150028770, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022206.txt'log_ISIC2013030105.txt<br>
+1, 83A5C795 -> S372226546078D, Chip number assigned.; 9233731680110016964, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030105.txt'log_ISIC2013030405.txt<br>
+1, CCDEA449 -> S372226258247J, Chip number assigned.; 9233731680120053148, PAN number assigned.<br>
+2, 0C7EA549 -> S372226258246G, Chip number assigned.; 9233731680120053130, PAN number assigned.<br>
+3, 3C33A549 -> S372226258245F, Chip number assigned.; 9233731680120053122, PAN number assigned.<br>
+4, 0C171B43 -> S372226258244N, Chip number assigned.; 9233731680120053114, PAN number assigned.<br>
+5, 7C181B43 -> S372226258248K, Chip number assigned.; 9233731680120053155, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030405.txt'log_ISIC2013030106.txt<br>
+1, BCAF1B43 -> S372226258242U, Chip number assigned.; 9233731680120052793, PAN number assigned.<br>
+2, FCED2C43 -> S372226258243L, Chip number assigned.; 9233731680120052801, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030106.txt'log_ISIC2013022707.txt<br>
+1, 8C1365F9 -> P372005001152, Chip number assigned.; 9233731680109014087, PAN number assigned.<br>
+2, 2C1B65F9 -> P372005001153, Chip number assigned.; 9233731680109014095, PAN number assigned.<br>
+3, 0C1C65F9 -> P372005001154, Chip number assigned.; 9233731680109014103, PAN number assigned.<br>
+4, 4CB068F9 -> P372005001155, Chip number assigned.; 9233731680109014111, PAN number assigned.<br>
+5, FCB468F9 -> P372005001156, Chip number assigned.; 9233731680109014129, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022707.txt'log_ISIC2013030404.txt<br>
+1, 6316D892 -> S372226546079E, Chip number assigned.; 9233731680110016980, PAN number assigned.<br>
+2, 7317D892 -> S372226546080N, Chip number assigned.; 9233731680110016998, PAN number assigned.<br>
+3, 63C8C695 -> S372226546081P, Chip number assigned.; 9233731680110017004, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030404.txt'log_ISIC2013030402.txt<br>
+1, 6E3C0D82 -> 05094221, Chip number assigned.; 9233731680108002505, PAN number assigned.<br>
+2, 2E3D0D82 -> 05094219, Chip number assigned.; 9233731680108002489, PAN number assigned.<br>
+3, 6E3D0D82 -> 05094220, Chip number assigned.; 9233731680108002497, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030402.txt'log_ISIC2013030408.txt<br>
+1, F4BF634A -> T372150931677H, Chip number assigned.; 9233731680150028911, PAN number assigned.<br>
+2, E4E1994A -> T372150931676Q, Chip number assigned.; 9233731680150028903, PAN number assigned.<br>
+3, F4BF634A -> T372150931677H, Chip number already assigned.; 9233731680150028911, PAN number already assigned.<br>
+4, E4E1994A -> T372150931676Q, Chip number already assigned.; 9233731680150028903, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030408.txt'log_ISIC2013022203.txt<br>
+1, 7378CA95 -> S372226546053E, Chip number assigned.; 9233731680110016725, PAN number assigned.<br>
+2, 23BDCA95 -> S372226546072N, Chip number assigned.; 9233731680110016915, PAN number assigned.<br>
+3, A344CB95 -> S372226546071K, Chip number assigned.; 9233731680110016907, PAN number assigned.<br>
+4, 7343CB95 -> S372226546070J, Chip number assigned.; 9233731680110016899, PAN number assigned.<br>
+5, 3343CB95 -> S372226546069K, Chip number assigned.; 9233731680110016881, PAN number assigned.<br>
+6, 030BC695 -> S372226546068J, Chip number assigned.; 9233731680110016873, PAN number assigned.<br>
+7, C30AC695 -> S372226546067R, Chip number assigned.; 9233731680110016865, PAN number assigned.<br>
+8, D30BC695 -> S372226546066P, Chip number assigned.; 9233731680110016857, PAN number assigned.<br>
+9, 130CC695 -> S372226546065N, Chip number assigned.; 9233731680110016840, PAN number assigned.<br>
+10, 030CC695 -> S372226546064L, Chip number assigned.; 9233731680110016832, PAN number assigned.<br>
+11, 430BC695 -> S372226546063U, Chip number assigned.; 9233731680110016824, PAN number assigned.<br>
+12, 5312C795 -> S372226546062H, Chip number assigned.; 9233731680110016816, PAN number assigned.<br>
+13, 9313C795 -> S372226546061G, Chip number assigned.; 9233731680110016808, PAN number assigned.<br>
+14, 7354C795 -> S372226546060N, Chip number assigned.; 9233731680110016790, PAN number assigned.<br>
+15, 3354C795 -> S372226546059Q, Chip number assigned.; 9233731680110016782, PAN number assigned.<br>
+16, E314C795 -> S372226546058N, Chip number assigned.; 9233731680110016774, PAN number assigned.<br>
+17, A314C795 -> S372226546057N, Chip number assigned.; 9233731680110016766, PAN number assigned.<br>
+18, 33C6C695 -> S372226546056K, Chip number assigned.; 9233731680110016758, PAN number assigned.<br>
+19, F3C5C695 -> S372226546055J, Chip number assigned.; 9233731680110016741, PAN number assigned.<br>
+20, B3C4C695 -> S372226546054R, Chip number assigned.; 9233731680110016733, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022203.txt'log_ISIC2013030507.txt<br>
+1, F4009A4A -> T372151272596N, Chip number assigned.; 9233731680150028820, PAN number assigned.<br>
+2, F4009A4A -> T372151272596N, Chip number already assigned.; 9233731680150028820, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030507.txt'log_ISIC2013022605.txt<br>
+1, 932EC995 -> S372226546075S, Chip number assigned.; 9233731680110016956, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022605.txt'log_ISIC2013030505.txt<br>
+1, 343A654A -> T372150930636B, Chip number assigned.; 9233731680150028838, PAN number assigned.<br>
+2, 44349C4A -> T372150930636B, Chip number assigned.; 9233731680150028937, PAN number already assigned.<br>
+3, 8424664A -> T372150930638Q, Chip number assigned.; 9233731680150028952, PAN number assigned.<br>
+4, E487654A -> T372150930637E, Chip number assigned.; 9233731680150028945, PAN number assigned.<br>
+5, 74BE634A -> T372150930640Q, Chip number assigned.; 9233731680150028978, PAN number assigned.<br>
+6, C4E49B4A -> T372150930639H, Chip number assigned.; 9233731680150028960, PAN number assigned.<br>
+7, 343A654A -> T372150930636B, Chip number assigned.; 9233731680150028838, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030505.txt'log_ISIC2013022502.txt<br>
+1, ACBB1B43 -> S372226260595N, Chip number assigned.; 9233731680120052264, PAN number assigned.<br>
+2, 9CF31C43 -> S372226260596Q, Chip number assigned.; 9233731680120052272, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022502.txt'log_ISIC2013022802.txt<br>
+1, 3CEE2C43 -> S372226258239J, Chip number assigned.; 9233731680120052975, PAN number assigned.<br>
+2, 7CB01B43 -> S372226258240G, Chip number assigned.; 9233731680120052983, PAN number assigned.<br>
+3, 2C042E43 -> S372226258241S, Chip number assigned.; 9233731680120052991, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022802.txt'log_ISIC2013022807.txt<br>
+1, 7C4966F9 -> P372005001157, Chip number assigned.; 9233731680109014509, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022807.txt'log_ISIC2013022609.txt<br>
+1, B4229A4A -> T372150932758Q, Chip number assigned.; 9233731680150028804, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022609.txt'log_ISIC2013022207.txt<br>
+1, E4169A4A -> T372150932749N, Chip number assigned.; 9233731680150028739, PAN number assigned.<br>
+2, E4EA9B4A -> T372150932747J, Chip number assigned.; 9233731680150028713, PAN number assigned.<br>
+3, D40F9A4A -> T372150932748W, Chip number assigned.; 9233731680150028721, PAN number assigned.<br>
+4, 6480904A -> T372150932750L, Chip number assigned.; 9233731680150028747, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022207.txt'log_ISIC2013030201.txt<br>
+1, 7CF666F9 -> P372005001103, Chip number assigned.; 9233731680109014491, PAN number assigned.<br>
+2, 9C5D67F9 -> P372005001102, Chip number assigned.; 9233731680109014483, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030201.txt'log_ISIC2013030504.txt<br>
+1, 0CDFA449 -> S372226260691R, Chip number assigned.; 9233731680120053080, PAN number assigned.<br>
+2, 8CDFA449 -> S372226260687D, Chip number assigned.; 9233731680120053049, PAN number assigned.<br>
+3, 3C32A549 -> S372226260689R, Chip number assigned.; 9233731680120053064, PAN number assigned.<br>
+4, FC32A549 -> S372226260688E, Chip number assigned.; 9233731680120053056, PAN number assigned.<br>
+5, 8CDEA449 -> S372226260684H, Chip number assigned.; 9233731680120053015, PAN number assigned.<br>
+6, AC821A43 -> S372226260690E, Chip number assigned.; 9233731680120053072, PAN number assigned.<br>
+7, EC821A43 -> S372226260685U, Chip number assigned.; 9233731680120053023, PAN number assigned.<br>
+8, 3C32A549 -> S372226260689R, Chip number already assigned.; 9233731680120053064, PAN number already assigned.<br>
+9, 1C221B43 -> S372226260686W, Chip number assigned.; 9233731680120053031, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030504.txt'log_ISIC2013022511.txt<br>
+1, 04BF994A -> T372150932751N, Chip number assigned.; 9233731680150028648, PAN number assigned.<br>
+2, 74039A4A -> T372150932757P, Chip number assigned.; 9233731680150028705, PAN number assigned.<br>
+3, 5447904A -> T372150932756M, Chip number assigned.; 9233731680150028697, PAN number assigned.<br>
+4, 044B904A -> T372150932754T, Chip number assigned.; 9233731680150028671, PAN number assigned.<br>
+5, 34B6634A -> T372150932752E, Chip number assigned.; 9233731680150028655, PAN number assigned.<br>
+6, D465904A -> T372150932753G, Chip number assigned.; 9233731680150028663, PAN number assigned.<br>
+7, C467904A -> T372150932755K, Chip number assigned.; 9233731680150028689, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022511.txt'log_ISIC2013022606.txt<br>
+1, 1CB01B43 -> S372226258238G, Chip number assigned.; 9233731680120052603, PAN number assigned.<br>
+2, 2C402143 -> S372226258237D, Chip number assigned.; 9233731680120052595, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022606.txt'log_ISIC2013030410.txt<br>
+1, A499644A -> T372150932764N, Chip number assigned.; 9233731680150028879, PAN number assigned.<br>
+2, 8473664A -> T372150932761H, Chip number assigned.; 9233731680150028846, PAN number assigned.<br>
+3, 04DA994A -> T372150932762J, Chip number assigned.; 9233731680150028853, PAN number assigned.<br>
+4, 64E7994A -> T372150932765P, Chip number assigned.; 9233731680150028887, PAN number assigned.<br>
+5, 54FD994A -> T372150932766H, Chip number assigned.; 9233731680150028895, PAN number assigned.<br>
+6, 74E1994A -> T372150932763W, Chip number assigned.; 9233731680150028861, PAN number assigned.<br>
+7, A499644A -> T372150932764N, Chip number already assigned.; 9233731680150028879, PAN number already assigned.<br>
+8, 8473664A -> T372150932761H, Chip number already assigned.; 9233731680150028846, PAN number already assigned.<br>
+9, 04DA994A -> T372150932762J, Chip number already assigned.; 9233731680150028853, PAN number already assigned.<br>
+10, 64E7994A -> T372150932765P, Chip number already assigned.; 9233731680150028887, PAN number already assigned.<br>
+11, 54FD994A -> T372150932766H, Chip number already assigned.; 9233731680150028895, PAN number already assigned.<br>
+12, 74E1994A -> T372150932763W, Chip number already assigned.; 9233731680150028861, PAN number already assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013030410.txt'log_ISIC2013022706.txt<br>
+1, B4E5994A -> T372150932759S, Chip number assigned.; 9233731680150028796, PAN number assigned.<br>
+<br>
+done<br>
+/usr/bin/ssh -o UserKnownHostsFile=/var/www/minukool.ee/khs/cron/.ssh/known_hosts -i /var/www/minukool.ee/khs/cron/.ssh/id_rsa -l isic 213.35.252.226 'rm ./share/tryb2isic/log_ISIC2013022706.txt'

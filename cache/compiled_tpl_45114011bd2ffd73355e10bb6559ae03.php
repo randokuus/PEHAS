@@ -1,0 +1,159 @@
+<?php defined("MODERA_KEY")|| die(); ?><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../js/ext/builds/structure-tree.js"></script>
+    <script type="text/javascript" src="js/modera/modera-tree.js"></script>
+    <link rel="stylesheet" type="text/css" href="../js/ext/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="js/modera/resources/css/tree.css" />
+
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            padding: 5px 0 0 5px;
+            margin: 0;
+        }
+
+        #tree-div {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* override Ext styles to make font resizable with IE */
+
+        .x-tree {
+            font-size: 77%;
+        }
+
+        .ext-ie ul.x-tree-node-ct, .x-tree-node {
+            font-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="tree-div"></div>
+<script>
+
+    // workaround for loading content to right frame
+    // used in content_admin
+    var loadToRight_url;
+    var loadToRight = function(url)
+    {
+        loadToRight_url = url;
+        tree.root.on('load', function(node) {
+                if (window.parent.right) {
+                    window.parent.right.location = loadToRight_url;
+                }
+            }, this, {single: true}
+        );
+    }
+
+    // change url for spacer image
+    Ext.BLANK_IMAGE_URL = '../js/ext/resources/images/default/s.gif';
+
+    // define language data (will be defined via template variable)
+    var languageData = {<?php echo $data["LANGUAGE_DATA"]; ?>};
+
+    // global reference to tree object
+    var tree;
+
+    ////////////////////////////////////////////////////////////////////////////
+
+    Ext.onReady(function(){
+
+        Ext.dd.ScrollManager.animDuration = .2;
+        Ext.dd.ScrollManager.frequency = 150;
+        Ext.dd.ScrollManager.increment = 25;
+        Ext.dd.ScrollManager.thresh = 40;
+
+        Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+
+        tree = new Modera.tree.ContentStructurePanel('tree-div', {
+            containerScroll: true,
+            backendUri : 'structure_backend.php',
+            languageData : languageData,
+            animate : false
+        });
+
+        tree.on({
+            contentnodeactivated : function(nodeId) {
+                window.parent.right.location = 'content_admin.php?show=modify&id=' + nodeId;
+            },
+
+            templatenodeactivated : function(nodeId) {
+                window.parent.right.location = 'content_admin.php?show=modify&node_type=template'
+                    + '&id=' + nodeId;
+            },
+
+            trashnodeactivated : function(nodeId) {
+                window.parent.right.location = 'content_admin.php?show=modify&node_type=trash'
+                    + '&id=' + nodeId;
+            },
+
+            newcontentnode : function(parentNodeId) {
+                window.parent.right.location = 'content_admin.php?show=add&parent_id=' + parentNodeId;
+            },
+
+            newtemplatenode : function() {
+                window.parent.right.location = 'content_admin.php?show=add&node_type=template';
+            },
+
+            emptytrash : function() {
+                var location = window.parent.right.location;
+                if (-1 != location.toString().indexOf('node_type=trash')) {
+                    window.parent.right.location = 'dashboard.php';
+                }
+            },
+
+            beforeajaxsuccess : function(o) {
+                if (o.responseText == '<META HTTP-EQUIV="refresh" CONTENT="0"><body onLoad= "top.document.location=\'login.php\'">') {
+                    top.document.location = 'login.php';
+                    return false;
+                }
+            },
+
+            ajaxsuccess : function(response) {
+                if (response.action) {
+                    switch (response.action) {
+                        case 'shownode':
+                            if (response.node_id && response.node_type) {
+                                window.parent.right.location = 'content_admin.php?show=modify'
+                                    + '&node_type=' + response.node_type
+                                    + '&id=' + response.node_id;
+                            }
+
+                            break;
+
+                        case 'showblank':
+                            // load dashboard
+                            window.parent.right.location = 'dashboard.php';
+                            break;
+                        case 'showerror':
+                            if (!response.error_code) {
+                                response.error_code = 404;
+                            }
+                            window.parent.right.location = '../error.php?error='
+                                + response.error_code;
+                            break;
+                    }
+                }
+            }
+        });
+
+        var root = new Ext.tree.AsyncTreeNode({
+            draggable : false,
+            id : 'r'
+        });
+
+        root.on('load', function(node){
+            node.getOwnerTree().restoreState();
+        });
+
+        tree.setRootNode(root);
+        tree.render();
+        root.expand();
+    });
+</script>
+</body>
+</html>

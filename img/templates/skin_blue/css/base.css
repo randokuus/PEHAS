@@ -1,0 +1,100 @@
+/* base styles */
+
+A { color: #1b66b2; }
+
+/* table styles */
+
+TABLE.style1 TD.title { background: #9bcdf2 url("../img/bg_tabs.gif") repeat-y right; }
+
+/* header */
+
+#editProfile A { background: #4894d0 url("../img/bg_button.gif") no-repeat top right; }
+#time { color: #304f82; }
+#time A { color: #4894d0; }
+
+/* main nav */
+
+#nav A.on { background: #4894d0 url("../img/bg_reflection_2.gif") repeat-x top; }
+
+
+/* global column on the right */
+
+#globalColumnSpan { border: 1px solid #2973ae; background: #4894d0 url("../img/bg_reflection_2.gif") repeat-x top; }
+p#hideColumn A { background: url("../img/b_close_col.gif") no-repeat top left; }
+
+/* global column - calendar */
+
+#calendar { background: #fff url("../img/bg_calendar.gif") repeat-x bottom; }
+#calendar tr.month TH { background: #d4e7f6; }
+#calendar tr.month TH.month { background: #d4e7f6 url("../img/bg_calendar_tr.gif") repeat-y center; }
+TD#globalColumn #calendar A { color: #186ab7; }
+
+/* global column - messenger */
+
+#messenger { padding-bottom: 11px; background: url("../img/bg_calendar.gif") repeat-x bottom; }
+#globalColumn #messenger H2 { background: url("../img/icon_messenger.gif") no-repeat top left; }
+
+/* global column - shortcuts */
+
+#shortcutsList { background: url("../img/bg_shortcuts.gif") repeat-x bottom; }
+#globalColumn #shortcuts H2 { background: url("../img/icon_shortcuts.gif") no-repeat top left; }
+#shortcuts LI A { border-bottom: 1px solid #3f5c8b; }
+#shortcuts LI A:hover { border: 1px solid #9acdf3; }
+#shortcutsListSpan { background: #304f82; }
+
+/* shortcuts global version */
+
+.shortcuts { background: #304f82; }
+.shortcuts LI A { border-bottom: 1px solid #3f5c8b; }
+.shortcuts LI A:hover { border: 1px solid #9acdf3; }
+.shortcuts LI.readMore A { border: 1px solid #3f5c8b; }
+.shortcuts LI.on A { border: 1px solid #9acdf3; }
+.shortcuts LI UL { border-left: 1px solid #9acdf3; border-right: 1px solid #9acdf3; background: #4894d0; }
+.shortcuts LI.on UL LI A { border-bottom: 1px solid #9acdf3; }
+.shortcuts LI.on UL LI A:hover { border-bottom: 1px solid #9acdf3; }
+
+/* global column - search */
+
+#globalColumn .search H2 { background: url("../img/icon_search.gif") no-repeat top left; }
+#globalColumn .search input.text { border: 1px solid #afd7f4; }
+
+/* block style */
+
+.block { border: 1px solid #99cdf4; overflow: hidden; }
+* HTML .block { height: 1px; overflow: visible; }
+.blockHeader H2 { background: #99cdf4 url("../img/bg_block_header.gif") repeat-x top; color: #314f83; }
+
+.blockHeaderSimple H2 { background: #99cdf4 url("../img/bg_block_header.gif") repeat-x top; color: #314f83; }
+
+.tabs { background: #9bcdf2 url("../img/bg_tabs.gif") repeat-y right; }
+.tabs LI A { background: #4894d0 url("../img/bg_reflection_2.gif") repeat-x top; border-color: #4894d0; }
+.tabs LI.on A { border-top: 1px solid #4894d0; border-left: 1px solid #4894d0; border-right: 1px solid #4894d0; color: #343434; }
+.buttons LI A { border: 1px solid #3f5c8b; background: #4894d0 url("../img/bg_reflection_2.gif") repeat-x top; }
+.actions { background: #d1e6f6 url("../img/bg_actions.gif") repeat-y center; }
+
+/* From modera intranet */
+
+.pad1 { padding: 2px; }
+.w100p { width: 100%; }
+TABLE.calendar { width: 100%; border: none; border-collapse: collapse; border-bottom: 1px solid #d4d4d4; }
+TABLE.calendar TD { vertical-align: top; font-size: 11px; font-family: Tahoma, Arial, Helvetica, sans-serif; width: 20px; background: url('../img/bg10.gif') left top; padding: 0px; }
+TABLE.calendar TD.time { white-space: nowrap; padding: 0px 10px; width: 20px; color: #534968; height: 32px; line-height: 16px; background: url('../img/bg12.gif') left top; }
+TABLE.calendar TD.events { width: auto; padding: 0px; }
+TABLE.event { margin-left: 4px; cursor: pointer; border: none; width: 100%; border-collapse: collapse; }
+TABLE.event TD { vertical-align: middle !important; padding: 0px !important; padding: 1px 5px !important; width: auto; }
+.priority-important { background: #ffd2d2 !important; color: #BC0000; }
+.priority-low { background: #F0F0F0 !important; color: #8F8F8F; }
+.priority-normal { background: #dcf0ff !important; color: #534968; }
+.private { background-image: url('../img/bg11.gif') !important; }
+DIV.legend IMG { vertical-align: middle; width: 20px; height: 12px; margin: 5px; border: 1px solid #99cdf4; }
+TABLE.calendar-month { width: 100%; border-collapse: collapse; }
+TABLE.calendar-month TD { padding: 1px; border: 1px solid #d1e6f6; width: 16%; text-align: left; vertical-align: top; height: 35px; }
+TABLE.calendar-month TD A.add { float: right; padding: 2px; }
+TABLE.calendar-month TD DIV.date { background: #e7f2fb; color: #1b66b2; font-weight: bold; padding: 2px 5px; }
+TABLE.calendar-month TD DIV.date-newmonth { background: #F2F2F2; color: #BEBEBE; font-weight: bold; padding: 2px 5px; }
+TABLE.calendar-month TD DIV.event { line-height: 0px; font-size: 1px; height: 15px; margin: 3px 0px; cursor: pointer; }
+DIV.eventname { color: #aaa; font-size: 10px; width: 100%; overflow: hidden; text-overflow: ellipsis; padding: 3px 0 1px 0; }
+DIV.eventname A { color: #aaa; }
+
+DIV.alphabet A:hover { background: #1b66b2; }
+DIV.alphabet A.active { background: #1b66b2; }

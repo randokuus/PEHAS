@@ -1,0 +1,25 @@
+<div class="block" id="block1">
+  <div class="blockHeader">
+    <h2><a href="<TPL:MESSAGES_URL>"><TPL:TXT_module_messages|module_title> (<TPL:MESSAGES_TOTAL>)</a></h2>
+    <div class="clearer"></div>
+  </div>
+  <div class="blockBody">
+    <div class="blockBodyText">
+      <TPL_SUB:ARTICLE>
+      <div class="news">
+        <a href="<TPL:URL>"><TPL:TITLE></a> <span class="date">(<TPL:DATE> - <TPL:USERNAME>)</span><br />
+        <TPL:LEAD>
+      </div>
+      </TPL_SUB:ARTICLE>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <TPL_SUB:ADD>
+  <div class="shortcuts">
+    <ul>
+      <li><a href="<TPL:MESSAGES_URL>&action=add"><TPL:TXT_module_messages|add></a></li>
+    </ul>
+    <div class="clearer"></div>
+  </div>
+  </TPL_SUB:ADD>
+</div>

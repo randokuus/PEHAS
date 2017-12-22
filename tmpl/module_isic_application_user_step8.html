@@ -1,0 +1,37 @@
+        <!--singleCol-->
+        <div class="singleCol">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|step8_title></h2>
+                        </div>
+
+                        <TPL_SUB:IMESSAGE>
+                        <!--msgWrap-->
+                        <div class="msgWrap">
+                            <p class="msg msgOk">
+                                <span><TPL:IMESSAGE></span>
+                            </p>
+                        </div>
+                        <!--/msgWrap-->
+                        </TPL_SUB:IMESSAGE>
+                        
+                        <!--formTable-->
+                        <div class="formTable">
+                            <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+                            <!--wButtons-->
+                            <div class="wButtons">
+					          <TPL_SUB:BUTTON_LEAVE>
+					          <input type="button" id="button_leave" value="<TPL:TITLE>" onClick="document.location='<TPL:URL>'" />
+					          </TPL_SUB:BUTTON_LEAVE>
+                            </div>
+                            <!--/wButtons-->
+                        </form>
+                    </div>
+                    <!--/formTable-->
+                </div>
+            </div>
+            <!--/box-->
+        </div>
+        <!--/singleCol-->

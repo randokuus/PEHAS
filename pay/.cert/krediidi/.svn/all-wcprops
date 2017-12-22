@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi
+END
+cert_req.pem
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi/cert_req.pem
+END
+privkey.pem.encrypted
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi/privkey.pem.encrypted
+END
+new_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi/new_cert.pem
+END
+privkey.pem
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi/privkey.pem
+END
+krediidi_pub.pem
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/modera_projects/!svn/ver/2474/minukool_khs/trunk/pay/.cert/krediidi/krediidi_pub.pem
+END

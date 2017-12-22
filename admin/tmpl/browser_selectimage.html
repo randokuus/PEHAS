@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<head>
+	<title>Files</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" /> 
+	<meta http-equiv="cache-control" content="no-cache" />		
+	<link rel="stylesheet" href="main.css" type="text/css" media="all" />
+	
+		<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+		<!--
+		function del(urliMeez) {
+			conf = window.confirm('<TPL:CONFIRMATION>');
+			if (conf) top.main.right.document.location = urliMeez;
+		}
+		function submitTo() {
+			document.forms["vorm"].elements['submit_to'].value = '1';
+			document.forms["vorm"].submit();	
+		}
+		// Open new window for the selection
+		function newWindow(myurl, sizex, sizey) {
+			var newWindow;
+			var props = 'scrollBars=yes,resizable=yes,toolbar=no,menubar=yes,location=no,directories=no,width='+sizex+',height='+sizey;
+			newWindow = window.open(myurl, "window", props);
+			newWindow.focus();
+		}
+		
+		PositionX = 10;
+		PositionY = 10;
+		defaultWidth  = 600;
+		defaultHeight = 400;
+		
+		//kinda important
+		var AutoClose = true;
+				
+		function openPicture(imageURL){
+			imageTitle = imageURL;
+			var imgWin = window.open('','_blank','scrollbars=no,resizable=1,width='+defaultWidth+',height='+defaultHeight+',left='+PositionX+',top='+PositionY);
+			if( !imgWin ) { return true; } //popup blockers should not cause errors
+			imgWin.document.write('<html><head><title>'+imageTitle+'<\/title><script type="text\/javascript">\n'+
+				'function resizeWinTo() {\n'+
+				'if( !document.images.length ) { document.images[0] = document.layers[0].images[0]; }'+
+				'var oH = document.images[0].height, oW = document.images[0].width;\n'+
+				'if( !oH || window.doneAlready ) { return; }\n'+ //in case images are disabled
+				'window.doneAlready = true;\n'+ //for Safari and Opera
+				'var x = window; x.resizeTo( oW + 200, oH + 200 );\n'+
+				'var myW = 0, myH = 0, d = x.document.documentElement, b = x.document.body;\n'+
+				'if( x.innerWidth ) { myW = x.innerWidth; myH = x.innerHeight; }\n'+
+				'else if( d && d.clientWidth ) { myW = d.clientWidth; myH = d.clientHeight; }\n'+
+				'else if( b && b.clientWidth ) { myW = b.clientWidth; myH = b.clientHeight; }\n'+
+				'if( window.opera && !document.childNodes ) { myW += 16; }\n'+
+				'x.resizeTo( oW = oW + ( ( oW + 200 ) - myW ), oH = oH + ( (oH + 200 ) - myH ) );\n'+
+				'var scW = screen.availWidth ? screen.availWidth : screen.width;\n'+
+				'var scH = screen.availHeight ? screen.availHeight : screen.height;\n'+
+				'if( !window.opera ) { x.moveTo(Math.round((scW-oW)/2),Math.round((scH-oH)/2)); }\n'+
+				'}\n'+
+				'<\/script>'+
+				'<\/head><body onload="resizeWinTo();"'+(AutoClose?' onblur="self.close();"':'')+'>'+
+				(document.layers?('<layer left="0" top="0">'):('<div style="position:absolute;left:0px;top:0px;">'))+
+				'<img src='+imageURL+' alt="Loading image ..." title="" onload="resizeWinTo();">'+
+				(document.layers?'<\/layer>':'<\/div>')+'<\/body><\/html>');
+			imgWin.document.close();
+			if( imgWin.focus ) { imgWin.focus(); }
+			//return false;
+		}
+
+		function openFile(loct) {
+			var win=window.open(loct,'','width=600,height=400,menu=yes,status=yes,scrollbars=no');		
+		}			
+		
+		//-->
+		</SCRIPT>
+	
+</head>
+
+<body id="body-frame">
+
+<div class="infopanel">
+	<h1><TPL:TITLE></h1>
+</div>
+
+
+<div class="tabmenu-dark">
+	<ul class="tabmenu-dark">
+	<TPL_SUB:TABS>
+		<li id="tabset<TPL:ID>" <TPL:CLASS>><a href="<TPL:URL>"><TPL:NAME></a></li>
+	</TPL_SUB:TABS>		
+	</ul>
+</div>
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+
+function fieldsetInit(maxfs) {
+	for (i = 0; i < maxfs; i++) {
+		if ((i+1) != 1) {
+			document.getElementById("fieldset"+(i+1)).style.display = "none";										
+		}
+	}
+}
+
+function fieldJump(current, maxtab, jumpto) {
+	for (i = 0; i < maxtab; i++) {
+		document.getElementById("tabset"+(i+1)).className = "";										
+	}
+	document.getElementById("tabset"+current).className = "active";			
+	
+	document.location = jumpto;
+	
+	return;
+}
+
+function valueCheck(objToTest) {
+	if (null == objToTest) {
+		return false;
+	}
+	if ("undefined" == typeof(objToTest) ) {
+		return false;
+	}
+	return true;
+
+}
+
+function selectImage(id, name, type, date, size, url, url1,url2){
+  if (url1 != "") {
+	if (document.forms['filter_form'].elements['small_pic'].checked) {
+		top.document.forms[0].elements['ImgUrl'].value= url1;	
+	}
+	else {
+		top.document.forms[0].elements['ImgUrl'].value= url;			
+	}
+  }
+  else {
+		top.document.forms[0].elements['ImgUrl'].value= url;				   
+  }
+}
+
+</SCRIPT>
+
+<form action="<_TPL:PHP_SELF>" method="get" name="filter_form" class="formpanel">
+	<fieldset title="Node properties">
+	<legend><TPL:FILTER></legend>
+		<table class="inputfield">
+<!-- 		<form action="<_TPL:PHP_SELF>" method="get" name="filter_form">		 -->
+		<tr>
+			<td><label for="filter" class="left"><TPL:FILTER></label></td>
+			<td><input type="text" id="filter" name="filter" value="<TPL:VAL_FILTER>" size="16" /></td>
+			<td align="right"><label for="mode" class="left"><TPL:MODE></label></td>
+			<td><select id="mode" name="mode">
+				<TPL_SUB:MODES>
+					<option value="<TPL:VALUE>" <TPL:SEL>><TPL:NAME></option>
+				</TPL_SUB:MODES>					
+				</select></td>			
+			<TPL_SUB:EXTRAFILTER>
+			<td><label for="<TPL:ID>" class="left"><TPL:LABEL></label></td>
+			<td><TPL:FIELD></td>			
+			</TPL_SUB:EXTRAFILTER>					
+			<td>&nbsp;</td>
+			<td><button type="submit"><img src="pic/button_accept.gif" alt="" border="0"><TPL:SUBMIT></button></td>
+		</tr>
+			<TPL:HIDDEN>
+			<input type="hidden" name="sort" value="<TPL:VAL_SORT>">
+			<input type="hidden" name="sort_type" value="<TPL:VAL_SORT_TYPE>">		
+			<input type="hidden" name="folder" value="<TPL:VAL_FOLDER>">					
+<!-- 		</form> -->
+		</table>
+	</fieldset>
+</form>
+
+<!-- begin list -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+<!-- <caption><TPL:CAPTION>&nbsp;</caption> -->
+<tr>
+	<TPL_SUB:HEADER>
+	<th class="<TPL:STYLE>"><a href="<TPL:URL>"><TPL:NAME></a></th>
+	</TPL_SUB:HEADER>		
+</tr>
+<TPL_SUB:FOLDERS>
+<tr>
+	<td width="1%"><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:ICON></a></td>
+	<td colspan="4"><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:NAME></a></td>	
+</tr>
+</TPL_SUB:FOLDERS>
+<TPL_SUB:ROWS>
+<tr>
+	<td width="1%"><a href="<TPL:URL1>" alt="<TPL:TEXT>"><TPL:ICON></a></td>
+	<td><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:NAME></a></td>
+	<td><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:SIZE></a></td>
+	<td><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:DATE></a></td>	
+	<td><a href="<TPL:URL>" alt="<TPL:TEXT>"><TPL:TEXT></a></td>		
+</tr>
+</TPL_SUB:ROWS>
+</table>
+
+<TPL_SUB:PAGES>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="datatable">
+	<tr><td><TPL:PAGES>: <TPL:LINKS></td></tr>
+	</table>
+</TPL_SUB:PAGES>
+
+<p></p>
+<!-- end list -->
+
+</body>
+</html>

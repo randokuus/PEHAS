@@ -1,0 +1,66 @@
+		<TPL_SUB:MESSAGE>
+		<!--msgWrap-->
+		<div class="msgWrap">
+		    <p class="msg msgError msgGray">
+		        <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+		    </p>
+		</div>
+		<!--/msgWrap-->
+		</TPL_SUB:MESSAGE>
+
+        
+
+        <!--col1-->
+        <div class="col1">
+            <!--colInner-->
+            <div class="colInner">
+                <!--box-->
+                <div class="box">
+                    <div class="inner">
+                        <div class="heading">
+                            <h2><TPL:TXT_module_isic_card|deactivation_reason></h2>
+                        </div>
+
+                        <!--formTable-->
+                        <div class="formTable">
+                            <form name="vorm" method="post" action="<TPL:SELF>" enctype="multipart/form-data" class="jNice">
+                            <TPL:HIDDEN>
+                            <!--fRow-->
+                            <div class="fRow">
+                                <TPL_SUB:STATUS_ID>
+                                <!--fLine-->
+                                <div class="fLine <TPL:REQUIRED>">
+                                    <div class="fHead">
+                                        <TPL:TXT_module_isic_card|status>:
+                                    </div>
+                                    <div class="fCell">
+                                        <TPL:FIELD_status_id>
+                                    </div>
+                                    <div class="fHint">
+                                        <p><span><TPL:TOOLTIP></span></p>
+                                    </div>
+                                </div>
+                                <!--/fLine-->
+                                </TPL_SUB:STATUS_ID>
+                            </div>
+                            <!--/fRow-->
+
+                            <!--wButtons-->
+                            <div class="wButtons">
+                                 <input type="button" class="grayButton" onClick="document.location='<TPL:URL_BACK_CONFIRM>'" value="<TPL:TXT_module_isic_card|back>" />
+                                 <TPL_SUB:SUBMIT>
+                                 <input type="submit" value="<TPL:BUTTON>" />
+                                 </TPL_SUB:SUBMIT>
+                             </div>
+                             <!--/wButtons-->
+                             </div>
+                            </form>
+                        </div>
+                        <!--/formTable-->
+                    </div>
+                </div>
+                <!--/box-->
+            </div>
+            <!--/colInner-->
+        </div>
+        <!--/col1-->

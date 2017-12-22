@@ -1,0 +1,102 @@
+<TPL_INCLUDE:tmpl/header_report_print.html>
+		<!--filterSettings-->
+		<div class="filterSettings">
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_name_first>:</th>
+                                <td><TPL:FIELD_filter_person_name_first></td>
+                            </tr>
+                            <tr>
+                                <th><TPL:TXT_module_isic_card|person_name_last>:</th>
+                                <td><TPL:FIELD_filter_person_name_last></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+				            <tr>
+	                           <th><TPL:TXT_module_isic_card|person_id>:</th>
+	                           <td><TPL:FIELD_filter_person_number></td>
+	                        </tr>
+                            <tr>
+                               <th><TPL:TXT_module_isic_card|isic_number>:</th>
+                               <td><TPL:FIELD_filter_isic_number></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                               <th><TPL:TXT_module_isic_card|card_type>:</th>
+                               <td><TPL:FIELD_filter_type_id></td>
+                            </tr>
+                            <tr>
+                               <th><TPL:TXT_module_isic_card|school>:</th>
+                               <td><TPL:FIELD_filter_school_id></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                               <th><TPL:TXT_module_isic_card|currency>:</th>
+                               <td><TPL:FIELD_filter_currency></td>
+                            </tr>
+                            <tr>
+                               <th></th>
+                               <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--/filterSettings-->
+                        
+        <!--block-->
+        <div class="block">
+            <div class="heading">
+                <h2><TPL:TITLE></h2>
+            </div>
+            <!--tableWrap-->
+            <div class="tableWrap">
+                <table class="tList tCard">
+                    <tr class="tHeader3">
+                        <th><TPL:TXT_module_isic_card|pic></th>
+                        <th><TPL:TXT_module_isic_card|person_name_first></th>
+                        <th><TPL:TXT_module_isic_card|person_name_last></th>
+                        <th><TPL:TXT_module_isic_card|person_id></th>
+                        <th><TPL:TXT_module_isic_card|expiration_date></th>
+                        <th><TPL:TXT_module_isic_card|isic_number></th>
+                        <th><TPL:TXT_module_isic_card|confirm_payment_collateral></th>
+                        <th><TPL:TXT_module_isic_card|confirm_payment_cost></th>
+                        <th><TPL:TXT_module_isic_card|type></th>
+                        <th><TPL:TXT_module_isic_card|application_type></th>
+                        <th><TPL:TXT_module_isic_card|active></th>
+                    </tr>
+                    <TPL_SUB:DATA>
+                    <tr class="<TPL:STYLE>">
+                        <td><TPL:IMAGE></td>
+                        <td><TPL:PERSON_NAME_FIRST></td>
+                        <td><TPL:PERSON_NAME_LAST></td>
+                        <td><TPL:PERSON_NUMBER></td>
+                        <td><TPL:EXPIRATION_DATE></td>
+                        <td><TPL:ISIC_NUMBER></td>
+                        <td><TPL:CONFIRM_PAYMENT_COLLATERAL><br /><TPL:COLLATERAL_SUM></td>
+                        <td><TPL:CONFIRM_PAYMENT_COST><br /><TPL:COST_SUM></td>
+                        <td><TPL:CARD_TYPE_NAME></td>
+                        <td><TPL:CARD_STATUS_NAME></td>
+                        <td><TPL:ACTIVE></td>
+                        </td>
+                    </tr>
+                    </TPL_SUB:DATA>
+                </table>
+            </div>
+            <!--/tableWrap-->
+        </div>
+        <!--/block-->
+
+<TPL_INCLUDE:tmpl/footer_report_print.html>

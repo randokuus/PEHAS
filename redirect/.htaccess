@@ -1,0 +1,10 @@
+Options FollowSymLinks
+RewriteEngine On
+
+#
+# In some setups mod_rewrite will not work correctly
+# without specifying RewriteBase
+#
+#RewriteBase /redirect
+
+RewriteRule ^(.*)$ index.php?link=$1 [QSA]

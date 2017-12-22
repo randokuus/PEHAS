@@ -1,0 +1,149 @@
+<div class="box">
+<TPL_SUB:FORM>
+<SCRIPT LANGUAGE="javascript">
+    var attach=-1;
+    var count_rows = 0;
+    var data = new Array();
+
+    function actionSet(value){
+        document.getElementById('action').value = value;
+        document.composeForm.submit();
+    }
+
+    function setTemplateName(value){
+        //tpl_name = prompt("Enter template name");
+        //if (tpl_name.length > 0 ){
+            //document.getElementById('template_name').value = tpl_name;
+            actionSet(value);
+        //}
+    }
+
+    function deleteRow(row){
+        var oTable = document.getElementById("oTable");
+        oTable.deleteRow(data[row]);
+        data[row] = -1;
+        pos = 0
+        str = ""
+        for (i = 0; i < data.length; i++){
+            if (data[i] >= 0){
+                data[i] = pos;
+                pos++;
+            }
+            str +="pos: "+data[i]+" \n";
+        }
+        count_rows = pos;
+    }
+
+    //--- add new attach file
+    function addNewRow(file_number){
+        if (file_number == attach){
+        // Insert two rows.
+        var oTable = document.getElementById("oTable");
+        var oRow1=oTable.insertRow(oTable.rows.length);
+
+        // Retrieve the rows collection for the table.
+        var aRows=oTable.rows;
+
+        // Retrieve the cells collection for the first row.
+        var aCells=oRow1.cells;
+
+        // Insert two cells into the first row.
+        var oCell=aRows[oRow1.rowIndex].insertCell(aCells.length);
+        if (attach > -1){
+            document.getElementById("div"+attach).innerHTML = "<input type=\"button\" value=\"delete\" class=\"submit\" onClick=\"deleteRow('"+attach+"');\">";
+        }
+        attach++;
+        data[attach] = count_rows;
+        count_rows++;
+        oCell.innerHTML="<input type=\"file\" id=\"attach"+attach+"\" name=\"attach[]\" value=\"\"  onChange=\"addNewRow("+attach+");\"> <div id=\"div"+attach+"\" name=\"div"+attach+"\" style=\"display: inline;\">";
+        }
+    }
+
+    function changeTextType(element, action){
+        old_element = "<TPL:TEXT_TYPE>";
+        if(old_element == "text" || element.value == "text" ){
+            actionSet(action);
+        }
+    }
+</SCRIPT>
+
+
+
+<form id="composeForm" name="composeForm" method="post" action="<TPL:SELF>"  enctype="multipart/form-data">
+<input type="hidden" name="action" id="action" value="SaveAsTemplate">
+<input type="hidden" name="template_name" id="template_name" value="">
+    <table cellspacing="3" cellpadding="0" border="0">
+    <col width="80px">
+    <col width="400px">
+    <tr>
+        <td class="label" colspan="2"><font color="red"><TPL:ER></font></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table collspacing="0" cellpadding="0" border="0" width="50%">
+                <tr>
+                    <TPL:RADIO_TEXT_TYPE>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td> <TPL:TXT_module_mautomation|subject>*: </td>
+        <td> <input type="text" name="subject" value="<TPL:SUBJECT>"> </td>
+    </tr>
+    <tr>
+        <td valign="top"> <TPL:TXT_module_mautomation|attachment>: </td>
+        <td>
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%" name="oTable" id="oTable">
+                    </table>
+                </td>
+            </tr>
+            <TPL:ATTACH_FILES_LIST>
+            </table>
+            <script language="javascript">
+                addNewRow(-1);
+            </script>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <TPL:TXT_module_mautomation|content>*:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <TPL:EDITOR>
+        </td>
+    </tr>
+    <tr>
+        <td> <TPL:TXT_module_mautomation|available_fields>: </td>
+        <td> <TPL:USER_FIELDS> </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+                <TPL_SUB:NEW_MESSAGE>
+                    <input type="button" value="<TPL:TXT_module_mautomation|load_template>" class="submit" onClick="document.location = '<TPL:TEMPLATE_URL>';">
+                    <input type="button" value="<TPL:SAVE_LABEL>" class="submit" onClick="setTemplateName('SaveAsTemplate')">
+                    <input type="button" value="<TPL:TXT_module_mautomation|send_message>" class="submit" onClick="actionSet('SendMessage')">
+                </TPL_SUB:NEW_MESSAGE>
+                <TPL_SUB:EDIT_TEMPLATE>
+                    <input type="button" value="<TPL:SAVE_LABEL>" class="submit" onClick="setTemplateName('SaveAsTemplate')">
+                    <input type="button" value="<TPL:TXT_module_mautomation|send_message>" class="submit" onClick="actionSet('SendMessage')">
+                    <input type="button" value="<TPL:TXT_module_mautomation|cancel>" class="submit" onClick="actionSet('Cancel')">
+                </TPL_SUB:EDIT_TEMPLATE>
+        </td>
+    </tr>
+    </TPL_SUB:FORM>
+    </table>
+</form>
+
+</div>

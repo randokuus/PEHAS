@@ -1,0 +1,24 @@
+<TPL_INCLUDE:tmpl/header.html>
+        <!--singleCol-->
+        <div class="singleCol">
+		    <TPL_OBJECT:search>
+		    <TPL_OBJECT_PARAM:setDisplay('form')>
+		    <TPL_OBJECT_PARAM:setTemplate('module_search_form.html')>
+		    <TPL_OBJECT_OUTPUT:show()>
+		    </TPL_OBJECT:search>
+		
+		    <TPL_OBJECT:search>
+		    <TPL_OBJECT_PARAM:setDisplay('list')>
+		    <TPL_OBJECT_PARAM:setTemplate('module_search_list.html')>
+		    <TPL_OBJECT_OUTPUT:show()>
+		    </TPL_OBJECT:search>
+		
+		    <TPL_OBJECT:search>
+		    <TPL_OBJECT_PARAM:setDisplay('list')>
+		    <TPL_OBJECT_PARAM:setModule('news')>
+		    <TPL_OBJECT_PARAM:setTemplate('module_search_list_news.html')>
+		    <TPL_OBJECT_OUTPUT:show()>
+		    </TPL_OBJECT:search>
+        </div>
+        <!--/singleCol-->
+<TPL_INCLUDE:tmpl/footer.html>

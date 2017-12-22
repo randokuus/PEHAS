@@ -1,0 +1,27 @@
+<TPL_INCLUDE:tmpl/header.html>
+<!-- col 1 start -->
+<div style="float:left; width:23.9%; padding-right:1%;">
+  <div class="block">
+    <TPL_OBJECT:projects>
+    <TPL_OBJECT_OUTPUT:projectMembers()>
+    </TPL_OBJECT:projects>
+  </div>
+
+  <TPL_OBJECT:poll>
+    <TPL_OBJECT_OUTPUT:show()>
+  </TPL_OBJECT:poll>
+  <div class="clearer"></div>
+</div>
+<!-- col 1 end -->
+<!-- col 2 start -->
+<div style="float:left; width:75%;">
+  <div class="block">
+  <TPL_OBJECT:projects>
+    <TPL_OBJECT_OUTPUT:show()>
+  </TPL_OBJECT:projects>
+  </div>
+  <div class="clearer"></div>
+</div>
+<!-- col 2 end -->
+<TPL_INCLUDE:tmpl/right_column.html>
+<TPL_INCLUDE:tmpl/footer.html>

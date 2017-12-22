@@ -1,0 +1,49 @@
+            <TPL_SUB:MESSAGE>
+            <!--msgWrap-->
+            <div class="msgWrap">
+                <p class="msg msgError msgGray">
+                    <span><TPL:TXT_output|error_occurred> <TPL:MESSAGE></span>
+                </p>
+            </div>
+            <!--/msgWrap-->
+            </TPL_SUB:MESSAGE>
+            
+            
+
+            <form method="post" action="<TPL:SELF>" name="vorm" class="jNice">
+            <TPL:HIDDEN>        
+            <!--box-->
+            <div class="box">
+                <div class="inner">
+                    <div class="heading">
+                        <h2><_TPL:PAGETITLE></h2>
+                    </div>
+
+                    <!--tableWrap-->
+                    <div class="tableWrap">
+                        <table class="tList tWide">
+                            <tr>
+								<th><TPL:TXT_module_isic_card|row></th>
+								<TPL_SUB:ROW_TITLE>
+								<th><TPL:TITLE></th>
+								</TPL_SUB:ROW_TITLE>
+								<th><TPL:TXT_module_isic_card|confirm></th>
+                            </tr>
+							<TPL_SUB:ROW>
+							<tr>
+							  <td><TPL:ROW></td>
+							  <TPL_SUB:COL>
+							  <td><TPL:DATA></td>
+							  </TPL_SUB:COL>
+							</tr>
+							</TPL_SUB:ROW>
+                        </table>
+                    </div>
+                    <!--/tableWrap-->
+                </div>
+            </div>
+            <!--/box-->
+            <div class="wButtons tListSubmit">
+                <input type="submit" value="<TPL:BUTTON>" />
+            </div>
+            </form>

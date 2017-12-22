@@ -1,0 +1,48 @@
+<TPL_SUB:IMPORT>
+<h2><TPL:TXT_module_mautomation|import></h2>
+<font color="red"><TPL:MESSAGE></font><br><br>
+</TPL_SUB:IMPORT>
+
+<TPL_SUB:EXPORT>
+<h2><TPL:TXT_module_mautomation|export></h2>
+<font color="red"><TPL:MESSAGE></font><br><br>
+</TPL_SUB:EXPORT>
+
+<TPL_SUB:FORM>
+<h2><TPL:TXT_module_mautomation|import></h2>
+<font color="red"><TPL:MESSAGE></font><br><br>
+<form method="post" enctype="multipart/form-data" action="<TPL:SELF>">
+<input type="hidden" name="action" value="Import">
+<table class="filter">
+    <col width="100px">
+    <col width="*">
+    <tr>
+        <td class="label"><TPL:TXT_module_mautomation|file_to_import>:</td>
+        <td class="input"><input name="import_file" class="i120" type="file"></td>
+    </tr>
+    <tr>
+        <td class="action" colspan="2" valign="bottom">
+            <input type="submit" class="submit" value="<TPL:TXT_module_mautomation|import>"/>
+        </td>
+    </tr>
+</table>
+</form>
+<h2><TPL:TXT_module_mautomation|export></h2>
+<form method="post" enctype="multipart/form-data" action="<TPL:SELF>">
+<input type="hidden" name="action" value="Export">
+<table class="filter">
+    <col width="100px">
+    <col width="*">
+    <tr>
+        <td class="label"><TPL:TXT_module_mautomation|file_type>:</td>
+        <td class="input">
+            <input type="radio" name="file_type" value="csv" checked> CSV<br/>
+            <input type="radio" name="file_type" value="xml"> XML<br/>
+        </td>
+        <td class="action" colspan="2" style="vertical-align: bottom">
+            <input type="submit" class="submit" value="<TPL:TXT_module_mautomation|export>"/>
+        </td>
+    </tr>
+</table>
+</form>
+</TPL_SUB:FORM>
